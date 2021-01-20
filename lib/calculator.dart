@@ -99,7 +99,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       ],
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "Dungee bichne uu",
+                        hintText: "dun bichne uu",
                       ),
                       textAlign: TextAlign.center,
                       style: TextStyle(
