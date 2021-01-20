@@ -99,7 +99,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       ],
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "Нэхэмжлэлийн үнийн дүнгээ бичнэ үү?",
+                        hintText: "Dungee bichne uu",
                       ),
                       textAlign: TextAlign.center,
                       style: TextStyle(
