@@ -53,7 +53,7 @@ class _PageState extends State<Main> {
         backgroundColor: Color(0xfff4f5fa),
         buttonBackgroundColor: Color(0xfff78c1e),
         index: 1,
-        animationDuration: Duration(milliseconds: 1200),
+        animationDuration: Duration(milliseconds: 1400),
         animationCurve: Curves.linearToEaseOut,
         items: <Widget>[
           Icon(
