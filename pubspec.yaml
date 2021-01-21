@@ -24,11 +24,11 @@ dependencies:
   curved_navigation_bar:
   flutter:
     sdk: flutter
-  google_fonts: ^1.1.0
   flutter_custom_clippers: ^1.1.2
   url_launcher: ^5.7.10
   carousel_slider: ^2.3.1
   flutter_phone_direct_caller: ^1.0.1
+  google_fonts: ^1.1.1
 
 
   # The following adds the Cupertino Icons font to your application.

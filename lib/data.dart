@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/zuvluguupopup.dart';
 
 import 'customdialog.dart';
+import 'zuvluguupopup.dart';
 
 //onboarding screen ii zuragnud
 class SliderModel {
@@ -218,55 +220,132 @@ List<CustomDialogBox> adPopups() {
 }
 
 //more hesgiin 2doh popup
-List<CustomDialogBox> morePopups() {
-  List<CustomDialogBox> popups = new List<CustomDialogBox>();
-  CustomDialogBox popup = new CustomDialogBox();
+List<ZuvluguuPopup> morePopups() {
+  List<ZuvluguuPopup> popups = new List<ZuvluguuPopup>();
+  ZuvluguuPopup popup = new ZuvluguuPopup();
 
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 0";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new ZuvluguuPopup();
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 1";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new ZuvluguuPopup();
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 2";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new ZuvluguuPopup();
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 3";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new ZuvluguuPopup();
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 4";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new ZuvluguuPopup();
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 5";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new ZuvluguuPopup();
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 6";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new ZuvluguuPopup();
   popup.descriptions = "Hello World!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 7";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 8";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 9";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 10";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 11";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 12";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 13";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 14";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 15";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 16";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 17";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 18";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 19";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 20";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 21";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 22";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 23";
+  popups.add(popup);
+
+  popup = new ZuvluguuPopup();
+  popup.descriptions = "Hello World!";
+  popup.title = "idx 24";
   popups.add(popup);
 
   return popups;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'customcarousel.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override
@@ -12,17 +12,11 @@ class CalculatorPage extends StatefulWidget {
 class _MyCustomFormState extends State<CalculatorPage> {
   final myController = TextEditingController();
 
-  Future<void> _makePhoneCall(String contact, bool direct) async {
-    if (direct == true) {
-      bool res = await FlutterPhoneDirectCaller.callNumber(contact);
+  _makePhoneCall(String contact) async {
+    if (await FlutterPhoneDirectCaller.callNumber(contact)) {
+      await FlutterPhoneDirectCaller.callNumber(contact);
     } else {
-      String telScheme = 'tel:$contact';
-
-      if (await canLaunch(telScheme)) {
-        await launch(telScheme);
-      } else {
-        throw 'Could not launch $telScheme';
-      }
+      throw 'Could not dial $contact';
     }
   }
 
@@ -175,7 +169,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       ],
                     ),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () => launch('http://hdc.gov.mn/page/46/'),
                       icon: Icon(Icons.monetization_on),
                       color: Color(0xff23233c),
                     ),
@@ -237,7 +231,8 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       ],
                     ),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () =>
+                          launch('https://www.youtube.com/watch?v=6Atkf-N9b80'),
                       icon: Icon(Icons.play_circle_fill),
                       color: Color(0xff23233c),
                     ),
@@ -299,7 +294,9 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       ],
                     ),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _makePhoneCall("+97689830044");
+                      },
                       icon: Icon(Icons.phone),
                       color: Color(0xff23233c),
                     ),
@@ -332,7 +329,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                               fontStyle: FontStyle.normal,
                             ),
                           ),
-                          onTap: () {},
+                          onTap: () => _makePhoneCall("+9768983004"),
                         ),
                       ),
                     ),

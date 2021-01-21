@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'EruugiinHereg.dart';
 import 'customcarousel.dart';
-import 'customdialog.dart';
+import 'IrgeniiHereg.dart';
+import 'ZahirgaaniiHereg.dart';
 
 class More extends StatefulWidget {
   More({Key key}) : super(key: key);
@@ -277,25 +279,22 @@ class RecomQst extends StatelessWidget {
           BoxItems(
             imgPath: 'assets/images/galaxy.jpg',
             textBox: 'Иргэний хэрэг',
-            popup: MoreDialogBox(
+            popup: IrgenBox(
               title: 'Иргэний хэрэг',
             ),
           ),
           BoxItems(
             imgPath: 'assets/images/galaxy.jpg',
-            textBox: 'Захиргааны хэрэг',
-            popup: MoreDialogBox(title: 'Захиргааны хэрэг'),
-          ),
-          BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
             textBox: 'Эрүүгийн хэрэг',
-            popup: MoreDialogBox(title: 'Эрүүгийн хэрэг'),
+            popup: EruuBox(
+              title: 'Эрүүгийн хэрэг',
+            ),
           ),
           BoxItems(
             imgPath: 'assets/images/galaxy.jpg',
-            textBox: 'Нөхөж бичих...',
-            popup: MoreDialogBox(
-              title: 'Нөхөж бичих...',
+            textBox: 'Захиргааны хэрэг',
+            popup: ZahirgaaBox(
+              title: 'Захиргааны хэрэг',
             ),
           ),
         ],
