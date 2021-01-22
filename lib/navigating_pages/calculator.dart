@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_1/custom_func_data/calc_copy.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../custom_func_data/customcarousel.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -93,7 +94,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       ],
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "dun bichne uu",
+                        hintText: "Нэхэмжлэлийн үнийн дүнгээ бичнэ үү?",
                       ),
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -113,10 +114,11 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       },
                       //TextFormField deer utga oruulad ok darahad uniin dungin utga uurchlugduh
                       onFieldSubmitted: (String str) {
-                        setState(() {
-                          finalresult = calculate.tomyo(int.parse(str));
-                          if (finalresult == null) finalresult = '0';
-                        });
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return CalcPopup(prc: finalresult,);
+                          });
                       },
                     ),
                   ),

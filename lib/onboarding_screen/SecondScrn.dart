@@ -10,8 +10,7 @@ class SecondScr extends StatefulWidget {
   }
 }
 
-class SecondState extends State<SecondScr>
-    with SingleTickerProviderStateMixin {
+class SecondState extends State<SecondScr> with SingleTickerProviderStateMixin {
   AnimationController _controller;
   Animation _animation;
   @override
@@ -34,7 +33,7 @@ class SecondState extends State<SecondScr>
   }
 
   route() {
-    Navigator.pushReplacement(
+    Navigator.push(
         context, MaterialPageRoute(builder: (context) => ThirdScr()));
   }
 
@@ -45,8 +44,8 @@ class SecondState extends State<SecondScr>
       opacity: _animation,
       child: GestureDetector(
         onTap: () {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => ThirdScr()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ThirdScr()));
         },
         child: Container(
           width: MediaQuery.of(context).size.width,

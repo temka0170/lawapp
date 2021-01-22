@@ -34,8 +34,7 @@ class ThirdState extends State<ThirdScr> with SingleTickerProviderStateMixin {
   }
 
   route() {
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Main()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Main()));
   }
 
   @override
@@ -45,8 +44,8 @@ class ThirdState extends State<ThirdScr> with SingleTickerProviderStateMixin {
       opacity: _animation,
       child: GestureDetector(
         onTap: () {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => Main()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Main()));
         },
         child: Container(
           width: MediaQuery.of(context).size.width,

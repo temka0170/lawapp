@@ -29,7 +29,7 @@ dependencies:
   carousel_slider: ^2.3.1
   flutter_phone_direct_caller: ^1.0.1
   google_fonts: ^1.1.1
-  flutter_masked_text: ^0.8.0
+  flutter_filereader: ^2.2.0
 
 
   # The following adds the Cupertino Icons font to your application.

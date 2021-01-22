@@ -34,7 +34,7 @@ class StartState extends State<OnboardingScreen>
   }
 
   route() {
-    Navigator.pushReplacement(
+    Navigator.push(
         context, MaterialPageRoute(builder: (context) => SecondScr()));
   }
 
@@ -45,8 +45,8 @@ class StartState extends State<OnboardingScreen>
       opacity: _animation,
       child: GestureDetector(
         onTap: () {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => SecondScr()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SecondScr()));
         },
         child: Container(
           width: MediaQuery.of(context).size.width,
