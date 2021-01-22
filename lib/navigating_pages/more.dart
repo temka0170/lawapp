@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'EruugiinHereg.dart';
-import 'customcarousel.dart';
-import 'IrgeniiHereg.dart';
-import 'ZahirgaaniiHereg.dart';
+import '../zuvluguu_popups/EruugiinHereg.dart';
+import '../custom_func_data/customcarousel.dart';
+import '../zuvluguu_popups/IrgeniiHereg.dart';
+import '../zuvluguu_popups/ZahirgaaniiHereg.dart';
 
 class More extends StatefulWidget {
   More({Key key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_1/zuvluguupopup.dart';
+import 'package:project_1/zuvluguu_popups/zuvluguupopup.dart';
 
 import 'customdialog.dart';
-import 'zuvluguupopup.dart';
+import '../zuvluguu_popups/zuvluguupopup.dart';
 
 //onboarding screen ii zuragnud
 class SliderModel {
@@ -224,7 +224,7 @@ List<ZuvluguuPopup> morePopups() {
   List<ZuvluguuPopup> popups = new List<ZuvluguuPopup>();
   ZuvluguuPopup popup = new ZuvluguuPopup();
 
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "empty";
   popup.title = "idx 0";
   popups.add(popup);
 

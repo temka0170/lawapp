@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:project_1/customdialog.dart';
+import 'package:project_1/custom_func_data/customdialog.dart';
 import 'data.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 

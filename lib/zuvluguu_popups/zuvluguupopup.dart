@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'data.dart';
+import '../custom_func_data/data.dart';
 
 //2dah popup (sub popup) iin row buyu 2 container
 // ignore: must_be_immutable

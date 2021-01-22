@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_1/customdialog.dart';
-import 'customcarousel.dart';
+import 'package:project_1/custom_func_data/customdialog.dart';
+import '../custom_func_data/customcarousel.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHome extends StatefulWidget {
