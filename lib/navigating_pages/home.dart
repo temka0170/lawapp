@@ -198,15 +198,11 @@ class _HomeContainerState extends State<HomeContainer> {
       child: Column(
         children: [
           Container(
-            width: 320.0,
-            height: 30.0,
+            width: 340.0,
+            height: 40.0,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(23.0),
-                  topRight: Radius.circular(23.0)),
-              border: Border.all(
-                  width: 0, color: Color(0xffff4f5fa), style: BorderStyle.none),
-              color: Color(0xffffffff),
+              color: Color(0xfff4f5fa),
+              border: Border.all(width: 0, color: Color(0xfff4f5fa), style: BorderStyle.none),
               boxShadow: [
                 BoxShadow(
                   color: Color(0x14000000),
@@ -216,84 +212,98 @@ class _HomeContainerState extends State<HomeContainer> {
                 )
               ],
             ),
-            //tab solih button uud
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: FlatButton(
-                    onPressed: () {
+                  child: GestureDetector(
+                    onTap: () {
                       setState(() {
                         _currentTab = 0;
                       });
                     },
-                    child: Text(
-                      "Холбоос линк",
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: _currentTab == 0
-                            ? Color(0xfff78c1e)
-                            : Color(0xff23233c),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
+                    child: SizedBox.expand(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(12.0)),
+                          color: _currentTab == 0
+                              ? Color(0xffffffff)
+                              : Color(0xfff4f5fa),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Холбоос линк",
+                            style: TextStyle(
+                              fontFamily: 'SFProDisplay',
+                              color: _currentTab == 0
+                                  ? Color(0xfff78c1e)
+                                  : Color(0xff23233c),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ),
                     ),
-                    color: _currentTab == 0
-                        ? Color(0xffffffff)
-                        : Color(0xfff4f5fa),
                   ),
                 ),
                 Expanded(
-                  child: FlatButton(
-                    onPressed: () {
+                  child: GestureDetector(
+                    onTap: () {
                       setState(() {
                         _currentTab = 1;
                       });
                     },
-                    child: Text(
-                      "хамтран ажиллах",
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: _currentTab == 1
-                            ? Color(0xfff78c1e)
-                            : Color(0xff23233c),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
+                    child: SizedBox.expand(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(12.0)),
+                          color: _currentTab == 1
+                              ? Color(0xffffffff)
+                              : Color(0xfff4f5fa),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "хамтран ажиллах",
+                            style: TextStyle(
+                              fontFamily: 'SFProDisplay',
+                              color: _currentTab == 1
+                                  ? Color(0xfff78c1e)
+                                  : Color(0xff23233c),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ),
                     ),
-                    color: _currentTab == 1
-                        ? Color(0xffffffff)
-                        : Color(0xfff4f5fa),
                   ),
                 ),
               ],
             ),
           ),
           //tabuudin datag aguulah container
-          ClipRRect(
-            borderRadius: BorderRadius.circular(13),
-            child: Container(
-              width: 340.0,
-              height: 201.0,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x14000000),
-                    offset: Offset(0, 0),
-                    blurRadius: 20,
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: Column(
-                children: <Widget>[
-                  Expanded(
-                    child: _contTab[_currentTab],
-                  ),
-                ],
-              ),
+          Container(
+            width: 340.0,
+            height: 201.0,
+            decoration: BoxDecoration(
+              borderRadius:
+                  BorderRadius.vertical(bottom: Radius.circular(10.0)),
+              color: Colors.white,
+            ),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: _contTab[_currentTab],
+                ),
+              ],
             ),
           ),
         ],
@@ -314,7 +324,7 @@ class Link extends StatefulWidget {
 
 class _LinkState extends State<Link> {
   ScrollController _scrollController =
-      new ScrollController(initialScrollOffset: 10.0);
+      new ScrollController(initialScrollOffset: 127.0, keepScrollOffset: true);
   @override
   Widget build(BuildContext context) {
     return Scrollbar(

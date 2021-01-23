@@ -166,11 +166,8 @@ class _MoreContainerState extends State<MoreContainer> {
           width: 330.0,
           height: 30.0,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(23.0),
-                topRight: Radius.circular(23.0)),
             border: Border.all(
-                width: 1, color: Color(0xfff4f5fa), style: BorderStyle.solid),
+                width: 0, color: Color(0xfff4f5fa), style: BorderStyle.none),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
@@ -181,57 +178,82 @@ class _MoreContainerState extends State<MoreContainer> {
               )
             ],
           ),
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                      _currentTab = 0;
-                    });
-                  },
-                  child: Text(
-                    "ЗӨВӨЛГӨӨ",
-                    style: TextStyle(
-                      fontFamily: 'SFProDisplay',
-                      color: _currentTab == 0
-                          ? Color(0xffffffff)
-                          : Color(0xff23233c),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
+          child: Container(
+            color: Color(0xfff4f5fa),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _currentTab = 0;
+                      });
+                    },
+                    child: SizedBox.expand(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(8.0)),
+                          color: _currentTab == 0
+                            ? Color(0xfff9931f)
+                            : Color(0xfff4f5fa),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                                                child: Text(
+                            "ЗӨВӨЛГӨӨ",
+                            style: TextStyle(
+                              fontFamily: 'SFProDisplay',
+                              color: _currentTab == 0
+                                  ? Color(0xffffffff)
+                                  : Color(0xff23233c),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                  color:
-                      _currentTab == 0 ? Color(0xfff9931f) : Color(0xfff4f5fa),
                 ),
-              ),
-              Expanded(
-                child: FlatButton(
-                  onPressed: () {
-                    setState(() {
-                      _currentTab = 1;
-                    });
-                  },
-                  child: Text(
-                    "ТҮГЭЭМЭЛ АСУУЛТ",
-                    style: TextStyle(
-                      fontFamily: 'SFProDisplay',
-                      color: _currentTab == 1
-                          ? Color(0xffffffff)
-                          : Color(0xff23233c),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _currentTab = 1;
+                      });
+                    },
+                    child: SizedBox.expand(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(8.0)),
+                          color: _currentTab == 1
+                            ? Color(0xfff9931f)
+                            : Color(0xfff4f5fa),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                                                child: Text(
+                            "ТҮГЭЭМЭЛ АСУУЛТ",
+                            style: TextStyle(
+                              fontFamily: 'SFProDisplay',
+                              color: _currentTab == 1
+                                  ? Color(0xffffffff)
+                                  : Color(0xff23233c),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                  color:
-                      _currentTab == 1 ? Color(0xfff9931f) : Color(0xfff4f5fa),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         ClipRRect(
