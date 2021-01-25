@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:project_1/custom_func_data/customdialog.dart';
 import '../custom_func_data/customcarousel.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class MyHome extends StatefulWidget {
   MyHome({Key key}) : super(key: key);
@@ -13,6 +16,7 @@ class MyHome extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         color: Color(0xfff4f5fa),
@@ -55,11 +59,7 @@ class _MyStatefulWidgetState extends State<MyHome> {
                         ),
                         child: GestureDetector(
                           onTap: () {
-                            showDialog(
-                                context: context,
-                                builder: (_) => CustomTeamPopup(
-                                      currentidx: 0,
-                                    ));
+                            buildShowGeneralDialog(context, height, 0);
                           },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[350],
@@ -78,13 +78,15 @@ class _MyStatefulWidgetState extends State<MyHome> {
                           top: 5.0,
                         ),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            buildShowGeneralDialog(context, height, 4);
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[350],
                             radius: 43.0,
                             child: CircleAvatar(
                               backgroundImage:
-                                  AssetImage('assets/images/galaxy.jpg'),
+                                  AssetImage('assets/images/test.jpg'),
                               radius: 38.0,
                             ),
                           ),
@@ -96,13 +98,15 @@ class _MyStatefulWidgetState extends State<MyHome> {
                           top: 3.0,
                         ),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            buildShowGeneralDialog(context, height, 1);
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[350],
                             radius: 46.0,
                             child: CircleAvatar(
                               backgroundImage:
-                                  AssetImage('assets/images/galaxy.jpg'),
+                                  AssetImage('assets/splashscreen/start1.png'),
                               radius: 41.0,
                             ),
                           ),
@@ -114,13 +118,15 @@ class _MyStatefulWidgetState extends State<MyHome> {
                           top: 3.0,
                         ),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            buildShowGeneralDialog(context, height, 3);
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[350],
                             radius: 46.0,
                             child: CircleAvatar(
                               backgroundImage:
-                                  AssetImage('assets/images/galaxy.jpg'),
+                                  AssetImage('assets/splashscreen/start3.png'),
                               radius: 41.0,
                             ),
                           ),
@@ -131,13 +137,15 @@ class _MyStatefulWidgetState extends State<MyHome> {
                           left: 160.0,
                         ),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            buildShowGeneralDialog(context, height, 2);
+                          },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey[350],
                             radius: 50.0,
                             child: CircleAvatar(
                               backgroundImage:
-                                  AssetImage('assets/images/galaxy.jpg'),
+                                  AssetImage('assets/splashscreen/start2.png'),
                               radius: 45.0,
                             ),
                           ),
@@ -171,6 +179,74 @@ class _MyStatefulWidgetState extends State<MyHome> {
       ),
     );
   }
+
+  Future buildShowGeneralDialog(BuildContext context, double height, int idx) {
+    // ignore: unused_local_variable
+    int _current;
+    return showGeneralDialog(
+        context: context,
+        barrierDismissible: true,
+        barrierLabel:
+            MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        barrierColor: Colors.black45,
+        transitionDuration: const Duration(milliseconds: 200),
+        pageBuilder: (BuildContext buildContext, Animation animation,
+            Animation secondaryAnimation) {
+          return BackdropFilter(
+            filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: height,
+              child: SizedBox.expand(
+                child: Column(children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 28.0, right: 28.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                            width: 30.0,
+                            height: 30.0,
+                            decoration: new BoxDecoration(
+                              color: Color(0xffffffff).withOpacity(0.7),
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color(0x14000000),
+                                    offset: Offset(0, 0),
+                                    blurRadius: 10,
+                                    spreadRadius: 0)
+                              ],
+                            ),
+                            child: Icon(Icons.close)),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 85.0),
+                    child: CarouselSlider(
+                      items: imageSliders,
+                      options: CarouselOptions(
+                          initialPage: idx,
+                          autoPlay: false,
+                          enlargeCenterPage: false,
+                          height: height * 0.685,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              _current = index;
+                            });
+                          }),
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+          );
+        });
+  }
 }
 
 class HomeContainer extends StatefulWidget {
@@ -202,7 +278,8 @@ class _HomeContainerState extends State<HomeContainer> {
             height: 40.0,
             decoration: BoxDecoration(
               color: Color(0xfff4f5fa),
-              border: Border.all(width: 0, color: Color(0xfff4f5fa), style: BorderStyle.none),
+              border: Border.all(
+                  width: 0, color: Color(0xfff4f5fa), style: BorderStyle.none),
               boxShadow: [
                 BoxShadow(
                   color: Color(0x14000000),
@@ -492,3 +569,140 @@ class BoxItems extends StatelessWidget {
     );
   }
 }
+
+final List<Widget> imageSliders = imgList
+    .map((item) => Container(
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 10.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(16.0)),
+                child: Stack(
+                  children: <Widget>[
+                    SizedBox.expand(
+                        child: Image.asset(
+                      item,
+                      fit: BoxFit.fill,
+                    )),
+                    Positioned(
+                      bottom: 0.0,
+                      left: 0.0,
+                      right: 0.0,
+                      child: Container(
+                        height: 186,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(200, 0, 0, 0),
+                              Color.fromARGB(0, 0, 0, 0)
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            SizedBox(
+                              height: 40.0,
+                            ),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                itemTitle[imgList.indexOf(item)],
+                                style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  color: Color(0xffffffff),
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w700,
+                                  fontStyle: FontStyle.normal,
+                                  decoration: TextDecoration.none,
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                itemDesc[imgList.indexOf(item)],
+                                style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  color: Color(0xfff9931f),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                  decoration: TextDecoration.none,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 18.0),
+                              child: Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Container(
+                                  width: 206,
+                                  height: 50,
+                                  decoration: new BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(
+                                        width: 1.0,
+                                        color: Color(0xfff9931f),
+                                        style: BorderStyle.solid),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      itemBtn[imgList.indexOf(item)],
+                                      style: TextStyle(
+                                        fontFamily: 'SFProDisplay',
+                                        color: Color(0xffffffff),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        fontStyle: FontStyle.normal,
+                                        decoration: TextDecoration.none,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+        ))
+    .toList();
+
+final List<String> imgList = [
+  "assets/images/galaxy.jpg",
+  "assets/splashscreen/start1.png",
+  "assets/splashscreen/start2.png",
+  "assets/splashscreen/start3.png",
+  "assets/images/test.jpg"
+];
+
+final List<String> itemTitle = [
+  "Galaxy",
+  "Start 1",
+  "Start 2",
+  "Start 3",
+  "Test Jpg"
+];
+
+final List<String> itemDesc = [
+  "\"Galaxy PlaceHolder\"",
+  "\"Start1 PlaceHolder\"",
+  "\"Start2 PlaceHolder\"",
+  "\"Start3 PlaceHolder\"",
+  "\"Test PlaceHolder\""
+];
+
+final List<String> itemBtn = [
+  "Just Galaxy",
+  "Just Start1",
+  "Just Start2",
+  "Just Start3",
+  "Just Test",
+];
