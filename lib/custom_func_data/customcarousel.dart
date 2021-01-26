@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/customdialog.dart';
@@ -182,6 +183,8 @@ class _AdScreenState extends State<AdScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Random _rand = new Random();
+    int rad;
     return Stack(
       children: <Widget>[
         PageView.builder(
@@ -194,9 +197,10 @@ class _AdScreenState extends State<AdScreen> {
           },
           itemBuilder: (context, index) {
             //AdTile n carousel iin 1 Tab
+            rad = _rand.nextInt(ads.length);
             return AdTile(
-              imgPath: ads[index].getAssetPath(),
-              desc: ads[index].getDescript(),
+              imgPath: ads[rad].getAssetPath(),
+              desc: ads[rad].getDescript(),
             );
           },
         ),
@@ -250,7 +254,7 @@ class _AdScreenState extends State<AdScreen> {
                 builder: (BuildContext context) {
                   //popup n carouseliin indextei tentsuu
                   //data.dart deer utga-uudaa awna
-                  return cmpopups[_currentAd];
+                  return cmpopups[rad];
                 });
           },
           child: Container(
@@ -362,6 +366,8 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Random rand = new Random();
+    int _rad;
     return Stack(
       children: <Widget>[
         PageView.builder(
@@ -373,9 +379,10 @@ class _MainScreenState extends State<MainScreen> {
             });
           },
           itemBuilder: (context, index) {
+            _rad = rand.nextInt(mains.length);
             return MainTile(
-              imgPath: mains[index].getAssetPath(),
-              desc: mains[index].getDescript(),
+              imgPath: mains[_rad].getAssetPath(),
+              desc: mains[_rad].getDescript(),
             );
           },
         ),
@@ -407,7 +414,7 @@ class _MainScreenState extends State<MainScreen> {
                 builder: (BuildContext context) {
                   //popup n carouseliin indextei tentsuu
                   //data.dart deer utga-uudaa awna
-                  return popups[_currentMain];
+                  return popups[_rad];
                 });
           },
           child: Container(

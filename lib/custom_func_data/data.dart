@@ -184,36 +184,36 @@ List<CustomDialogBox> adPopups() {
   List<CustomDialogBox> popups = new List<CustomDialogBox>();
   CustomDialogBox popup = new CustomDialogBox();
 
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 0";
+  popup.title = "tanii aylaliin hutuch";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "bla bla bla";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 1";
+  popup.title = "bla bla bla";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "test test test";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 2";
+  popup.title = "test test test";
   popups.add(popup);
 
   //suuliin 2 utga adilhan bh, timer deere currentpage maani
   //ene listnii lengthees 1 eer ih bolsnii daraa 0 ruu butsaj bga bolhor
   //index aldaa zaaj bga uchraas suulin 2 utgiig adilhan awsan
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "Hello World test";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 3";
+  popup.title = "hello world tst";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "Hello World test";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 3";
+  popup.title = "hello world tst";
   popups.add(popup);
 
   return popups;
