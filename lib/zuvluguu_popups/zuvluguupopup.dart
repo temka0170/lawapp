@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_1/navigating_pages/more.dart';
 import '../custom_func_data/data.dart';
 
 //2dah popup (sub popup) iin row buyu 2 container
@@ -227,6 +228,33 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
                 icon: Icon(Icons.arrow_back),
                 onPressed: () {
                   Navigator.pop(context);
+                },
+              ),
+            ),
+          ),
+          Positioned(
+            right: 0.0,
+            top: 0.0,
+            child: Container(
+              width: 30.0,
+              height: 30.0,
+              decoration: new BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(8),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x14000000),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 0)
+                ],
+              ),
+              child: IconButton(
+                iconSize: 12,
+                color: Color(0xff23233c),
+                icon: Icon(Icons.close),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => More()));
                 },
               ),
             ),
