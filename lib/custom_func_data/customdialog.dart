@@ -146,3 +146,117 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     );
   }
 }
+
+// ignore: must_be_immutable
+class QuestionBox extends StatefulWidget {
+  String question, answer, text;
+
+  QuestionBox({Key key, this.question, this.answer, this.text})
+      : super(key: key);
+
+  @override
+  _QuestionBoxState createState() => _QuestionBoxState();
+}
+
+class _QuestionBoxState extends State<QuestionBox> {
+  @override
+  Widget build(BuildContext context) {
+    //ariin font iig blur bolgoh
+    return BackdropFilter(
+      filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+      child: Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        child: contentBox(context),
+      ),
+    );
+  }
+
+  contentBox(context) {
+    return Stack(
+      children: <Widget>[
+        Positioned(
+          right: 0.0,
+          top: 0.0,
+          child: Container(
+            width: 30.0,
+            height: 30.0,
+            decoration: new BoxDecoration(
+              color: Color(0xffffffff),
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                    color: Color(0x14000000),
+                    offset: Offset(0, 0),
+                    blurRadius: 10,
+                    spreadRadius: 0)
+              ],
+            ),
+            child: IconButton(
+              iconSize: 12,
+              color: Color(0xff23233c),
+              icon: Icon(Icons.close),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 100.0, bottom: 99.0),
+          child: Container(
+            decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black,
+                      offset: Offset(0, 10),
+                      blurRadius: 10),
+                ]),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                SizedBox(
+                  height: 50,
+                ),
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 28.0),
+                    child: Text(
+                        //utgaa data.dart deer awna
+                        widget.question,
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          color: Color(0xff23233c),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                        )),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  //utgaa data.dart deer awna
+                  widget.answer,
+                  style: TextStyle(fontSize: 14),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 22,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

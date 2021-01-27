@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/custom_func_data/customdialog.dart';
+import 'package:project_1/custom_func_data/data.dart';
 import '../zuvluguu_popups/EruugiinHereg.dart';
 import '../custom_func_data/customcarousel.dart';
 import '../zuvluguu_popups/IrgeniiHereg.dart';
@@ -100,9 +102,11 @@ class QstsItems extends StatelessWidget {
   const QstsItems({
     Key key,
     @required this.textQsts,
+    @required this.qstpopup,
   }) : super(key: key);
 
   final String textQsts;
+  final Widget qstpopup;
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +118,13 @@ class QstsItems extends StatelessWidget {
       child: Column(
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return qstpopup;
+                  });
+            },
             child: Text(
               textQsts,
               textAlign: TextAlign.center,
@@ -330,7 +340,7 @@ class RecomQst extends StatelessWidget {
 
 //tugeemel asuult tab
 class Qsts extends StatefulWidget {
-  const Qsts({
+  Qsts({
     Key key,
   }) : super(key: key);
 
@@ -341,6 +351,15 @@ class Qsts extends StatefulWidget {
 class _QstsState extends State<Qsts> {
   ScrollController _scrollController =
       new ScrollController(initialScrollOffset: 10.0);
+
+  List<QuestionBox> questions = new List<QuestionBox>();
+
+  @override
+  void initState() {
+    super.initState();
+    questions = questionPop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scrollbar(
@@ -353,18 +372,23 @@ class _QstsState extends State<Qsts> {
         children: <Widget>[
           QstsItems(
             textQsts: 'PlaceHolder1',
+            qstpopup: questions[0],
           ),
           QstsItems(
             textQsts: 'PlaceHolder2',
+            qstpopup: questions[1],
           ),
           QstsItems(
             textQsts: 'PlaceHolder3',
+            qstpopup: questions[2],
           ),
           QstsItems(
             textQsts: 'PlaceHolder4',
+            qstpopup: questions[3],
           ),
           QstsItems(
             textQsts: 'PlaceHolder5',
+            qstpopup: questions[4],
           ),
         ],
       ),

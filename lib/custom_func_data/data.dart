@@ -219,6 +219,37 @@ List<CustomDialogBox> adPopups() {
   return popups;
 }
 
+List<QuestionBox> questionPop() {
+  List<QuestionBox> qstPops = new List<QuestionBox>();
+  QuestionBox qstPop = new QuestionBox();
+
+  qstPop.question = 'idx 0 asuult';
+  qstPop.answer = 'idx 0 hariult';
+  qstPops.add(qstPop);
+
+  qstPop = new QuestionBox();
+  qstPop.question = 'idx 1 asuult';
+  qstPop.answer = 'idx 1 hariult';
+  qstPops.add(qstPop);
+
+  qstPop = new QuestionBox();
+  qstPop.question = 'idx 2 asuult';
+  qstPop.answer = 'idx 2 hariult';
+  qstPops.add(qstPop);
+
+  qstPop = new QuestionBox();
+  qstPop.question = 'idx 3 asuult';
+  qstPop.answer = 'idx 3 hariult';
+  qstPops.add(qstPop);
+
+  qstPop = new QuestionBox();
+  qstPop.question = 'idx 4 asuult';
+  qstPop.answer = 'idx 4 hariult';
+  qstPops.add(qstPop);
+
+  return qstPops;
+}
+
 //more hesgiin 2doh popup
 List<ZuvluguuPopup> morePopups() {
   List<ZuvluguuPopup> popups = new List<ZuvluguuPopup>();
