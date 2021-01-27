@@ -277,7 +277,7 @@ class _HomeContainerState extends State<HomeContainer> {
             width: 340.0,
             height: 40.0,
             decoration: BoxDecoration(
-              color: Color(0xfff4f5fa),
+              color: Color(0xfff4f5fa).withOpacity(0.0),
               border: Border.all(
                   width: 0, color: Color(0xfff4f5fa), style: BorderStyle.none),
               boxShadow: [
@@ -676,7 +676,7 @@ final List<Widget> imageSliders = imgList
     .toList();
 
 final List<String> imgList = [
-  "assets/images/galaxy.jpg",
+  "assets/images/amarhuu.jpg",
   "assets/splashscreen/start1.png",
   "assets/splashscreen/start2.png",
   "assets/splashscreen/start3.png",
@@ -684,7 +684,7 @@ final List<String> imgList = [
 ];
 
 final List<String> itemTitle = [
-  "Galaxy",
+  "Хуульч",
   "Start 1",
   "Start 2",
   "Start 3",
@@ -692,7 +692,7 @@ final List<String> itemTitle = [
 ];
 
 final List<String> itemDesc = [
-  "\"Galaxy PlaceHolder\"",
+  "\"Үүсгэн байгуулагч\"",
   "\"Start1 PlaceHolder\"",
   "\"Start2 PlaceHolder\"",
   "\"Start3 PlaceHolder\"",
@@ -700,7 +700,7 @@ final List<String> itemDesc = [
 ];
 
 final List<String> itemBtn = [
-  "Just Galaxy",
+  "Э.Амархүү",
   "Just Start1",
   "Just Start2",
   "Just Start3",

@@ -232,33 +232,6 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
               ),
             ),
           ),
-          Positioned(
-            right: 0.0,
-            top: 0.0,
-            child: Container(
-              width: 30.0,
-              height: 30.0,
-              decoration: new BoxDecoration(
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                      color: Color(0x14000000),
-                      offset: Offset(0, 0),
-                      blurRadius: 10,
-                      spreadRadius: 0)
-                ],
-              ),
-              child: IconButton(
-                iconSize: 12,
-                color: Color(0xff23233c),
-                icon: Icon(Icons.close),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => More()));
-                },
-              ),
-            ),
-          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(
@@ -304,10 +277,14 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
                         height: 15,
                       ),
                       Align(
-                        child: Text(
-                          //utgaa data.dart deer awna
-                          widget.descriptions,
-                          style: TextStyle(fontSize: 14),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20, right: 20, top: 15),
+                          child: Text(
+                            //utgaa data.dart deer awna
+                            widget.descriptions,
+                            style: TextStyle(fontSize: 14),
+                          ),
                         ),
                       ),
                       SizedBox(

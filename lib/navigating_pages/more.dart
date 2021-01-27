@@ -312,21 +312,21 @@ class RecomQst extends StatelessWidget {
       child: Column(
         children: <Widget>[
           BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
+            imgPath: 'assets/images/irgeniihereg.png',
             textBox: 'Иргэний хэрэг',
             popup: IrgenBox(
               title: 'Иргэний хэрэг',
             ),
           ),
           BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
+            imgPath: 'assets/images/eruugiinhereg.png',
             textBox: 'Эрүүгийн хэрэг',
             popup: EruuBox(
               title: 'Эрүүгийн хэрэг',
             ),
           ),
           BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
+            imgPath: 'assets/images/zahirgaaniihereg.png',
             textBox: 'Захиргааны хэрэг',
             popup: ZahirgaaBox(
               title: 'Захиргааны хэрэг',
@@ -371,23 +371,23 @@ class _QstsState extends State<Qsts> {
         itemExtent: 60.0,
         children: <Widget>[
           QstsItems(
-            textQsts: 'PlaceHolder1',
+            textQsts: 'Иргэний хэргийн хөөн хэлэл...',
             qstpopup: questions[0],
           ),
           QstsItems(
-            textQsts: 'PlaceHolder2',
+            textQsts: 'Шүүхэд хандмаар байгаа ч хариу...',
             qstpopup: questions[1],
           ),
           QstsItems(
-            textQsts: 'PlaceHolder3',
+            textQsts: 'Зээлийн гэрээ бичгээр байгуула...',
             qstpopup: questions[2],
           ),
           QstsItems(
-            textQsts: 'PlaceHolder4',
+            textQsts: 'Орон сууц худалдаж авахаар гэрэ...',
             qstpopup: questions[3],
           ),
           QstsItems(
-            textQsts: 'PlaceHolder5',
+            textQsts: 'Шүүхийн шийдвэрээр тогтоосон тэт...',
             qstpopup: questions[4],
           ),
         ],

@@ -73,17 +73,17 @@ List<AdModel> getAds() {
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("bla bla bla");
+  ad.setAdDesc("Tanii aylaliin hutuch");
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("test test test");
+  ad.setAdDesc("Tanii aylaliin hutuch");
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Hello World!");
+  ad.setAdDesc("Tanii aylaliin hutuch");
   ads.add(ad);
 
   return ads;
@@ -124,17 +124,17 @@ List<MainModel> getMains() {
 
   main = new MainModel();
   main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("bla bla bla");
+  main.setAdDesc("Aylaliin hutuch");
   mains.add(main);
 
   main = new MainModel();
   main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("test test test");
+  main.setAdDesc("Aylaliin hutuch");
   mains.add(main);
 
   main = new MainModel();
   main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Hello World!");
+  main.setAdDesc("Aylaliin hutuch");
   mains.add(main);
 
   return mains;
@@ -151,13 +151,13 @@ List<CustomDialogBox> getPopups() {
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 1";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 2";
   popups.add(popup);
@@ -166,13 +166,13 @@ List<CustomDialogBox> getPopups() {
   //ene listnii lengthees 1 eer ih bolsnii daraa 0 ruu butsaj bga bolhor
   //index aldaa zaaj bga uchraas suulin 2 utgiig adilhan awsan
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 3";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World!";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 3";
   popups.add(popup);
@@ -190,24 +190,24 @@ List<CustomDialogBox> adPopups() {
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "bla bla bla";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "bla bla bla";
+  popup.title = "aylaliin hutuch";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "test test test";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "test test test";
+  popup.title = "aylaliin hutuch";
   popups.add(popup);
 
   //suuliin 2 utga adilhan bh, timer deere currentpage maani
   //ene listnii lengthees 1 eer ih bolsnii daraa 0 ruu butsaj bga bolhor
   //index aldaa zaaj bga uchraas suulin 2 utgiig adilhan awsan
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World test";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "hello world tst";
+  popup.title = "aylaliin hutuch";
   popups.add(popup);
 
   popup = new CustomDialogBox();
@@ -223,28 +223,37 @@ List<QuestionBox> questionPop() {
   List<QuestionBox> qstPops = new List<QuestionBox>();
   QuestionBox qstPop = new QuestionBox();
 
-  qstPop.question = 'idx 0 asuult';
-  qstPop.answer = 'idx 0 hariult';
+  qstPop.question = 'Иргэний хэргийн хөөн хэлэлцэх хугацааг юу гэж ойлгох вэ?';
+  qstPop.answer =
+      'Иргэн, хуулийн этгээдээс зөрчигдсөн эрхээ хамгаалуулахын тулд шүүх, арбитр зэрэг байгууллагад нэхэмжлэл гаргаж болох хугацааг хуулиар тогтоосныг хөөн хэлэлцэх хугацаа гэнэ. Хуульд өөрөөр заагаагүй бол хөөн хэлэлцэх ерөнхий хугацаа 10 жил, гэрээний үүрэгтэй холбоотой шаардлага гаргах хөөн хэлэлцэх хугацаа 3 жил, үл хөдлөх эд хөрөнгөтэй холбоотой гэрээний үүрэгтэй холбоотой хөөн хэлэлцэх хугацаа 6 жил гэх мэт тусгай асуудлаар нь зааж өгсөн. Хөөн хэлэлцэх хугацаа өнгөрсөн бол үүрэг гүйцэтгэгч үүрэг гүйцэтгэхээс татгалзах эрхтэй байдаг.';
   qstPops.add(qstPop);
 
   qstPop = new QuestionBox();
-  qstPop.question = 'idx 1 asuult';
-  qstPop.answer = 'idx 1 hariult';
+  qstPop.question =
+      'Шүүхэд хандмаар байгаа ч хариуцагч этгээдийн оршин суугаа хаягийг мэдэхгүй байгаа тохиолдолд яах вэ?';
+  qstPop.answer =
+      'Хариуцагчийн оршин суугаа газрын хаяг мэдэгдэхгүй байвал түүнийг эрэн сурвалжлуулахаар шүүхэд хүсэлт гаргаж болно. Хариуцагчийг эрэн сурвалжлах тухай шүүхийн шийдвэр гарсан тохиолдолд цагдаагийн байгууллага тухайн этгээдийн оршин суугаа хаягийг тогтоохоор эрэн сурвалжлах ажиллагааг хийж гүйцэтгэнэ.';
   qstPops.add(qstPop);
 
   qstPop = new QuestionBox();
-  qstPop.question = 'idx 2 asuult';
-  qstPop.answer = 'idx 2 hariult';
+  qstPop.question =
+      'Зээлийн гэрээ бичгээр байгуулаагүй ч гэсэн хүү нэхэж болох уу?';
+  qstPop.answer =
+      'Монгол Улсын Иргэний хуульд “Хуульд өөрөөр заагаагүй бол хүү тогтоосон бол зээлийн гэрээг бичгээр хийнэ. Энэ шаардлагыг хангаагүй бол хүү авах эрхээ алдана” гэж зохицуулсан байдаг. Иймд зээл олгохдоо хүү төлөхөөр тохиролцсон хэдий ч бичгээр гэрээ байгуулаагүй, зөвхөн амаар тохиролцсон тохиолдолд зээлдүүлэгч хүү шаардах эрхгүй болно.';
   qstPops.add(qstPop);
 
   qstPop = new QuestionBox();
-  qstPop.question = 'idx 3 asuult';
-  qstPop.answer = 'idx 3 hariult';
+  qstPop.question =
+      'Орон сууц худалдаж авахаар гэрээ байгуулахад юуг анхаарах ёстой вэ?';
+  qstPop.answer =
+      'Орон сууц худалдах, худалдан авах гэрээ байгуулахдаа гэрээгээ улсын бүртгэлийн газарт бүртгүүлэх ёстой. Учир нь үл хөдлөх эрх хөрөнгө өмчлөх эрх хэлцлийн үндсэн дээр нэг этгээдээс нөгөөд шилжиж байгаа бол уг хэлцлийг үл хөдлөх эд хөрөнгийн бүртгэлийн газар бүртгүүлснээр тухайн үл хөдлөх эд хөрөнгийн өмчлөх эрх худалдан авагчид шилжиж, өмнөх өмчлөгч буюу худалдагчийн өмчлөх эрх дуусгавар болдог. Хэрэв уг шаардлагыг хангаагүй бол талуудын хооронд байгуулагдсан худалдах, худалдан авах гэрээ нь Иргэний хуульд заасан хүчин төгөлдөр бус байх хэлцэлд тооцогдох хууль зүйн үр дагаврыг бий болгоно.';
   qstPops.add(qstPop);
 
   qstPop = new QuestionBox();
-  qstPop.question = 'idx 4 asuult';
-  qstPop.answer = 'idx 4 hariult';
+  qstPop.question =
+      'Шүүхийн шийдвэрээр тогтоосон тэтгэлгийг хугацаандаа төлөөгүй тохиолдолд алданги шаардаж болох уу?';
+  qstPop.answer =
+      'Хэрэв шүүхийн шийдвэрээр тогтоосон тэтгэлгийг хугацаанд нь төлөөгүй бол хожимдуулсан хоног тутамд тогтоосон тэтгэлгийн үнийн дүнгийн 0,5 хувиар алданги гаргуулахаар шаардаж болно. Гэхдээ алдангийн нийт хэмжээ төлөгдөөгүй тэтгэлгийн үнийн дүнгийн 50 хувиас хэтрэхгүй байхыг анхаарах нь зүйтэй.';
   qstPops.add(qstPop);
 
   return qstPops;

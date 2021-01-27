@@ -218,41 +218,49 @@ class _QuestionBoxState extends State<QuestionBox> {
                       offset: Offset(0, 10),
                       blurRadius: 10),
                 ]),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                SizedBox(
-                  height: 50,
-                ),
-                Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 28.0),
-                    child: Text(
-                        //utgaa data.dart deer awna
-                        widget.question,
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          color: Color(0xff23233c),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                        )),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  SizedBox(
+                    height: 50,
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  //utgaa data.dart deer awna
-                  widget.answer,
-                  style: TextStyle(fontSize: 14),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: 22,
-                ),
-              ],
+                  Align(
+                    alignment: AlignmentDirectional.center,
+                    child: Text(
+                      //utgaa data.dart deer awna
+                      widget.question,
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        color: Color(0xff23233c),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Align(
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(left: 20, right: 20, top: 15),
+                      child: Text(
+                        //utgaa data.dart deer awna
+                        widget.answer,
+                        style: TextStyle(fontSize: 14, height: 2),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 22,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -23,7 +23,7 @@ class StartState extends State<OnboardingScreen>
       duration: Duration(milliseconds: 800),
     );
     _animation = Tween(
-      begin: 0.0,
+      begin: 0.1,
       end: 1.0,
     ).animate(_controller);
   }

@@ -57,12 +57,12 @@ class _PageState extends State<Main> {
         animationCurve: Curves.linearToEaseOut,
         items: <Widget>[
           Icon(
-            Icons.home_rounded,
+            Icons.home,
             size: 40.0,
             color: _activePage == 0 ? _activeclr : _inactclr,
           ),
           Icon(
-            Icons.calculate_outlined,
+            Icons.confirmation_number,
             size: 38,
             color: _activePage == 1 ? _activeclr : _inactclr,
           ),
