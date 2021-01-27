@@ -231,7 +231,7 @@ List<ZuvluguuPopup> morePopups() {
 
   popup = new ZuvluguuPopup();
   popup.descriptions =
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?";
+      "Нэхэмжлэгч: \n\tОвог, нэр: ................. ургийн овогтой .................... -ний ....................... \n\tХаяг: ......................................................................................................... \n\tУтас: ............................ \n\tХариуцагч:";
   popup.title = "idx 1";
   popups.add(popup);
 

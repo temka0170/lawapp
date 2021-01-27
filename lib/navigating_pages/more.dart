@@ -73,6 +73,7 @@ class BoxItems extends StatelessWidget {
               onPressed: () {
                 showDialog(
                     context: context,
+                    barrierDismissible: true,
                     builder: (BuildContext context) {
                       //popup n carouseliin indextei tentsuu
                       //data.dart deer utga-uudaa awna
@@ -192,14 +193,15 @@ class _MoreContainerState extends State<MoreContainer> {
                     child: SizedBox.expand(
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(8.0)),
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(8.0)),
                           color: _currentTab == 0
-                            ? Color(0xfff9931f)
-                            : Color(0xfff4f5fa),
+                              ? Color(0xfff9931f)
+                              : Color(0xfff4f5fa),
                         ),
                         child: Align(
                           alignment: Alignment.center,
-                                                child: Text(
+                          child: Text(
                             "ЗӨВӨЛГӨӨ",
                             style: TextStyle(
                               fontFamily: 'SFProDisplay',
@@ -227,14 +229,15 @@ class _MoreContainerState extends State<MoreContainer> {
                     child: SizedBox.expand(
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(8.0)),
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(8.0)),
                           color: _currentTab == 1
-                            ? Color(0xfff9931f)
-                            : Color(0xfff4f5fa),
+                              ? Color(0xfff9931f)
+                              : Color(0xfff4f5fa),
                         ),
                         child: Align(
                           alignment: Alignment.center,
-                                                child: Text(
+                          child: Text(
                             "ТҮГЭЭМЭЛ АСУУЛТ",
                             style: TextStyle(
                               fontFamily: 'SFProDisplay',

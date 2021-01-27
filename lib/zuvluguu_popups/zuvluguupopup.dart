@@ -49,6 +49,7 @@ class _BoxRowState extends State<BoxRow> {
                     onTap: () {
                       showDialog(
                           context: context,
+                          barrierDismissible: true,
                           builder: (BuildContext context) {
                             return morepopups[widget.index1];
                           });
@@ -109,6 +110,7 @@ class _BoxRowState extends State<BoxRow> {
                     onTap: () {
                       showDialog(
                           context: context,
+                          barrierDismissible: true,
                           builder: (BuildContext context) {
                             return morepopups[widget.index2];
                           });
@@ -172,9 +174,8 @@ class _BoxRowState extends State<BoxRow> {
 // ignore: must_be_immutable
 class ZuvluguuPopup extends StatefulWidget {
   String title, descriptions, text;
-  Image img;
 
-  ZuvluguuPopup({Key key, this.title, this.descriptions, this.text, this.img})
+  ZuvluguuPopup({Key key, this.title, this.descriptions, this.text})
       : super(key: key);
 
   @override

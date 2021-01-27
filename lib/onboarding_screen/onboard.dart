@@ -20,16 +20,16 @@ class StartState extends State<OnboardingScreen>
     startTimer();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 600),
+      duration: Duration(milliseconds: 800),
     );
     _animation = Tween(
-      begin: 0.2,
+      begin: 0.0,
       end: 1.0,
     ).animate(_controller);
   }
 
   startTimer() async {
-    var duration = Duration(seconds: 3);
+    var duration = Duration(milliseconds: 1500);
     return Timer(duration, route);
   }
 
@@ -43,18 +43,12 @@ class StartState extends State<OnboardingScreen>
     _controller.forward();
     return FadeTransition(
       opacity: _animation,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SecondScr()));
-        },
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: FittedBox(
-            child: Image.asset("assets/splashscreen/start1.png"),
-            fit: BoxFit.fill,
-          ),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: FittedBox(
+          child: Image.asset("assets/splashscreen/start1.png"),
+          fit: BoxFit.fill,
         ),
       ),
     );
