@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 
+//Popup function when clicked on Submit of TextFormField in calculator.dart
 // ignore: must_be_immutable
 class CalcPopup extends StatefulWidget {
   String prc;
@@ -98,9 +99,7 @@ class _CalcPopState extends State<CalcPopup> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0),
                       child: Text(
-                        widget.prc != null ? widget.prc +
-                        '₮' : "0"+
-                        '₮',
+                        widget.prc != null ? widget.prc + '₮' : "0" + '₮',
                         style: TextStyle(
                           fontFamily: 'SFProDisplay',
                           color: Color(0xff23233c),
@@ -161,7 +160,8 @@ class _CalcPopState extends State<CalcPopup> {
                     child: Center(
                       child: GestureDetector(
                         onTap: () {
-                          Clipboard.setData(new ClipboardData(text: widget.prc));
+                          Clipboard.setData(
+                              new ClipboardData(text: widget.prc));
                         },
                         child: Text(
                           "ХУУЛАХ",
@@ -183,7 +183,7 @@ class _CalcPopState extends State<CalcPopup> {
           ),
         ),
         Expanded(
-                  child: Align(
+          child: Align(
             alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.only(top: 15.0),
@@ -208,7 +208,8 @@ class _CalcPopState extends State<CalcPopup> {
                         Align(
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: const EdgeInsets.only(top: 15.0, left: 10.0),
+                            padding:
+                                const EdgeInsets.only(top: 15.0, left: 10.0),
                             child: Text(
                               "\n0-130 000\t4550 төгрөг.\n\n130 001-650 000\t4550 төгрөг дээр 130 000 төгрөгөөс давсан дүнгийн 3 хувийг нэмнэ.\n\n650 001-1 300 000\t20150 төгрөг дээр 650 000 төгрөгөөс давсан дүнгийн 2.4 хувийг нэмнэ.\n\n1 300 001-13 000 000\t35750 төгрөг дээр 1 300 000 төгрөгөөс давсан дүнгийн 1.6 хувийг нэмнэ.\n\n13 000 001-ээс дээш\t222950 төгрөг дээр 13 000 000 төгрөгөөс давсан дүнгийн 0.5 хувийг нэмнэ.\n \n\n7.1.2.эд хөрөнгийн бус, түүнчлэн үнэлэх боломжгүй нэхэмжлэлд 70 200 төгрөг;\n",
                               style: TextStyle(

@@ -1,44 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/zuvluguu_popups/zuvluguupopup.dart';
 
-import 'customdialog.dart';
+import 'calculator_popup.dart';
 import '../zuvluguu_popups/zuvluguupopup.dart';
 
-//onboarding screen ii zuragnud
-class SliderModel {
-  String imgPath;
-
-  SliderModel({this.imgPath});
-
-  void setImgPath(String getImgPath) {
-    imgPath = getImgPath;
-  }
-
-  String getImgAssetPath() {
-    return imgPath;
-  }
-}
-
-//onboard screen ii zuragnuud
-List<SliderModel> getSlides() {
-  List<SliderModel> slides = new List<SliderModel>();
-  SliderModel sliderModel = new SliderModel();
-
-  sliderModel.setImgPath("assets/splashscreen/start1.png");
-  slides.add(sliderModel);
-
-  sliderModel = new SliderModel();
-  sliderModel.setImgPath("assets/splashscreen/start2.png");
-  slides.add(sliderModel);
-
-  sliderModel = new SliderModel();
-  sliderModel.setImgPath("assets/splashscreen/start3.png");
-  slides.add(sliderModel);
-
-  return slides;
-}
-
-//getter listruu utga damjuulah
+//setter of calculator, more section carousel
 class AdModel {
   String adImgPath;
   String adDesc;
@@ -62,7 +28,7 @@ class AdModel {
   }
 }
 
-//calculator, more hesgiin carousel utga awah
+//values of calculator, more section carousel
 List<AdModel> getAds() {
   List<AdModel> ads = new List<AdModel>();
   AdModel ad = new AdModel();
@@ -89,7 +55,7 @@ List<AdModel> getAds() {
   return ads;
 }
 
-//getter listruu utga damjuulah
+//setter of home section carousel
 class MainModel {
   String mainImgPath;
   String mainDesc;
@@ -113,7 +79,7 @@ class MainModel {
   }
 }
 
-//home hesgiin carousel utga awah heseg
+//values of home section carousel
 List<MainModel> getMains() {
   List<MainModel> mains = new List<MainModel>();
   MainModel main = new MainModel();
@@ -140,7 +106,7 @@ List<MainModel> getMains() {
   return mains;
 }
 
-//home hesgiin popup utga awah heseg
+//home section popup values
 List<CustomDialogBox> getPopups() {
   List<CustomDialogBox> popups = new List<CustomDialogBox>();
   CustomDialogBox popup = new CustomDialogBox();
@@ -162,9 +128,9 @@ List<CustomDialogBox> getPopups() {
   popup.title = "idx 2";
   popups.add(popup);
 
-  //suuliin 2 utga adilhan bh, timer deere currentpage maani
-  //ene listnii lengthees 1 eer ih bolsnii daraa 0 ruu butsaj bga bolhor
-  //index aldaa zaaj bga uchraas suulin 2 utgiig adilhan awsan
+  //temporary solution of index number difference from timer class,
+  //timer either sets index 1 more than list length or goes back to
+  //initial index after 3rd slide
   popup = new CustomDialogBox();
   popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
@@ -180,6 +146,7 @@ List<CustomDialogBox> getPopups() {
   return popups;
 }
 
+//calculator, more section popup values
 List<CustomDialogBox> adPopups() {
   List<CustomDialogBox> popups = new List<CustomDialogBox>();
   CustomDialogBox popup = new CustomDialogBox();
@@ -219,6 +186,7 @@ List<CustomDialogBox> adPopups() {
   return popups;
 }
 
+//values of more section q&a section
 List<QuestionBox> questionPop() {
   List<QuestionBox> qstPops = new List<QuestionBox>();
   QuestionBox qstPop = new QuestionBox();
@@ -259,7 +227,7 @@ List<QuestionBox> questionPop() {
   return qstPops;
 }
 
-//more hesgiin 2doh popup
+//values of more section advice section
 List<ZuvluguuPopup> morePopups() {
   List<ZuvluguuPopup> popups = new List<ZuvluguuPopup>();
   ZuvluguuPopup popup = new ZuvluguuPopup();

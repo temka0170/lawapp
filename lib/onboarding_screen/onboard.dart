@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'SecondScrn.dart';
 
-//splash screen default state()
+import 'package:project_1/main.dart';
+
+//Custom Splash screen with fade in animation and timer
 class OnboardingScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -29,13 +30,12 @@ class StartState extends State<OnboardingScreen>
   }
 
   startTimer() async {
-    var duration = Duration(milliseconds: 1500);
+    var duration = Duration(milliseconds: 2000);
     return Timer(duration, route);
   }
 
   route() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondScr()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Main()));
   }
 
   @override
@@ -47,7 +47,7 @@ class StartState extends State<OnboardingScreen>
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: FittedBox(
-          child: Image.asset("assets/splashscreen/start1.png"),
+          child: Image.asset("assets/splashscreen/start3.png"),
           fit: BoxFit.fill,
         ),
       ),

@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-//carousel iin popup dialog
+//calculator, more section carousel popup
 // ignore: must_be_immutable
 class CustomDialogBox extends StatefulWidget {
   String title, descriptions, text;
@@ -18,7 +18,7 @@ class CustomDialogBox extends StatefulWidget {
 class _CustomDialogBoxState extends State<CustomDialogBox> {
   @override
   Widget build(BuildContext context) {
-    //ariin font iig blur bolgoh
+    //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
       child: Dialog(
@@ -86,7 +86,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 28.0),
                     child: Text(
-                        //utgaa data.dart deer awna
+                        //gets values in data.dart
                         widget.title,
                         style: TextStyle(
                           fontFamily: 'Roboto',
@@ -101,7 +101,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   height: 15,
                 ),
                 Text(
-                  //utgaa data.dart deer awna
+                  //gets value in data.dart
                   widget.descriptions,
                   style: TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
@@ -135,7 +135,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: FittedBox(
-                //data.dart deer utga awna
+                //gets value in data.dart
                 child: widget.img,
                 fit: BoxFit.fill,
               ),
@@ -147,6 +147,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   }
 }
 
+//more section q&a popup
 // ignore: must_be_immutable
 class QuestionBox extends StatefulWidget {
   String question, answer, text;
@@ -161,7 +162,7 @@ class QuestionBox extends StatefulWidget {
 class _QuestionBoxState extends State<QuestionBox> {
   @override
   Widget build(BuildContext context) {
-    //ariin font iig blur bolgoh
+    //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
       child: Dialog(
@@ -229,7 +230,7 @@ class _QuestionBoxState extends State<QuestionBox> {
                   Align(
                     alignment: AlignmentDirectional.center,
                     child: Text(
-                      //utgaa data.dart deer awna
+                      //gets value in data.dart
                       widget.question,
                       style: TextStyle(
                         fontFamily: 'Roboto',
@@ -249,7 +250,7 @@ class _QuestionBoxState extends State<QuestionBox> {
                       padding:
                           const EdgeInsets.only(left: 20, right: 20, top: 15),
                       child: Text(
-                        //utgaa data.dart deer awna
+                        //gets value in data.dart
                         widget.answer,
                         style: TextStyle(fontSize: 14, height: 2),
                         textAlign: TextAlign.justify,

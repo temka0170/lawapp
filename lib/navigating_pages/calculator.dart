@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_1/custom_func_data/calc_copy.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../custom_func_data/customcarousel.dart';
+import '../custom_func_data/calculator_carousel.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import "package:intl/intl.dart";
+import 'package:project_1/custom_func_data/decimal_formatter.dart';
+import 'package:project_1/custom_func_data/calculator_formula.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override
@@ -28,10 +29,10 @@ class _MyCustomFormState extends State<CalculatorPage> {
     super.dispose();
   }
 
-  //CalculatePrice func iin alias
+  //sets alias for CalculatePrice function
   CalculatePrice calculate = CalculatePrice();
   //Uniin dungiin placeholder
-  String finalresult;
+  String finalresult = '0';
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +42,14 @@ class _MyCustomFormState extends State<CalculatorPage> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         color: Color(0xfff4f5fa),
-        //minii turshsan emulator oos baga height tei utas dooshoo overflow hiihgui bolgoson
+        //temporary solution for overflow
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 377.0,
-                //customcarousel.dart iin AdScreen
+                //custom carousel
                 child: AdScreen(),
               ),
               Padding(
@@ -92,6 +93,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       keyboardType: TextInputType.number,
                       inputFormatters: <TextInputFormatter>[
                         FilteringTextInputFormatter.digitsOnly,
+                        DecimalFormatter(),
                       ],
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -105,15 +107,15 @@ class _MyCustomFormState extends State<CalculatorPage> {
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                       ),
-                      //TextFormField iin utga soligdohod uniin dungiin utga real time aar shinechlegdeh
+                      //TextFormField recalculating price after input
                       onChanged: (String str) {
                         setState(() {
-                          finalresult = calculate.tomyo(int.parse(str));
-                          //textformfield utga oruulagui uyd uniin dun 0
+                          finalresult = calculate.tomyo(str);
+                          //if theres no input sets value to 0
                           if (finalresult == null) finalresult = '0';
                         });
                       },
-                      //TextFormField deer utga oruulad ok darahad uniin dungin utga uurchlugduh
+                      //TextFormField submit popup
                       onFieldSubmitted: (String str) {
                         showDialog(
                             context: context,
@@ -130,9 +132,8 @@ class _MyCustomFormState extends State<CalculatorPage> {
               Padding(
                 padding: EdgeInsets.only(top: 4.0, left: 250),
                 child: Text(
-                    //uniin dun haruulah
-                    calculate.tomyo(int.parse(myController.text,
-                            onError: (source) => 0)) +
+                    //shows final price
+                    finalresult +
                         '₮',
                     style: TextStyle(
                       fontFamily: 'SFProDisplay',
@@ -344,93 +345,6 @@ class _MyCustomFormState extends State<CalculatorPage> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-//uniin dun tootsoollin tomyo
-class CalculatePrice {
-  String result;
-  double placehold;
-  String tomyo(int value) {
-    if (value == 0) {
-      result = '0.00';
-    } else if (value <= 130000) {
-      result = '4550';
-    } else if (value <= 650000 && value > 130000) {
-      placehold = 4550 + (value - 130000) * 0.03;
-      result = placehold.toString();
-    } else if (value <= 1300000 && value > 650000) {
-      placehold = 20150 + (value - 650000) * 0.024;
-      result = placehold.toString();
-    } else if (value <= 13000000 && value > 1300000) {
-      placehold = 35750 + (value - 1300000) * 0.016;
-      result = placehold.toString();
-    } else if (value > 13000000) {
-      placehold = 222950 + (value - 13000000) * 0.005;
-      result = placehold.toString();
-    }
-    return result;
-  }
-
-  String printResult() {
-    return result;
-  }
-}
-
-class DecimalFormatter extends TextInputFormatter {
-  final int decimalDigits;
-
-  DecimalFormatter({this.decimalDigits = 2}) : assert(decimalDigits >= 0);
-
-  @override
-  TextEditingValue formatEditUpdate(
-    TextEditingValue oldValue,
-    TextEditingValue newValue,
-  ) {
-    String newText;
-
-    if (decimalDigits == 0) {
-      newText = newValue.text.replaceAll(RegExp('[^0-9]'), '');
-    } else {
-      newText = newValue.text.replaceAll(RegExp('[^0-9\.]'), '');
-    }
-
-    if (newText.contains('.')) {
-      //in case if user's first input is "."
-      if (newText.trim() == '.') {
-        return newValue.copyWith(
-          text: '0.',
-          selection: TextSelection.collapsed(offset: 2),
-        );
-      }
-      //in case if user tries to input multiple "."s or tries to input
-      //more than the decimal place
-      else if ((newText.split(".").length > 2) ||
-          (newText.split(".")[1].length > this.decimalDigits)) {
-        return oldValue;
-      } else
-        return newValue;
-    }
-
-    //in case if input is empty or zero
-    if (newText.trim() == '' || newText.trim() == '0') {
-      return newValue.copyWith(text: '');
-    } else if (int.parse(newText) < 1) {
-      return newValue.copyWith(text: '');
-    }
-
-    double newDouble = double.parse(newText);
-    var selectionIndexFromTheRight =
-        newValue.text.length - newValue.selection.end;
-
-    String newString = NumberFormat("#,##0.##").format(newDouble);
-
-    return TextEditingValue(
-      text: newString,
-      selection: TextSelection.collapsed(
-        offset: newString.length - selectionIndexFromTheRight,
       ),
     );
   }
