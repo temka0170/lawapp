@@ -7,7 +7,7 @@ import 'package:project_1/zuvluguu_popups/ZahirgaaniiHereg.dart';
 import 'calculator_popup.dart';
 import 'data.dart';
 
-//zuwluguu, tugeemel asuult hesgiin container
+//content table of advice, q&a section
 class MoreContainer extends StatefulWidget {
   MoreContainer({
     Key key,
@@ -154,7 +154,7 @@ class _MoreContainerState extends State<MoreContainer> {
   }
 }
 
-//zuwluguu tab
+//advice tab
 class RecomQst extends StatelessWidget {
   const RecomQst({
     Key key,
@@ -162,38 +162,41 @@ class RecomQst extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: <Widget>[
-          BoxItems(
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: BoxItems(
             imgPath: 'assets/images/irgeniihereg.png',
             textBox: 'Иргэний хэрэг',
             popup: IrgenBox(
               title: 'Иргэний хэрэг',
             ),
           ),
-          BoxItems(
+        ),
+        Expanded(
+          child: BoxItems(
             imgPath: 'assets/images/eruugiinhereg.png',
             textBox: 'Эрүүгийн хэрэг',
             popup: EruuBox(
               title: 'Эрүүгийн хэрэг',
             ),
           ),
-          BoxItems(
+        ),
+        Expanded(
+          child: BoxItems(
             imgPath: 'assets/images/zahirgaaniihereg.png',
             textBox: 'Захиргааны хэрэг',
             popup: ZahirgaaBox(
               title: 'Захиргааны хэрэг',
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
 
-//tugeemel asuult tab
+//q&a tab
 class Qsts extends StatefulWidget {
   Qsts({
     Key key,

@@ -21,159 +21,152 @@ class _MyStatefulWidgetState extends State<MyHome> {
         color: Color(0xfff4f5fa),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Container(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: height * 0.31,
+              child: MainScreen(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: Text("БҮТЭЭСЭН БАГ",
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xff23233c),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 260.0,
-                child: MainScreen(),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 5.0),
-                child: Container(
-                  width: 132.0,
-                  height: 24.0,
-                  alignment: Alignment.center,
-                  child: Text("БҮТЭЭСЭН БАГ",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        color: Color(0xff23233c),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                      )),
+                child: Stack(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 20.0,
+                        top: 5.0,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          buildShowGeneralDialog(context, height, 0);
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey[350],
+                          radius: 43.0,
+                          child: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/galaxy.jpg'),
+                            radius: 38.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 300.0,
+                        top: 5.0,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          buildShowGeneralDialog(context, height, 4);
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey[350],
+                          radius: 43.0,
+                          child: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/test.jpg'),
+                            radius: 38.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 90.0,
+                        top: 3.0,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          buildShowGeneralDialog(context, height, 1);
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey[350],
+                          radius: 46.0,
+                          child: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/splashscreen/start1.png'),
+                            radius: 41.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 230.0,
+                        top: 3.0,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          buildShowGeneralDialog(context, height, 3);
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey[350],
+                          radius: 46.0,
+                          child: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/splashscreen/start3.png'),
+                            radius: 41.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 160.0,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          buildShowGeneralDialog(context, height, 2);
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey[350],
+                          radius: 50.0,
+                          child: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/splashscreen/start2.png'),
+                            radius: 45.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Stack(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 20.0,
-                          top: 5.0,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            buildShowGeneralDialog(context, height, 0);
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: Colors.grey[350],
-                            radius: 43.0,
-                            child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/images/galaxy.jpg'),
-                              radius: 38.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 300.0,
-                          top: 5.0,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            buildShowGeneralDialog(context, height, 4);
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: Colors.grey[350],
-                            radius: 43.0,
-                            child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/images/test.jpg'),
-                              radius: 38.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 90.0,
-                          top: 3.0,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            buildShowGeneralDialog(context, height, 1);
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: Colors.grey[350],
-                            radius: 46.0,
-                            child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/splashscreen/start1.png'),
-                              radius: 41.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 230.0,
-                          top: 3.0,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            buildShowGeneralDialog(context, height, 3);
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: Colors.grey[350],
-                            radius: 46.0,
-                            child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/splashscreen/start3.png'),
-                              radius: 41.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 160.0,
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            buildShowGeneralDialog(context, height, 2);
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: Colors.grey[350],
-                            radius: 50.0,
-                            child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage('assets/splashscreen/start2.png'),
-                              radius: 45.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: 10.0,
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 10.0,
-                ),
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Text("Placeholder",
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: Color(0xff23233c),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
-                      )),
-                ),
+              child: Container(
+                alignment: Alignment.center,
+                child: Text("Placeholder",
+                    style: TextStyle(
+                      fontFamily: 'SFProDisplay',
+                      color: Color(0xff23233c),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    )),
               ),
-              //home hesgiin holboos link, holbogdoh hesgig tusad n class bolgoson
-              HomeContainer(),
-            ],
-          ),
+            ),
+            //home hesgiin holboos link, holbogdoh hesgig tusad n class bolgoson
+            HomeContainer(),
+          ],
         ),
       ),
     );
@@ -207,11 +200,9 @@ class _MyStatefulWidgetState extends State<MyHome> {
                           Navigator.of(context).pop();
                         },
                         child: Container(
-                            width: 30.0,
-                            height: 30.0,
                             decoration: new BoxDecoration(
                               color: Color(0xffffffff).withOpacity(0.7),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(5),
                               boxShadow: [
                                 BoxShadow(
                                     color: Color(0x14000000),
@@ -247,4 +238,3 @@ class _MyStatefulWidgetState extends State<MyHome> {
         });
   }
 }
-
