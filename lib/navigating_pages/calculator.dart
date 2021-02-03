@@ -22,7 +22,6 @@ class _MyCustomFormState extends State<CalculatorPage> {
 
   //sets alias for CalculatePrice function
   CalculatePrice calculate = CalculatePrice();
-  //Uniin dungiin placeholder
   String finalresult = '0';
 
   @override
