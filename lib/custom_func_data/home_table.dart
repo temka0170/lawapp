@@ -11,7 +11,7 @@ class HomeContainer extends StatefulWidget {
 }
 
 class _HomeContainerState extends State<HomeContainer> {
-  //holbogdoh, holboos link tab
+  //tabs of home page content table
   final List<Widget> _contTab = [
     Link(),
     Association(),
@@ -20,7 +20,7 @@ class _HomeContainerState extends State<HomeContainer> {
 
   @override
   Widget build(BuildContext context) {
-    //holbooslink, holbogdoh hesgiin body container
+    //content table container
     return Padding(
       padding: EdgeInsets.only(top: 30.0),
       child: Column(
@@ -118,7 +118,7 @@ class _HomeContainerState extends State<HomeContainer> {
               ],
             ),
           ),
-          //tabuudin datag aguulah container
+          //container of tab items
           Container(
             width: 340.0,
             height: 201.0,
@@ -141,7 +141,7 @@ class _HomeContainerState extends State<HomeContainer> {
   }
 }
 
-//holboos link tab
+//links tab
 class Link extends StatefulWidget {
   const Link({
     Key key,
@@ -192,7 +192,7 @@ class _LinkState extends State<Link> {
   }
 }
 
-//holbogdoh tab
+//associate tab
 class Association extends StatelessWidget {
   const Association({
     Key key,
@@ -253,7 +253,7 @@ class Association extends StatelessWidget {
   }
 }
 
-//holboos link hesgiin itemnuud
+//items of links tab
 class BoxItems extends StatelessWidget {
   const BoxItems({
     Key key,
@@ -321,140 +321,3 @@ class BoxItems extends StatelessWidget {
     );
   }
 }
-
-final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 10.0),
-            child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                child: Stack(
-                  children: <Widget>[
-                    SizedBox.expand(
-                        child: Image.asset(
-                      item,
-                      fit: BoxFit.fill,
-                    )),
-                    Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        height: 186,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 20.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[
-                            SizedBox(
-                              height: 40.0,
-                            ),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                itemTitle[imgList.indexOf(item)],
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  color: Color(0xffffffff),
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w700,
-                                  fontStyle: FontStyle.normal,
-                                  decoration: TextDecoration.none,
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                itemDesc[imgList.indexOf(item)],
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  color: Color(0xfff9931f),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                  decoration: TextDecoration.none,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 18.0),
-                              child: Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                  width: 206,
-                                  height: 50,
-                                  decoration: new BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                        width: 1.0,
-                                        color: Color(0xfff9931f),
-                                        style: BorderStyle.solid),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      itemBtn[imgList.indexOf(item)],
-                                      style: TextStyle(
-                                        fontFamily: 'SFProDisplay',
-                                        color: Color(0xffffffff),
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.normal,
-                                        decoration: TextDecoration.none,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-          ),
-        ))
-    .toList();
-
-final List<String> imgList = [
-  "assets/images/amarhuu.jpg",
-  "assets/splashscreen/start1.png",
-  "assets/splashscreen/start2.png",
-  "assets/splashscreen/start3.png",
-  "assets/images/test.jpg"
-];
-
-final List<String> itemTitle = [
-  "Хуульч",
-  "Start 1",
-  "Start 2",
-  "Start 3",
-  "Test Jpg"
-];
-
-final List<String> itemDesc = [
-  "\"Үүсгэн байгуулагч\"",
-  "\"Start1 PlaceHolder\"",
-  "\"Start2 PlaceHolder\"",
-  "\"Start3 PlaceHolder\"",
-  "\"Test PlaceHolder\""
-];
-
-final List<String> itemBtn = [
-  "Э.Амархүү",
-  "Just Start1",
-  "Just Start2",
-  "Just Start3",
-  "Just Test",
-];

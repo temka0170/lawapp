@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//home hesgiin carousel border
+//home page carousel curved bottom border
 class MainWave1 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {

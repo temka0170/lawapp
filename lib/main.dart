@@ -25,11 +25,11 @@ final List<Widget> _tabItems = [
   More(),
 ];
 
-//bottom navigation bar iin background color
+//background colors of curved nav bar
 Color _activeclr = Color(0xffffffff);
 Color _inactclr = Color(0xfff78c1e);
 
-//bottom navigation bar iin default page, default page n CalculatorPage
+//curved nav bar default page, default is Calculator page
 int _activePage = 1;
 
 class Main extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//calculator, more hesgiin carousel border
+//calculator, more page carousel bottom curved border
 class FirstWave extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {

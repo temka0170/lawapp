@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'zuvluguupopup.dart';
+import 'boxRow_buttons.dart';
 
-//irgenii hereg popup tses
+//civil case popup
 // ignore: must_be_immutable
 class IrgenBox extends StatefulWidget {
   String title;
@@ -24,7 +24,7 @@ class _IrgenBoxState extends State<IrgenBox> {
 
   @override
   Widget build(BuildContext context) {
-    //ariin font iig blur bolgoh
+    //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
       child: Dialog(
@@ -101,6 +101,9 @@ class _IrgenBoxState extends State<IrgenBox> {
               padding: EdgeInsets.only(top: 23.0),
               itemExtent: 120.0,
               children: <Widget>[
+                //index value links to what popup should show when clicked,
+                //boxrow has 2 buttons in 1 row so it requires atleast index1,desc1,img1
+                //if index2,desc2,img2 is null shows only 1 button with index1 values
                 BoxRow(
                   index1: 0,
                   index2: 1,

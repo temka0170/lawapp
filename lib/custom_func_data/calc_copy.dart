@@ -16,7 +16,7 @@ class CalcPopup extends StatefulWidget {
 class _CalcPopState extends State<CalcPopup> {
   @override
   Widget build(BuildContext context) {
-    //ariin font iig blur bolgoh
+    //blurring background of popup
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
       child: Dialog(
@@ -30,6 +30,7 @@ class _CalcPopState extends State<CalcPopup> {
     );
   }
 
+//contents of the popup
   contentBox(context) {
     return Column(
       children: <Widget>[

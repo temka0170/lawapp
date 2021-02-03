@@ -168,9 +168,8 @@ List<CustomDialogBox> adPopups() {
   popup.title = "aylaliin hutuch";
   popups.add(popup);
 
-  //suuliin 2 utga adilhan bh, timer deere currentpage maani
-  //ene listnii lengthees 1 eer ih bolsnii daraa 0 ruu butsaj bga bolhor
-  //index aldaa zaaj bga uchraas suulin 2 utgiig adilhan awsan
+  //due to Timer class current index is passing more than list length
+  //thus throwing an exception,
   popup = new CustomDialogBox();
   popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
@@ -178,9 +177,9 @@ List<CustomDialogBox> adPopups() {
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "Hello World test";
+  popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "hello world tst";
+  popup.title = "aylaliin hutuch";
   popups.add(popup);
 
   return popups;

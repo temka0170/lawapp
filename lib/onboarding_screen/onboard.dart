@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:project_1/main.dart';
 
-//Custom Splash screen with fade in animation and timer
+//Splashscreen of the app
 class OnboardingScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {

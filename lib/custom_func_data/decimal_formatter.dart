@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
+//formats/adds separator to calculator page textformfield and final price text
 class DecimalFormatter extends TextInputFormatter {
   final int decimalDigits;
 

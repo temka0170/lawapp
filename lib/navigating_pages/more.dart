@@ -23,12 +23,12 @@ class _MyStatefulWidgetState extends State<More> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 377.0,
-                //calculator hesgiin carouseltei adilhan
+                //same carousel as calculator page carousel, shuffled
                 child: AdScreen(),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 9.0),
-                //more hesgiin utga aguulah container
+                //content table of more page
                 child: MoreContainer(),
               ),
             ],
@@ -39,7 +39,7 @@ class _MyStatefulWidgetState extends State<More> {
   }
 }
 
-//zuwluguu hesgiin itemnud
+//items of advice tab
 class BoxItems extends StatelessWidget {
   const BoxItems({
     Key key,
@@ -73,8 +73,7 @@ class BoxItems extends StatelessWidget {
                     context: context,
                     barrierDismissible: true,
                     builder: (BuildContext context) {
-                      //popup n carouseliin indextei tentsuu
-                      //data.dart deer utga-uudaa awna
+                      //links popups to its button
                       return popup;
                     });
               },
@@ -93,7 +92,7 @@ class BoxItems extends StatelessWidget {
   }
 }
 
-//tugeemel asuult hesgiin itemnud
+//q&a section items
 class QstsItems extends StatelessWidget {
   const QstsItems({
     Key key,
