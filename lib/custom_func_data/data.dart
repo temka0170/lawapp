@@ -44,25 +44,25 @@ List<AdModel> getAds() {
 
   ad.setAdPath("assets/images/galaxy.jpg");
   ad.setAdDesc("Tanii Aylaliin hutuch 0");
-  ad.idex = 0;
+  ad.setIdx(0);
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
   ad.setAdDesc("Tanii aylaliin hutuch 1");
-  ad.idex = 1;
+  ad.setIdx(1);
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
   ad.setAdDesc("Tanii aylaliin hutuch 2");
-  ad.idex = 2;
+  ad.setIdx(2);
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
   ad.setAdDesc("Tanii aylaliin hutuch 3");
-  ad.idex = 3;
+  ad.setIdx(3);
   ads.add(ad);
 
   return ads;
@@ -72,8 +72,9 @@ List<AdModel> getAds() {
 class MainModel {
   String mainImgPath;
   String mainDesc;
+  int mainIdx;
 
-  MainModel({this.mainImgPath, this.mainDesc});
+  MainModel({this.mainImgPath, this.mainDesc, this.mainIdx});
 
   void setAdPath(String getImgPath) {
     mainImgPath = getImgPath;
@@ -83,12 +84,20 @@ class MainModel {
     mainDesc = getDesc;
   }
 
+  void setIdx(int getIdx) {
+    mainIdx = getIdx;
+  }
+
   String getAssetPath() {
     return mainImgPath;
   }
 
   String getDescript() {
     return mainDesc;
+  }
+
+  int getIdx() {
+    return mainIdx;
   }
 }
 
@@ -98,22 +107,26 @@ List<MainModel> getMains() {
   MainModel main = new MainModel();
 
   main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Tanii Aylaliin hutuch");
+  main.setAdDesc("Tanii Aylaliin hutuch 0");
+  main.setIdx(0);
   mains.add(main);
 
   main = new MainModel();
   main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Aylaliin hutuch");
+  main.setAdDesc("Aylaliin hutuch 1");
+  main.setIdx(1);
   mains.add(main);
 
   main = new MainModel();
   main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Aylaliin hutuch");
+  main.setAdDesc("Aylaliin hutuch 2");
+  main.setIdx(2);
   mains.add(main);
 
   main = new MainModel();
   main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Aylaliin hutuch");
+  main.setAdDesc("Aylaliin hutuch 3");
+  main.setIdx(3);
   mains.add(main);
 
   return mains;
@@ -139,15 +152,6 @@ List<CustomDialogBox> getPopups() {
   popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 2";
-  popups.add(popup);
-
-  //temporary solution of index number difference from timer class,
-  //timer either sets index 1 more than list length or goes back to
-  //initial index after 3rd slide
-  popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 3";
   popups.add(popup);
 
   popup = new CustomDialogBox();
@@ -181,14 +185,12 @@ List<CustomDialogBox> adPopups() {
   popup.title = "aylaliin hutuch";
   popups.add(popup);
 
-  //due to Timer class current index is passing more than list length
-  //thus throwing an exception,
   popup = new CustomDialogBox();
   popup.descriptions = "aylaliin hutuch 3";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "aylaliin hutuch";
   popups.add(popup);
-  
+
   return popups;
 }
 

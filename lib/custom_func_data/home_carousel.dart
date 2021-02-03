@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/calculator_popup.dart';
@@ -27,6 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     // TODO: implement initState
     super.initState();
     mains = getMains();
+    mains.shuffle();
     popups = getPopups();
 
     if (mains != null) {
@@ -60,8 +60,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Random rand = new Random();
-    int _rad;
+    int ix;
     return Stack(
       children: <Widget>[
         PageView.builder(
@@ -73,10 +72,10 @@ class _MainScreenState extends State<MainScreen> {
             });
           },
           itemBuilder: (context, index) {
-            _rad = rand.nextInt(mains.length);
+            ix = index;
             return MainTile(
-              imgPath: mains[_rad].getAssetPath(),
-              desc: mains[_rad].getDescript(),
+              imgPath: mains[ix].getAssetPath(),
+              desc: mains[ix].getDescript(),
             );
           },
         ),
@@ -107,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
                 context: context,
                 builder: (BuildContext context) {
                   //gets values from list
-                  return popups[_rad];
+                  return popups[mains[ix].getIdx()];
                 });
           },
           child: Container(
