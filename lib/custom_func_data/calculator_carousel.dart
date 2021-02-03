@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/calculator_popup.dart';
@@ -29,6 +28,7 @@ class _AdScreenState extends State<AdScreen> {
     super.initState();
     //gets values from data.dart
     ads = getAds();
+    ads.shuffle();
     cmpopups = adPopups();
 
     //periodic slide change timer
@@ -36,7 +36,8 @@ class _AdScreenState extends State<AdScreen> {
       timer = Timer.periodic(Duration(seconds: 4), (_) {
         if (adController.hasClients) {
           if (_currentAd == ads.length) {
-            adController.animateToPage(0,
+            _currentAd = 0;
+            adController.animateToPage(_currentAd,
                 duration: Duration(seconds: 1), curve: Curves.easeOut);
           } else {
             adController.animateToPage(_currentAd++,
@@ -62,8 +63,8 @@ class _AdScreenState extends State<AdScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Random _rand = new Random();
-    int rad;
+    int ix;
+    int id;
     return Stack(
       children: <Widget>[
         PageView.builder(
@@ -76,10 +77,11 @@ class _AdScreenState extends State<AdScreen> {
           },
           itemBuilder: (context, index) {
             //Slide of carousel, gets data by list
-            rad = _rand.nextInt(ads.length);
+            ix = index;
+            id = ads[ix].getIdex();
             return AdTile(
-              imgPath: ads[rad].getAssetPath(),
-              desc: ads[rad].getDescript(),
+              imgPath: ads[ix].getAssetPath(),
+              desc: ads[ix].getDescript(),
             );
           },
         ),
@@ -111,9 +113,19 @@ class _AdScreenState extends State<AdScreen> {
           size: Size(MediaQuery.of(context).size.width, 377),
           painter: SecondWave(),
         ),
-        CustomPaint(
-          size: Size(MediaQuery.of(context).size.width, 377),
-          painter: FirstWave(),
+        GestureDetector(
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  //this links which popup should popup when clicked on slider
+                  return cmpopups[id];
+                });
+          },
+          child: CustomPaint(
+            size: Size(MediaQuery.of(context).size.width, 377),
+            painter: FirstWave(),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 320.0),
@@ -125,23 +137,6 @@ class _AdScreenState extends State<AdScreen> {
               for (int i = 0; i < ads.length; i++)
                 _currentAd == i ? adIndicator(true) : adIndicator(false),
             ],
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  //this links which popup should popup when clicked on slider
-                  return cmpopups[rad];
-                });
-          },
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 294,
-            //wrapped whole carousel in gesture detector, initial detector i added onto the
-            //carousel got painted over with custompainter class
-            color: Color(0xffffffff).withOpacity(0),
           ),
         ),
       ],

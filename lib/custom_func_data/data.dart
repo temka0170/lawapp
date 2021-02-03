@@ -8,8 +8,9 @@ import '../zuvluguu_popups/zuvluguupopup.dart';
 class AdModel {
   String adImgPath;
   String adDesc;
+  int idex;
 
-  AdModel({this.adImgPath, this.adDesc});
+  AdModel({this.adImgPath, this.adDesc, this.idex});
 
   void setAdPath(String getImgPath) {
     adImgPath = getImgPath;
@@ -19,12 +20,20 @@ class AdModel {
     adDesc = getDesc;
   }
 
+  void setIdx(int getIdx) {
+    idex = getIdx;
+  }
+
   String getAssetPath() {
     return adImgPath;
   }
 
   String getDescript() {
     return adDesc;
+  }
+
+  int getIdex() {
+    return idex;
   }
 }
 
@@ -34,22 +43,26 @@ List<AdModel> getAds() {
   AdModel ad = new AdModel();
 
   ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Tanii Aylaliin hutuch");
+  ad.setAdDesc("Tanii Aylaliin hutuch 0");
+  ad.idex = 0;
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Tanii aylaliin hutuch");
+  ad.setAdDesc("Tanii aylaliin hutuch 1");
+  ad.idex = 1;
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Tanii aylaliin hutuch");
+  ad.setAdDesc("Tanii aylaliin hutuch 2");
+  ad.idex = 2;
   ads.add(ad);
 
   ad = new AdModel();
   ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Tanii aylaliin hutuch");
+  ad.setAdDesc("Tanii aylaliin hutuch 3");
+  ad.idex = 3;
   ads.add(ad);
 
   return ads;
@@ -151,19 +164,19 @@ List<CustomDialogBox> adPopups() {
   List<CustomDialogBox> popups = new List<CustomDialogBox>();
   CustomDialogBox popup = new CustomDialogBox();
 
-  popup.descriptions = "aylaliin hutuch";
+  popup.descriptions = "aylaliin hutuch 0";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "tanii aylaliin hutuch";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
+  popup.descriptions = "aylaliin hutuch 1";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "aylaliin hutuch";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
+  popup.descriptions = "aylaliin hutuch 2";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "aylaliin hutuch";
   popups.add(popup);
@@ -171,17 +184,11 @@ List<CustomDialogBox> adPopups() {
   //due to Timer class current index is passing more than list length
   //thus throwing an exception,
   popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
+  popup.descriptions = "aylaliin hutuch 3";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "aylaliin hutuch";
   popups.add(popup);
-
-  popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "aylaliin hutuch";
-  popups.add(popup);
-
+  
   return popups;
 }
 
