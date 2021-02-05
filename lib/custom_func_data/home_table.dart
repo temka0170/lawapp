@@ -21,13 +21,15 @@ class _HomeContainerState extends State<HomeContainer> {
   @override
   Widget build(BuildContext context) {
     //content table container
+    double maxWidth = MediaQuery.of(context).size.width;
+    double maxHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: EdgeInsets.only(top: 30.0),
       child: Column(
         children: [
           Container(
-            width: 340.0,
-            height: 40.0,
+            width: maxWidth * 0.9,
+            height: maxHeight * 0.05,
             decoration: BoxDecoration(
               color: Color(0xfff4f5fa).withOpacity(0.0),
               border: Border.all(
@@ -120,8 +122,8 @@ class _HomeContainerState extends State<HomeContainer> {
           ),
           //container of tab items
           Container(
-            width: 340.0,
-            height: 201.0,
+            width: maxWidth * 0.9,
+            height: maxHeight * 0.25,
             decoration: BoxDecoration(
               borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(10.0)),
@@ -201,24 +203,27 @@ class Association extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 18.0),
+        Expanded(
+          flex: 4,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(left: 21.7),
-                child: Image(
-                  width: 78.0,
-                  height: 73.0,
-                  image: AssetImage('assets/images/galaxy.jpg'),
+              Expanded(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image(
+                    image: AssetImage('assets/images/galaxy.jpg'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 28.0),
-                child: SizedBox(
-                  width: 200.0,
-                  height: 87.0,
+              Expanded(
+                flex: 4,
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
                   child: Text(
                     "Улсын тэмдэгтийн хураамж цахим тооцоолборын хамт олонтой хамтран ажиллахыг хүсвэл дараах дугаараар холбогдоно уу.",
                     style: TextStyle(
@@ -235,8 +240,8 @@ class Association extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 28.0, left: 0.0),
+        Expanded(
+          flex: 2,
           child: Text(
             "Утас: 9922ХХХХ\nИмэйл: umbrella.lawfirm@gmail.com",
             style: TextStyle(
@@ -279,17 +284,17 @@ class BoxItems extends StatelessWidget {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 25.0),
+            Expanded(
+              flex: 1,
               child: Image.asset(
                 imgPath,
-                width: 55.0,
-                height: 55.0,
                 fit: BoxFit.fill,
               ),
             ),
             Expanded(
+              flex: 4,
               child: FlatButton(
                 onPressed: () {
                   _launchURL(url);
@@ -312,7 +317,7 @@ class BoxItems extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 12.0),
           child: Container(
-            width: 280.0,
+            width: MediaQuery.of(context).size.width * 0.75,
             height: 1.0,
             color: Color(0xff23233c).withOpacity(0.1),
           ),

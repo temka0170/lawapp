@@ -29,8 +29,8 @@ class _MoreContainerState extends State<MoreContainer> {
     return Column(
       children: [
         Container(
-          width: 330.0,
-          height: 30.0,
+          width: MediaQuery.of(context).size.width * 0.86,
+          height: MediaQuery.of(context).size.height * 0.05,
           decoration: BoxDecoration(
             border: Border.all(
                 width: 0, color: Color(0xfff4f5fa), style: BorderStyle.none),
@@ -127,8 +127,8 @@ class _MoreContainerState extends State<MoreContainer> {
         ClipRRect(
           borderRadius: BorderRadius.circular(13),
           child: Container(
-            width: 352.0,
-            height: 281.0,
+            width: MediaQuery.of(context).size.width * 0.92,
+            height: MediaQuery.of(context).size.height * 0.35,
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [

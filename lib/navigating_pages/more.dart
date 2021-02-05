@@ -22,7 +22,7 @@ class _MyStatefulWidgetState extends State<More> {
             children: <Widget>[
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: 377.0,
+                height: MediaQuery.of(context).size.height * 0.46,
                 //same carousel as calculator page carousel, shuffled
                 child: AdScreen(),
               ),
@@ -57,31 +57,52 @@ class BoxItems extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 5.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(left: 33.0),
-            child: Image.asset(
-              imgPath,
-              width: 60.0,
-              height: 60.0,
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: GestureDetector(
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      barrierDismissible: true,
+                      builder: (BuildContext context) {
+                        //links popups to its button
+                        return popup;
+                      });
+                },
+                child: Container(
+                  margin: EdgeInsets.all(6.0),
+                  child: Image.asset(
+                    imgPath,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
             ),
           ),
           Expanded(
-            child: FlatButton(
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    barrierDismissible: true,
-                    builder: (BuildContext context) {
-                      //links popups to its button
-                      return popup;
-                    });
-              },
-              child: Text(
-                textBox,
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 15.0,
+            flex: 3,
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: FlatButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      barrierDismissible: true,
+                      builder: (BuildContext context) {
+                        //links popups to its button
+                        return popup;
+                      });
+                },
+                child: Text(
+                  textBox,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 15.0,
+                  ),
                 ),
               ),
             ),
@@ -106,8 +127,8 @@ class QstsItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 50,
+      width: MediaQuery.of(context).size.width * 0.8,
+      height: MediaQuery.of(context).size.height * 0.06,
       alignment: Alignment.center,
       padding: EdgeInsets.only(top: 8.0),
       child: Column(
@@ -134,9 +155,9 @@ class QstsItems extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 16.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: Container(
-              width: 280.0,
+              width: MediaQuery.of(context).size.width * 0.75,
               height: 1.0,
               color: Color(0xff23233c).withOpacity(0.1),
             ),
@@ -146,4 +167,3 @@ class QstsItems extends StatelessWidget {
     );
   }
 }
-
