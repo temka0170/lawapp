@@ -17,14 +17,14 @@ Padding govLink(double width, double height) {
     padding: const EdgeInsets.only(top: 15.0),
     child: SizedBox(
       width: width,
-      height: height * 0.05,
+      height: height * 0.06,
       child: Expanded(
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Container(
-                width: height * 0.05,
-                height: height * 0.05,
+                width: height * 0.06,
+                height: height * 0.06,
                 decoration: new BoxDecoration(
                   color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(13),
@@ -44,7 +44,7 @@ Padding govLink(double width, double height) {
               ),
               Container(
                 width: width * 0.65,
-                height: height * 0.05,
+                height: height * 0.06,
                 decoration: new BoxDecoration(
                   color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(10),
@@ -84,14 +84,14 @@ Padding ytLink(double width, double height) {
     padding: const EdgeInsets.only(top: 10.0),
     child: SizedBox(
       width: width,
-      height: height * 0.05,
+      height: height * 0.06,
       child: Expanded(
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Container(
-                width: height * 0.05,
-                height: height * 0.05,
+                width: height * 0.06,
+                height: height * 0.06,
                 decoration: new BoxDecoration(
                   color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(13),
@@ -112,7 +112,7 @@ Padding ytLink(double width, double height) {
               ),
               Container(
                 width: width * 0.65,
-                height: height * 0.05,
+                height: height * 0.06,
                 decoration: new BoxDecoration(
                   color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(10),
@@ -152,14 +152,14 @@ Padding phoneCaller(double width, double height) {
     padding: const EdgeInsets.only(top: 10.0),
     child: SizedBox(
       width: width,
-      height: height * 0.05,
+      height: height * 0.06,
       child: Expanded(
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Container(
-                width: height * 0.05,
-                height: height * 0.05,
+                width: height * 0.06,
+                height: height * 0.06,
                 decoration: new BoxDecoration(
                   color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(13),
@@ -181,7 +181,7 @@ Padding phoneCaller(double width, double height) {
               ),
               Container(
                 width: width * 0.65,
-                height: height * 0.05,
+                height: height * 0.06,
                 decoration: new BoxDecoration(
                   color: Color(0xffffffff),
                   borderRadius: BorderRadius.circular(10),
