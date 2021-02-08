@@ -127,16 +127,21 @@ class _AdScreenState extends State<AdScreen> {
             painter: FirstWave(),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 320.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              //defines length of indicator dots, counts how much items there are
-              //in data.dart list and add dots accordingly/equally
-              for (int i = 0; i < ads.length; i++)
-                _currentAd == i ? adIndicator(true) : adIndicator(false),
-            ],
+        Positioned(
+          bottom: 10.0,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  //defines length of indicator dots, counts how much items there are
+                  //in data.dart list and add dots accordingly/equally
+                  for (int i = 0; i < ads.length; i++)
+                    _currentAd == i ? adIndicator(true) : adIndicator(false),
+                ],
+              ),
+            ),
           ),
         ),
       ],

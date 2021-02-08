@@ -42,7 +42,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
             children: [
               Container(
                 width: _width,
-                height: _height * 0.46,
+                height: _height * 0.435,
                 //custom carousel
                 child: AdScreen(),
               ),

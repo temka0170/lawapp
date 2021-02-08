@@ -22,12 +22,12 @@ class _MyStatefulWidgetState extends State<More> {
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.46,
+              height: MediaQuery.of(context).size.height * 0.435,
               //same carousel as calculator page carousel, shuffled
               child: AdScreen(),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 9.0),
+              padding: const EdgeInsets.only(top: 10.0),
               //content table of more page
               child: MoreContainer(),
             ),
