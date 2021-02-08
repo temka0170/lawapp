@@ -13,26 +13,25 @@ class _MyStatefulWidgetState extends State<More> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: Color(0xfff4f5fa),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.46,
-                //same carousel as calculator page carousel, shuffled
-                child: AdScreen(),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 9.0),
-                //content table of more page
-                child: MoreContainer(),
-              ),
-            ],
-          ),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.46,
+              //same carousel as calculator page carousel, shuffled
+              child: AdScreen(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 9.0),
+              //content table of more page
+              child: MoreContainer(),
+            ),
+          ],
         ),
       ),
     );
