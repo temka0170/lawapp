@@ -18,63 +18,61 @@ Padding govLink(double width, double height) {
     child: SizedBox(
       width: width,
       height: height * 0.06,
-      child: Expanded(
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                width: height * 0.06,
-                height: height * 0.06,
-                decoration: new BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(13),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0x14000000),
-                        offset: Offset(0, 0),
-                        blurRadius: 10,
-                        spreadRadius: 0)
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () => launch('http://hdc.gov.mn/page/46/'),
-                  icon: Icon(Icons.monetization_on),
-                  color: Color(0xff23233c),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Container(
+              width: height * 0.06,
+              height: height * 0.06,
+              decoration: new BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(13),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x14000000),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 0)
+                ],
+              ),
+              child: IconButton(
+                onPressed: () => launch('http://hdc.gov.mn/page/46/'),
+                icon: Icon(Icons.monetization_on),
+                color: Color(0xff23233c),
+              ),
+            ),
+            Container(
+              width: width * 0.65,
+              height: height * 0.06,
+              decoration: new BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x14000000),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 0)
+                ],
+              ),
+              child: Center(
+                child: GestureDetector(
+                  child: Text(
+                    "Төлбөрийн даалгавар үүсгэх",
+                    style: TextStyle(
+                      fontFamily: 'SFProDisplay',
+                      color: Color(0xff23233c),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  onTap: () => launch('http://hdc.gov.mn/page/46/'),
                 ),
               ),
-              Container(
-                width: width * 0.65,
-                height: height * 0.06,
-                decoration: new BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0x14000000),
-                        offset: Offset(0, 0),
-                        blurRadius: 10,
-                        spreadRadius: 0)
-                  ],
-                ),
-                child: Center(
-                  child: GestureDetector(
-                    child: Text(
-                      "Төлбөрийн даалгавар үүсгэх",
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: Color(0xff23233c),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    onTap: () => launch('http://hdc.gov.mn/page/46/'),
-                  ),
-                ),
-              )
-            ]),
-      ),
+            )
+          ]),
     ),
   );
 }
@@ -85,64 +83,62 @@ Padding ytLink(double width, double height) {
     child: SizedBox(
       width: width,
       height: height * 0.06,
-      child: Expanded(
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                width: height * 0.06,
-                height: height * 0.06,
-                decoration: new BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(13),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0x14000000),
-                        offset: Offset(0, 0),
-                        blurRadius: 10,
-                        spreadRadius: 0)
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () =>
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Container(
+              width: height * 0.06,
+              height: height * 0.06,
+              decoration: new BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(13),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x14000000),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 0)
+                ],
+              ),
+              child: IconButton(
+                onPressed: () =>
+                    launch('https://www.youtube.com/watch?v=6Atkf-N9b80'),
+                icon: Icon(Icons.play_arrow),
+                color: Color(0xff23233c),
+              ),
+            ),
+            Container(
+              width: width * 0.65,
+              height: height * 0.06,
+              decoration: new BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x14000000),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 0)
+                ],
+              ),
+              child: Center(
+                child: GestureDetector(
+                  child: Text(
+                    "Заавар видео үзэх",
+                    style: TextStyle(
+                      fontFamily: 'SFProDisplay',
+                      color: Color(0xff23233c),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                  onTap: () =>
                       launch('https://www.youtube.com/watch?v=6Atkf-N9b80'),
-                  icon: Icon(Icons.play_arrow),
-                  color: Color(0xff23233c),
                 ),
               ),
-              Container(
-                width: width * 0.65,
-                height: height * 0.06,
-                decoration: new BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0x14000000),
-                        offset: Offset(0, 0),
-                        blurRadius: 10,
-                        spreadRadius: 0)
-                  ],
-                ),
-                child: Center(
-                  child: GestureDetector(
-                    child: Text(
-                      "Заавар видео үзэх",
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: Color(0xff23233c),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
-                      ),
-                    ),
-                    onTap: () =>
-                        launch('https://www.youtube.com/watch?v=6Atkf-N9b80'),
-                  ),
-                ),
-              )
-            ]),
-      ),
+            )
+          ]),
     ),
   );
 }
@@ -153,64 +149,62 @@ Padding phoneCaller(double width, double height) {
     child: SizedBox(
       width: width,
       height: height * 0.06,
-      child: Expanded(
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                width: height * 0.06,
-                height: height * 0.06,
-                decoration: new BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(13),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0x14000000),
-                        offset: Offset(0, 0),
-                        blurRadius: 10,
-                        spreadRadius: 0)
-                  ],
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    _makePhoneCall("+97689830044");
-                  },
-                  icon: Icon(Icons.phone),
-                  color: Color(0xff23233c),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Container(
+              width: height * 0.06,
+              height: height * 0.06,
+              decoration: new BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(13),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x14000000),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 0)
+                ],
+              ),
+              child: IconButton(
+                onPressed: () {
+                  _makePhoneCall("+97689830044");
+                },
+                icon: Icon(Icons.phone),
+                color: Color(0xff23233c),
+              ),
+            ),
+            Container(
+              width: width * 0.65,
+              height: height * 0.06,
+              decoration: new BoxDecoration(
+                color: Color(0xffffffff),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x14000000),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 0)
+                ],
+              ),
+              child: Center(
+                child: GestureDetector(
+                  child: Text(
+                    "Өмгөөлөгчтэй холбогдох",
+                    style: TextStyle(
+                      fontFamily: 'SFProDisplay',
+                      color: Color(0xff23233c),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                  onTap: () => _makePhoneCall("+97689830044"),
                 ),
               ),
-              Container(
-                width: width * 0.65,
-                height: height * 0.06,
-                decoration: new BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color(0x14000000),
-                        offset: Offset(0, 0),
-                        blurRadius: 10,
-                        spreadRadius: 0)
-                  ],
-                ),
-                child: Center(
-                  child: GestureDetector(
-                    child: Text(
-                      "Өмгөөлөгчтэй холбогдох",
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: Color(0xff23233c),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
-                      ),
-                    ),
-                    onTap: () => _makePhoneCall("+97689830044"),
-                  ),
-                ),
-              )
-            ]),
-      ),
+            )
+          ]),
     ),
   );
 }

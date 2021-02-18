@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_1/navigating_pages/more.dart';
 import 'package:project_1/zuvluguu_popups/EruugiinHereg.dart';
 import 'package:project_1/zuvluguu_popups/IrgeniiHereg.dart';
+import 'package:project_1/zuvluguu_popups/NudeeNee.dart';
 import 'package:project_1/zuvluguu_popups/ZahirgaaniiHereg.dart';
 
 import 'calculator_popup.dart';
@@ -188,6 +189,15 @@ class RecomQst extends StatelessWidget {
             textBox: 'Захиргааны хэрэг',
             popup: ZahirgaaBox(
               title: 'Захиргааны хэрэг',
+            ),
+          ),
+        ),
+        Expanded(
+          child: BoxItems(
+            imgPath: 'assets/images/galaxy.jpg',
+            textBox: 'Open your eyes',
+            popup: EyeBox(
+              title: 'Open your eyes',
             ),
           ),
         ),

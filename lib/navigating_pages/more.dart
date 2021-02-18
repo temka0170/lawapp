@@ -73,10 +73,12 @@ class BoxItems extends StatelessWidget {
                       });
                 },
                 child: Container(
-                  margin: EdgeInsets.all(6.0),
+                  padding: EdgeInsets.only(left: 12.0),
                   child: Image.asset(
                     imgPath,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.contain,
+                    width: MediaQuery.of(context).size.height * 0.07,
+                    height: MediaQuery.of(context).size.height * 0.07,
                   ),
                 ),
               ),

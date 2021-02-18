@@ -131,16 +131,14 @@ class _AdScreenState extends State<AdScreen> {
           bottom: 10.0,
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
-            child: Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  //defines length of indicator dots, counts how much items there are
-                  //in data.dart list and add dots accordingly/equally
-                  for (int i = 0; i < ads.length; i++)
-                    _currentAd == i ? adIndicator(true) : adIndicator(false),
-                ],
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                //defines length of indicator dots, counts how much items there are
+                //in data.dart list and add dots accordingly/equally
+                for (int i = 0; i < ads.length; i++)
+                  _currentAd == i ? adIndicator(true) : adIndicator(false),
+              ],
             ),
           ),
         ),
