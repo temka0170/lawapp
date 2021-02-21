@@ -16,7 +16,6 @@ class AdScreen extends StatefulWidget {
 class _AdScreenState extends State<AdScreen> {
   //gets values in data.dart for each slide
   List<AdModel> ads = new List<AdModel>();
-  List<CustomDialogBox> cmpopups = new List<CustomDialogBox>();
   int _currentAd = 0;
   Timer timer;
   PageController adController = new PageController(initialPage: 0);
@@ -29,7 +28,6 @@ class _AdScreenState extends State<AdScreen> {
     //gets values from data.dart
     ads = getAds();
     ads.shuffle();
-    cmpopups = adPopups();
 
     //periodic slide change timer
     if (ads != null) {
@@ -82,48 +80,49 @@ class _AdScreenState extends State<AdScreen> {
             return AdTile(
               imgPath: ads[ix].getAssetPath(),
               desc: ads[ix].getDescript(),
+              idx: id,
             );
           },
         ),
         //Top curved border of Calculator,more section carousel
-        ClipPath(
-          clipper: WaveClipperTwo(
-            flip: true,
-            reverse: false,
-          ),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 85.0,
-            color: Color(0xfff8931f).withOpacity(0.4),
+        IgnorePointer(
+          child: ClipPath(
+            clipper: WaveClipperTwo(
+              flip: true,
+              reverse: false,
+            ),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.1,
+              color: Color(0xfff8931f).withOpacity(0.4),
+            ),
           ),
         ),
-        ClipPath(
-          clipper: WaveClipperTwo(
-            flip: true,
-            reverse: false,
-          ),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 70.0,
-            color: Color(0xfff8931f),
+        IgnorePointer(
+          child: ClipPath(
+            clipper: WaveClipperTwo(
+              flip: true,
+              reverse: false,
+            ),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.09,
+              color: Color(0xfff8931f),
+            ),
           ),
         ),
         //bottom curved border of calculator,more section carousel
-        CustomPaint(
-          size: Size(MediaQuery.of(context).size.width, 377),
-          painter: SecondWave(),
-        ),
-        GestureDetector(
-          onTap: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  //this links which popup should popup when clicked on slider
-                  return cmpopups[id];
-                });
-          },
+        IgnorePointer(
           child: CustomPaint(
-            size: Size(MediaQuery.of(context).size.width, 377),
+            size: Size(MediaQuery.of(context).size.width,
+                MediaQuery.of(context).size.height * 0.46 + 1),
+            painter: SecondWave(),
+          ),
+        ),
+        IgnorePointer(
+          child: CustomPaint(
+            size: Size(MediaQuery.of(context).size.width,
+                MediaQuery.of(context).size.height * 0.46 + 1),
             painter: FirstWave(),
           ),
         ),
@@ -152,13 +151,25 @@ class _AdScreenState extends State<AdScreen> {
 class AdTile extends StatefulWidget {
   String imgPath;
   String desc;
-  AdTile({this.imgPath, this.desc});
+  int idx;
+  AdTile({this.imgPath, this.desc, this.idx});
 
   @override
   _AdTileState createState() => _AdTileState();
 }
 
 class _AdTileState extends State<AdTile> {
+  List<CustomDialogBox> cmpopups = new List<CustomDialogBox>();
+
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+
+    cmpopups = adPopups();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -166,22 +177,35 @@ class _AdTileState extends State<AdTile> {
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 376,
-            child: FittedBox(
-              child: Image.asset(widget.imgPath),
-              fit: BoxFit.fill,
+            height: MediaQuery.of(context).size.height * 0.46,
+            child: GestureDetector(
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      //this links which popup should popup when clicked on slider
+                      return cmpopups[widget.idx];
+                    });
+              },
+              child: FittedBox(
+                child: Image.asset(widget.imgPath),
+                fit: BoxFit.fill,
+              ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 95.0, left: 44.0),
-            child: Text(
-              widget.desc,
-              style: TextStyle(
-                fontFamily: 'Roboto',
-                color: Color(0xffffffff),
-                fontSize: 25,
-                fontWeight: FontWeight.w700,
-                fontStyle: FontStyle.normal,
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                widget.desc,
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  color: Color(0xffffffff),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.normal,
+                ),
               ),
             ),
           ),

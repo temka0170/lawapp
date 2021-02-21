@@ -15,7 +15,6 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   //gets slide values
   List<MainModel> mains = new List<MainModel>();
-  List<CustomDialogBox> popups = new List<CustomDialogBox>();
   int _currentMain = 0;
   Timer timerMain;
   PageController mainController = new PageController(initialPage: 0);
@@ -27,7 +26,6 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
     mains = getMains();
     mains.shuffle();
-    popups = getPopups();
 
     if (mains != null) {
       timerMain = Timer.periodic(Duration(seconds: 4), (_) {
@@ -76,44 +74,37 @@ class _MainScreenState extends State<MainScreen> {
             return MainTile(
               imgPath: mains[ix].getAssetPath(),
               desc: mains[ix].getDescript(),
+              idx: mains[ix].getIdx(),
             );
           },
         ),
         //curved border of home section carousel
-        CustomPaint(
-          size: Size(MediaQuery.of(context).size.width, 295),
-          painter: MainWave1(),
-        ),
-        CustomPaint(
-          size: Size(MediaQuery.of(context).size.width, 295),
-          painter: MainWave2(),
-        ),
-        //indicator builder
-        Padding(
-          padding: const EdgeInsets.only(top: 210.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              for (int i = 0; i < mains.length; i++)
-                _currentMain == i ? adIndicator(true) : adIndicator(false),
-            ],
+        IgnorePointer(
+          child: CustomPaint(
+            size: Size(MediaQuery.of(context).size.width,
+                MediaQuery.of(context).size.height * 0.36 + 1),
+            painter: MainWave1(),
           ),
         ),
-        //Popup implementation
-        GestureDetector(
-          onTap: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  //gets values from list
-                  return popups[mains[ix].getIdx()];
-                });
-          },
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: 294,
-            //wrapped carousel with gesture detector
-            color: Color(0xffffffff).withOpacity(0),
+        IgnorePointer(
+          child: CustomPaint(
+            size: Size(MediaQuery.of(context).size.width,
+                MediaQuery.of(context).size.height * 0.36 + 1),
+            painter: MainWave2(),
+          ),
+        ),
+        //indicator builder
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                for (int i = 0; i < mains.length; i++)
+                  _currentMain == i ? adIndicator(true) : adIndicator(false),
+              ],
+            ),
           ),
         ),
       ],
@@ -126,36 +117,61 @@ class _MainScreenState extends State<MainScreen> {
 class MainTile extends StatefulWidget {
   String imgPath;
   String desc;
-  MainTile({this.imgPath, this.desc});
+  int idx;
+  MainTile({this.imgPath, this.desc, this.idx});
 
   @override
   _MainTileState createState() => _MainTileState();
 }
 
 class _MainTileState extends State<MainTile> {
+  List<CustomDialogBox> popups = new List<CustomDialogBox>();
+
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+
+    popups = getPopups();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Stack(
         children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 294,
-            child: FittedBox(
-              child: Image.asset(widget.imgPath),
-              fit: BoxFit.fill,
+          GestureDetector(
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    //gets values from list
+                    return popups[widget.idx];
+                  });
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.36,
+              child: FittedBox(
+                child: Image.asset(widget.imgPath),
+                fit: BoxFit.fill,
+              ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 95.0, left: 44.0),
-            child: Text(
-              widget.desc,
-              style: TextStyle(
-                fontFamily: 'Roboto',
-                color: Color(0xffffffff),
-                fontSize: 25,
-                fontWeight: FontWeight.w700,
-                fontStyle: FontStyle.normal,
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                widget.desc,
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  color: Color(0xffffffff),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.normal,
+                ),
               ),
             ),
           ),
