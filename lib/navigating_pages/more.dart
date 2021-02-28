@@ -45,33 +45,16 @@ class BoxItems extends StatelessWidget {
     @required this.imgPath,
     @required this.textBox,
     @required this.popup,
-    @required this.clr1,
-    @required this.clr2,
-    @required this.txtclr,
   }) : super(key: key);
 
   final String imgPath;
   final String textBox;
   final Widget popup;
-  final Color clr1;
-  final Color clr2;
-  final Color txtclr;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 5.0),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            clr1,
-            clr2,
-          ],
-          tileMode: TileMode.repeated,
-        ),
-      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -120,8 +103,6 @@ class BoxItems extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15.0,
-                    color: txtclr,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

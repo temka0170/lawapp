@@ -169,9 +169,6 @@ class RecomQst extends StatelessWidget {
           child: BoxItems(
             imgPath: 'assets/gifs/irgen.gif',
             textBox: 'Иргэний хэрэг',
-            clr1: Color.fromRGBO(223, 7, 44, 1.0),
-            clr2: Color.fromRGBO(226, 10, 50, 1.0),
-            txtclr: Colors.black,
             popup: IrgenBox(
               title: 'Иргэний хэрэг',
             ),
@@ -181,9 +178,6 @@ class RecomQst extends StatelessWidget {
           child: BoxItems(
             imgPath: 'assets/gifs/eruu.gif',
             textBox: 'Эрүүгийн хэрэг',
-            clr1: Color.fromRGBO(15, 172, 140, 1.0),
-            clr2: Color.fromRGBO(15, 171, 139, 1.0),
-            txtclr: Colors.black,
             popup: EruuBox(
               title: 'Эрүүгийн хэрэг',
             ),
@@ -193,9 +187,6 @@ class RecomQst extends StatelessWidget {
           child: BoxItems(
             imgPath: 'assets/gifs/baiguullaga.gif',
             textBox: 'Захиргааны хэрэг',
-            clr1: Color.fromRGBO(206, 107, 18, 1.0),
-            clr2: Color.fromRGBO(208, 107, 13, 1.0),
-            txtclr: Colors.black,
             popup: ZahirgaaBox(
               title: 'Захиргааны хэрэг',
             ),
@@ -205,9 +196,6 @@ class RecomQst extends StatelessWidget {
           child: BoxItems(
             imgPath: 'assets/gifs/openeye.gif',
             textBox: 'Open your eyes',
-            clr1: Color.fromRGBO(3, 3, 3, 1.0),
-            clr2: Color.fromRGBO(3, 3, 3, 1.0),
-            txtclr: Colors.white,
             popup: EyeBox(
               title: 'Open your eyes',
             ),
