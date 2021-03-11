@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'navigating_pages/calculator.dart';
 import 'navigating_pages/home.dart';
 import 'navigating_pages/more.dart';
-import 'onboarding_screen/onboard.dart';
+// import 'onboarding_screen/onboard.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: OnboardingScreen(), //loading screen/onboarding screen
+      home: Main(), //loading screen/onboarding screen
       debugShowCheckedModeBanner: false,
     );
   }

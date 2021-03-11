@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/calculator_popup.dart';
 import 'data.dart';
-import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-import 'package:project_1/painters/calculatorpainter.dart';
+// import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+// import 'package:project_1/painters/calculatorpainter.dart';
 
 //Custom Carousel Slider of Calculator.dart and More.dart
 // ignore: must_be_immutable
@@ -65,14 +66,11 @@ class _AdScreenState extends State<AdScreen> {
     int id;
     return Stack(
       children: <Widget>[
-        PageView.builder(
-          controller: adController,
+        SizedBox(
+          height: 12.0,
+        ),
+        CarouselSlider.builder(
           itemCount: ads.length,
-          onPageChanged: (idx) {
-            setState(() {
-              _currentAd = idx;
-            });
-          },
           itemBuilder: (context, index) {
             //Slide of carousel, gets data by list
             ix = index;
@@ -83,51 +81,88 @@ class _AdScreenState extends State<AdScreen> {
               idx: id,
             );
           },
+          options: CarouselOptions(
+            onPageChanged: (index, reason) {
+              setState(() {
+                _currentAd = index;
+              });
+            },
+            aspectRatio: 18 / 10,
+            viewportFraction: 0.8,
+            initialPage: 0,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: true,
+            autoPlayInterval: Duration(seconds: 3),
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true,
+            scrollDirection: Axis.horizontal,
+          ),
         ),
+        // PageView.builder(
+        //   controller: adController,
+        //   itemCount: ads.length,
+        //   onPageChanged: (idx) {
+        //     setState(() {
+        //       _currentAd = idx;
+        //     });
+        //   },
+        //   itemBuilder: (context, index) {
+        //     //Slide of carousel, gets data by list
+        //     ix = index;
+        //     id = ads[ix].getIdex();
+        //     return AdTile(
+        //       imgPath: ads[ix].getAssetPath(),
+        //       desc: ads[ix].getDescript(),
+        //       idx: id,
+        //     );
+        //   },
+        // ),
         //Top curved border of Calculator,more section carousel
-        IgnorePointer(
-          child: ClipPath(
-            clipper: WaveClipperTwo(
-              flip: true,
-              reverse: false,
-            ),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.1,
-              color: Color(0xfff8931f).withOpacity(0.4),
-            ),
-          ),
-        ),
-        IgnorePointer(
-          child: ClipPath(
-            clipper: WaveClipperTwo(
-              flip: true,
-              reverse: false,
-            ),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.09,
-              color: Color(0xfff8931f),
-            ),
-          ),
-        ),
-        //bottom curved border of calculator,more section carousel
-        IgnorePointer(
-          child: CustomPaint(
-            size: Size(MediaQuery.of(context).size.width,
-                MediaQuery.of(context).size.height * 0.46 + 1),
-            painter: SecondWave(),
-          ),
-        ),
-        IgnorePointer(
-          child: CustomPaint(
-            size: Size(MediaQuery.of(context).size.width,
-                MediaQuery.of(context).size.height * 0.46 + 1),
-            painter: FirstWave(),
-          ),
-        ),
+        // IgnorePointer(
+        //   child: ClipPath(
+        //     clipper: WaveClipperTwo(
+        //       flip: true,
+        //       reverse: false,
+        //     ),
+        //     child: Container(
+        //       width: MediaQuery.of(context).size.width,
+        //       height: MediaQuery.of(context).size.height * 0.1,
+        //       color: Color(0xfff8931f).withOpacity(0.4),
+        //     ),
+        //   ),
+        // ),
+        // IgnorePointer(
+        //   child: ClipPath(
+        //     clipper: WaveClipperTwo(
+        //       flip: true,
+        //       reverse: false,
+        //     ),
+        //     child: Container(
+        //       width: MediaQuery.of(context).size.width,
+        //       height: MediaQuery.of(context).size.height * 0.09,
+        //       color: Color(0xfff8931f),
+        //     ),
+        //   ),
+        // ),
+        // //bottom curved border of calculator,more section carousel
+        // IgnorePointer(
+        //   child: CustomPaint(
+        //     size: Size(MediaQuery.of(context).size.width,
+        //         MediaQuery.of(context).size.height * 0.46 + 1),
+        //     painter: SecondWave(),
+        //   ),
+        // ),
+        // IgnorePointer(
+        //   child: CustomPaint(
+        //     size: Size(MediaQuery.of(context).size.width,
+        //         MediaQuery.of(context).size.height * 0.46 + 1),
+        //     painter: FirstWave(),
+        //   ),
+        // ),
         Positioned(
-          bottom: 10.0,
+          bottom: 20.0,
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
@@ -173,43 +208,49 @@ class _AdTileState extends State<AdTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.46,
-            child: GestureDetector(
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      //this links which popup should popup when clicked on slider
-                      return cmpopups[widget.idx];
-                    });
-              },
-              child: FittedBox(
-                child: Image.asset(widget.imgPath),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                widget.desc,
-                style: TextStyle(
-                  fontFamily: 'Roboto',
-                  color: Color(0xffffffff),
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.normal,
+      child: GestureDetector(
+        onTap: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                //this links which popup should popup when clicked on slider
+                return cmpopups[widget.idx];
+              });
+        },
+        child: Stack(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.46,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: FittedBox(
+                    child: Image.asset(widget.imgPath),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  widget.desc,
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xffffffff),
+                    fontSize: 25,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

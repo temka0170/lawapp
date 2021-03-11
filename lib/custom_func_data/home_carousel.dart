@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'dart:ui';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/calculator_popup.dart';
 import 'data.dart';
-import 'package:project_1/painters/mainpainter.dart';
+// import 'package:project_1/painters/mainpainter.dart';
 
 //Home section carousel, reused calculator section carousel with few changes
 // ignore: must_be_immutable
@@ -58,41 +59,75 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    int ix;
+    int ix, id;
     return Stack(
       children: <Widget>[
-        PageView.builder(
-          controller: mainController,
+        SizedBox(
+          height: 12.0,
+        ),
+        CarouselSlider.builder(
           itemCount: mains.length,
-          onPageChanged: (idx) {
-            setState(() {
-              _currentMain = idx;
-            });
-          },
           itemBuilder: (context, index) {
+            //Slide of carousel, gets data by list
             ix = index;
+            id = mains[ix].getIdx();
             return MainTile(
               imgPath: mains[ix].getAssetPath(),
               desc: mains[ix].getDescript(),
-              idx: mains[ix].getIdx(),
+              idx: id,
             );
           },
+          options: CarouselOptions(
+            onPageChanged: (index, reason) {
+              setState(() {
+                _currentMain = index;
+              });
+            },
+            aspectRatio: 18 / 10,
+            viewportFraction: 0.8,
+            initialPage: 0,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: true,
+            autoPlayInterval: Duration(seconds: 3),
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true,
+            scrollDirection: Axis.horizontal,
+          ),
         ),
+        // PageView.builder(
+        //   controller: mainController,
+        //   itemCount: mains.length,
+        //   onPageChanged: (idx) {
+        //     setState(() {
+        //       _currentMain = idx;
+        //     });
+        //   },
+        //   itemBuilder: (context, index) {
+        //     ix = index;
+        //     return MainTile(
+        //       imgPath: mains[ix].getAssetPath(),
+        //       desc: mains[ix].getDescript(),
+        //       idx: mains[ix].getIdx(),
+        //     );
+        //   },
+        // ),
         //curved border of home section carousel
-        IgnorePointer(
-          child: CustomPaint(
-            size: Size(MediaQuery.of(context).size.width,
-                MediaQuery.of(context).size.height * 0.36 + 1),
-            painter: MainWave1(),
-          ),
-        ),
-        IgnorePointer(
-          child: CustomPaint(
-            size: Size(MediaQuery.of(context).size.width,
-                MediaQuery.of(context).size.height * 0.36 + 1),
-            painter: MainWave2(),
-          ),
-        ),
+        // IgnorePointer(
+        //   child: CustomPaint(
+        //     size: Size(MediaQuery.of(context).size.width,
+        //         MediaQuery.of(context).size.height * 0.36 + 1),
+        //     painter: MainWave1(),
+        //   ),
+        // ),
+        // IgnorePointer(
+        //   child: CustomPaint(
+        //     size: Size(MediaQuery.of(context).size.width,
+        //         MediaQuery.of(context).size.height * 0.36 + 1),
+        //     painter: MainWave2(),
+        //   ),
+        // ),
         //indicator builder
         Align(
           alignment: Alignment.bottomCenter,
@@ -139,43 +174,49 @@ class _MainTileState extends State<MainTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(
-        children: <Widget>[
-          GestureDetector(
-            onTap: () {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    //gets values from list
-                    return popups[widget.idx];
-                  });
-            },
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.36,
-              child: FittedBox(
-                child: Image.asset(widget.imgPath),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                widget.desc,
-                style: TextStyle(
-                  fontFamily: 'Roboto',
-                  color: Color(0xffffffff),
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.normal,
+      child: GestureDetector(
+        onTap: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                //gets values from list
+                return popups[widget.idx];
+              });
+        },
+        child: Stack(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.36,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12.0),
+                  child: FittedBox(
+                    child: Image.asset(widget.imgPath),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  widget.desc,
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xffffffff),
+                    fontSize: 25,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
