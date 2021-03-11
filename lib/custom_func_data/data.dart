@@ -194,6 +194,33 @@ List<CustomDialogBox> adPopups() {
   return popups;
 }
 
+const question_data = [
+  {
+    "question": "Иргэний хэргийн хөөн хэлэлцэх хугацааг юу гэж ойлгох вэ?",
+    "popup": 0
+  },
+  {
+    "question":
+        "Шүүхэд хандмаар байгаа ч хариуцагч этгээдийн оршин суугаа хаягийг мэдэхгүй байгаа тохиолдолд яах вэ?",
+    "popup": 1
+  },
+  {
+    "question":
+        "Зээлийн гэрээ бичгээр байгуулаагүй ч гэсэн хүү нэхэж болох уу?",
+    "popup": 2
+  },
+  {
+    "question":
+        "Орон сууц худалдаж авахаар гэрээ байгуулахад юуг анхаарах ёстой вэ?",
+    "popup": 3
+  },
+  {
+    "question":
+        "Шүүхийн шийдвэрээр тогтоосон тэтгэлгийг хугацаандаа төлөөгүй тохиолдолд алданги шаардаж болох уу?",
+    "popup": 4
+  },
+];
+
 //values of more section q&a section
 List<QuestionBox> questionPop() {
   List<QuestionBox> qstPops = new List<QuestionBox>();
