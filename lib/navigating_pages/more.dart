@@ -22,15 +22,11 @@ class _MyStatefulWidgetState extends State<More> {
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.435,
+              height: MediaQuery.of(context).size.height * 0.39,
               //same carousel as calculator page carousel, shuffled
               child: AdScreen(),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              //content table of more page
-              child: MoreContainer(),
-            ),
+            CategoriesScroller(),
           ],
         ),
       ),
@@ -55,37 +51,13 @@ class BoxItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 5.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      width: MediaQuery.of(context).size.width * 0.36,
+      height: MediaQuery.of(context).size.height * 0.3 - 50,
+      child: Stack(
+        fit: StackFit.expand,
         children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: GestureDetector(
-                onTap: () {
-                  showDialog(
-                      context: context,
-                      barrierDismissible: true,
-                      builder: (BuildContext context) {
-                        //links popups to its button
-                        return popup;
-                      });
-                },
-                child: Container(
-                  padding: EdgeInsets.only(left: 12.0),
-                  child: Image.asset(
-                    imgPath,
-                    fit: BoxFit.contain,
-                    width: MediaQuery.of(context).size.height * 0.07,
-                    height: MediaQuery.of(context).size.height * 0.07,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 3,
+          Padding(
+            padding: const EdgeInsets.all(6.0),
             child: GestureDetector(
               onTap: () {
                 showDialog(
@@ -96,14 +68,11 @@ class BoxItems extends StatelessWidget {
                       return popup;
                     });
               },
-              child: Padding(
-                padding: const EdgeInsets.only(right: 12.0),
-                child: Text(
-                  textBox,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15.0,
-                  ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
+                child: Image.asset(
+                  imgPath,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
