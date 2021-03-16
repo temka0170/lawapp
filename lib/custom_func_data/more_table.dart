@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/navigating_pages/more.dart';
 import 'package:project_1/zuvluguu_popups/EruugiinHereg.dart';
-import 'package:project_1/zuvluguu_popups/IrgeniiHereg.dart';
 import 'package:project_1/zuvluguu_popups/NudeeNee.dart';
+import 'package:project_1/zuvluguu_popups/SubIrgen.dart';
 import 'package:project_1/zuvluguu_popups/ZahirgaaniiHereg.dart';
 
 // import 'calculator_popup.dart';
@@ -282,7 +282,7 @@ class CategoriesScroller extends StatelessWidget {
               BoxItems(
                 imgPath: 'assets/gifs/irgen.gif',
                 textBox: 'Иргэний хэрэг',
-                popup: IrgenBox(
+                popup: SubIrgenBox(
                   title: 'Иргэний хэрэг',
                 ),
               ),

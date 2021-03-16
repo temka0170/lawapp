@@ -1,20 +1,20 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'boxRow_buttons.dart';
+import '../boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class IrgenBox extends StatefulWidget {
+class EBox extends StatefulWidget {
   String title;
 
-  IrgenBox({Key key, this.title}) : super(key: key);
+  EBox({Key key, this.title}) : super(key: key);
 
   @override
-  _IrgenBoxState createState() => _IrgenBoxState();
+  _EBoxState createState() => _EBoxState();
 }
 
-class _IrgenBoxState extends State<IrgenBox> {
+class _EBoxState extends State<EBox> {
   @override
   void initState() {
     // ignore: todo
