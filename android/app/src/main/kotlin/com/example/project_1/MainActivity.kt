@@ -1,4 +1,4 @@
-package com.example.project_1
+package umbrella.Lawfirm.App
 
 import io.flutter.embedding.android.FlutterActivity
 
