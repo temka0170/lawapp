@@ -84,7 +84,7 @@ class _EBoxState extends State<EBox> {
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
-            height: 555,
+            height: MediaQuery.of(context).size.height * 0.68,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13.0),
               color: Color(0xfffff4e8).withOpacity(0.88),
