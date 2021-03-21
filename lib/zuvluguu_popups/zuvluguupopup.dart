@@ -1,13 +1,15 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
 
 //sub popups
 // ignore: must_be_immutable
 class ZuvluguuPopup extends StatefulWidget {
-  String title, descriptions, text;
+  String title, descriptions, url;
 
-  ZuvluguuPopup({Key key, this.title, this.descriptions, this.text})
+  ZuvluguuPopup({Key key, this.title, this.descriptions, this.url})
       : super(key: key);
 
   @override
@@ -15,6 +17,18 @@ class ZuvluguuPopup extends StatefulWidget {
 }
 
 class _ZuvluguuState extends State<ZuvluguuPopup> {
+  Future<void> downloadFile() async {
+    Dio dio = Dio();
+
+    try {
+      var dir = await getExternalStorageDirectory();
+
+      await dio.download(widget.url, "${dir.path}/${widget.title}.pdf");
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     //blurred background
@@ -60,6 +74,64 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 40.0),
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    downloadFile();
+                  });
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.65,
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  decoration: new BoxDecoration(
+                    color: Color(0xffffffff),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Color(0x14000000),
+                          offset: Offset(0, 0),
+                          blurRadius: 10,
+                          spreadRadius: 0)
+                    ],
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Icon(
+                          Icons.download_rounded,
+                        ),
+                      ),
+                      Expanded(
+                        child: Center(
+                          child: Text(
+                            "Татаж авах",
+                            style: TextStyle(
+                              fontFamily: 'SFProDisplay',
+                              color: Color(0xff23233c),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Icon(
+                          Icons.download_rounded,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
