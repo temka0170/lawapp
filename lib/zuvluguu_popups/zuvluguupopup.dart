@@ -107,6 +107,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Icon(
                           Icons.download_rounded,
+                          color: Color(0xfff8931f),
                         ),
                       ),
                       Expanded(
@@ -127,6 +128,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Icon(
                           Icons.download_rounded,
+                          color: Color(0xfff8931f),
                         ),
                       ),
                     ],
