@@ -51,7 +51,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
       child: Stack(
         children: <Widget>[
           Positioned(
-            left: 0.0,
+            right: 0.0,
             top: 0.0,
             child: Container(
               width: 30.0,
@@ -70,7 +70,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
               child: IconButton(
                 iconSize: 12,
                 color: Color(0xff23233c),
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.cancel_outlined),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -80,7 +80,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: const EdgeInsets.only(top: 40.0),
+              padding: const EdgeInsets.only(top: 70.0),
               child: GestureDetector(
                 onTap: () {
                   setState(() {
