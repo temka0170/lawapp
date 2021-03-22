@@ -106,8 +106,8 @@ List<MainModel> getMains() {
   List<MainModel> mains = new List<MainModel>();
   MainModel main = new MainModel();
 
-  main.setAdPath("assets/images/rolex.jpg");
-  main.setAdDesc("Таний бугуйг чимнэ!");
+  main.setAdPath("assets/images/galaxy.jpg");
+  main.setAdDesc("Placeholder");
   main.setIdx(0);
   mains.add(main);
 
@@ -137,9 +137,9 @@ List<CustomDialogBox> getPopups() {
   List<CustomDialogBox> popups = new List<CustomDialogBox>();
   CustomDialogBox popup = new CustomDialogBox();
 
-  popup.descriptions = "Таний бугуйг чимнэ!";
-  popup.img = Image.asset("assets/images/rolex.jpg");
-  popup.title = "Таний бугуйг чимнэ!";
+  popup.descriptions = "Placeholder!";
+  popup.img = Image.asset("assets/images/galaxy.jpg");
+  popup.title = "Placeholder!";
   popups.add(popup);
 
   popup = new CustomDialogBox();
@@ -169,8 +169,8 @@ List<CustomDialogBox> adPopups() {
   CustomDialogBox popup = new CustomDialogBox();
 
   popup.descriptions = "aylaliin hutuch 0";
-  popup.img = Image.asset("assets/images/rolex.jpg");
-  popup.title = "Таний бугуйг чимнэ!";
+  popup.img = Image.asset("assets/images/galaxy.jpg");
+  popup.title = "Placeholder!";
   popups.add(popup);
 
   popup = new CustomDialogBox();
