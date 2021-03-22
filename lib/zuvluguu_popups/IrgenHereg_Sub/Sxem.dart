@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import '../boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable

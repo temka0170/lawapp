@@ -101,9 +101,22 @@ class _NBoxState extends State<NBox> {
               padding: EdgeInsets.only(top: 23.0),
               itemExtent: 120.0,
               children: <Widget>[
-                //index value links to what popup should show when clicked,
-                //boxrow has 2 buttons in 1 row so it requires atleast index1,desc1,img1
-                //if index2,desc2,img2 is null shows only 1 button with index1 values
+                BoxRow(
+                  index1: 28,
+                  index2: 29,
+                  desc1: "Таны үүрэг",
+                  desc2: "Таны эрх",
+                  img1: "assets/images/ajilsanjil.png",
+                  img2: "assets/images/galaxy.jpg",
+                ),
+                BoxRow(
+                  index1: 26,
+                  index2: 27,
+                  desc1: "НЭХЭМЖЛЭГЧ ГЭДЭГ НЬ",
+                  desc2: "НЭХЭМЖЛЭЛ ГЭДЭГ НЬ",
+                  img1: "assets/images/ajilsanjil.png",
+                  img2: "assets/images/galaxy.jpg",
+                ),
                 BoxRow(
                   index1: 0,
                   index2: 1,
@@ -129,9 +142,9 @@ class _NBoxState extends State<NBox> {
                   img2: "assets/images/loan.png",
                 ),
                 BoxRow(
-                  index1: 6,
+                  index1: 14,
                   index2: 7,
-                  desc1: "Эвлэрүүлэн зуучлал",
+                  desc1: "Хариуцагчийг эрэн сурвалжлуулах",
                   desc2: "Хамтын амьдралтай байсныг тогтоолгох",
                   img1: "assets/images/contr.png",
                   img2: "assets/images/nehemj.png",
@@ -154,16 +167,8 @@ class _NBoxState extends State<NBox> {
                 ),
                 BoxRow(
                   index1: 12,
-                  index2: 13,
-                  desc1: "Гэрээний дагуу авлага",
-                  desc2: "Иргэний нэхэмжлэлийн шаардлага",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-                BoxRow(
-                  index1: 14,
                   index2: 15,
-                  desc1: "Хариуцагчийг эрэн сурвалжлуулах",
+                  desc1: "Гэрээний дагуу авлага",
                   desc2: "Эрх хязгаарлах арга хэмжээ авахуулах тухай",
                   img1: "assets/images/galaxy.jpg",
                   img2: "assets/images/galaxy.jpg",

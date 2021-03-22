@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project_1/navigating_pages/more.dart';
 import 'package:project_1/zuvluguu_popups/EruugiinHereg.dart';
 import 'package:project_1/zuvluguu_popups/NudeeNee.dart';
-import 'package:project_1/zuvluguu_popups/SubIrgen.dart';
 import 'package:project_1/zuvluguu_popups/ZahirgaaniiHereg.dart';
 import 'package:project_1/zuvluguu_popups/firstIrgen.dart';
 

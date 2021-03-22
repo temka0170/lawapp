@@ -70,7 +70,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
               child: IconButton(
                 iconSize: 12,
                 color: Color(0xff23233c),
-                icon: Icon(Icons.cancel_outlined),
+                icon: Icon(Icons.close),
                 onPressed: () {
                   Navigator.pop(context);
                 },

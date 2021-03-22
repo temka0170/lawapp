@@ -1,11 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/zuvluguu_popups/SubIrgen.dart';
-import 'IrgenHereg_Sub/3rdInvolve.dart';
 import 'IrgenHereg_Sub/Ewleruuleh.dart';
-import 'IrgenHereg_Sub/Hariutsagch.dart';
-import 'IrgenHereg_Sub/Nehemjlel.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup

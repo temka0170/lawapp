@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'IrgenHereg_Sub/3rdInvolve.dart';
-import 'IrgenHereg_Sub/Ewleruuleh.dart';
 import 'IrgenHereg_Sub/Hariutsagch.dart';
 import 'IrgenHereg_Sub/Nehemjlel.dart';
 import 'IrgenHereg_Sub/Sxem.dart';

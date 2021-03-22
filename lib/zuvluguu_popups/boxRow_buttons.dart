@@ -70,30 +70,22 @@ class _BoxRowState extends State<BoxRow> {
                       ),
                       child: Column(
                         children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: Image.asset(
-                                widget.img1,
-                                fit: BoxFit.fill,
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  widget.desc1,
+                                  style: TextStyle(
+                                    fontFamily: 'SFProDisplay',
+                                    color: Color(0xff23233c),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              widget.desc1,
-                              style: TextStyle(
-                                fontFamily: 'SFProDisplay',
-                                color: Color(0xff23233c),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
                             ),
                           ),
                         ],
@@ -131,30 +123,22 @@ class _BoxRowState extends State<BoxRow> {
                       ),
                       child: Column(
                         children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: Image.asset(
-                                widget.img2,
-                                fit: BoxFit.fill,
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  widget.desc2,
+                                  style: TextStyle(
+                                    fontFamily: 'RobotoMono',
+                                    color: Color(0xff23233c),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              widget.desc2,
-                              style: TextStyle(
-                                fontFamily: 'RobotoMono',
-                                color: Color(0xff23233c),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                fontStyle: FontStyle.normal,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
                             ),
                           ),
                         ],
