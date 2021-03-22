@@ -64,10 +64,10 @@ class _AdScreenState extends State<AdScreen> {
   Widget build(BuildContext context) {
     int ix;
     int id;
-    return Stack(
+    return Column(
       children: <Widget>[
         SizedBox(
-          height: 12.0,
+          height: 35.0,
         ),
         CarouselSlider.builder(
           itemCount: ads.length,
@@ -161,20 +161,25 @@ class _AdScreenState extends State<AdScreen> {
         //     painter: FirstWave(),
         //   ),
         // ),
-        Positioned(
-          bottom: 20.0,
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                //defines length of indicator dots, counts how much items there are
-                //in data.dart list and add dots accordingly/equally
-                for (int i = 0; i < ads.length; i++)
-                  _currentAd == i ? adIndicator(true) : adIndicator(false),
-              ],
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 14.0),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    //defines length of indicator dots, counts how much items there are
+                    //in data.dart list and add dots accordingly/equally
+                    for (int i = 0; i < ads.length; i++)
+                      _currentAd == i ? adIndicator(true) : adIndicator(false),
+                  ],
+                ),
+              ),
             ),
-          ),
+          ],
         ),
       ],
     );
@@ -207,49 +212,62 @@ class _AdTileState extends State<AdTile> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: GestureDetector(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                //this links which popup should popup when clicked on slider
-                return cmpopups[widget.idx];
-              });
-        },
-        child: Stack(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.46,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: FittedBox(
-                    child: Image.asset(widget.imgPath),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  widget.desc,
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                    color: Color(0xffffffff),
-                    fontSize: 25,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
-                  ),
-                ),
-              ),
-            ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              offset: Offset(4, 4),
+              blurRadius: 12,
+              spreadRadius: 0,
+            )
           ],
+        ),
+        child: GestureDetector(
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  //this links which popup should popup when clicked on slider
+                  return cmpopups[widget.idx];
+                });
+          },
+          child: Stack(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.46,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: FittedBox(
+                      child: Image.asset(widget.imgPath),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    widget.desc,
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Color(0xffffffff),
+                      fontSize: 25,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

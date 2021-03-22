@@ -229,17 +229,20 @@ class _QuestionBoxState extends State<QuestionBox> {
                   ),
                   Align(
                     alignment: AlignmentDirectional.center,
-                    child: Text(
-                      //gets value in data.dart
-                      widget.question,
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        color: Color(0xff23233c),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.normal,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(
+                        //gets value in data.dart
+                        widget.question,
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          color: Color(0xff23233c),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.normal,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                   SizedBox(

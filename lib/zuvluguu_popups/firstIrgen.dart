@@ -1,25 +1,25 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:project_1/zuvluguu_popups/SubIrgen.dart';
 import 'IrgenHereg_Sub/3rdInvolve.dart';
 import 'IrgenHereg_Sub/Ewleruuleh.dart';
 import 'IrgenHereg_Sub/Hariutsagch.dart';
 import 'IrgenHereg_Sub/Nehemjlel.dart';
-import 'IrgenHereg_Sub/Sxem.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class SubIrgenBox extends StatefulWidget {
+class FirstIrgenBox extends StatefulWidget {
   String title;
 
-  SubIrgenBox({Key key, this.title}) : super(key: key);
+  FirstIrgenBox({Key key, this.title}) : super(key: key);
 
   @override
-  _SubIrgenBoxState createState() => _SubIrgenBoxState();
+  _FirstIrgenBoxState createState() => _FirstIrgenBoxState();
 }
 
-class _SubIrgenBoxState extends State<SubIrgenBox> {
+class _FirstIrgenBoxState extends State<FirstIrgenBox> {
   @override
   void initState() {
     // ignore: todo
@@ -114,8 +114,8 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return NBox(
-                              title: "Нэхэмжлэгч",
+                            return SubIrgenBox(
+                              title: "Шүүхийн Маргаан",
                             );
                           });
                     },
@@ -126,7 +126,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Нэхэмжлэгч"),
+                          child: Text("Шүүхийн Маргаан"),
                         ),
                       ),
                     ),
@@ -140,8 +140,8 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return HBox(
-                              title: "Хариуцагч",
+                            return EBox(
+                              title: "Эвлэрүүлэн Зуучлах",
                             );
                           });
                     },
@@ -152,64 +152,64 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Хариуцагч"),
+                          child: Text("Эвлэрүүлэн Зуучлах"),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return IrgenBox(
-                              title: "Гуравдагч Этгээд",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Гуравдагч Этгээд"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return SxemBox(
-                              title: "СХЕМ ЗУРАГ",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("СХЕМ ЗУРАГ"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                // Expanded(
+                //   child: GestureDetector(
+                //     onTap: () {
+                //       showDialog(
+                //           context: context,
+                //           barrierDismissible: true,
+                //           builder: (BuildContext context) {
+                //             //links popups to its button
+                //             return HBox(
+                //               title: "Хариуцагч",
+                //             );
+                //           });
+                //     },
+                //     child: Padding(
+                //       padding: const EdgeInsets.all(10.0),
+                //       child: Container(
+                //         decoration: BoxDecoration(
+                //             color: Colors.white,
+                //             borderRadius: BorderRadius.circular(8.0)),
+                //         child: Center(
+                //           child: Text("Хариуцагч"),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // Expanded(
+                //   child: GestureDetector(
+                //     onTap: () {
+                //       showDialog(
+                //           context: context,
+                //           barrierDismissible: true,
+                //           builder: (BuildContext context) {
+                //             //links popups to its button
+                //             return NBox(
+                //               title: "Нэхэмжлэгч",
+                //             );
+                //           });
+                //     },
+                //     child: Padding(
+                //       padding: const EdgeInsets.all(10.0),
+                //       child: Container(
+                //         decoration: BoxDecoration(
+                //             color: Colors.white,
+                //             borderRadius: BorderRadius.circular(8.0)),
+                //         child: Center(
+                //           child: Text("Нэхэмжлэгч"),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 // BoxRow(
                 //   index1: 0,
                 //   index2: 1,

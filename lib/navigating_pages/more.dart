@@ -43,36 +43,40 @@ class _MyStatefulWidgetState extends State<More> {
                 return questions[post["popup"]];
               });
         },
-        child: Container(
-            height: 80,
-            margin: const EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withAlpha(100), blurRadius: 8.0),
-                ]),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    post["question"],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'SFProDisplay',
-                      color: Color(0xff23233c),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Container(
+              margin: const EdgeInsets.only(bottom: 8.0, left: 8.0, right: 8.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  color: Color(0xfff4f5fa),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withAlpha(100), blurRadius: 8.0),
+                  ]),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0, vertical: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      post["question"],
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'SFProDisplay',
+                        color: Color(0xff23233c),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                      ),
+                      maxLines: 3,
+                      overflow: TextOverflow.fade,
                     ),
-                  ),
-                ],
-              ),
-            )),
+                  ],
+                ),
+              )),
+        ),
       ));
     });
     setState(() {
@@ -83,11 +87,11 @@ class _MyStatefulWidgetState extends State<More> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final double categoryHeight = size.height * 0.3 - 50;
+    final double categoryHeight = size.height * 0.35 - 50;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        color: Color(0xfff4f5fa),
+        color: Color(0xffffffff),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Column(
@@ -106,17 +110,58 @@ class _MyStatefulWidgetState extends State<More> {
                 width: MediaQuery.of(context).size.width,
                 alignment: Alignment.topCenter,
                 height: closeTopContainer ? 0 : categoryHeight,
-                child: CategoriesScroller(),
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+                        child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  СХЕМ ЗУРАГ",
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              color: Color(0xff23233c),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              fontStyle: FontStyle.normal,
+                            )),
+                      ),
+                    ),
+                    Expanded(flex: 6, child: CategoriesScroller()),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Text(
+                "ТҮГЭЭМЭЛ АСУУЛТУУД",
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  color: Color(0xff23233c),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.normal,
+                ),
+                textAlign: TextAlign.left,
               ),
             ),
             Expanded(
+                child: Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: Scrollbar(
+                controller: controller,
+                radius: Radius.circular(4.0),
+                thickness: 6.0,
+                isAlwaysShown: true,
                 child: ListView.builder(
                     itemCount: questionsData.length,
                     controller: controller,
                     physics: BouncingScrollPhysics(),
                     itemBuilder: (context, index) {
                       return questionsData[index];
-                    })),
+                    }),
+              ),
+            )),
           ],
         ),
       ),

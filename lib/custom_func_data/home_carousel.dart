@@ -62,9 +62,6 @@ class _MainScreenState extends State<MainScreen> {
     int ix, id;
     return Stack(
       children: <Widget>[
-        SizedBox(
-          height: 12.0,
-        ),
         CarouselSlider.builder(
           itemCount: mains.length,
           itemBuilder: (context, index) {

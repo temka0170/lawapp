@@ -100,7 +100,7 @@ class _HomeContainerState extends State<HomeContainer> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Text(
-                            "хамтран ажиллах",
+                            "Хамтран ажиллах",
                             style: TextStyle(
                               fontFamily: 'SFProDisplay',
                               color: _currentTab == 1
@@ -167,23 +167,23 @@ class _LinkState extends State<Link> {
         controller: _scrollController,
         children: <Widget>[
           BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
+            imgPath: 'assets/images/e-icon.png',
             textBox: 'E Mongolia',
             url:
                 'https://e-mongolia.mn/services/citizen/sector/5d88f11c0384df17c56691b3',
           ),
           BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
+            imgPath: 'assets/images/legalicon.jpg',
             textBox: 'Эрх зүйн мэдээллийн нэгдсэн систем',
             url: 'https://www.legalinfo.mn/',
           ),
           BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
+            imgPath: 'assets/images/huuli-icon.jpg',
             textBox: 'Хууль зүйн үндэсний хүрээлэн',
             url: 'http://nli.gov.mn/',
           ),
           BoxItems(
-            imgPath: 'assets/images/galaxy.jpg',
+            imgPath: 'assets/images/like.png',
             textBox: 'Like дарж дэмжээрэй',
             url: 'https://www.facebook.com/Umbrella.Lawfirm',
           ),
@@ -215,7 +215,7 @@ class Association extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image(
-                    image: AssetImage('assets/images/galaxy.jpg'),
+                    image: AssetImage('assets/images/lawfirmlogo.png'),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -243,7 +243,7 @@ class Association extends StatelessWidget {
         Expanded(
           flex: 2,
           child: Text(
-            "Утас: 9922ХХХХ\nИмэйл: umbrella.lawfirm@gmail.com",
+            "Утас: 94998777\nИмэйл: umbrella.lawfirm@gmail.com",
             style: TextStyle(
               fontFamily: 'SFProDisplay',
               color: Color(0xff23233c),
@@ -281,48 +281,40 @@ class BoxItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Image.asset(
-                imgPath,
-                fit: BoxFit.fill,
-              ),
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.9,
+      height: 90.0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: Image.asset(
+              imgPath,
+              fit: BoxFit.fill,
             ),
-            Expanded(
-              flex: 4,
-              child: FlatButton(
-                onPressed: () {
-                  _launchURL(url);
-                },
-                child: Text(
-                  textBox,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'SFProDisplay',
-                    color: Color(0xff23233c),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
+          ),
+          Expanded(
+            flex: 4,
+            child: FlatButton(
+              onPressed: () {
+                _launchURL(url);
+              },
+              child: Text(
+                textBox,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'SFProDisplay',
+                  color: Color(0xff23233c),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
                 ),
               ),
             ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 12.0),
-          child: Container(
-            width: MediaQuery.of(context).size.width * 0.75,
-            height: 1.0,
-            color: Color(0xff23233c).withOpacity(0.1),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

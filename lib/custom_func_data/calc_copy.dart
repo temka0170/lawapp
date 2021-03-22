@@ -14,6 +14,7 @@ class CalcPopup extends StatefulWidget {
 }
 
 class _CalcPopState extends State<CalcPopup> {
+  final snackBar = SnackBar(content: Text("Амжилттай хууллаа!"));
   @override
   Widget build(BuildContext context) {
     //blurring background of popup
@@ -132,7 +133,8 @@ class _CalcPopState extends State<CalcPopup> {
                     ),
                     child: Center(
                       child: GestureDetector(
-                        onTap: () => launch('http://hdc.gov.mn/page/46/'),
+                        onTap: () =>
+                            launch('https://itax.mta.mn/home/receiptCreate'),
                         child: Text(
                           "ТӨЛӨХ",
                           style: TextStyle(
@@ -163,6 +165,7 @@ class _CalcPopState extends State<CalcPopup> {
                         onTap: () {
                           Clipboard.setData(
                               new ClipboardData(text: widget.prc));
+                          Navigator.pop(context);
                         },
                         child: Text(
                           "ХУУЛАХ",

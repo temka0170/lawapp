@@ -36,7 +36,7 @@ Padding govLink(double width, double height) {
                 ],
               ),
               child: IconButton(
-                onPressed: () => launch('http://hdc.gov.mn/page/46/'),
+                onPressed: () => launch('https://itax.mta.mn/home/receiptCreate'),
                 icon: Icon(Icons.monetization_on),
                 color: Color(0xff23233c),
               ),
@@ -68,7 +68,7 @@ Padding govLink(double width, double height) {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  onTap: () => launch('http://hdc.gov.mn/page/46/'),
+                  onTap: () => launch('https://itax.mta.mn/home/receiptCreate'),
                 ),
               ),
             )
@@ -168,7 +168,7 @@ Padding phoneCaller(double width, double height) {
               ),
               child: IconButton(
                 onPressed: () {
-                  _makePhoneCall("+97689830044");
+                  _makePhoneCall("+97694998777");
                 },
                 icon: Icon(Icons.phone),
                 color: Color(0xff23233c),
@@ -200,7 +200,7 @@ Padding phoneCaller(double width, double height) {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  onTap: () => _makePhoneCall("+97689830044"),
+                  onTap: () => _makePhoneCall("+97694998777"),
                 ),
               ),
             )

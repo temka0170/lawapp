@@ -4,6 +4,7 @@ import 'package:project_1/zuvluguu_popups/EruugiinHereg.dart';
 import 'package:project_1/zuvluguu_popups/NudeeNee.dart';
 import 'package:project_1/zuvluguu_popups/SubIrgen.dart';
 import 'package:project_1/zuvluguu_popups/ZahirgaaniiHereg.dart';
+import 'package:project_1/zuvluguu_popups/firstIrgen.dart';
 
 // import 'calculator_popup.dart';
 // import 'data.dart';
@@ -269,7 +270,12 @@ class CategoriesScroller extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScrollController _scrollController = new ScrollController(
+      initialScrollOffset: 100.0,
+      keepScrollOffset: true,
+    );
     return SingleChildScrollView(
+      controller: _scrollController,
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Container(
@@ -282,7 +288,7 @@ class CategoriesScroller extends StatelessWidget {
               BoxItems(
                 imgPath: 'assets/gifs/irgen.gif',
                 textBox: 'Иргэний хэрэг',
-                popup: SubIrgenBox(
+                popup: FirstIrgenBox(
                   title: 'Иргэний хэрэг',
                 ),
               ),
