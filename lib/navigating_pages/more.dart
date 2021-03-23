@@ -112,21 +112,18 @@ class _MyStatefulWidgetState extends State<More> {
                 height: closeTopContainer ? 0 : categoryHeight,
                 child: Column(
                   children: [
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
-                        child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  СХЕМ ЗУРАГ",
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              color: Color(0xff23233c),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                              fontStyle: FontStyle.normal,
-                            )),
-                      ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+                      child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  СХЕМ ЗУРАГ",
+                          style: TextStyle(
+                            fontFamily: 'Roboto',
+                            color: Color(0xff23233c),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.normal,
+                          )),
                     ),
-                    Expanded(flex: 6, child: CategoriesScroller()),
+                    Expanded(child: CategoriesScroller()),
                   ],
                 ),
               ),
