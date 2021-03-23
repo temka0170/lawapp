@@ -102,22 +102,6 @@ class _NBoxState extends State<NBox> {
               itemExtent: 120.0,
               children: <Widget>[
                 BoxRow(
-                  index1: 28,
-                  index2: 29,
-                  desc1: "Таны үүрэг",
-                  desc2: "Таны эрх",
-                  img1: "assets/images/ajilsanjil.png",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-                BoxRow(
-                  index1: 26,
-                  index2: 27,
-                  desc1: "НЭХЭМЖЛЭГЧ ГЭДЭГ НЬ",
-                  desc2: "НЭХЭМЖЛЭЛ ГЭДЭГ НЬ",
-                  img1: "assets/images/ajilsanjil.png",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-                BoxRow(
                   index1: 0,
                   index2: 1,
                   desc1: "Гэм хор",

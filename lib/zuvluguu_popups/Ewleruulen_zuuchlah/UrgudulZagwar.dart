@@ -1,29 +1,30 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'IrgenHereg_Sub/3rdInvolve.dart';
-import 'IrgenHereg_Sub/Hariutsagch.dart';
-import 'IrgenHereg_Sub/Nehemjlel.dart';
-import 'IrgenHereg_Sub/Sxem.dart';
+import 'package:project_1/custom_func_data/data.dart';
+import '../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class SubIrgenBox extends StatefulWidget {
+class UZBox extends StatefulWidget {
   String title;
 
-  SubIrgenBox({Key key, this.title}) : super(key: key);
+  UZBox({Key key, this.title}) : super(key: key);
 
   @override
-  _SubIrgenBoxState createState() => _SubIrgenBoxState();
+  _UZState createState() => _UZState();
 }
 
-class _SubIrgenBoxState extends State<SubIrgenBox> {
+class _UZState extends State<UZBox> {
+  List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
+
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
+    morepopups = morePopups();
   }
 
   @override
@@ -113,9 +114,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return NBox(
-                              title: "Нэхэмжлэгч",
-                            );
+                            return morepopups[40];
                           });
                     },
                     child: Padding(
@@ -125,7 +124,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Нэхэмжлэгч"),
+                          child: Text("Жищээ Загвар"),
                         ),
                       ),
                     ),
@@ -139,9 +138,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return HBox(
-                              title: "Хариуцагч",
-                            );
+                            return morepopups[41];
                           });
                     },
                     child: Padding(
@@ -151,59 +148,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Хариуцагч"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return IrgenBox(
-                              title: "Гуравдагч Этгээд",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Гуравдагч Этгээд"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return SxemBox(
-                              title: "СХЕМ ЗУРАГ",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("СХЕМ ЗУРАГ"),
+                          child: Text("Загвар татах"),
                         ),
                       ),
                     ),

@@ -3,7 +3,7 @@ import 'package:project_1/navigating_pages/more.dart';
 import 'package:project_1/zuvluguu_popups/EruugiinHereg.dart';
 import 'package:project_1/zuvluguu_popups/NudeeNee.dart';
 import 'package:project_1/zuvluguu_popups/ZahirgaaniiHereg.dart';
-import 'package:project_1/zuvluguu_popups/firstIrgen.dart';
+import 'package:project_1/zuvluguu_popups/IrgenHereg_Sub/firstIrgen.dart';
 
 // import 'calculator_popup.dart';
 // import 'data.dart';
