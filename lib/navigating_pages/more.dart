@@ -182,35 +182,52 @@ class BoxItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double categoryHeight = MediaQuery.of(context).size.height * 0.3 - 50;
-    return Container(
-      padding: EdgeInsets.only(top: 5.0),
-      width: MediaQuery.of(context).size.width * 0.36,
-      height: categoryHeight,
-      child: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(6.0),
-            child: GestureDetector(
-              onTap: () {
-                showDialog(
-                    context: context,
-                    barrierDismissible: true,
-                    builder: (BuildContext context) {
-                      //links popups to its button
-                      return popup;
-                    });
-              },
-              child: ClipRRect(
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+            context: context,
+            barrierDismissible: true,
+            builder: (BuildContext context) {
+              //links popups to its button
+              return popup;
+            });
+      },
+      child: Container(
+        padding: EdgeInsets.only(top: 5.0),
+        width: MediaQuery.of(context).size.width * 0.36,
+        height: categoryHeight,
+        child: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: Image.asset(
                   imgPath,
                   fit: BoxFit.fill,
                 ),
               ),
-            ),
+              Positioned.fill(
+                left: 0,
+                top: 0,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 6.0, left: 6.0),
+                  child: Text(
+                    textBox,
+                    style: TextStyle(
+                      fontFamily: 'SFProDisplay',
+                      color: Color(0xff23233c),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
