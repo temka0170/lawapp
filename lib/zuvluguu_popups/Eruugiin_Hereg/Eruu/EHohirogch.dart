@@ -1,22 +1,22 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import 'package:project_1/zuvluguu_popups/Eruugiin%20Hereg/Zurchil/ZHolbogdogch.dart';
+import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Eruu/hohirogch_erh.dart';
 import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class SubZurchilBox extends StatefulWidget {
+class EHohirogchBox extends StatefulWidget {
   String title;
 
-  SubZurchilBox({Key key, this.title}) : super(key: key);
+  EHohirogchBox({Key key, this.title}) : super(key: key);
 
   @override
-  _SZState createState() => _SZState();
+  _EHohirogchBoxState createState() => _EHohirogchBoxState();
 }
 
-class _SZState extends State<SubZurchilBox> {
+class _EHohirogchBoxState extends State<EHohirogchBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -114,7 +114,7 @@ class _SZState extends State<SubZurchilBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[46];
+                            return morepopups[69];
                           });
                     },
                     child: Padding(
@@ -124,7 +124,7 @@ class _SZState extends State<SubZurchilBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Зөрчил шалгах субъект"),
+                          child: Text("Таны үүрэг"),
                         ),
                       ),
                     ),
@@ -138,8 +138,8 @@ class _SZState extends State<SubZurchilBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ZHolbogdBox(
-                              title: "Холбогдогч",
+                            return HohirogchErh(
+                              title: "Таны эрх",
                             );
                           });
                     },
@@ -150,7 +150,7 @@ class _SZState extends State<SubZurchilBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Холбогдогч"),
+                          child: Text("Таны эрх"),
                         ),
                       ),
                     ),
@@ -164,9 +164,7 @@ class _SZState extends State<SubZurchilBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ZHohirogchBox(
-                              title: "Хохирогч",
-                            );
+                            return morepopups[73];
                           });
                     },
                     child: Padding(
@@ -176,7 +174,79 @@ class _SZState extends State<SubZurchilBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Хохирогч"),
+                          child: Text("АТГ-д хандах хэрэг"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[74];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Гомдлын Загвар"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[75];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Хохирогч гэдэг нь"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[76];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Цагдаагийн газруудын хаяг"),
                         ),
                       ),
                     ),

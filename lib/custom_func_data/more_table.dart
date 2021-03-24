@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/navigating_pages/more.dart';
-import 'package:project_1/zuvluguu_popups/Eruugiin%20Hereg/Eruu%20Hereg%20Sub/EruugiinHereg.dart';
+import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Eruu_Hereg_Sub/EruugiinHereg.dart';
 import 'package:project_1/zuvluguu_popups/Irgenii%20Hereg/IrgenHereg_Sub/firstIrgen.dart';
 import 'package:project_1/zuvluguu_popups/NudeeNee.dart';
 import 'package:project_1/zuvluguu_popups/ZahirgaaniiHereg.dart';

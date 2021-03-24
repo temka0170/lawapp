@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
+import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Eruu/EHohirogch.dart';
+import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Eruu/EHolbogdogch.dart';
 import '../../zuvluguupopup.dart';
 
 // ignore: must_be_immutable
@@ -111,9 +113,9 @@ class _SEState extends State<SubEruuBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            // return ESBox(
-                            //   title: "Эвлэрүүлэн Зуучлах",
-                            // );
+                            return EHolbogdBox(
+                              title: "Холбогдогч",
+                            );
                           });
                     },
                     child: Padding(
@@ -137,9 +139,9 @@ class _SEState extends State<SubEruuBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            // return ESBox(
-                            //   title: "Эвлэрүүлэн Зуучлах",
-                            // );
+                            return EHohirogchBox(
+                              title: "Хохирогч",
+                            );
                           });
                     },
                     child: Padding(
@@ -163,9 +165,7 @@ class _SEState extends State<SubEruuBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            // return SubIrgenBox(
-                            //   title: "Шүүхийн Маргаан",
-                            // );
+                            return morepopups[55];
                           });
                     },
                     child: Padding(

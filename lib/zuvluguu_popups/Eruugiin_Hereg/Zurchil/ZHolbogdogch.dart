@@ -1,29 +1,30 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-
-import 'SubZurchil.dart';
-
-//idx 16,17,18,19
-
+import 'package:project_1/custom_func_data/data.dart';
+import '../../zuvluguupopup.dart';
+import 'ZLEG.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class FirstEruuBox extends StatefulWidget {
+class ZHolbogdBox extends StatefulWidget {
   String title;
 
-  FirstEruuBox({Key key, this.title}) : super(key: key);
+  ZHolbogdBox({Key key, this.title}) : super(key: key);
 
   @override
-  _FirstEruuBoxState createState() => _FirstEruuBoxState();
+  _SHolbogdState createState() => _SHolbogdState();
 }
 
-class _FirstEruuBoxState extends State<FirstEruuBox> {
+class _SHolbogdState extends State<ZHolbogdBox> {
+  List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
+
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
+    morepopups = morePopups();
   }
 
   @override
@@ -113,9 +114,7 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return SubZurchilBox(
-                              title: "Зөрчлийн Хэрэг",
-                            );
+                            return ZLEGBox(title: "Таний эрх, үүрэг");
                           });
                     },
                     child: Padding(
@@ -125,7 +124,7 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Зөрчлийн Хэрэг"),
+                          child: Text("Таний эрх, үүрэг"),
                         ),
                       ),
                     ),
@@ -139,9 +138,7 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            // return ESBox(
-                            //   title: "Эвлэрүүлэн Зуучлах",
-                            // );
+                            return morepopups[47];
                           });
                     },
                     child: Padding(
@@ -151,7 +148,7 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Эрүүгийн Хэрэг"),
+                          child: Text("Холбогдогч Гэж"),
                         ),
                       ),
                     ),

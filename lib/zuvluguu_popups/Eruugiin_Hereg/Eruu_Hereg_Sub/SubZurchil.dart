@@ -1,22 +1,23 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import 'package:project_1/zuvluguu_popups/Eruugiin%20Hereg/Zurchil/ZLEG.dart';
+import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Zurchil/ZHohirogch.dart';
+import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Zurchil/ZHolbogdogch.dart';
 import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class ZHolbogdBox extends StatefulWidget {
+class SubZurchilBox extends StatefulWidget {
   String title;
 
-  ZHolbogdBox({Key key, this.title}) : super(key: key);
+  SubZurchilBox({Key key, this.title}) : super(key: key);
 
   @override
-  _SHolbogdState createState() => _SHolbogdState();
+  _SZState createState() => _SZState();
 }
 
-class _SHolbogdState extends State<ZHolbogdBox> {
+class _SZState extends State<SubZurchilBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -114,7 +115,7 @@ class _SHolbogdState extends State<ZHolbogdBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ZLEGBox(title: "Таний эрх, үүрэг");
+                            return morepopups[46];
                           });
                     },
                     child: Padding(
@@ -124,7 +125,7 @@ class _SHolbogdState extends State<ZHolbogdBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Text("Зөрчил шалгах субъект"),
                         ),
                       ),
                     ),
@@ -138,7 +139,9 @@ class _SHolbogdState extends State<ZHolbogdBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[47];
+                            return ZHolbogdBox(
+                              title: "Холбогдогч",
+                            );
                           });
                     },
                     child: Padding(
@@ -148,7 +151,33 @@ class _SHolbogdState extends State<ZHolbogdBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Холбогдогч Гэж"),
+                          child: Text("Холбогдогч"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return ZHohirogchBox(
+                              title: "Хохирогч",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Хохирогч"),
                         ),
                       ),
                     ),
