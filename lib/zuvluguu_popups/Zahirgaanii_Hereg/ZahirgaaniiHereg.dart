@@ -1,9 +1,14 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'boxRow_buttons.dart';
+import 'package:project_1/zuvluguu_popups/Zahirgaanii_Hereg/Uridchilah.dart';
 
-//administrative case popup
+import 'Shuuh.dart';
+
+//idx 16,17,18,19
+
+// import 'boxRow_buttons.dart';
+
+//civil case popup
 // ignore: must_be_immutable
 class ZahirgaaBox extends StatefulWidget {
   String title;
@@ -24,7 +29,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
 
   @override
   Widget build(BuildContext context) {
-    //lurred background
+    //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
       child: Dialog(
@@ -39,13 +44,14 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
   }
 
   contentBox(context) {
+    double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
         Align(
           alignment: Alignment.topRight,
           child: Container(
-            width: 30.0,
-            height: 30.0,
+            width: height * 0.04,
+            height: height * 0.04,
             decoration: new BoxDecoration(
               color: Color(0xffffffff),
               borderRadius: BorderRadius.circular(8),
@@ -84,7 +90,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
-            height: 555,
+            height: height * 0.69,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13.0),
               color: Color(0xfffff4e8).withOpacity(0.88),
@@ -97,33 +103,60 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                 ),
               ],
             ),
-            child: ListView(
-              padding: EdgeInsets.only(top: 23.0),
-              itemExtent: 120.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                //index value links to what popup should show when clicked,
-                //boxrow has 2 buttons in 1 row so it requires atleast index1,desc1,img1
-                //if index2,desc2,img2 is null shows only 1 button with index1 values
-                BoxRow(
-                  index1: 20,
-                  index2: 21,
-                  desc1: "Газрын маргаан",
-                  desc2: "Татварын маргаан",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return Uridchilah(
+                              title: "УРЬДЧИЛАН ШИЙДВЭРЛЭХ ШАТ",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("УРЬДЧИЛАН ШИЙДВЭРЛЭХ ШАТ"),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-                BoxRow(
-                  index1: 22,
-                  index2: 23,
-                  desc1: "Тендерийн маргаан",
-                  desc2: "Төрийн албаны маргаан",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-                BoxRow(
-                  index1: 24,
-                  desc1: "Улсын бүртгэлийн маргаан",
-                  img1: "assets/images/galaxy.jpg",
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return ShuuhBox(
+                              title: "ШҮҮХИЙН ШАТ",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("ШҮҮХИЙН ШАТ"),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
