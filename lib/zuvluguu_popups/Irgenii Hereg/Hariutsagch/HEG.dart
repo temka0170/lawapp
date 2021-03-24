@@ -1,21 +1,21 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NEGBox extends StatefulWidget {
+class HEGBox extends StatefulWidget {
   String title;
 
-  NEGBox({Key key, this.title}) : super(key: key);
+  HEGBox({Key key, this.title}) : super(key: key);
 
   @override
-  _NEGState createState() => _NEGState();
+  _HEGState createState() => _HEGState();
 }
 
-class _NEGState extends State<NEGBox> {
+class _HEGState extends State<HEGBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -113,7 +113,7 @@ class _NEGState extends State<NEGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[29];
+                            return morepopups[31];
                           });
                     },
                     child: Padding(
@@ -137,7 +137,7 @@ class _NEGState extends State<NEGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[28];
+                            return morepopups[30];
                           });
                     },
                     child: Padding(

@@ -1,31 +1,26 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
-import 'HEG.dart';
+import '../Ewleruulen_zuuchlah/EvleruulehSub.dart';
+import 'SubIrgen.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class HSBox extends StatefulWidget {
+class FirstIrgenBox extends StatefulWidget {
   String title;
 
-  HSBox({Key key, this.title}) : super(key: key);
+  FirstIrgenBox({Key key, this.title}) : super(key: key);
 
   @override
-  _HSState createState() => _HSState();
+  _FirstIrgenBoxState createState() => _FirstIrgenBoxState();
 }
 
-class _HSState extends State<HSBox> {
-  List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
-
+class _FirstIrgenBoxState extends State<FirstIrgenBox> {
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
   }
 
   @override
@@ -115,8 +110,8 @@ class _HSState extends State<HSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return HEGBox(
-                              title: "Таний эрх, үүрэг",
+                            return SubIrgenBox(
+                              title: "Шүүхийн Маргаан",
                             );
                           });
                     },
@@ -127,7 +122,7 @@ class _HSState extends State<HSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Text("Шүүхийн Маргаан"),
                         ),
                       ),
                     ),
@@ -141,7 +136,9 @@ class _HSState extends State<HSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[32];
+                            return ESBox(
+                              title: "Эвлэрүүлэн Зуучлах",
+                            );
                           });
                     },
                     child: Padding(
@@ -151,31 +148,7 @@ class _HSState extends State<HSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("ХАРИУ ТАЙЛБАР"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[33];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("ХАРИУЦАГЧ ГЭДЭГ НЬ"),
+                          child: Text("Эвлэрүүлэн Зуучлах"),
                         ),
                       ),
                     ),

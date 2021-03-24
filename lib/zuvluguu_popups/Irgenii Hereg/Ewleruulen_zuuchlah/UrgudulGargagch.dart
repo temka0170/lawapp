@@ -2,21 +2,22 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import '../../zuvluguupopup.dart';
+import 'UrgudulZagwar.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class URBox extends StatefulWidget {
+class UGBox extends StatefulWidget {
   String title;
 
-  URBox({Key key, this.title}) : super(key: key);
+  UGBox({Key key, this.title}) : super(key: key);
 
   @override
-  _URState createState() => _URState();
+  _UGState createState() => _UGState();
 }
 
-class _URState extends State<URBox> {
+class _UGState extends State<UGBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -114,7 +115,7 @@ class _URState extends State<URBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[37];
+                            return morepopups[35];
                           });
                     },
                     child: Padding(
@@ -138,7 +139,7 @@ class _URState extends State<URBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[36];
+                            return morepopups[34];
                           });
                     },
                     child: Padding(
@@ -154,6 +155,48 @@ class _URState extends State<URBox> {
                     ),
                   ),
                 ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return UZBox(
+                              title: "Өргөдөлийн загвар",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Өргөдөлийн загвар"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                // BoxRow(
+                //   index1: 0,
+                //   index2: 1,
+                //   desc1: "Гуравдагч Этгээд",
+                //   desc2: "Нэхэмжлэгч",
+                //   img1: "assets/images/ajilsanjil.png",
+                //   img2: "assets/images/fired.png",
+                // ),
+                // BoxRow(
+                //   index1: 2,
+                //   index2: 3,
+                //   desc1: "Хариуцагч",
+                //   desc2: "Эвлэрүүлэн зуучлал",
+                //   img1: "assets/images/care.png",
+                //   img2: "assets/images/danger.png",
+                // ),
               ],
             ),
           ),

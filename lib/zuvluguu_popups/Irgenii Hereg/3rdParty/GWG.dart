@@ -1,23 +1,21 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import 'package:project_1/zuvluguu_popups/3rdParty/GWG.dart';
-import '../zuvluguupopup.dart';
-import 'GEG.dart';
+import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class GSBox extends StatefulWidget {
+class GWGBox extends StatefulWidget {
   String title;
 
-  GSBox({Key key, this.title}) : super(key: key);
+  GWGBox({Key key, this.title}) : super(key: key);
 
   @override
-  _GSState createState() => _GSState();
+  _GWGState createState() => _GWGState();
 }
 
-class _GSState extends State<GSBox> {
+class _GWGState extends State<GWGBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -115,9 +113,7 @@ class _GSState extends State<GSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return GEGBox(
-                              title: "Таний эрх, үүрэг",
-                            );
+                            return morepopups[43];
                           });
                     },
                     child: Padding(
@@ -127,7 +123,12 @@ class _GSState extends State<GSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Text(
+                                "Бие даасан шаардлага гаргаагүй гуравдагч этгээд"),
+                          ),
                         ),
                       ),
                     ),
@@ -141,9 +142,7 @@ class _GSState extends State<GSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return GWGBox(
-                              title: "3-дагч этгээд гэж хэн бэ?",
-                            );
+                            return morepopups[42];
                           });
                     },
                     child: Padding(
@@ -153,7 +152,12 @@ class _GSState extends State<GSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("3-дагч этгээд гэж хэн бэ?"),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Text(
+                                "Бие даасан шаардлага гаргасан гуравдагч этгээд"),
+                          ),
                         ),
                       ),
                     ),

@@ -1,21 +1,22 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class GWGBox extends StatefulWidget {
+class URBox extends StatefulWidget {
   String title;
 
-  GWGBox({Key key, this.title}) : super(key: key);
+  URBox({Key key, this.title}) : super(key: key);
 
   @override
-  _GWGState createState() => _GWGState();
+  _URState createState() => _URState();
 }
 
-class _GWGState extends State<GWGBox> {
+class _URState extends State<URBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -113,7 +114,7 @@ class _GWGState extends State<GWGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[43];
+                            return morepopups[37];
                           });
                     },
                     child: Padding(
@@ -123,12 +124,7 @@ class _GWGState extends State<GWGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Text(
-                                "Бие даасан шаардлага гаргаагүй гуравдагч этгээд"),
-                          ),
+                          child: Text("Таний эрх"),
                         ),
                       ),
                     ),
@@ -142,7 +138,7 @@ class _GWGState extends State<GWGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[42];
+                            return morepopups[36];
                           });
                     },
                     child: Padding(
@@ -152,12 +148,7 @@ class _GWGState extends State<GWGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Text(
-                                "Бие даасан шаардлага гаргасан гуравдагч этгээд"),
-                          ),
+                          child: Text("Таний үүрэг"),
                         ),
                       ),
                     ),

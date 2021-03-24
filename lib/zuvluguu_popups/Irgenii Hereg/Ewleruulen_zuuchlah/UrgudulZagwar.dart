@@ -1,21 +1,22 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class GEGBox extends StatefulWidget {
+class UZBox extends StatefulWidget {
   String title;
 
-  GEGBox({Key key, this.title}) : super(key: key);
+  UZBox({Key key, this.title}) : super(key: key);
 
   @override
-  _GEGState createState() => _GEGState();
+  _UZState createState() => _UZState();
 }
 
-class _GEGState extends State<GEGBox> {
+class _UZState extends State<UZBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -113,7 +114,7 @@ class _GEGState extends State<GEGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[45];
+                            return morepopups[40];
                           });
                     },
                     child: Padding(
@@ -123,7 +124,7 @@ class _GEGState extends State<GEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх"),
+                          child: Text("Жищээ Загвар"),
                         ),
                       ),
                     ),
@@ -137,7 +138,7 @@ class _GEGState extends State<GEGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[44];
+                            return morepopups[41];
                           });
                     },
                     child: Padding(
@@ -147,12 +148,28 @@ class _GEGState extends State<GEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний үүрэг"),
+                          child: Text("Загвар татах"),
                         ),
                       ),
                     ),
                   ),
                 ),
+                // BoxRow(
+                //   index1: 0,
+                //   index2: 1,
+                //   desc1: "Гуравдагч Этгээд",
+                //   desc2: "Нэхэмжлэгч",
+                //   img1: "assets/images/ajilsanjil.png",
+                //   img2: "assets/images/fired.png",
+                // ),
+                // BoxRow(
+                //   index1: 2,
+                //   index2: 3,
+                //   desc1: "Хариуцагч",
+                //   desc2: "Эвлэрүүлэн зуучлал",
+                //   img1: "assets/images/care.png",
+                //   img2: "assets/images/danger.png",
+                // ),
               ],
             ),
           ),

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:project_1/zuvluguu_popups/3rdParty/GSub.dart';
+import 'package:project_1/zuvluguu_popups/Irgenii%20Hereg/3rdParty/GSub.dart';
 import '../Hariutsagch/HSub.dart';
 import 'Sxem.dart';
 import '../Nehemjlel/NehemjlelSub.dart';

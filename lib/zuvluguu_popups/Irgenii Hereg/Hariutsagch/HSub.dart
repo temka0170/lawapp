@@ -2,22 +2,22 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
-import 'UrgudulZagwar.dart';
+import '../../zuvluguupopup.dart';
+import 'HEG.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class UGBox extends StatefulWidget {
+class HSBox extends StatefulWidget {
   String title;
 
-  UGBox({Key key, this.title}) : super(key: key);
+  HSBox({Key key, this.title}) : super(key: key);
 
   @override
-  _UGState createState() => _UGState();
+  _HSState createState() => _HSState();
 }
 
-class _UGState extends State<UGBox> {
+class _HSState extends State<HSBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -115,56 +115,8 @@ class _UGState extends State<UGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[35];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Таний эрх"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[34];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Таний үүрэг"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return UZBox(
-                              title: "Өргөдөлийн загвар",
+                            return HEGBox(
+                              title: "Таний эрх, үүрэг",
                             );
                           });
                     },
@@ -175,28 +127,60 @@ class _UGState extends State<UGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Өргөдөлийн загвар"),
+                          child: Text("Таний эрх, үүрэг"),
                         ),
                       ),
                     ),
                   ),
                 ),
-                // BoxRow(
-                //   index1: 0,
-                //   index2: 1,
-                //   desc1: "Гуравдагч Этгээд",
-                //   desc2: "Нэхэмжлэгч",
-                //   img1: "assets/images/ajilsanjil.png",
-                //   img2: "assets/images/fired.png",
-                // ),
-                // BoxRow(
-                //   index1: 2,
-                //   index2: 3,
-                //   desc1: "Хариуцагч",
-                //   desc2: "Эвлэрүүлэн зуучлал",
-                //   img1: "assets/images/care.png",
-                //   img2: "assets/images/danger.png",
-                // ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[32];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("ХАРИУ ТАЙЛБАР"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[33];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("ХАРИУЦАГЧ ГЭДЭГ НЬ"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

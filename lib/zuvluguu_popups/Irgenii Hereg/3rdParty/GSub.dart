@@ -1,21 +1,23 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import '../../zuvluguupopup.dart';
+import 'GEG.dart';
+import 'GWG.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NWHBox extends StatefulWidget {
+class GSBox extends StatefulWidget {
   String title;
 
-  NWHBox({Key key, this.title}) : super(key: key);
+  GSBox({Key key, this.title}) : super(key: key);
 
   @override
-  _NWHState createState() => _NWHState();
+  _GSState createState() => _GSState();
 }
 
-class _NWHState extends State<NWHBox> {
+class _GSState extends State<GSBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -113,7 +115,9 @@ class _NWHState extends State<NWHBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[26];
+                            return GEGBox(
+                              title: "Таний эрх, үүрэг",
+                            );
                           });
                     },
                     child: Padding(
@@ -123,7 +127,7 @@ class _NWHState extends State<NWHBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("НЭХЭМЖЛЭГЧ ГЭДЭГ НЬ"),
+                          child: Text("Таний эрх, үүрэг"),
                         ),
                       ),
                     ),
@@ -137,7 +141,9 @@ class _NWHState extends State<NWHBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[ 27];
+                            return GWGBox(
+                              title: "3-дагч этгээд гэж хэн бэ?",
+                            );
                           });
                     },
                     child: Padding(
@@ -147,7 +153,7 @@ class _NWHState extends State<NWHBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("НЭХЭМЖЛЭЛ ГЭДЭГ НЬ"),
+                          child: Text("3-дагч этгээд гэж хэн бэ?"),
                         ),
                       ),
                     ),

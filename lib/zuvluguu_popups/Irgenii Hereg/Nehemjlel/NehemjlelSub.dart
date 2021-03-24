@@ -1,21 +1,25 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import '../../zuvluguupopup.dart';
+import 'ErhUureg.dart';
+import 'NWH.dart';
+import 'Nehemjlel.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NWHBox extends StatefulWidget {
+class NSBox extends StatefulWidget {
   String title;
 
-  NWHBox({Key key, this.title}) : super(key: key);
+  NSBox({Key key, this.title}) : super(key: key);
 
   @override
-  _NWHState createState() => _NWHState();
+  _NSState createState() => _NSState();
 }
 
-class _NWHState extends State<NWHBox> {
+class _NSState extends State<NSBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -113,7 +117,9 @@ class _NWHState extends State<NWHBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[26];
+                            return NWHBox(
+                              title: "Нэхэмжлэгч гэж хэн бэ?",
+                            );
                           });
                     },
                     child: Padding(
@@ -123,7 +129,7 @@ class _NWHState extends State<NWHBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("НЭХЭМЖЛЭГЧ ГЭДЭГ НЬ"),
+                          child: Text("Нэхэмжлэгч гэж хэн бэ?"),
                         ),
                       ),
                     ),
@@ -137,7 +143,9 @@ class _NWHState extends State<NWHBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[ 27];
+                            return NBox(
+                              title: "Нэхэмжлэлийн загварууд",
+                            );
                           });
                     },
                     child: Padding(
@@ -147,7 +155,33 @@ class _NWHState extends State<NWHBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("НЭХЭМЖЛЭЛ ГЭДЭГ НЬ"),
+                          child: Text("Нэхэмжлэлийн загварууд"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return NEGBox(
+                              title: "Таний эрх, үүрэг",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Таний эрх, үүрэг"),
                         ),
                       ),
                     ),

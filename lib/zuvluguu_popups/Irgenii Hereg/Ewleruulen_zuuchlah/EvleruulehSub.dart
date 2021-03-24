@@ -2,21 +2,24 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import 'ESxem.dart';
+import '../../zuvluguupopup.dart';
+import 'UrgudulGargagch.dart';
+import 'Urigdagch.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class UZBox extends StatefulWidget {
+class ESBox extends StatefulWidget {
   String title;
 
-  UZBox({Key key, this.title}) : super(key: key);
+  ESBox({Key key, this.title}) : super(key: key);
 
   @override
-  _UZState createState() => _UZState();
+  _ESState createState() => _ESState();
 }
 
-class _UZState extends State<UZBox> {
+class _ESState extends State<ESBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -114,7 +117,9 @@ class _UZState extends State<UZBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[40];
+                            return UGBox(
+                              title: "Өргөдөл гаргагч",
+                            );
                           });
                     },
                     child: Padding(
@@ -124,7 +129,7 @@ class _UZState extends State<UZBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Жищээ Загвар"),
+                          child: Text("Өргөдөл гаргагч"),
                         ),
                       ),
                     ),
@@ -138,7 +143,9 @@ class _UZState extends State<UZBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[41];
+                            return URBox(
+                              title: "Уригдагч тал",
+                            );
                           });
                     },
                     child: Padding(
@@ -148,7 +155,81 @@ class _UZState extends State<UZBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Загвар татах"),
+                          child: Text("Уригдагч тал"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return ESxemBox(
+                              title: "СХЕМ ЗУРАГ",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("СХЕМ ЗУРАГ"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[39];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Эвлэрлийн гэрээ"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[38];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Гэрээний гүйцэтгэл хангах"),
                         ),
                       ),
                     ),

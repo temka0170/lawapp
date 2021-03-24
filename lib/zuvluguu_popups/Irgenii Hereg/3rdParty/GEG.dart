@@ -1,25 +1,21 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import 'package:project_1/zuvluguu_popups/Nehemjlel/NWH.dart';
-import '../zuvluguupopup.dart';
-import 'ErhUureg.dart';
-import 'Nehemjlel.dart';
+import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NSBox extends StatefulWidget {
+class GEGBox extends StatefulWidget {
   String title;
 
-  NSBox({Key key, this.title}) : super(key: key);
+  GEGBox({Key key, this.title}) : super(key: key);
 
   @override
-  _NSState createState() => _NSState();
+  _GEGState createState() => _GEGState();
 }
 
-class _NSState extends State<NSBox> {
+class _GEGState extends State<GEGBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -117,9 +113,7 @@ class _NSState extends State<NSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return NWHBox(
-                              title: "Нэхэмжлэгч гэж хэн бэ?",
-                            );
+                            return morepopups[45];
                           });
                     },
                     child: Padding(
@@ -129,7 +123,7 @@ class _NSState extends State<NSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Нэхэмжлэгч гэж хэн бэ?"),
+                          child: Text("Таний эрх"),
                         ),
                       ),
                     ),
@@ -143,9 +137,7 @@ class _NSState extends State<NSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return NBox(
-                              title: "Нэхэмжлэлийн загварууд",
-                            );
+                            return morepopups[44];
                           });
                     },
                     child: Padding(
@@ -155,33 +147,7 @@ class _NSState extends State<NSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Нэхэмжлэлийн загварууд"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return NEGBox(
-                              title: "Таний эрх, үүрэг",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Text("Таний үүрэг"),
                         ),
                       ),
                     ),

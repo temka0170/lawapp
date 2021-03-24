@@ -1,25 +1,19 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import 'ESxem.dart';
-import '../zuvluguupopup.dart';
-import 'UrgudulGargagch.dart';
-import 'Urigdagch.dart';
-// import 'boxRow_buttons.dart';
+import '../../zuvluguupopup.dart';
 
-//civil case popup
 // ignore: must_be_immutable
-class ESBox extends StatefulWidget {
+class SubEruuBox extends StatefulWidget {
   String title;
 
-  ESBox({Key key, this.title}) : super(key: key);
+  SubEruuBox({Key key, this.title}) : super(key: key);
 
   @override
-  _ESState createState() => _ESState();
+  _SEState createState() => _SEState();
 }
 
-class _ESState extends State<ESBox> {
+class _SEState extends State<SubEruuBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -117,9 +111,9 @@ class _ESState extends State<ESBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return UGBox(
-                              title: "Өргөдөл гаргагч",
-                            );
+                            // return ESBox(
+                            //   title: "Эвлэрүүлэн Зуучлах",
+                            // );
                           });
                     },
                     child: Padding(
@@ -129,7 +123,7 @@ class _ESState extends State<ESBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Өргөдөл гаргагч"),
+                          child: Text("Холбогдогч"),
                         ),
                       ),
                     ),
@@ -143,9 +137,9 @@ class _ESState extends State<ESBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return URBox(
-                              title: "Уригдагч тал",
-                            );
+                            // return ESBox(
+                            //   title: "Эвлэрүүлэн Зуучлах",
+                            // );
                           });
                     },
                     child: Padding(
@@ -155,7 +149,7 @@ class _ESState extends State<ESBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Уригдагч тал"),
+                          child: Text("Хохирогч"),
                         ),
                       ),
                     ),
@@ -169,9 +163,9 @@ class _ESState extends State<ESBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ESxemBox(
-                              title: "СХЕМ ЗУРАГ",
-                            );
+                            // return SubIrgenBox(
+                            //   title: "Шүүхийн Маргаан",
+                            // );
                           });
                     },
                     child: Padding(
@@ -181,76 +175,12 @@ class _ESState extends State<ESBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("СХЕМ ЗУРАГ"),
+                          child: Text("Ажиллагааны хугацаа"),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[39];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Эвлэрлийн гэрээ"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[38];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Гэрээний гүйцэтгэл хангах"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                // BoxRow(
-                //   index1: 0,
-                //   index2: 1,
-                //   desc1: "Гуравдагч Этгээд",
-                //   desc2: "Нэхэмжлэгч",
-                //   img1: "assets/images/ajilsanjil.png",
-                //   img2: "assets/images/fired.png",
-                // ),
-                // BoxRow(
-                //   index1: 2,
-                //   index2: 3,
-                //   desc1: "Хариуцагч",
-                //   desc2: "Эвлэрүүлэн зуучлал",
-                //   img1: "assets/images/care.png",
-                //   img2: "assets/images/danger.png",
-                // ),
               ],
             ),
           ),

@@ -1,21 +1,22 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../zuvluguupopup.dart';
+import '../../zuvluguupopup.dart';
+import 'ZHEG.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class HEGBox extends StatefulWidget {
+class ZHohirogchBox extends StatefulWidget {
   String title;
 
-  HEGBox({Key key, this.title}) : super(key: key);
+  ZHohirogchBox({Key key, this.title}) : super(key: key);
 
   @override
-  _HEGState createState() => _HEGState();
+  _SHohirogchState createState() => _SHohirogchState();
 }
 
-class _HEGState extends State<HEGBox> {
+class _SHohirogchState extends State<ZHohirogchBox> {
   List<ZuvluguuPopup> morepopups = new List<ZuvluguuPopup>();
 
   @override
@@ -113,7 +114,7 @@ class _HEGState extends State<HEGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[31];
+                            return ZHEGBox(title: "Таний эрх, үүрэг");
                           });
                     },
                     child: Padding(
@@ -123,7 +124,7 @@ class _HEGState extends State<HEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх"),
+                          child: Text("Таний эрх, үүрэг"),
                         ),
                       ),
                     ),
@@ -137,7 +138,7 @@ class _HEGState extends State<HEGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[30];
+                            return morepopups[52];
                           });
                     },
                     child: Padding(
@@ -147,7 +148,55 @@ class _HEGState extends State<HEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний үүрэг"),
+                          child: Text("Гомдлын Загвар"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[53];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Нийслэл дэх цагдаагийн газрын хаяг"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[54];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("Хохирогч гэдэг нь"),
                         ),
                       ),
                     ),
