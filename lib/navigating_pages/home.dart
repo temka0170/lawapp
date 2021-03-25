@@ -2,9 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/home_carousel.dart';
 import 'package:project_1/custom_func_data/home_table.dart';
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:project_1/custom_func_data/home_team_carousel.dart';
+import 'package:project_1/custom_func_data/team_carousel_items.dart';
 
 class MyHome extends StatefulWidget {
   MyHome({Key key}) : super(key: key);
@@ -17,6 +15,7 @@ class _MyStatefulWidgetState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    double maxWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         color: Color(0xfff4f5fa),
@@ -44,25 +43,10 @@ class _MyStatefulWidgetState extends State<MyHome> {
                     fontStyle: FontStyle.normal,
                   )),
             ),
-            teamStack(context, height),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 10.0,
-              ),
-              child: Container(
-                alignment: Alignment.center,
-                child: Text(
-                  "Э.АМАРХҮҮ\nХУУЛЬЧ, ӨМГӨӨЛӨГЧ",
-                  style: TextStyle(
-                    fontFamily: 'SFProDisplay',
-                    color: Color(0xff23233c),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+            Container(
+              width: maxWidth,
+              height: height * 0.18,
+              child: TeamCarousel(),
             ),
             //content table of home page
             HomeContainer(),
@@ -70,181 +54,5 @@ class _MyStatefulWidgetState extends State<MyHome> {
         ),
       ),
     );
-  }
-
-//home page team stack
-  Padding teamStack(BuildContext context, double height) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10.0),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        child: Stack(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 20.0,
-                top: 5.0,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  buildShowGeneralDialog(context, height, 2);
-                },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey[350],
-                  radius: 43.0,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/person4.jpg'),
-                    radius: 38.0,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 300.0,
-                top: 5.0,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  buildShowGeneralDialog(context, height, 4);
-                },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey[350],
-                  radius: 43.0,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/person1.jpg'),
-                    radius: 38.0,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 90.0,
-                top: 3.0,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  buildShowGeneralDialog(context, height, 1);
-                },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey[350],
-                  radius: 46.0,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/person2.jfif'),
-                    radius: 41.0,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 230.0,
-                top: 3.0,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  buildShowGeneralDialog(context, height, 3);
-                },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey[350],
-                  radius: 46.0,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/person3.jpg'),
-                    radius: 41.0,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 160.0,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  buildShowGeneralDialog(context, height, 0);
-                },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey[350],
-                  radius: 50.0,
-                  child: CircleAvatar(
-                    backgroundImage:
-                        AssetImage('assets/images/LawyerAmraa.jpg'),
-                    radius: 45.0,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-//team popup
-  Future buildShowGeneralDialog(BuildContext context, double height, int idx) {
-    // ignore: unused_local_variable
-    int _current;
-    return showGeneralDialog(
-        context: context,
-        barrierDismissible: true,
-        barrierLabel:
-            MaterialLocalizations.of(context).modalBarrierDismissLabel,
-        barrierColor: Colors.black45,
-        transitionDuration: const Duration(milliseconds: 200),
-        pageBuilder: (BuildContext buildContext, Animation animation,
-            Animation secondaryAnimation) {
-          return BackdropFilter(
-            filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: height,
-              child: SizedBox.expand(
-                child: Column(children: [
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 28.0, right: 28.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Container(
-                            decoration: new BoxDecoration(
-                              color: Color(0xffffffff).withOpacity(0.7),
-                              borderRadius: BorderRadius.circular(5),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color(0x14000000),
-                                    offset: Offset(0, 0),
-                                    blurRadius: 10,
-                                    spreadRadius: 0)
-                              ],
-                            ),
-                            child: Icon(Icons.close)),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 85.0),
-                    child: CarouselSlider(
-                      items: imageSliders,
-                      options: CarouselOptions(
-                          initialPage: idx,
-                          autoPlay: false,
-                          enlargeCenterPage: false,
-                          height: height * 0.685,
-                          onPageChanged: (index, reason) {
-                            setState(() {
-                              _current = index;
-                            });
-                          }),
-                    ),
-                  ),
-                ]),
-              ),
-            ),
-          );
-        });
   }
 }

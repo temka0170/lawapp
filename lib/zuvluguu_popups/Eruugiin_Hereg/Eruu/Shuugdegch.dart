@@ -114,7 +114,7 @@ class _EShuugdegchState extends State<EShuugdegch> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[59];
+                            return morepopups[82];
                           });
                     },
                     child: Padding(

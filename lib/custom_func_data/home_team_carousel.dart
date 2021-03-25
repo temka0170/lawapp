@@ -110,7 +110,7 @@ final List<Widget> imageSliders = imgList
 final List<String> imgList = [
   "assets/images/amarhuu.jpg",
   "assets/splashscreen/start1.png",
-  "assets/splashscreen/person4.jpg",
+  "assets/images/person4.jpg",
   "assets/splashscreen/start3.png",
   "assets/images/test.jpg"
 ];

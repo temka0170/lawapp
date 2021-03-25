@@ -217,7 +217,7 @@ class BoxItems extends StatelessWidget {
                     textBox,
                     style: TextStyle(
                       fontFamily: 'SFProDisplay',
-                      color: Color(0xff23233c),
+                      color: Color(0xffffffff),
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
