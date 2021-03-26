@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/calculator_popup.dart';
 import 'data.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 // import 'package:project_1/painters/calculatorpainter.dart';
 
@@ -227,12 +228,14 @@ class _AdTileState extends State<AdTile> {
         ),
         child: GestureDetector(
           onTap: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  //this links which popup should popup when clicked on slider
-                  return cmpopups[widget.idx];
-                });
+            cmpopups[widget.idx].url == null
+                ? showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      //this links which popup should popup when clicked on slider
+                      return cmpopups[widget.idx];
+                    })
+                : launch(cmpopups[widget.idx].url);
           },
           child: Stack(
             children: <Widget>[
