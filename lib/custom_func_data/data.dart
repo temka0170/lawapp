@@ -42,30 +42,58 @@ List<AdModel> getAds() {
   List<AdModel> ads = new List<AdModel>();
   AdModel ad = new AdModel();
 
-  ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Placeholder");
+  ad.setAdPath("assets/Ads/speak_club.jpg");
+  ad.setAdDesc("");
   ad.setIdx(0);
   ads.add(ad);
 
   ad = new AdModel();
-  ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Tanii aylaliin hutuch 1");
+  ad.setAdPath("assets/Ads/ulf.jpg");
+  ad.setAdDesc("");
   ad.setIdx(1);
   ads.add(ad);
 
   ad = new AdModel();
-  ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Tanii aylaliin hutuch 2");
+  ad.setAdPath("assets/Ads/wordpress.jpg");
+  ad.setAdDesc("");
   ad.setIdx(2);
   ads.add(ad);
 
   ad = new AdModel();
-  ad.setAdPath("assets/images/galaxy.jpg");
-  ad.setAdDesc("Tanii aylaliin hutuch 3");
+  ad.setAdPath("assets/Ads/adSpace.jpg");
+  ad.setAdDesc("");
   ad.setIdx(3);
   ads.add(ad);
 
   return ads;
+}
+
+//calculator, more section popup values
+List<CustomDialogBox> adPopups() {
+  List<CustomDialogBox> popups = new List<CustomDialogBox>();
+  CustomDialogBox popup = new CustomDialogBox();
+
+  popup.url =
+      "https://edit.mn/course/38/tesc-teenagers-english-speaking-course";
+  popup.img = Image.asset("assets/Ads/speak_club.jpg");
+  popups.add(popup);
+
+  popup = new CustomDialogBox();
+  popup.url = "https://www.facebook.com/Umbrella.Lawfirm";
+  popup.img = Image.asset("assets/Ads/ulf.jpg");
+  popups.add(popup);
+
+  popup = new CustomDialogBox();
+  popup.url = "https://edit.mn/course/47/make-website-without-code";
+  popup.img = Image.asset("assets/Ads/wordpress.jpg");
+  popups.add(popup);
+
+  popup = new CustomDialogBox();
+  popup.url = "https://www.google.mn/";
+  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popups.add(popup);
+
+  return popups;
 }
 
 //setter of home section carousel
@@ -227,37 +255,6 @@ List<CustomDialogBox> getPopups() {
   popup.descriptions = "aylaliin hutuch";
   popup.img = Image.asset("assets/images/galaxy.jpg");
   popup.title = "idx 3";
-  popups.add(popup);
-
-  return popups;
-}
-
-//calculator, more section popup values
-List<CustomDialogBox> adPopups() {
-  List<CustomDialogBox> popups = new List<CustomDialogBox>();
-  CustomDialogBox popup = new CustomDialogBox();
-
-  popup.descriptions = "aylaliin hutuch 0";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "Placeholder!";
-  popups.add(popup);
-
-  popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch 1";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "aylaliin hutuch";
-  popups.add(popup);
-
-  popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch 2";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "aylaliin hutuch";
-  popups.add(popup);
-
-  popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch 3";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "aylaliin hutuch";
   popups.add(popup);
 
   return popups;
