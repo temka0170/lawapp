@@ -134,26 +134,26 @@ List<MainModel> getMains() {
   List<MainModel> mains = new List<MainModel>();
   MainModel main = new MainModel();
 
-  main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Placeholder");
+  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdDesc("");
   main.setIdx(0);
   mains.add(main);
 
   main = new MainModel();
-  main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Aylaliin hutuch 1");
+  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdDesc("");
   main.setIdx(1);
   mains.add(main);
 
   main = new MainModel();
-  main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Aylaliin hutuch 2");
+  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdDesc("");
   main.setIdx(2);
   mains.add(main);
 
   main = new MainModel();
-  main.setAdPath("assets/images/galaxy.jpg");
-  main.setAdDesc("Aylaliin hutuch 3");
+  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdDesc("");
   main.setIdx(3);
   mains.add(main);
 
@@ -234,27 +234,27 @@ List<CustomDialogBox> getPopups() {
   List<CustomDialogBox> popups = new List<CustomDialogBox>();
   CustomDialogBox popup = new CustomDialogBox();
 
-  popup.descriptions = "Placeholder!";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "Placeholder!";
+  popup.descriptions = "";
+  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.title = "";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 1";
+  popup.descriptions = "";
+  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.title = "";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 2";
+  popup.descriptions = "";
+  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.title = "";
   popups.add(popup);
 
   popup = new CustomDialogBox();
-  popup.descriptions = "aylaliin hutuch";
-  popup.img = Image.asset("assets/images/galaxy.jpg");
-  popup.title = "idx 3";
+  popup.descriptions = "";
+  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.title = "";
   popups.add(popup);
 
   return popups;
