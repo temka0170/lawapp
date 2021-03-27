@@ -106,8 +106,7 @@ class _EyeBoxState extends State<EyeBox> {
                 //if index2,desc2,img2 is null shows only 1 button with index1 values
                 BoxRow(
                   index1: 25,
-                  desc1: "Open Your eyes",
-                  img1: "assets/images/galaxy.jpg",
+                  desc1: "Coming Soon",
                 ),
               ],
             ),

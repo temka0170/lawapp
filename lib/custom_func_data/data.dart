@@ -599,8 +599,8 @@ List<ZuvluguuPopup> morePopups() {
 
   //Open your eyes movement placeholders
   popup = new ZuvluguuPopup();
-  popup.descriptions = "PlaceHolder(OpenYourEyes)";
-  popup.title = "Open Your Eyes";
+  popup.descriptions = "Coming Soon!";
+  popup.title = "Coming Soon!";
   popups.add(popup);
 
   //Нэхэмжлэгч гэдэг нь idx: 26
