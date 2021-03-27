@@ -220,7 +220,7 @@ class _AdTileState extends State<AdTile> {
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
-              offset: Offset(4, 4),
+              offset: Offset(2, 4),
               blurRadius: 12,
               spreadRadius: 0,
             )

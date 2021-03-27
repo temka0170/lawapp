@@ -171,12 +171,10 @@ class BoxItems extends StatelessWidget {
   const BoxItems({
     Key key,
     @required this.imgPath,
-    @required this.textBox,
     @required this.popup,
   }) : super(key: key);
 
   final String imgPath;
-  final String textBox;
   final Widget popup;
 
   @override
@@ -206,23 +204,6 @@ class BoxItems extends StatelessWidget {
                 child: Image.asset(
                   imgPath,
                   fit: BoxFit.fill,
-                ),
-              ),
-              Positioned.fill(
-                left: 0,
-                top: 0,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 6.0, left: 6.0),
-                  child: Text(
-                    textBox,
-                    style: TextStyle(
-                      fontFamily: 'SFProDisplay',
-                      color: Color(0xffffffff),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                    ),
-                  ),
                 ),
               ),
             ],

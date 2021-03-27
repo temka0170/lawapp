@@ -57,7 +57,7 @@ flutter:
   assets:
     - assets/images/
     - assets/splashscreen/
-    - assets/gifs/
+    - assets/Icons/
     - assets/Ads/
 
   # An image asset can refer to one or more resolution-specific "variants", see

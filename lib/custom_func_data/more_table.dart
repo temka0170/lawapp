@@ -26,29 +26,25 @@ class CategoriesScroller extends StatelessWidget {
           child: Row(
             children: <Widget>[
               BoxItems(
-                imgPath: 'assets/gifs/irgen.gif',
-                textBox: 'Иргэний хэрэг',
+                imgPath: 'assets/Icons/irgen.gif',
                 popup: FirstIrgenBox(
                   title: 'Иргэний хэрэг',
                 ),
               ),
               BoxItems(
-                imgPath: 'assets/gifs/eruu.gif',
-                textBox: 'Эрүүгийн хэрэг',
+                imgPath: 'assets/Icons/eruu.gif',
                 popup: FirstEruuBox(
                   title: 'Эрүүгийн хэрэг',
                 ),
               ),
               BoxItems(
-                imgPath: 'assets/gifs/baiguullaga.gif',
-                textBox: 'Захиргааны хэрэг',
+                imgPath: 'assets/Icons/baiguullaga.gif',
                 popup: ZahirgaaBox(
                   title: 'Захиргааны хэрэг',
                 ),
               ),
               BoxItems(
-                imgPath: 'assets/gifs/openeye.gif',
-                textBox: 'Open your eyes',
+                imgPath: 'assets/Icons/openeye.gif',
                 popup: EyeBox(
                   title: 'Open your eyes',
                 ),
