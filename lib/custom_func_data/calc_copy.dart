@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +13,6 @@ class CalcPopup extends StatefulWidget {
 }
 
 class _CalcPopState extends State<CalcPopup> {
-  final snackBar = SnackBar(content: Text("Амжилттай хууллаа!"));
   @override
   Widget build(BuildContext context) {
     //blurring background of popup
@@ -109,6 +107,7 @@ class _CalcPopState extends State<CalcPopup> {
                           fontWeight: FontWeight.w200,
                           fontStyle: FontStyle.normal,
                         ),
+                        overflow: TextOverflow.fade,
                       ),
                     ),
                   ),
@@ -166,6 +165,26 @@ class _CalcPopState extends State<CalcPopup> {
                           Clipboard.setData(
                               new ClipboardData(text: widget.prc));
                           Navigator.pop(context);
+                          showDialog(
+                              barrierDismissible: false,
+                              context: context,
+                              builder: (context) {
+                                Future.delayed(Duration(milliseconds: 1200),
+                                    () {
+                                  Navigator.of(context).pop(true);
+                                });
+                                return AlertDialog(
+                                  title: Text(
+                                    "Амжилттай хууллаа!",
+                                    style: TextStyle(
+                                      color: Color(0xffffffff),
+                                      fontSize: 16.0,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  backgroundColor: Color(0xfff78c1e),
+                                );
+                              });
                         },
                         child: Text(
                           "ХУУЛАХ",
