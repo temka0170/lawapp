@@ -25,7 +25,7 @@ class _SZState extends State<SubZurchilBox> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

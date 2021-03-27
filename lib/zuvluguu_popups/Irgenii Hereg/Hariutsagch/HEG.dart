@@ -23,7 +23,7 @@ class _HEGState extends State<HEGBox> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

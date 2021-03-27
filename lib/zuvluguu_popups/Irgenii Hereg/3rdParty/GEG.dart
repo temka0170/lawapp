@@ -23,7 +23,7 @@ class _GEGState extends State<GEGBox> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

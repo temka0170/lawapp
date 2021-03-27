@@ -23,7 +23,7 @@ class _ShuuhErhState extends State<ShuuhErh> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

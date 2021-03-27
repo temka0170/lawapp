@@ -23,7 +23,7 @@ class _NEGState extends State<NEGBox> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

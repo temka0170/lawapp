@@ -24,7 +24,7 @@ class _SHohirogchState extends State<ZHohirogchBox> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

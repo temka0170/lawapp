@@ -24,7 +24,7 @@ class _EShuugdegchState extends State<EShuugdegch> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

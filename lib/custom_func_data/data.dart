@@ -4,7 +4,7 @@ import 'package:project_1/zuvluguu_popups/zuvluguupopup.dart';
 import 'calculator_popup.dart';
 import '../zuvluguu_popups/zuvluguupopup.dart';
 
-//setter of calculator, more section carousel
+//setter of calculator carousel
 class AdModel {
   String adImgPath;
   String adDesc;
@@ -94,6 +94,97 @@ List<CustomDialogBox> adPopups() {
   popups.add(popup);
 
   return popups;
+}
+
+//Setter of more section carousel
+class MoreModel {
+  String moreImgPath;
+  String moreDesc;
+  int idex;
+
+  MoreModel({this.moreImgPath, this.moreDesc, this.idex});
+
+  void setAdPath(String getImgPath) {
+    moreImgPath = getImgPath;
+  }
+
+  void setAdDesc(String getDesc) {
+    moreDesc = getDesc;
+  }
+
+  void setIdx(int getIdx) {
+    idex = getIdx;
+  }
+
+  String getAssetPath() {
+    return moreImgPath;
+  }
+
+  String getDescript() {
+    return moreDesc;
+  }
+
+  int getIdex() {
+    return idex;
+  }
+}
+
+//values of more section carousel
+List<MoreModel> getMore() {
+  List<MoreModel> mores = new List<MoreModel>();
+  MoreModel more = new MoreModel();
+
+  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdDesc("");
+  more.setIdx(0);
+  mores.add(more);
+
+  more = new MoreModel();
+  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdDesc("");
+  more.setIdx(1);
+  mores.add(more);
+
+  more = new MoreModel();
+  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdDesc("");
+  more.setIdx(2);
+  mores.add(more);
+
+  more = new MoreModel();
+  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdDesc("");
+  more.setIdx(3);
+  mores.add(more);
+
+  return mores;
+}
+
+//calculator, more section popup values
+List<CustomDialogBox> morePopups() {
+  List<CustomDialogBox> morepops = new List<CustomDialogBox>();
+  CustomDialogBox morepop = new CustomDialogBox();
+
+  morepop.url = "https://www.google.mn/";
+  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepops.add(morepop);
+
+  morepop = new CustomDialogBox();
+  morepop.url = "https://www.google.mn/";
+  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepops.add(morepop);
+
+  morepop = new CustomDialogBox();
+  morepop.url = "https://www.google.mn/";
+  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepops.add(morepop);
+
+  morepop = new CustomDialogBox();
+  morepop.url = "https://www.google.mn/";
+  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepops.add(morepop);
+
+  return morepops;
 }
 
 //setter of home section carousel
@@ -197,32 +288,32 @@ List<CreatorModel> getCreators() {
   List<CreatorModel> creators = new List<CreatorModel>();
   CreatorModel crt = new CreatorModel();
 
+  crt.setCrtPath("assets/images/person2.jfif");
+  crt.setCrtDesc("Random Person1");
+  crt.setIdx(1);
+  creators.add(crt);
+
+  crt = new CreatorModel();
+  crt.setCrtPath("assets/images/person4.jpg");
+  crt.setCrtDesc("Random Person2");
+  crt.setIdx(2);
+  creators.add(crt);
+
+  crt = new CreatorModel();
   crt.setCrtPath("assets/images/LawyerAmraa.jpg");
   crt.setCrtDesc("Э.АМАРХҮҮ\nХУУЛЬЧ, ӨМГӨӨЛӨГЧ");
   crt.setIdx(0);
   creators.add(crt);
 
   crt = new CreatorModel();
-  crt.setCrtPath("assets/images/person2.jfif");
-  crt.setCrtDesc("Random Person");
-  crt.setIdx(1);
-  creators.add(crt);
-
-  crt = new CreatorModel();
-  crt.setCrtPath("assets/images/person4.jpg");
-  crt.setCrtDesc("Random Person");
-  crt.setIdx(2);
-  creators.add(crt);
-
-  crt = new CreatorModel();
   crt.setCrtPath("assets/images/person3.jpg");
-  crt.setCrtDesc("Random Person");
+  crt.setCrtDesc("Random Person3");
   crt.setIdx(3);
   creators.add(crt);
 
   crt = new CreatorModel();
   crt.setCrtPath("assets/images/person1.jpg");
-  crt.setCrtDesc("Random Person");
+  crt.setCrtDesc("Random Person4");
   crt.setIdx(4);
   creators.add(crt);
 
@@ -404,7 +495,7 @@ List<QuestionBox> questionPop() {
 }
 
 //values of more section advice section
-List<ZuvluguuPopup> morePopups() {
+List<ZuvluguuPopup> moreSubPopups() {
   List<ZuvluguuPopup> popups = new List<ZuvluguuPopup>();
   ZuvluguuPopup popup = new ZuvluguuPopup();
 

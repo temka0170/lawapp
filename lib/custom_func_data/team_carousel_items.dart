@@ -19,7 +19,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
   int itemCount = getCreators().length;
   int selected;
   int y = 2;
-  String title;
+  String title = "Э.АМАРХҮҮ\nХУУЛЬЧ, ӨМГӨӨЛӨГЧ";
   FixedExtentScrollController _scrollController =
       FixedExtentScrollController(initialItem: 2);
   List<CreatorModel> creators = new List<CreatorModel>();
@@ -37,6 +37,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
     return Column(
       children: [
         Expanded(
+          flex: 4,
           child: RotatedBox(
             quarterTurns: -1,
             child: GestureDetector(
@@ -51,6 +52,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                   setState(() {
                     selected = x;
                     y = x;
+                    title = creators[y].getDescript();
                   });
                   print(selected);
                 },
@@ -197,23 +199,26 @@ class _TeamCarouselState extends State<TeamCarousel> {
             ),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.only(top: 8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "title",
-                style: TextStyle(
-                  fontFamily: 'SFProDisplay',
-                  color: Color(0xff23233c),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.normal,
-                ),
-                textAlign: TextAlign.center,
-              )
-            ],
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontFamily: 'SFProDisplay',
+                    color: Color(0xff23233c),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
           ),
         ),
       ],

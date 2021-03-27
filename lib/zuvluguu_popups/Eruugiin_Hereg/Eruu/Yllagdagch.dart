@@ -24,7 +24,7 @@ class _EYllagdagchState extends State<EYllagdagch> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

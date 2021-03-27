@@ -21,7 +21,7 @@ class _ZLEGState extends State<ZLEGBox> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = morePopups();
+    morepopups = moreSubPopups();
   }
 
   @override

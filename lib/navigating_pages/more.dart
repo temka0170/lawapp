@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/calculator_popup.dart';
 import 'package:project_1/custom_func_data/data.dart';
-import '../custom_func_data/calculator_carousel.dart';
+import 'package:project_1/custom_func_data/more_carousel.dart';
 import 'package:project_1/custom_func_data/more_table.dart';
 
 class More extends StatefulWidget {
@@ -100,7 +100,7 @@ class _MyStatefulWidgetState extends State<More> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.37,
               //same carousel as calculator page carousel, shuffled
-              child: AdScreen(),
+              child: MoreScreen(),
             ),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 200),

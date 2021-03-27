@@ -24,7 +24,7 @@ class _HomeContainerState extends State<HomeContainer> {
     double maxWidth = MediaQuery.of(context).size.width;
     double maxHeight = MediaQuery.of(context).size.height;
     return Padding(
-      padding: EdgeInsets.only(top: 30.0),
+      padding: EdgeInsets.only(top: 14.0),
       child: Column(
         children: [
           Container(
