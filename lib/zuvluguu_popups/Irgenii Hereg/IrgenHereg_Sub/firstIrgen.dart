@@ -121,8 +121,23 @@ class _FirstIrgenBoxState extends State<FirstIrgenBox> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Шүүхийн Маргаан"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Image.asset(
+                                "assets/Icons/shuuhMargaan.png",
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("Шүүхийн Маргаан"),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -147,8 +162,23 @@ class _FirstIrgenBoxState extends State<FirstIrgenBox> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Эвлэрүүлэн Зуучлах"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Image.asset(
+                                "assets/Icons/eZuuchlal.png",
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("Эвлэрүүлэн Зуучлах"),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

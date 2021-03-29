@@ -125,8 +125,23 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("УРЬДЧИЛАН ШИЙДВЭРЛЭХ ШАТ"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Image.asset(
+                                "assets/Icons/UridchlanShiidwerleh.png",
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("УРЬДЧИЛАН ШИЙДВЭРЛЭХ ШАТ"),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -151,8 +166,23 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("ШҮҮХИЙН ШАТ"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Image.asset(
+                                "assets/Icons/ShuuhShat.png",
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("ШҮҮХИЙН ШАТ"),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

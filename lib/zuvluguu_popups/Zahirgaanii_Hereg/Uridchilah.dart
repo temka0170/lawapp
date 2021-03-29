@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
+import '../MenuItems.dart';
 import '../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
@@ -43,6 +44,7 @@ class _UridchilahState extends State<Uridchilah> {
   }
 
   contentBox(context) {
+    ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
@@ -102,82 +104,27 @@ class _UridchilahState extends State<Uridchilah> {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[77];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("УРЬДЧИЛАН ШИЙДВЭРЛЭХ АЖИЛЛАГАА ГЭЖ"),
-                        ),
-                      ),
-                    ),
+            child: SingleChildScrollView(
+              controller: _controller,
+              child: Column(
+                children: <Widget>[
+                  MenuItems(
+                    popup: morepopups[77],
+                    title: "УРЬДЧИЛАН ШИЙДВЭРЛЭХ АЖИЛЛАГАА ГЭЖ",
+                    img: "assets/Icons/UridchlanShiidwerleh.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[78];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("ХУГАЦАА"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: morepopups[78],
+                    title: "ХУГАЦАА",
+                    img: "assets/Icons/Hugatsaa.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[79];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("ХЯНАН ШИЙДВЭРЛЭХ БАЙГУУЛЛАГА"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: morepopups[79],
+                    title: "ХЯНАН ШИЙДВЭРЛЭХ БАЙГУУЛЛАГА",
+                    img: "assets/Icons/shTemplate.png",
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

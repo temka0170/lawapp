@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/zuvluguu_popups/Zahirgaanii_Hereg/Shuuh_Erh.dart';
 
+import '../MenuItems.dart';
 import 'Nehemjlel_zagwar.dart';
 
 //idx 16,17,18,19
@@ -44,6 +45,7 @@ class _ShuuhBoxState extends State<ShuuhBox> {
   }
 
   contentBox(context) {
+    ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
@@ -103,62 +105,22 @@ class _ShuuhBoxState extends State<ShuuhBox> {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return Nehemjlel(
-                              title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("НЭХЭМЖЛЭЛИЙН ЗАГВАР"),
-                        ),
-                      ),
-                    ),
+            child: SingleChildScrollView(
+              controller: _controller,
+              child: Column(
+                children: <Widget>[
+                  MenuItems(
+                    popup: Nehemjlel(title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР"),
+                    title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР",
+                    img: "assets/Icons/shTemplate.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return ShuuhErh(
-                              title: "ТАНЫ ЭРХ, ҮҮРЭГ",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("ТАНЫ ЭРХ, ҮҮРЭГ"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: ShuuhErh(title: "ТАНЫ ЭРХ, ҮҮРЭГ"),
+                    title: "ТАНЫ ЭРХ, ҮҮРЭГ",
+                    img: "assets/Icons/taniiEG.png",
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

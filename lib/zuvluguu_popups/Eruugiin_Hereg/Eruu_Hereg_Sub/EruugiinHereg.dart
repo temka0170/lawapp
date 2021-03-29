@@ -125,8 +125,23 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Зөрчлийн Хэрэг"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: Image.asset(
+                                "assets/Icons/Zurchil.png",
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("Зөрчлийн Хэрэг"),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -151,8 +166,22 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Эрүүгийн Хэрэг"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: Image.asset(
+                                  "assets/Icons/Eruu.png",
+                                  fit: BoxFit.fill,
+                                )),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("Эрүүгийн Хэрэг"),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

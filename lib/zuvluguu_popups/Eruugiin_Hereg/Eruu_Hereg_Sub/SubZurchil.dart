@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
 import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Zurchil/ZHohirogch.dart';
 import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Zurchil/ZHolbogdogch.dart';
+import '../../MenuItems.dart';
 import '../../zuvluguupopup.dart';
 // import 'boxRow_buttons.dart';
 
@@ -45,6 +46,7 @@ class _SZState extends State<SubZurchilBox> {
   }
 
   contentBox(context) {
+    ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
@@ -104,86 +106,27 @@ class _SZState extends State<SubZurchilBox> {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[46];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Зөрчил шалгах субъект"),
-                        ),
-                      ),
-                    ),
+            child: SingleChildScrollView(
+              controller: _controller,
+              child: Column(
+                children: <Widget>[
+                  MenuItems(
+                    popup: morepopups[46],
+                    title: "Зөрчил шалгах субъект",
+                    img: "assets/Icons/shTemplate.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return ZHolbogdBox(
-                              title: "Холбогдогч",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Холбогдогч"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: ZHolbogdBox(title: "Холбогдогч"),
+                    title: "Холбогдогч",
+                    img: "assets/Icons/Holbogdogch.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return ZHohirogchBox(
-                              title: "Хохирогч",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Хохирогч"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: ZHohirogchBox(title: "Хохирогч"),
+                    title: "Хохирогч",
+                    img: "assets/Icons/Hohirogch.png",
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

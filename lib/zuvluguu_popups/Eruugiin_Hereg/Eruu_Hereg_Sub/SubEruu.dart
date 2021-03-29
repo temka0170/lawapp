@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
 import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Eruu/EHohirogch.dart';
 import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Eruu/EHolbogdogch.dart';
+import '../../MenuItems.dart';
 import '../../zuvluguupopup.dart';
 
 // ignore: must_be_immutable
@@ -43,6 +44,7 @@ class _SEState extends State<SubEruuBox> {
   }
 
   contentBox(context) {
+    ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
@@ -102,86 +104,27 @@ class _SEState extends State<SubEruuBox> {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return EHolbogdBox(
-                              title: "Холбогдогч",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Холбогдогч"),
-                        ),
-                      ),
-                    ),
+            child: SingleChildScrollView(
+              controller: _controller,
+              child: Column(
+                children: <Widget>[
+                  MenuItems(
+                    popup: EHolbogdBox(title: "Холбогдогч"),
+                    title: "Холбогдогч",
+                    img: "assets/Icons/Holbogdogch.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return EHohirogchBox(
-                              title: "Хохирогч",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Хохирогч"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: EHohirogchBox(title: "Хохирогч"),
+                    title: "Хохирогч",
+                    img: "assets/Icons/Hohirogch.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[55];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Ажиллагааны хугацаа"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: morepopups[55],
+                    title: "Ажиллагааны хугацаа",
+                    img: "assets/Icons/Hugatsaa.png",
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

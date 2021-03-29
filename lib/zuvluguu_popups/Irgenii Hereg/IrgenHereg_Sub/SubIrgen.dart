@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:project_1/zuvluguu_popups/Irgenii%20Hereg/3rdParty/GSub.dart';
+import '../../MenuItems.dart';
 import '../Hariutsagch/HSub.dart';
 import 'Sxem.dart';
 import '../Nehemjlel/NehemjlelSub.dart';
@@ -19,6 +20,7 @@ class SubIrgenBox extends StatefulWidget {
 }
 
 class _SubIrgenBoxState extends State<SubIrgenBox> {
+  ScrollController _controller = new ScrollController();
   @override
   void initState() {
     // ignore: todo
@@ -102,130 +104,32 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return NSBox(
-                              title: "Нэхэмжлэгч",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Нэхэмжлэгч"),
-                        ),
-                      ),
-                    ),
+            child: SingleChildScrollView(
+              controller: _controller,
+              child: Column(
+                children: <Widget>[
+                  MenuItems(
+                    popup: NSBox(title: "Нэхэмжлэгч"),
+                    title: "Нэхэмжлэгч",
+                    img: "assets/Icons/Nehemjlegch.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return HSBox(
-                              title: "Хариуцагч",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Хариуцагч"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: HSBox(title: "Хариуцагч"),
+                    title: "Хариуцагч",
+                    img: "assets/Icons/Hariutsagch.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return GSBox(
-                              title: "Гуравдагч Этгээд",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Гуравдагч Этгээд"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: GSBox(title: "Гуравдагч Этгээд"),
+                    title: "Гуравдагч Этгээд",
+                    img: "assets/Icons/3rdParty.png",
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return SxemBox(
-                              title: "СХЕМ ЗУРАГ",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("СХЕМ ЗУРАГ"),
-                        ),
-                      ),
-                    ),
+                  MenuItems(
+                    popup: SxemBox(title: "СХЕМ ЗУРАГ"),
+                    title: "СХЕМ ЗУРАГ",
+                    img: "assets/Icons/shTemplate.png",
                   ),
-                ),
-                // BoxRow(
-                //   index1: 0,
-                //   index2: 1,
-                //   desc1: "Гуравдагч Этгээд",
-                //   desc2: "Нэхэмжлэгч",
-                //   img1: "assets/images/ajilsanjil.png",
-                //   img2: "assets/images/fired.png",
-                // ),
-                // BoxRow(
-                //   index1: 2,
-                //   index2: 3,
-                //   desc1: "Хариуцагч",
-                //   desc2: "Эвлэрүүлэн зуучлал",
-                //   img1: "assets/images/care.png",
-                //   img2: "assets/images/danger.png",
-                // ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

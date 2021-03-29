@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_func_data/data.dart';
+import '../../MenuItems.dart';
 import 'ESxem.dart';
 import '../../zuvluguupopup.dart';
 import 'UrgudulGargagch.dart';
@@ -47,6 +48,7 @@ class _ESState extends State<ESBox> {
   }
 
   contentBox(context) {
+    ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
@@ -106,152 +108,43 @@ class _ESState extends State<ESBox> {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return UGBox(
-                              title: "Өргөдөл гаргагч",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Өргөдөл гаргагч"),
-                        ),
-                      ),
+            child: Scrollbar(
+              thickness: 8.0,
+              isAlwaysShown: true,
+              controller: _controller,
+              radius: Radius.circular(4.0),
+              child: SingleChildScrollView(
+                controller: _controller,
+                child: Column(
+                  children: <Widget>[
+                    MenuItems(
+                      popup: UGBox(title: "Өргөдөл Гаргагч"),
+                      title: "Өргөдөл Гаргагч",
+                      img: "assets/Icons/UrgudulGargagch.png",
                     ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return URBox(
-                              title: "Уригдагч тал",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Уригдагч тал"),
-                        ),
-                      ),
+                    MenuItems(
+                      popup: URBox(title: "Уригдагч тал"),
+                      title: "Уригдагч тал",
+                      img: "assets/Icons/Urigdagch.png",
                     ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return ESxemBox(
-                              title: "СХЕМ ЗУРАГ",
-                            );
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("СХЕМ ЗУРАГ"),
-                        ),
-                      ),
+                    MenuItems(
+                      popup: ESxemBox(title: "СХЕМ ЗУРАГ"),
+                      title: "СХЕМ ЗУРАГ",
+                      img: "assets/Icons/shTemplate.png",
                     ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[39];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Эвлэрлийн гэрээ"),
-                        ),
-                      ),
+                    MenuItems(
+                      popup: morepopups[39],
+                      title: "Эвлэрлийн гэрээ",
+                      img: "assets/Icons/EwlerliinGeree.png",
                     ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[38];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Гэрээний гүйцэтгэл хангах"),
-                        ),
-                      ),
+                    MenuItems(
+                      popup: morepopups[38],
+                      title: "Гэрээний гүйцэтгэл хангах",
+                      img: "assets/Icons/shTemplate.png",
                     ),
-                  ),
+                  ],
                 ),
-                // BoxRow(
-                //   index1: 0,
-                //   index2: 1,
-                //   desc1: "Гуравдагч Этгээд",
-                //   desc2: "Нэхэмжлэгч",
-                //   img1: "assets/images/ajilsanjil.png",
-                //   img2: "assets/images/fired.png",
-                // ),
-                // BoxRow(
-                //   index1: 2,
-                //   index2: 3,
-                //   desc1: "Хариуцагч",
-                //   desc2: "Эвлэрүүлэн зуучлал",
-                //   img1: "assets/images/care.png",
-                //   img2: "assets/images/danger.png",
-                // ),
-              ],
+              ),
             ),
           ),
         ),
