@@ -40,11 +40,14 @@ class _MyCustomFormState extends State<CalculatorPage> {
           //temporary solution for overflow
           child: Column(
             children: [
-              Container(
-                width: _width,
-                height: _height * 0.4,
-                //custom carousel
-                child: AdScreen(),
+              Padding(
+                padding: const EdgeInsets.only(top: 32.0),
+                child: Container(
+                  width: _width,
+                  height: _height * 0.4,
+                  //custom carousel
+                  child: AdScreen(),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 2.0),
@@ -64,8 +67,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 0.0,
-                  top: 10.0,
+                  top: 10.0
                 ),
                 child: Center(
                   child: Container(

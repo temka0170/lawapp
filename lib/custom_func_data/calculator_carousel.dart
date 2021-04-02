@@ -67,9 +67,6 @@ class _AdScreenState extends State<AdScreen> {
     int id;
     return Column(
       children: <Widget>[
-        SizedBox(
-          height: 35.0,
-        ),
         CarouselSlider.builder(
           itemCount: ads.length,
           itemBuilder: (context, index) {
