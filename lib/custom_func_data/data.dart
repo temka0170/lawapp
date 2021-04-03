@@ -288,14 +288,14 @@ List<CreatorModel> getCreators() {
   List<CreatorModel> creators = new List<CreatorModel>();
   CreatorModel crt = new CreatorModel();
 
-  crt.setCrtPath("assets/images/person2.jfif");
-  crt.setCrtDesc("Random Person1");
+  crt.setCrtPath("assets/creators_png/tsengel.jpg");
+  crt.setCrtDesc("С.Батцэнгэл\nDeveloper");
   crt.setIdx(1);
   creators.add(crt);
 
   crt = new CreatorModel();
-  crt.setCrtPath("assets/images/person4.jpg");
-  crt.setCrtDesc("Random Person2");
+  crt.setCrtPath("assets/creators_png/tedy1.jpg");
+  crt.setCrtDesc("Б.Тэмүүлэн\nDeveloper");
   crt.setIdx(2);
   creators.add(crt);
 
@@ -306,14 +306,14 @@ List<CreatorModel> getCreators() {
   creators.add(crt);
 
   crt = new CreatorModel();
-  crt.setCrtPath("assets/images/person3.jpg");
-  crt.setCrtDesc("Random Person3");
+  crt.setCrtPath("assets/creators_png/lawyer2.jpg");
+  crt.setCrtDesc("null");
   crt.setIdx(3);
   creators.add(crt);
 
   crt = new CreatorModel();
-  crt.setCrtPath("assets/images/person1.jpg");
-  crt.setCrtDesc("Random Person4");
+  crt.setCrtPath("assets/creators_png/lawyer3.jpg");
+  crt.setCrtDesc("null");
   crt.setIdx(4);
   creators.add(crt);
 

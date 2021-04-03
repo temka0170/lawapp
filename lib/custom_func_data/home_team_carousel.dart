@@ -108,26 +108,26 @@ final List<Widget> imageSliders = imgList
 
 //our team popup images
 final List<String> imgList = [
-  "assets/splashscreen/start1.png",
-  "assets/images/person4.jpg",
-  "assets/images/amarhuu.jpg",
-  "assets/splashscreen/start3.png",
-  "assets/images/test.jpg"
+  "assets/creators_png/tsengel.jpg",
+  "assets/creators_png/tedy1.jpg",
+  "assets/creators_png/lawyer1_1.jpg",
+  "assets/creators_png/lawyer2.jpg",
+  "assets/creators_png/lawyer3.jpg"
 ];
 
 //our team popup titles
 final List<String> itemTitle = [
-  "Start 1",
-  "Start 2",
-  "Хуульч",
+  "Апп Хөгжүүлэгч",
+  "Апп Хөгжүүлэгч",
+  "Хуульч, Өмгөөлөгч",
   "Start 3",
   "Test Jpg"
 ];
 
 //our team popup descriptions
 final List<String> itemDesc = [
-  "\"Start1 PlaceHolder\"",
-  "\"Start2 PlaceHolder\"",
+  "\"Senior Developer\"",
+  "\"Junior Developer\"",
   "\"Үүсгэн байгуулагч\"",
   "\"Start3 PlaceHolder\"",
   "\"Test PlaceHolder\""
@@ -135,8 +135,8 @@ final List<String> itemDesc = [
 
 //our team popup bottom container with names
 final List<String> itemBtn = [
-  "Just Start1",
-  "Just Start2",
+  "С.Батцэнгэл",
+  "Б.Тэмүүлэн",
   "Э.Амархүү",
   "Just Start3",
   "Just Test",

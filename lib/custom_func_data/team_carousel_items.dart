@@ -34,137 +34,97 @@ class _TeamCarouselState extends State<TeamCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    ScrollController _controller = new ScrollController();
     return Column(
       children: [
         Expanded(
           flex: 4,
-          child: RotatedBox(
-            quarterTurns: -1,
-            child: GestureDetector(
-              onTap: () {
-                double height = MediaQuery.of(context).size.height;
-                buildShowGeneralDialog(context, height, y);
-              },
-              child: ListWheelScrollView(
-                magnification: 2.0,
-                diameterRatio: 2.9,
-                onSelectedItemChanged: (x) {
-                  setState(() {
-                    selected = x;
-                    y = x;
-                    title = creators[y].getDescript();
-                  });
-                },
-                controller: _scrollController,
-                itemExtent: itemWidth,
-                squeeze: 0.9,
+          child: SingleChildScrollView(
+            controller: _controller,
+            scrollDirection: Axis.horizontal,
+            child: Row(
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      double height = MediaQuery.of(context).size.height;
-                      buildShowGeneralDialog(context, height, 1);
-                    },
-                    child: RotatedBox(
-                      quarterTurns: 1,
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 400),
-                        width: 100.0,
-                        height: 100.0,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Color(0xfff78c1e), shape: BoxShape.circle),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        double height = MediaQuery.of(context).size.height;
+                        buildShowGeneralDialog(context, height, 0);
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage("assets/images/person2.jfif"),
-                          radius: 40.0,
+                          radius: 47,
+                          backgroundImage: AssetImage("assets/creators_png/tsengelM.jpg"),
                         ),
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      double height = MediaQuery.of(context).size.height;
-                      buildShowGeneralDialog(context, height, 2);
-                    },
-                    child: RotatedBox(
-                      quarterTurns: 1,
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 400),
-                        width: 100.0,
-                        height: 100.0,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Color(0xfff78c1e), shape: BoxShape.circle),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        double height = MediaQuery.of(context).size.height;
+                        buildShowGeneralDialog(context, height, 1);
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage("assets/images/person4.jpg"),
-                          radius: 40.0,
+                          radius: 47,
+                          backgroundImage: AssetImage("assets/creators_png/tedyM.jpg"),
                         ),
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      double height = MediaQuery.of(context).size.height;
-                      buildShowGeneralDialog(context, height, 0);
-                    },
-                    child: RotatedBox(
-                      quarterTurns: 1,
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 400),
-                        width: 100.0,
-                        height: 100.0,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Color(0xfff78c1e), shape: BoxShape.circle),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        double height = MediaQuery.of(context).size.height;
+                        buildShowGeneralDialog(context, height, 2);
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage("assets/images/LawyerAmraa.jpg"),
-                          radius: 40.0,
+                          radius: 47,
+                          backgroundImage: AssetImage("assets/creators_png/lawyer1M.jpg"),
                         ),
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      double height = MediaQuery.of(context).size.height;
-                      buildShowGeneralDialog(context, height, 3);
-                    },
-                    child: RotatedBox(
-                      quarterTurns: 1,
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 400),
-                        width: 100.0,
-                        height: 100.0,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Color(0xfff78c1e), shape: BoxShape.circle),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        double height = MediaQuery.of(context).size.height;
+                        buildShowGeneralDialog(context, height, 3);
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage("assets/images/person3.jpg"),
-                          radius: 40.0,
+                          radius: 47,
+                          backgroundImage: AssetImage("assets/creators_png/lawyer2M.jpg"),
                         ),
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      double height = MediaQuery.of(context).size.height;
-                      buildShowGeneralDialog(context, height, 4);
-                    },
-                    child: RotatedBox(
-                      quarterTurns: 1,
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 400),
-                        width: 100.0,
-                        height: 100.0,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Color(0xfff78c1e), shape: BoxShape.circle),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        double height = MediaQuery.of(context).size.height;
+                        buildShowGeneralDialog(context, height, 4);
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage("assets/images/person1.jpg"),
-                          radius: 40.0,
+                          radius: 47,
+                          backgroundImage: AssetImage("assets/creators_png/lawyer3M.jpg"),
                         ),
                       ),
                     ),
@@ -198,29 +158,6 @@ class _TeamCarouselState extends State<TeamCarousel> {
               ),
             ),
           ),
-        ),
-        Expanded(
-          flex: 2,
-          child: Padding(
-            padding: EdgeInsets.only(top: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontFamily: 'SFProDisplay',
-                    color: Color(0xff23233c),
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                  ),
-                  textAlign: TextAlign.center,
-                )
-              ],
-            ),
-          ),
-        ),
       ],
     );
   }
