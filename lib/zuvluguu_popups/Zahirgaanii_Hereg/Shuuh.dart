@@ -112,7 +112,7 @@ class _ShuuhBoxState extends State<ShuuhBox> {
                   MenuItems(
                     popup: Nehemjlel(title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР"),
                     title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР",
-                    img: "assets/Icons/shTemplate.png",
+                    img: "assets/Icons/Zagwar.png",
                   ),
                   MenuItems(
                     popup: ShuuhErh(title: "ТАНЫ ЭРХ, ҮҮРЭГ"),

@@ -121,7 +121,7 @@ class _UridchilahState extends State<Uridchilah> {
                   MenuItems(
                     popup: morepopups[79],
                     title: "ХЯНАН ШИЙДВЭРЛЭХ БАЙГУУЛЛАГА",
-                    img: "assets/Icons/shTemplate.png",
+                    img: "assets/Icons/Zagwar.png",
                   ),
                 ],
               ),

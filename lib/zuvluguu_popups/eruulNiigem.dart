@@ -1,21 +1,19 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../Ewleruulen_zuuchlah/EvleruulehSub.dart';
-import 'SubIrgen.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class FirstIrgenBox extends StatefulWidget {
+class NewBox extends StatefulWidget {
   String title;
 
-  FirstIrgenBox({Key key, this.title}) : super(key: key);
+  NewBox({Key key, this.title}) : super(key: key);
 
   @override
-  _FirstIrgenBoxState createState() => _FirstIrgenBoxState();
+  _NewBoxState createState() => _NewBoxState();
 }
 
-class _FirstIrgenBoxState extends State<FirstIrgenBox> {
+class _NewBoxState extends State<NewBox> {
   @override
   void initState() {
     // ignore: todo
@@ -110,9 +108,9 @@ class _FirstIrgenBoxState extends State<FirstIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return SubIrgenBox(
-                              title: "Шүүхийн Маргаан",
-                            );
+                            // return SubIrgenBox(
+                            //   title: "Шүүхийн Маргаан",
+                            // );
                           });
                     },
                     child: Padding(
@@ -151,9 +149,9 @@ class _FirstIrgenBoxState extends State<FirstIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ESBox(
-                              title: "Эвлэрүүлэн Зуучлах",
-                            );
+                            // return ESBox(
+                            //   title: "Эвлэрүүлэн Зуучлах",
+                            // );
                           });
                     },
                     child: Padding(

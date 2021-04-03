@@ -47,17 +47,17 @@ class _TeamCarouselState extends State<TeamCarousel> {
               },
               child: ListWheelScrollView(
                 magnification: 2.0,
-                diameterRatio: 2.5,
+                diameterRatio: 2.9,
                 onSelectedItemChanged: (x) {
                   setState(() {
                     selected = x;
                     y = x;
                     title = creators[y].getDescript();
                   });
-                  print(selected);
                 },
                 controller: _scrollController,
                 itemExtent: itemWidth,
+                squeeze: 0.9,
                 children: [
                   GestureDetector(
                     onTap: () {

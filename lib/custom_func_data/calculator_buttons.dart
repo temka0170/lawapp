@@ -62,7 +62,7 @@ Padding govLink(double width, double height) {
                     style: TextStyle(
                       fontFamily: 'SFProDisplay',
                       color: Color(0xff23233c),
-                      fontSize: 14,
+                      fontSize: height * 0.016,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                     ),
@@ -128,7 +128,7 @@ Padding ytLink(double width, double height) {
                     style: TextStyle(
                       fontFamily: 'SFProDisplay',
                       color: Color(0xff23233c),
-                      fontSize: 14,
+                      fontSize: height * 0.016,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                     ),
@@ -195,7 +195,7 @@ Padding phoneCaller(double width, double height) {
                     style: TextStyle(
                       fontFamily: 'SFProDisplay',
                       color: Color(0xff23233c),
-                      fontSize: 14,
+                      fontSize: height * 0.016,
                       fontWeight: FontWeight.w400,
                       fontStyle: FontStyle.normal,
                     ),

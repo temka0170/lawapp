@@ -96,11 +96,14 @@ class _MyStatefulWidgetState extends State<More> {
         height: MediaQuery.of(context).size.height,
         child: Column(
           children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.37,
-              //same carousel as calculator page carousel, shuffled
-              child: MoreScreen(),
+            Padding(
+              padding: const EdgeInsets.only(top: 32.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.34,
+                //same carousel as calculator page carousel, shuffled
+                child: MoreScreen(),
+              ),
             ),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 200),
@@ -131,9 +134,7 @@ class _MyStatefulWidgetState extends State<More> {
                 width: MediaQuery.of(context).size.width,
                 alignment: Alignment.topCenter,
                 height: closeTopContainer ? 0 : categoryHeight,
-                child: Expanded(
-                    child: CategoriesScroller(),
-                ),
+                child: CategoriesScroller(),
               ),
             ),
             Padding(

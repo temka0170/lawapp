@@ -130,7 +130,7 @@ class _ESState extends State<ESBox> {
                     MenuItems(
                       popup: ESxemBox(title: "СХЕМ ЗУРАГ"),
                       title: "СХЕМ ЗУРАГ",
-                      img: "assets/Icons/shTemplate.png",
+                      img: "assets/Icons/Zagwar.png",
                     ),
                     MenuItems(
                       popup: morepopups[39],
@@ -140,7 +140,7 @@ class _ESState extends State<ESBox> {
                     MenuItems(
                       popup: morepopups[38],
                       title: "Гэрээний гүйцэтгэл хангах",
-                      img: "assets/Icons/shTemplate.png",
+                      img: "assets/Icons/EwlerliinGereeGuitsetgeh.png",
                     ),
                   ],
                 ),

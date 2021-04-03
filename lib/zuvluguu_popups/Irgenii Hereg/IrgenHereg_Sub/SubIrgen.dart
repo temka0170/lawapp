@@ -126,7 +126,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                   MenuItems(
                     popup: SxemBox(title: "СХЕМ ЗУРАГ"),
                     title: "СХЕМ ЗУРАГ",
-                    img: "assets/Icons/shTemplate.png",
+                    img: "assets/Icons/Zagwar.png",
                   ),
                 ],
               ),

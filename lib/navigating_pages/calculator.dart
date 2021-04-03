@@ -44,7 +44,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                 padding: const EdgeInsets.only(top: 32.0),
                 child: Container(
                   width: _width,
-                  height: _height * 0.4,
+                  height: _height * 0.34,
                   //custom carousel
                   child: AdScreen(),
                 ),
@@ -57,7 +57,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       color: Color(0xff23233c),
-                      fontSize: 23,
+                      fontSize: MediaQuery.of(context).size.height * 0.028,
                       fontWeight: FontWeight.w700,
                       fontStyle: FontStyle.normal,
                     ),
@@ -100,7 +100,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                       style: TextStyle(
                         fontFamily: 'SFProDisplay',
                         color: Color(0xff23233c),
-                        fontSize: 14,
+                        fontSize: MediaQuery.of(context).size.height * 0.02,
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.normal,
                       ),
@@ -132,14 +132,14 @@ class _MyCustomFormState extends State<CalculatorPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 6.0, right: 10.0),
+                    padding: const EdgeInsets.only(top: 8.0, right: 10.0),
                     child: Text(
                         //shows final price
                         finalresult + '₮',
                         style: TextStyle(
                           fontFamily: 'SFProDisplay',
                           color: Color(0xff23233c),
-                          fontSize: 20,
+                          fontSize: MediaQuery.of(context).size.height * 0.024,
                           fontWeight: FontWeight.w900,
                           fontStyle: FontStyle.normal,
                         )),
@@ -150,7 +150,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 6.0, right: 10.0),
+                    padding: const EdgeInsets.only(top: 8.0, right: 10.0),
                     child: Text(
                         psps == 1
                             ? "Таны төлөх үнийн дүн"
@@ -158,7 +158,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                         style: TextStyle(
                           fontFamily: 'SFProDisplay',
                           color: Color(0xff23233c),
-                          fontSize: 12,
+                          fontSize: MediaQuery.of(context).size.height * 0.016,
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                         )),

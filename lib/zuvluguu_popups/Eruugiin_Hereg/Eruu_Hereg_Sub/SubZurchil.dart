@@ -113,7 +113,7 @@ class _SZState extends State<SubZurchilBox> {
                   MenuItems(
                     popup: morepopups[46],
                     title: "Зөрчил шалгах субъект",
-                    img: "assets/Icons/shTemplate.png",
+                    img: "assets/Icons/Zagwar.png",
                   ),
                   MenuItems(
                     popup: ZHolbogdBox(title: "Холбогдогч"),

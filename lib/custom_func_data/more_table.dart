@@ -4,6 +4,7 @@ import 'package:project_1/zuvluguu_popups/Eruugiin_Hereg/Eruu_Hereg_Sub/Eruugiin
 import 'package:project_1/zuvluguu_popups/Irgenii%20Hereg/IrgenHereg_Sub/firstIrgen.dart';
 import 'package:project_1/zuvluguu_popups/NudeeNee.dart';
 import 'package:project_1/zuvluguu_popups/Zahirgaanii_Hereg/ZahirgaaniiHereg.dart';
+import 'package:project_1/zuvluguu_popups/eruulNiigem.dart';
 
 class CategoriesScroller extends StatelessWidget {
   const CategoriesScroller();
@@ -47,6 +48,12 @@ class CategoriesScroller extends StatelessWidget {
                 imgPath: 'assets/Icons/openeye.gif',
                 popup: EyeBox(
                   title: 'Open your eyes',
+                ),
+              ),
+              BoxItems(
+                imgPath: 'assets/Icons/irgen.gif',
+                popup: NewBox(
+                  title: 'ЭРҮҮЛ НИЙГЭМ',
                 ),
               ),
             ],

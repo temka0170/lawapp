@@ -67,9 +67,6 @@ class _MoreScreenState extends State<MoreScreen> {
     int id;
     return Column(
       children: <Widget>[
-        SizedBox(
-          height: 35.0,
-        ),
         CarouselSlider.builder(
           itemCount: mores.length,
           itemBuilder: (context, index) {
@@ -99,6 +96,7 @@ class _MoreScreenState extends State<MoreScreen> {
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,
             scrollDirection: Axis.horizontal,
+            height: MediaQuery.of(context).size.height * 0.28,
           ),
         ),
         // PageView.builder(
@@ -166,7 +164,7 @@ class _MoreScreenState extends State<MoreScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 14.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Row(
@@ -243,7 +241,7 @@ class _MoreTileState extends State<MoreTile> {
                 padding: const EdgeInsets.only(top: 15.0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.46,
+                  height: MediaQuery.of(context).size.height * 0.28,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: FittedBox(

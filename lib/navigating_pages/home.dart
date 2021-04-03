@@ -40,7 +40,7 @@ class _MyStatefulWidgetState extends State<MyHome> {
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       color: Color(0xff23233c),
-                      fontSize: 18,
+                      fontSize: MediaQuery.of(context).size.height * 0.026,
                       fontWeight: FontWeight.w700,
                       fontStyle: FontStyle.normal,
                     )),
