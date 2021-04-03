@@ -120,8 +120,8 @@ final List<String> itemTitle = [
   "Апп Хөгжүүлэгч",
   "Апп Хөгжүүлэгч",
   "Хуульч, Өмгөөлөгч",
-  "Start 3",
-  "Test Jpg"
+  "Хуульч, Өмгөөлөгч",
+  "Хуульч, Өмгөөлөгч"
 ];
 
 //our team popup descriptions
@@ -129,8 +129,8 @@ final List<String> itemDesc = [
   "\"Senior Developer\"",
   "\"Junior Developer\"",
   "\"Үүсгэн байгуулагч\"",
-  "\"Start3 PlaceHolder\"",
-  "\"Test PlaceHolder\""
+  "\"Хуульч, Өмгөөлөгч\"",
+  "\"Хуульч, Өмгөөлөгч\""
 ];
 
 //our team popup bottom container with names
@@ -138,6 +138,6 @@ final List<String> itemBtn = [
   "С.Батцэнгэл",
   "Б.Тэмүүлэн",
   "Э.Амархүү",
-  "Just Start3",
-  "Just Test",
+  "П.Ундрах-Эрдэнэ",
+  "Х.Отгонтогтох",
 ];

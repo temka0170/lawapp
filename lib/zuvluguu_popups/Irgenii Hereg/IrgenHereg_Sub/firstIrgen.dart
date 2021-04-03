@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../../SubLocation.dart';
 import '../Ewleruulen_zuuchlah/EvleruulehSub.dart';
 import 'SubIrgen.dart';
 // import 'boxRow_buttons.dart';
@@ -176,6 +177,46 @@ class _FirstIrgenBoxState extends State<FirstIrgenBox> {
                               flex: 1,
                               child: Center(
                                 child: Text("Эвлэрүүлэн Зуучлах"),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return SubLocationBox(
+                              title: "Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: Image.asset(
+                                  "assets/Icons/Bairshil.png",
+                                  fit: BoxFit.fill,
+                                )),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод", textAlign: TextAlign.center,),
                               ),
                             ),
                           ],

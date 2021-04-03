@@ -50,12 +50,12 @@ class CategoriesScroller extends StatelessWidget {
                   title: 'Open your eyes',
                 ),
               ),
-              BoxItems(
-                imgPath: 'assets/Icons/irgen.gif',
-                popup: NewBox(
-                  title: 'ЭРҮҮЛ НИЙГЭМ',
-                ),
-              ),
+              // BoxItems(
+              //   imgPath: 'assets/Icons/irgen.gif',
+              //   popup: NewBox(
+              //     title: 'ЭРҮҮЛ НИЙГЭМ',
+              //   ),
+              // ),
             ],
           ),
         ),

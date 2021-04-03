@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/zuvluguu_popups/Zahirgaanii_Hereg/Uridchilah.dart';
 
+import '../SubLocation.dart';
 import 'Shuuh.dart';
 
 //idx 16,17,18,19
@@ -180,6 +181,46 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                               flex: 1,
                               child: Center(
                                 child: Text("ШҮҮХИЙН ШАТ"),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return SubLocationBox(
+                              title: "Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: Image.asset(
+                                  "assets/Icons/Bairshil.png",
+                                  fit: BoxFit.fill,
+                                )),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод", textAlign: TextAlign.center,),
                               ),
                             ),
                           ],
