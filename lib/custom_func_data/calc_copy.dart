@@ -87,7 +87,7 @@ class _CalcPopState extends State<CalcPopup> {
                         style: TextStyle(
                           fontFamily: 'Roboto',
                           color: Color(0xff23233c),
-                          fontSize: 20,
+                          fontSize: MediaQuery.of(context).size.height * 0.02,
                           fontWeight: FontWeight.w900,
                           fontStyle: FontStyle.normal,
                         ),
@@ -97,17 +97,18 @@ class _CalcPopState extends State<CalcPopup> {
                   Align(
                     alignment: Alignment.center,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         widget.prc != null ? widget.prc + '₮' : "0" + '₮',
                         style: TextStyle(
                           fontFamily: 'SFProDisplay',
                           color: Color(0xff23233c),
-                          fontSize: 55,
+                          fontSize: MediaQuery.of(context).size.height * 0.069,
                           fontWeight: FontWeight.w200,
                           fontStyle: FontStyle.normal,
                         ),
-                        overflow: TextOverflow.fade,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
                     ),
                   ),

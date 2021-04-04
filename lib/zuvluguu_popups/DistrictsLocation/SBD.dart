@@ -107,7 +107,7 @@ class _SBDBoxState extends State<SBDBox> {
               child: Column(
                 children: <Widget>[
                   LocationItems(url: "https://goo.gl/maps/ccucb5Lx6jCJLKcE7", title: "СБД-ийн Цагдаагийн 1-р Хэлтэс"),
-                  LocationItems(url: "https://goo.gl/maps/VXayRLygQcPabQKYA", title: "СБД-ийн Цагдаагийн 2-р Хэлтэс"),
+                  LocationItems(url: "https://goo.gl/maps/4R9SwzrVQr9vPLkz5", title: "СБД-ийн Цагдаагийн 2-р Хэлтэс"),
                 ],
               ),
             ),

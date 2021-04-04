@@ -228,30 +228,6 @@ class _EHohirogchBoxState extends State<EHohirogchBox> {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[76];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("Цагдаагийн газруудын хаяг"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

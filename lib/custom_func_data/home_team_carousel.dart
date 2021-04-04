@@ -129,8 +129,8 @@ final List<String> itemDesc = [
   "\"Senior Developer\"",
   "\"Junior Developer\"",
   "\"Үүсгэн байгуулагч\"",
-  "\"Хуульч, Өмгөөлөгч\"",
-  "\"Хуульч, Өмгөөлөгч\""
+  "\"Туслах\"",
+  "\"Туслах\""
 ];
 
 //our team popup bottom container with names

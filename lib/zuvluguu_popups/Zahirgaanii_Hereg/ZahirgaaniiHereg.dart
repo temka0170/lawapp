@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/zuvluguu_popups/Zahirgaanii_Hereg/Uridchilah.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../SubLocation.dart';
 import 'Shuuh.dart';
@@ -192,15 +193,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return SubLocationBox(
-                              title: "Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод",
-                            );
-                          });
+                      launch("https://goo.gl/maps/Y2woQHbfsoPFGCcW9");
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -220,7 +213,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                             Expanded(
                               flex: 1,
                               child: Center(
-                                child: Text("Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод", textAlign: TextAlign.center,),
+                                child: Text("Захиргааны хэргийн шүүхийн нэгдсэн байр", textAlign: TextAlign.center,),
                               ),
                             ),
                           ],
