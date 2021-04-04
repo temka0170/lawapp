@@ -90,7 +90,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
                           radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/lawyer1M.jpg"),
+                          backgroundImage: AssetImage("assets/creators_png/lawyer1_2.jpg"),
                         ),
                       ),
                     ),
@@ -107,7 +107,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
                           radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/lawyer2M.jpg"),
+                          backgroundImage: AssetImage("assets/creators_png/lawyer2_2.jpg"),
                         ),
                       ),
                     ),
@@ -185,7 +185,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                   Align(
                     alignment: Alignment.topRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 28.0, right: 28.0),
+                      padding: const EdgeInsets.only(top: 35.0, right: 28.0),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.of(context).pop();
