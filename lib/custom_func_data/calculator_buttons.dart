@@ -11,7 +11,7 @@ _makePhoneCall(String contact) async {
     throw 'Could not dial $contact';
   }
 }
-
+//url launcher to itax.mta.mn
 Padding govLink(double width, double height) {
   return Padding(
     padding: const EdgeInsets.only(top: 15.0),
@@ -76,7 +76,7 @@ Padding govLink(double width, double height) {
     ),
   );
 }
-//
+//url launcher to video guide
 Padding ytLink(double width, double height) {
   return Padding(
     padding: const EdgeInsets.only(top: 10.0),

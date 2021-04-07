@@ -1,8 +1,8 @@
 // import 'package:flutter/material.dart';
 // import 'dart:async';
-
+//
 // import 'package:project_1/main.dart';
-
+//
 // //Splashscreen of the app
 // class OnboardingScreen extends StatefulWidget {
 //   @override
@@ -10,7 +10,7 @@
 //     return StartState();
 //   }
 // }
-
+//
 // class StartState extends State<OnboardingScreen>
 //     with SingleTickerProviderStateMixin {
 //   AnimationController _controller;
@@ -28,16 +28,16 @@
 //       end: 1.0,
 //     ).animate(_controller);
 //   }
-
+//   //timer of transition to main page
 //   startTimer() async {
 //     var duration = Duration(milliseconds: 2000);
 //     return Timer(duration, route);
 //   }
-
+//   //path to main page
 //   route() {
 //     Navigator.push(context, MaterialPageRoute(builder: (context) => Main()));
 //   }
-
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     _controller.forward();

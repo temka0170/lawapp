@@ -77,6 +77,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
               ),
             ),
           ),
+          //checks if there's url in data dart values, and shows download button according to url
           widget.url != null ? Align(
             alignment: Alignment.topCenter,
             child: Padding(

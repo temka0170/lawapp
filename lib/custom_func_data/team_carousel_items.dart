@@ -6,6 +6,7 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:project_1/custom_func_data/home_team_carousel.dart';
 
+//home section scrollable creators section
 class TeamCarousel extends StatefulWidget {
   TeamCarousel({
     Key key,
@@ -15,13 +16,6 @@ class TeamCarousel extends StatefulWidget {
 }
 
 class _TeamCarouselState extends State<TeamCarousel> {
-  double itemWidth = 90.0;
-  int itemCount = getCreators().length;
-  int selected;
-  int y = 2;
-  String title = "Э.АМАРХҮҮ\nХУУЛЬЧ, ӨМГӨӨЛӨГЧ";
-  FixedExtentScrollController _scrollController =
-      FixedExtentScrollController(initialItem: 2);
   List<CreatorModel> creators = new List<CreatorModel>();
 
   @override
@@ -179,7 +173,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
     );
   }
 
-  //team popup
+  //App creators intro popup
   Future buildShowGeneralDialog(BuildContext context, double height, int idx) {
     // ignore: unused_local_variable
     int _current;
