@@ -47,7 +47,7 @@ class CategoriesScroller extends StatelessWidget {
               BoxItems(
                 imgPath: 'assets/Icons/openeye.gif',
                 popup: EyeBox(
-                  title: 'Open your eyes',
+                  title: 'Нүдээ нээ',
                 ),
               ),
               // BoxItems(

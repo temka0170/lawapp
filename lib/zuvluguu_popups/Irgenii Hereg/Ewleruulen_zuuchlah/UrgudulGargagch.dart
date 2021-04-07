@@ -125,7 +125,7 @@ class _UGState extends State<UGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх"),
+                          child: Text("Таны эрх"),
                         ),
                       ),
                     ),
@@ -149,7 +149,7 @@ class _UGState extends State<UGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний үүрэг"),
+                          child: Text("Таны үүрэг"),
                         ),
                       ),
                     ),

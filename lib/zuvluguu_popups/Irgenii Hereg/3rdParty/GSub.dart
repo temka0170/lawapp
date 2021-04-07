@@ -116,7 +116,7 @@ class _GSState extends State<GSBox> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return GEGBox(
-                              title: "Таний эрх, үүрэг",
+                              title: "Таны эрх, үүрэг",
                             );
                           });
                     },
@@ -127,7 +127,7 @@ class _GSState extends State<GSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Text("Таны эрх, үүрэг"),
                         ),
                       ),
                     ),

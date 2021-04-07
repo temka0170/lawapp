@@ -121,7 +121,7 @@ class _ZLEGState extends State<ZLEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх"),
+                          child: Text("Таны эрх"),
                         ),
                       ),
                     ),
@@ -145,7 +145,7 @@ class _ZLEGState extends State<ZLEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний үүрэг"),
+                          child: Text("Таны үүрэг"),
                         ),
                       ),
                     ),

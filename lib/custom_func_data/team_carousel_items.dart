@@ -34,7 +34,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    ScrollController _controller = new ScrollController();
+    ScrollController _controller = new ScrollController(initialScrollOffset: 150.0);
     return Column(
       children: [
         Expanded(
@@ -90,7 +90,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
                           radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/lawyer1_2.jpg"),
+                          backgroundImage: AssetImage("assets/creators_png/designer1_2.jpg"),
                         ),
                       ),
                     ),
@@ -107,7 +107,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         backgroundColor: Color(0xfff78c1e),
                         child: CircleAvatar(
                           radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/lawyer2_2.jpg"),
+                          backgroundImage: AssetImage("assets/creators_png/lawyer1_5.jpg"),
                         ),
                       ),
                     ),
@@ -118,6 +118,23 @@ class _TeamCarouselState extends State<TeamCarousel> {
                       onTap: () {
                         double height = MediaQuery.of(context).size.height;
                         buildShowGeneralDialog(context, height, 4);
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundColor: Color(0xfff78c1e),
+                        child: CircleAvatar(
+                          radius: 47,
+                          backgroundImage: AssetImage("assets/creators_png/lawyer2_2.jpg"),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        double height = MediaQuery.of(context).size.height;
+                        buildShowGeneralDialog(context, height, 5);
                       },
                       child: CircleAvatar(
                         radius: 50,
@@ -182,10 +199,13 @@ class _TeamCarouselState extends State<TeamCarousel> {
               height: height,
               child: SizedBox.expand(
                 child: Column(children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.12,
+                  ),
                   Align(
                     alignment: Alignment.topRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 35.0, right: 28.0),
+                      padding: const EdgeInsets.only(right: 28.0),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.of(context).pop();
@@ -206,21 +226,21 @@ class _TeamCarouselState extends State<TeamCarousel> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 85.0),
-                    child: CarouselSlider(
-                      items: imageSliders,
-                      options: CarouselOptions(
-                          initialPage: idx,
-                          autoPlay: false,
-                          enlargeCenterPage: false,
-                          height: height * 0.685,
-                          onPageChanged: (index, reason) {
-                            setState(() {
-                              _current = index;
-                            });
-                          }),
-                    ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.06,
+                  ),
+                  CarouselSlider(
+                    items: imageSliders,
+                    options: CarouselOptions(
+                        initialPage: idx,
+                        autoPlay: false,
+                        enlargeCenterPage: false,
+                        height: height * 0.685,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            _current = index;
+                          });
+                        }),
                   ),
                 ]),
               ),

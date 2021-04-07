@@ -114,7 +114,7 @@ class _SHohirogchState extends State<ZHohirogchBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ZHEGBox(title: "Таний эрх, үүрэг");
+                            return ZHEGBox(title: "Таны эрх, үүрэг");
                           });
                     },
                     child: Padding(
@@ -124,7 +124,7 @@ class _SHohirogchState extends State<ZHohirogchBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Text("Таны эрх, үүрэг"),
                         ),
                       ),
                     ),

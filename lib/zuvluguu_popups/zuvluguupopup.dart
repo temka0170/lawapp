@@ -77,7 +77,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
               ),
             ),
           ),
-          Align(
+          widget.url != null ? Align(
             alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.only(top: 70.0),
@@ -136,7 +136,7 @@ class _ZuvluguuState extends State<ZuvluguuPopup> {
                 ),
               ),
             ),
-          ),
+          ) : Container(),
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(

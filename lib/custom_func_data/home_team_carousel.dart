@@ -110,8 +110,9 @@ final List<Widget> imageSliders = imgList
 final List<String> imgList = [
   "assets/creators_png/tsengel.jpg",
   "assets/creators_png/tedy1.jpg",
-  "assets/creators_png/lawyer1_1.jpg",
-  "assets/creators_png/lawyer2.jpg",
+  "assets/creators_png/designer1.jpg",
+  "assets/creators_png/lawyer1_7.jpg",
+  "assets/creators_png/lawyer2_7.jpg",
   "assets/creators_png/lawyer3.jpg"
 ];
 
@@ -119,6 +120,7 @@ final List<String> imgList = [
 final List<String> itemTitle = [
   "Апп Хөгжүүлэгч",
   "Апп Хөгжүүлэгч",
+  "Дизайнэр",
   "Хуульч, Өмгөөлөгч",
   "Хуульч, Өмгөөлөгч",
   "Хуульч, Өмгөөлөгч"
@@ -128,6 +130,7 @@ final List<String> itemTitle = [
 final List<String> itemDesc = [
   "\"Senior Developer\"",
   "\"Junior Developer\"",
+  "\"Lead Designer\"",
   "\"Үүсгэн байгуулагч\"",
   "\"Туслах\"",
   "\"Туслах\""
@@ -137,6 +140,7 @@ final List<String> itemDesc = [
 final List<String> itemBtn = [
   "С.Батцэнгэл",
   "Б.Тэмүүлэн",
+  "Б.Батзориг",
   "Э.Амархүү",
   "П.Ундрах-Эрдэнэ",
   "Х.Отгонтогтох",

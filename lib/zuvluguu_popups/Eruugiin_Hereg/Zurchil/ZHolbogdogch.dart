@@ -114,7 +114,7 @@ class _SHolbogdState extends State<ZHolbogdBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ZLEGBox(title: "Таний эрх, үүрэг");
+                            return ZLEGBox(title: "Таны эрх, үүрэг");
                           });
                     },
                     child: Padding(
@@ -124,7 +124,7 @@ class _SHolbogdState extends State<ZHolbogdBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Text("Таны эрх, үүрэг"),
                         ),
                       ),
                     ),

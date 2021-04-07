@@ -127,7 +127,7 @@ class _GWGState extends State<GWGBox> {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
-                                "Бие даасан шаардлага гаргаагүй гуравдагч этгээд"),
+                                "Бие даасан шаардлага гаргаагүй гуравдагч этгээд", textAlign: TextAlign.center),
                           ),
                         ),
                       ),
@@ -156,7 +156,7 @@ class _GWGState extends State<GWGBox> {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
-                                "Бие даасан шаардлага гаргасан гуравдагч этгээд"),
+                                "Бие даасан шаардлага гаргасан гуравдагч этгээд", textAlign: TextAlign.center),
                           ),
                         ),
                       ),

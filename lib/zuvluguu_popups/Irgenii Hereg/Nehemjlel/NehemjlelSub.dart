@@ -170,7 +170,7 @@ class _NSState extends State<NSBox> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return NEGBox(
-                              title: "Таний эрх, үүрэг",
+                              title: "Таны эрх, үүрэг",
                             );
                           });
                     },
@@ -181,7 +181,7 @@ class _NSState extends State<NSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх, үүрэг"),
+                          child: Text("Таны эрх, үүрэг"),
                         ),
                       ),
                     ),

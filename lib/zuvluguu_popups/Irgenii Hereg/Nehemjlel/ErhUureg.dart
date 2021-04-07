@@ -123,7 +123,7 @@ class _NEGState extends State<NEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний эрх"),
+                          child: Text("Таны эрх"),
                         ),
                       ),
                     ),
@@ -147,7 +147,7 @@ class _NEGState extends State<NEGBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таний үүрэг"),
+                          child: Text("Таны үүрэг"),
                         ),
                       ),
                     ),
