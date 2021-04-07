@@ -23,7 +23,7 @@ class LocationItems extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(8.0)),
           child: Center(
-            child: Text(title),
+            child: Text(title, textAlign: TextAlign.center,),
           ),
         ),
       ),

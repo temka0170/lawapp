@@ -106,8 +106,8 @@ class _CDBoxState extends State<CDBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://www.google.com/maps/@47.9219771,106.9042907,3a,40y,180h,90t/data=!3m6!1e1!3m4!1sYUReUzvxsHFUb8WdB9YqqQ!2e0!7i13312!8i6656", title: "ЧД-ийн Цагдаагийн 1-р Хэлтэс"),
-                  LocationItems(url: "https://goo.gl/maps/9XcGaJamuE8c2WWJ7", title: "ЧД-ийн Цагдаагийн 2-р Хэлтэс"),
+                  LocationItems(url: "https://www.google.com/maps/@47.9219771,106.9042907,3a,40y,180h,90t/data=!3m6!1e1!3m4!1sYUReUzvxsHFUb8WdB9YqqQ!2e0!7i13312!8i6656", title: "ЧД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9,"),
+                  LocationItems(url: "https://goo.gl/maps/9XcGaJamuE8c2WWJ7", title: "ЧД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19"),
                 ],
               ),
             ),

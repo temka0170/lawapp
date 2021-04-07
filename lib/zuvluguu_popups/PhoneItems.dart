@@ -30,7 +30,7 @@ class PhoneItems extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(8.0)),
           child: Center(
-            child: Text(title==null ? number : title+number),
+            child: Text(title==null ? number : title+number, textAlign: TextAlign.center,),
           ),
         ),
       ),
