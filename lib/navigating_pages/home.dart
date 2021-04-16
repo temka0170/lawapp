@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:project_1/custom_func_data/home_carousel.dart';
-import 'package:project_1/custom_func_data/home_table.dart';
-import 'package:project_1/custom_func_data/team_carousel_items.dart';
+import 'package:project_1/custom_functions/home_carousel.dart';
+import 'package:project_1/custom_functions/home_table.dart';
+import 'package:project_1/custom_functions/team_carousel_items.dart';
 
 class MyHome extends StatefulWidget {
   MyHome({Key key}) : super(key: key);

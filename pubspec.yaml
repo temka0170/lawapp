@@ -32,6 +32,7 @@ dependencies:
   intl: "^0.16.1"
   dio: any
   path_provider: any
+  ext_storage: any
 
 
   # The following adds the Cupertino Icons font to your application.

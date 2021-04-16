@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_1/custom_func_data/calc_copy.dart';
-import 'package:project_1/custom_func_data/calculator_buttons.dart';
-import '../custom_func_data/calculator_carousel.dart';
-import 'package:project_1/custom_func_data/decimal_formatter.dart';
-import 'package:project_1/custom_func_data/calculator_formula.dart';
+import 'package:project_1/custom_functions/calculator_ad_popup.dart';
+import 'package:project_1/custom_functions/calculator_popup.dart';
+import 'package:project_1/custom_functions/calculator_buttons.dart';
+import '../custom_functions/calculator_carousel.dart';
+import 'package:project_1/custom_functions/decimal_formatter.dart';
+import 'package:project_1/custom_functions/calculator_formula.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override

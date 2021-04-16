@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_1/custom_func_data/calculator_popup.dart';
-import 'package:project_1/custom_func_data/data.dart';
-import 'package:project_1/custom_func_data/more_carousel.dart';
-import 'package:project_1/custom_func_data/more_table.dart';
+import 'package:project_1/custom_functions/calculator_ad_popup.dart';
+import 'package:project_1/custom_functions/data.dart';
+import 'package:project_1/custom_functions/more_carousel.dart';
+import 'package:project_1/custom_functions/more_table.dart';
 
 class More extends StatefulWidget {
   More({Key key}) : super(key: key);
