@@ -25,7 +25,7 @@ class _AdviceState extends State<AdvicePopup> {
       var dir = await getExternalStorageDirectory();
       var path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOWNLOADS);
 
-      await dio.download(widget.url, "${path}/${widget.title}.pdf");
+      await dio.download(widget.url, "$path/${widget.title}.pdf");
     } catch (e) {
       print(e);
     }
