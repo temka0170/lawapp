@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:project_1/onboarding_screen/onboard.dart';
 import 'navigating_pages/calculator.dart';
 import 'navigating_pages/home.dart';
 import 'navigating_pages/more.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Main(), //loading screen/onboarding screen
+      home: OnboardingScreen(), //loading screen/onboarding screen
       debugShowCheckedModeBanner: false,
     );
   }
