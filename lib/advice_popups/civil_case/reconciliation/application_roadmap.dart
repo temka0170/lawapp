@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
@@ -7,16 +6,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class UZBox extends StatefulWidget {
+class ApplicantTemplate extends StatefulWidget {
   String title;
 
-  UZBox({Key key, this.title}) : super(key: key);
+  ApplicantTemplate({Key key, this.title}) : super(key: key);
 
   @override
   _UZState createState() => _UZState();
 }
 
-class _UZState extends State<UZBox> {
+class _UZState extends State<ApplicantTemplate> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override

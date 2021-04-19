@@ -4,7 +4,7 @@ import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 // import 'boxRow_buttons.dart';
 
-//civil case popup
+/*This file shows subdirectory of administrative cases*/
 // ignore: must_be_immutable
 class HEGBox extends StatefulWidget {
   String title;

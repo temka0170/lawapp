@@ -6,20 +6,19 @@ import '../../menu_items.dart';
 import '../administrate/HSub.dart';
 import 'civil_roadmap.dart';
 import '../claim/claim_sub.dart';
-// import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class SubIrgenBox extends StatefulWidget {
+class SubCivilBox extends StatefulWidget {
   String title;
 
-  SubIrgenBox({Key key, this.title}) : super(key: key);
+  SubCivilBox({Key key, this.title}) : super(key: key);
 
   @override
-  _SubIrgenBoxState createState() => _SubIrgenBoxState();
+  _SubCivilBoxState createState() => _SubCivilBoxState();
 }
 
-class _SubIrgenBoxState extends State<SubIrgenBox> {
+class _SubCivilBoxState extends State<SubCivilBox> {
   ScrollController _controller = new ScrollController();
   @override
   void initState() {
@@ -109,7 +108,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
               child: Column(
                 children: <Widget>[
                   MenuItems(
-                    popup: NSBox(title: "Нэхэмжлэгч"),
+                    popup: ClaimSub(title: "Нэхэмжлэгч"),
                     title: "Нэхэмжлэгч",
                     img: "assets/Icons/Nehemjlegch.png",
                   ),
@@ -124,7 +123,7 @@ class _SubIrgenBoxState extends State<SubIrgenBox> {
                     img: "assets/Icons/3rdParty.png",
                   ),
                   MenuItems(
-                    popup: SxemBox(title: "СХЕМ ЗУРАГ"),
+                    popup: CivilTemplate(title: "СХЕМ ЗУРАГ"),
                     title: "СХЕМ ЗУРАГ",
                     img: "assets/Icons/Zagwar.png",
                   ),

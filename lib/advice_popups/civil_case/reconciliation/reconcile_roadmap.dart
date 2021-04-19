@@ -1,19 +1,18 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class ESxemBox extends StatefulWidget {
+class ReconcileTemplate extends StatefulWidget {
   String title;
 
-  ESxemBox({Key key, this.title}) : super(key: key);
+  ReconcileTemplate({Key key, this.title}) : super(key: key);
 
   @override
-  _ESxemBoxState createState() => _ESxemBoxState();
+  _ReconcileTemplateState createState() => _ReconcileTemplateState();
 }
 
-class _ESxemBoxState extends State<ESxemBox> {
+class _ReconcileTemplateState extends State<ReconcileTemplate> {
   @override
   void initState() {
     // ignore: todo

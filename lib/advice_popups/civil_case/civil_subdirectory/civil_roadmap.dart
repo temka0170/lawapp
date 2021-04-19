@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class SxemBox extends StatefulWidget {
+class CivilTemplate extends StatefulWidget {
   String title;
 
-  SxemBox({Key key, this.title}) : super(key: key);
+  CivilTemplate({Key key, this.title}) : super(key: key);
 
   @override
-  _SxemBoxState createState() => _SxemBoxState();
+  _CivilTemplateState createState() => _CivilTemplateState();
 }
 
-class _SxemBoxState extends State<SxemBox> {
+class _CivilTemplateState extends State<CivilTemplate> {
   @override
   void initState() {
     // ignore: todo

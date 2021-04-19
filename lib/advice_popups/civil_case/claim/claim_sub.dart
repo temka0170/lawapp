@@ -1,25 +1,23 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 import 'claim_rights.dart';
 import 'NWH.dart';
 import 'claim.dart';
-// import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NSBox extends StatefulWidget {
+class ClaimSub extends StatefulWidget {
   String title;
 
-  NSBox({Key key, this.title}) : super(key: key);
+  ClaimSub({Key key, this.title}) : super(key: key);
 
   @override
   _NSState createState() => _NSState();
 }
 
-class _NSState extends State<NSBox> {
+class _NSState extends State<ClaimSub> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -117,7 +115,7 @@ class _NSState extends State<NSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return NWHBox(
+                            return CWHBox(
                               title: "Нэхэмжлэгч гэж хэн бэ?",
                             );
                           });
@@ -143,7 +141,7 @@ class _NSState extends State<NSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return NBox(
+                            return ClaimBox(
                               title: "Нэхэмжлэлийн загварууд",
                             );
                           });
@@ -169,7 +167,7 @@ class _NSState extends State<NSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return NEGBox(
+                            return ClaimRights(
                               title: "Таны эрх, үүрэг",
                             );
                           });

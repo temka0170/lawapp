@@ -1,20 +1,19 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import '../../boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class EBox extends StatefulWidget {
+class Reconciliation extends StatefulWidget {
   String title;
 
-  EBox({Key key, this.title}) : super(key: key);
+  Reconciliation({Key key, this.title}) : super(key: key);
 
   @override
-  _EBoxState createState() => _EBoxState();
+  _ReconciliationState createState() => _ReconciliationState();
 }
 
-class _EBoxState extends State<EBox> {
+class _ReconciliationState extends State<Reconciliation> {
   @override
   void initState() {
     // ignore: todo

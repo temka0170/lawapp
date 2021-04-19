@@ -6,16 +6,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NWHBox extends StatefulWidget {
+class CWHBox extends StatefulWidget {
   String title;
 
-  NWHBox({Key key, this.title}) : super(key: key);
+  CWHBox({Key key, this.title}) : super(key: key);
 
   @override
   _NWHState createState() => _NWHState();
 }
 
-class _NWHState extends State<NWHBox> {
+class _NWHState extends State<CWHBox> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override

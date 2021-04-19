@@ -2,20 +2,20 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../advice_popup.dart';
-// import 'boxRow_buttons.dart';
 
-//civil case popup
+/*This file is sub popup directory of authority case
+* shows claim cases*/
 // ignore: must_be_immutable
-class Nehemjlel extends StatefulWidget {
+class Claim extends StatefulWidget {
   String title;
 
-  Nehemjlel({Key key, this.title}) : super(key: key);
+  Claim({Key key, this.title}) : super(key: key);
 
   @override
-  _NehemjlelState createState() => _NehemjlelState();
+  _ClaimState createState() => _ClaimState();
 }
 
-class _NehemjlelState extends State<Nehemjlel> {
+class _ClaimState extends State<Claim> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -23,7 +23,7 @@ class _NehemjlelState extends State<Nehemjlel> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = moreSubPopups();
+    morepopups = moreSubPopups(); //gets popup values from data.dart
   }
 
   @override
@@ -31,21 +31,23 @@ class _NehemjlelState extends State<Nehemjlel> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(//Popup made by Dialog widget
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20),//Rounded container
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,//blurred background
         child: contentBox(context),
       ),
     );
   }
 
+  //Popup contents
   contentBox(context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        //Back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -72,6 +74,7 @@ class _NehemjlelState extends State<Nehemjlel> {
             ),
           ),
         ),
+        //Title of Popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -86,6 +89,7 @@ class _NehemjlelState extends State<Nehemjlel> {
                 )),
           ),
         ),
+        //Items of Popup
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(

@@ -4,22 +4,18 @@ import 'package:project_1/advice_popups/criminal_case/Criminal_case_subdirectory
 import '../../sub_location.dart';
 import 'conflict_subdirectory.dart';
 
-//idx 16,17,18,19
-
-// import 'boxRow_buttons.dart';
-
 //civil case popup
 // ignore: must_be_immutable
-class FirstEruuBox extends StatefulWidget {
+class Criminal extends StatefulWidget {
   String title;
 
-  FirstEruuBox({Key key, this.title}) : super(key: key);
+  Criminal({Key key, this.title}) : super(key: key);
 
   @override
-  _FirstEruuBoxState createState() => _FirstEruuBoxState();
+  _CriminalState createState() => _CriminalState();
 }
 
-class _FirstEruuBoxState extends State<FirstEruuBox> {
+class _CriminalState extends State<Criminal> {
   @override
   void initState() {
     // ignore: todo
@@ -114,7 +110,7 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return SubZurchilBox(
+                            return ConflictSub(
                               title: "Зөрчлийн Хэрэг",
                             );
                           });
@@ -155,7 +151,7 @@ class _FirstEruuBoxState extends State<FirstEruuBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return SubEruuBox(
+                            return CriminalSub(
                               title: "Эрүүгийн Хэрэг",
                             );
                           });

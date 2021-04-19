@@ -69,26 +69,26 @@ List<AdModel> getAds() {
 }
 
 //calculator, more section popup values
-List<CustomDialogBox> adPopups() {
-  List<CustomDialogBox> popups = new List<CustomDialogBox>();
-  CustomDialogBox popup = new CustomDialogBox();
+List<CalculatorAdPopup> adPopups() {
+  List<CalculatorAdPopup> popups = new List<CalculatorAdPopup>();
+  CalculatorAdPopup popup = new CalculatorAdPopup();
 
   popup.url =
       "https://edit.mn/course/38/tesc-teenagers-english-speaking-course";
   popup.img = Image.asset("assets/Ads/speak_club.jpg");
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new CalculatorAdPopup();
   popup.url = "https://www.facebook.com/Umbrella.Lawfirm";
   popup.img = Image.asset("assets/Ads/ulf.jpg");
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new CalculatorAdPopup();
   popup.url = "https://edit.mn/course/47/make-website-without-code";
   popup.img = Image.asset("assets/Ads/wordpress.jpg");
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new CalculatorAdPopup();
   popup.url = "https://www.google.mn/";
   popup.img = Image.asset("assets/Ads/adSpace.jpg");
   popups.add(popup);
@@ -161,25 +161,25 @@ List<MoreModel> getMore() {
 }
 
 //calculator, more section popup values
-List<CustomDialogBox> morePopups() {
-  List<CustomDialogBox> morepops = new List<CustomDialogBox>();
-  CustomDialogBox morepop = new CustomDialogBox();
+List<CalculatorAdPopup> morePopups() {
+  List<CalculatorAdPopup> morepops = new List<CalculatorAdPopup>();
+  CalculatorAdPopup morepop = new CalculatorAdPopup();
 
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
 
-  morepop = new CustomDialogBox();
+  morepop = new CalculatorAdPopup();
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
 
-  morepop = new CustomDialogBox();
+  morepop = new CalculatorAdPopup();
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
 
-  morepop = new CustomDialogBox();
+  morepop = new CalculatorAdPopup();
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
@@ -321,28 +321,28 @@ List<CreatorModel> getCreators() {
 }
 
 //home section popup values
-List<CustomDialogBox> getPopups() {
-  List<CustomDialogBox> popups = new List<CustomDialogBox>();
-  CustomDialogBox popup = new CustomDialogBox();
+List<CalculatorAdPopup> getPopups() {
+  List<CalculatorAdPopup> popups = new List<CalculatorAdPopup>();
+  CalculatorAdPopup popup = new CalculatorAdPopup();
 
   popup.descriptions = "";
   popup.img = Image.asset("assets/Ads/adSpace.jpg");
   popup.title = "";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new CalculatorAdPopup();
   popup.descriptions = "";
   popup.img = Image.asset("assets/Ads/adSpace.jpg");
   popup.title = "";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new CalculatorAdPopup();
   popup.descriptions = "";
   popup.img = Image.asset("assets/Ads/adSpace.jpg");
   popup.title = "";
   popups.add(popup);
 
-  popup = new CustomDialogBox();
+  popup = new CalculatorAdPopup();
   popup.descriptions = "";
   popup.img = Image.asset("assets/Ads/adSpace.jpg");
   popup.title = "";

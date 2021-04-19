@@ -7,16 +7,16 @@ import 'conflict_rights_obligation.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class ZHohirogchBox extends StatefulWidget {
+class AuthorityVictim extends StatefulWidget {
   String title;
 
-  ZHohirogchBox({Key key, this.title}) : super(key: key);
+  AuthorityVictim({Key key, this.title}) : super(key: key);
 
   @override
   _SHohirogchState createState() => _SHohirogchState();
 }
 
-class _SHohirogchState extends State<ZHohirogchBox> {
+class _SHohirogchState extends State<AuthorityVictim> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -114,7 +114,7 @@ class _SHohirogchState extends State<ZHohirogchBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ZHEGBox(title: "Таны эрх, үүрэг");
+                            return ConflictRights(title: "Таны эрх, үүрэг");
                           });
                     },
                     child: Padding(

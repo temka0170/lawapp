@@ -4,16 +4,16 @@ import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 
 // ignore: must_be_immutable
-class ZHEGBox extends StatefulWidget {
+class ConflictRights extends StatefulWidget {
   String title;
 
-  ZHEGBox({Key key, this.title}) : super(key: key);
+  ConflictRights({Key key, this.title}) : super(key: key);
 
   @override
   _ZHEGState createState() => _ZHEGState();
 }
 
-class _ZHEGState extends State<ZHEGBox> {
+class _ZHEGState extends State<ConflictRights> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override

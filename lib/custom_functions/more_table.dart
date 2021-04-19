@@ -5,8 +5,8 @@ import 'package:project_1/advice_popups/civil_case/civil_subdirectory/first_civi
 import 'package:project_1/advice_popups/open_eyes.dart';
 import 'package:project_1/advice_popups/authority_case/authority_case.dart';
 
-class CategoriesScroller extends StatelessWidget {
-  const CategoriesScroller();
+class MoreButtons extends StatelessWidget {
+  const MoreButtons();
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +27,19 @@ class CategoriesScroller extends StatelessWidget {
             children: <Widget>[
               BoxItems(
                 imgPath: 'assets/Icons/irgen.gif',
-                popup: FirstIrgenBox(
+                popup: FirstCivilBox(
                   title: 'Иргэний хэрэг',
                 ),
               ),
               BoxItems(
                 imgPath: 'assets/Icons/eruu.gif',
-                popup: FirstEruuBox(
+                popup: Criminal(
                   title: 'Эрүүгийн хэрэг',
                 ),
               ),
               BoxItems(
                 imgPath: 'assets/Icons/baiguullaga.gif',
-                popup: ZahirgaaBox(
+                popup: AuthorityBox(
                   title: 'Захиргааны хэрэг',
                 ),
               ),
@@ -51,7 +51,7 @@ class CategoriesScroller extends StatelessWidget {
               ),
               // BoxItems(
               //   imgPath: 'assets/Icons/irgen.gif',
-              //   popup: NewBox(
+              //   popup: HealthySociety(
               //     title: 'ЭРҮҮЛ НИЙГЭМ',
               //   ),
               // ),

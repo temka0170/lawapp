@@ -31,7 +31,7 @@ class _MyStatefulWidgetState extends State<MyHome> {
                   width: MediaQuery.of(context).size.width,
                   height: height * 0.31,
                   //advertisement carousel of home page
-                  child: MainScreen(),
+                  child: HomeCarousel(),
                 ),
               ),
               Padding(

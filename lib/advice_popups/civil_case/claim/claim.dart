@@ -1,20 +1,19 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import '../../boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NBox extends StatefulWidget {
+class ClaimBox extends StatefulWidget {
   String title;
 
-  NBox({Key key, this.title}) : super(key: key);
+  ClaimBox({Key key, this.title}) : super(key: key);
 
   @override
-  _NBoxState createState() => _NBoxState();
+  _ClaimBoxState createState() => _ClaimBoxState();
 }
 
-class _NBoxState extends State<NBox> {
+class _ClaimBoxState extends State<ClaimBox> {
   @override
   void initState() {
     // ignore: todo

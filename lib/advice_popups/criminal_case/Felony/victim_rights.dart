@@ -6,16 +6,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class HohirogchErh extends StatefulWidget {
+class FelonyVictimRights extends StatefulWidget {
   String title;
 
-  HohirogchErh({Key key, this.title}) : super(key: key);
+  FelonyVictimRights({Key key, this.title}) : super(key: key);
 
   @override
-  _HohirogchErhState createState() => _HohirogchErhState();
+  _FelonyVictimRightsState createState() => _FelonyVictimRightsState();
 }
 
-class _HohirogchErhState extends State<HohirogchErh> {
+class _FelonyVictimRightsState extends State<FelonyVictimRights> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override

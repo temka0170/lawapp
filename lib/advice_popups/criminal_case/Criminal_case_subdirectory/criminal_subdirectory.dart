@@ -7,16 +7,16 @@ import '../../menu_items.dart';
 import '../../advice_popup.dart';
 
 // ignore: must_be_immutable
-class SubEruuBox extends StatefulWidget {
+class CriminalSub extends StatefulWidget {
   String title;
 
-  SubEruuBox({Key key, this.title}) : super(key: key);
+  CriminalSub({Key key, this.title}) : super(key: key);
 
   @override
   _SEState createState() => _SEState();
 }
 
-class _SEState extends State<SubEruuBox> {
+class _SEState extends State<CriminalSub> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -109,12 +109,12 @@ class _SEState extends State<SubEruuBox> {
               child: Column(
                 children: <Widget>[
                   MenuItems(
-                    popup: EHolbogdBox(title: "Холбогдогч"),
+                    popup: FelonyConnection(title: "Холбогдогч"),
                     title: "Холбогдогч",
                     img: "assets/Icons/Holbogdogch.png",
                   ),
                   MenuItems(
-                    popup: EHohirogchBox(title: "Хохирогч"),
+                    popup: FelonyVictim(title: "Хохирогч"),
                     title: "Хохирогч",
                     img: "assets/Icons/Hohirogch.png",
                   ),

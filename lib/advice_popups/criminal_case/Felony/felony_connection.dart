@@ -9,16 +9,16 @@ import 'suspect.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class EHolbogdBox extends StatefulWidget {
+class FelonyConnection extends StatefulWidget {
   String title;
 
-  EHolbogdBox({Key key, this.title}) : super(key: key);
+  FelonyConnection({Key key, this.title}) : super(key: key);
 
   @override
   _EHolbogdState createState() => _EHolbogdState();
 }
 
-class _EHolbogdState extends State<EHolbogdBox> {
+class _EHolbogdState extends State<FelonyConnection> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -116,7 +116,7 @@ class _EHolbogdState extends State<EHolbogdBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ESejigten(title: "Сэжигтэн");
+                            return FelonySuspect(title: "Сэжигтэн");
                           });
                     },
                     child: Padding(
@@ -140,7 +140,7 @@ class _EHolbogdState extends State<EHolbogdBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return EYllagdagch(
+                            return Culprit(
                               title: "Яллагдагч",
                             );
                           });
@@ -166,7 +166,7 @@ class _EHolbogdState extends State<EHolbogdBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return EShuugdegch(
+                            return Defendant(
                               title: "Шүүгдэгч",
                             );
                           });

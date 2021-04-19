@@ -5,22 +5,19 @@ import 'package:project_1/advice_popups/authority_case/court_rights.dart';
 import '../menu_items.dart';
 import 'claim_template.dart';
 
-//idx 16,17,18,19
-
-// import 'boxRow_buttons.dart';
-
-//civil case popup
+/*This file is sub directory of authority case
+* shows court cases*/
 // ignore: must_be_immutable
-class ShuuhBox extends StatefulWidget {
+class CourtBox extends StatefulWidget {
   String title;
 
-  ShuuhBox({Key key, this.title}) : super(key: key);
+  CourtBox({Key key, this.title}) : super(key: key);
 
   @override
-  _ShuuhBoxState createState() => _ShuuhBoxState();
+  _CourtBoxState createState() => _CourtBoxState();
 }
 
-class _ShuuhBoxState extends State<ShuuhBox> {
+class _CourtBoxState extends State<CourtBox> {
   @override
   void initState() {
     // ignore: todo
@@ -33,22 +30,24 @@ class _ShuuhBoxState extends State<ShuuhBox> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(//Popup made by Dialog widget
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20),//rounded container
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,//blurred background
         child: contentBox(context),
       ),
     );
   }
 
+  //contents of container
   contentBox(context) {
     ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        //back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -75,6 +74,7 @@ class _ShuuhBoxState extends State<ShuuhBox> {
             ),
           ),
         ),
+        //title of popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -89,6 +89,7 @@ class _ShuuhBoxState extends State<ShuuhBox> {
                 )),
           ),
         ),
+        //items of container
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
@@ -110,12 +111,12 @@ class _ShuuhBoxState extends State<ShuuhBox> {
               child: Column(
                 children: <Widget>[
                   MenuItems(
-                    popup: Nehemjlel(title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР"),
+                    popup: Claim(title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР"),
                     title: "НЭХЭМЖЛЭЛИЙН ЗАГВАР",
                     img: "assets/Icons/Zagwar.png",
                   ),
                   MenuItems(
-                    popup: ShuuhErh(title: "ТАНЫ ЭРХ, ҮҮРЭГ"),
+                    popup: CourtRight(title: "ТАНЫ ЭРХ, ҮҮРЭГ"),
                     title: "ТАНЫ ЭРХ, ҮҮРЭГ",
                     img: "assets/Icons/taniiEG.png",
                   ),

@@ -4,16 +4,16 @@ import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 
 // ignore: must_be_immutable
-class ZLEGBox extends StatefulWidget {
+class ConflictConnectionRights extends StatefulWidget {
   String title;
 
-  ZLEGBox({Key key, this.title}) : super(key: key);
+  ConflictConnectionRights({Key key, this.title}) : super(key: key);
 
   @override
   _ZLEGState createState() => _ZLEGState();
 }
 
-class _ZLEGState extends State<ZLEGBox> {
+class _ZLEGState extends State<ConflictConnectionRights> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override

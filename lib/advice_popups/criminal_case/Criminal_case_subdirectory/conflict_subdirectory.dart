@@ -9,16 +9,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class SubZurchilBox extends StatefulWidget {
+class ConflictSub extends StatefulWidget {
   String title;
 
-  SubZurchilBox({Key key, this.title}) : super(key: key);
+  ConflictSub({Key key, this.title}) : super(key: key);
 
   @override
   _SZState createState() => _SZState();
 }
 
-class _SZState extends State<SubZurchilBox> {
+class _SZState extends State<ConflictSub> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -116,12 +116,12 @@ class _SZState extends State<SubZurchilBox> {
                     img: "assets/Icons/Zagwar.png",
                   ),
                   MenuItems(
-                    popup: ZHolbogdBox(title: "Холбогдогч"),
+                    popup: ConflictConnection(title: "Холбогдогч"),
                     title: "Холбогдогч",
                     img: "assets/Icons/Holbogdogch.png",
                   ),
                   MenuItems(
-                    popup: ZHohirogchBox(title: "Хохирогч"),
+                    popup: AuthorityVictim(title: "Хохирогч"),
                     title: "Хохирогч",
                     img: "assets/Icons/Hohirogch.png",
                   ),

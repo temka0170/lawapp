@@ -2,26 +2,21 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/authority_case/preemptive.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../sub_location.dart';
 import 'court.dart';
 
-//idx 16,17,18,19
-
-// import 'boxRow_buttons.dart';
-
-//civil case popup
+/*This file shows authority case section in advice page*/
 // ignore: must_be_immutable
-class ZahirgaaBox extends StatefulWidget {
+class AuthorityBox extends StatefulWidget {
   String title;
 
-  ZahirgaaBox({Key key, this.title}) : super(key: key);
+  AuthorityBox({Key key, this.title}) : super(key: key);
 
   @override
-  _ZahirgaaBoxState createState() => _ZahirgaaBoxState();
+  _AuthorityBoxState createState() => _AuthorityBoxState();
 }
 
-class _ZahirgaaBoxState extends State<ZahirgaaBox> {
+class _AuthorityBoxState extends State<AuthorityBox> {
   @override
   void initState() {
     // ignore: todo
@@ -34,21 +29,23 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
-        shape: RoundedRectangleBorder(
+      child: Dialog(//Popup is made by Dialog widget
+        shape: RoundedRectangleBorder(//rounded the container
           borderRadius: BorderRadius.circular(20),
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,//blurs background
         child: contentBox(context),
       ),
     );
   }
 
+  //Contents that are in the Popup
   contentBox(context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        //back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -75,6 +72,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
             ),
           ),
         ),
+        //Title of the popup menu
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -89,6 +87,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                 )),
           ),
         ),
+        //items of popup
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
@@ -116,7 +115,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return Uridchilah(
+                            return Preemptive(
                               title: "УРЬДЧИЛАН ШИЙДВЭРЛЭХ ШАТ",
                             );
                           });
@@ -157,7 +156,7 @@ class _ZahirgaaBoxState extends State<ZahirgaaBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ShuuhBox(
+                            return CourtBox(
                               title: "ШҮҮХИЙН ШАТ",
                             );
                           });

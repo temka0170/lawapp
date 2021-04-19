@@ -1,23 +1,21 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 import 'application_roadmap.dart';
-// import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class UGBox extends StatefulWidget {
+class Applicant extends StatefulWidget {
   String title;
 
-  UGBox({Key key, this.title}) : super(key: key);
+  Applicant({Key key, this.title}) : super(key: key);
 
   @override
   _UGState createState() => _UGState();
 }
 
-class _UGState extends State<UGBox> {
+class _UGState extends State<Applicant> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -163,7 +161,7 @@ class _UGState extends State<UGBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return UZBox(
+                            return ApplicantTemplate(
                               title: "Өргөдөлийн загвар",
                             );
                           });

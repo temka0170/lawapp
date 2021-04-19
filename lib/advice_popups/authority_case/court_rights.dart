@@ -2,20 +2,20 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../advice_popup.dart';
-// import 'boxRow_buttons.dart';
 
-//civil case popup
+/*This file shows sub directory for court case
+* shows rights*/
 // ignore: must_be_immutable
-class ShuuhErh extends StatefulWidget {
+class CourtRight extends StatefulWidget {
   String title;
 
-  ShuuhErh({Key key, this.title}) : super(key: key);
+  CourtRight({Key key, this.title}) : super(key: key);
 
   @override
-  _ShuuhErhState createState() => _ShuuhErhState();
+  _CourtRightState createState() => _CourtRightState();
 }
 
-class _ShuuhErhState extends State<ShuuhErh> {
+class _CourtRightState extends State<CourtRight> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -23,7 +23,7 @@ class _ShuuhErhState extends State<ShuuhErh> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = moreSubPopups();
+    morepopups = moreSubPopups();//gets popup values from data.dart
   }
 
   @override
@@ -31,21 +31,23 @@ class _ShuuhErhState extends State<ShuuhErh> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(//popup made by Dialog widget
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20),//rounded container
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,//blurred background
         child: contentBox(context),
       ),
     );
   }
 
+  //contents of container
   contentBox(context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        //back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -72,6 +74,7 @@ class _ShuuhErhState extends State<ShuuhErh> {
             ),
           ),
         ),
+        //title of popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -86,6 +89,7 @@ class _ShuuhErhState extends State<ShuuhErh> {
                 )),
           ),
         ),
+        //items of container
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(

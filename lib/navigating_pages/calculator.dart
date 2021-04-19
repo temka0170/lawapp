@@ -47,7 +47,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
                   width: _width,
                   height: _height * 0.34,
                   //custom carousel
-                  child: AdScreen(),
+                  child: CalculatorCarousel(),
                 ),
               ),
               Padding(

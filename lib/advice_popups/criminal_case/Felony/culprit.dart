@@ -7,16 +7,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class EYllagdagch extends StatefulWidget {
+class Culprit extends StatefulWidget {
   String title;
 
-  EYllagdagch({Key key, this.title}) : super(key: key);
+  Culprit({Key key, this.title}) : super(key: key);
 
   @override
-  _EYllagdagchState createState() => _EYllagdagchState();
+  _CulpritState createState() => _CulpritState();
 }
 
-class _EYllagdagchState extends State<EYllagdagch> {
+class _CulpritState extends State<Culprit> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -138,7 +138,7 @@ class _EYllagdagchState extends State<EYllagdagch> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return EShuugdegchErh(
+                            return DefendantRights(
                               title: "Таны эрх",
                             );
                           });

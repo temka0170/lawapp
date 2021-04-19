@@ -6,16 +6,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NEGBox extends StatefulWidget {
+class ClaimRights extends StatefulWidget {
   String title;
 
-  NEGBox({Key key, this.title}) : super(key: key);
+  ClaimRights({Key key, this.title}) : super(key: key);
 
   @override
   _NEGState createState() => _NEGState();
 }
 
-class _NEGState extends State<NEGBox> {
+class _NEGState extends State<ClaimRights> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override

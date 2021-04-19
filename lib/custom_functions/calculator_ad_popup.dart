@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 
 //calculator, more section carousel popup
 // ignore: must_be_immutable
-class CustomDialogBox extends StatefulWidget {
+class CalculatorAdPopup extends StatefulWidget {
   String title, descriptions, text, url;
   Image img;
 
-  CustomDialogBox(
+  CalculatorAdPopup(
       {Key key, this.title, this.descriptions, this.text, this.img, this.url})
       : super(key: key);
 
   @override
-  _CustomDialogBoxState createState() => _CustomDialogBoxState();
+  _CalculatorAdPopupState createState() => _CalculatorAdPopupState();
 }
 
-class _CustomDialogBoxState extends State<CustomDialogBox> {
+class _CalculatorAdPopupState extends State<CalculatorAdPopup> {
 
   @override
   Widget build(BuildContext context) {

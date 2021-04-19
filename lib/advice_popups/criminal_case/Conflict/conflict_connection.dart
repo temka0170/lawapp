@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 import 'conflict_connect_rights.dart';
-// import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class ZHolbogdBox extends StatefulWidget {
+class ConflictConnection extends StatefulWidget {
   String title;
 
-  ZHolbogdBox({Key key, this.title}) : super(key: key);
+  ConflictConnection({Key key, this.title}) : super(key: key);
 
   @override
   _SHolbogdState createState() => _SHolbogdState();
 }
 
-class _SHolbogdState extends State<ZHolbogdBox> {
+class _SHolbogdState extends State<ConflictConnection> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -114,7 +113,7 @@ class _SHolbogdState extends State<ZHolbogdBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ZLEGBox(title: "Таны эрх, үүрэг");
+                            return ConflictConnectionRights(title: "Таны эрх, үүрэг");
                           });
                     },
                     child: Padding(

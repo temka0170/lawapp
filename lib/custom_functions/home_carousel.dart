@@ -8,12 +8,12 @@ import 'data.dart';
 
 //Home section carousel, reused calculator section carousel with few changes
 // ignore: must_be_immutable
-class MainScreen extends StatefulWidget {
+class HomeCarousel extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _HomeCarouselState createState() => _HomeCarouselState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _HomeCarouselState extends State<HomeCarousel> {
   //gets slide values
   List<MainModel> mains = new List<MainModel>();
   int _currentMain = 0;
@@ -157,7 +157,7 @@ class MainTile extends StatefulWidget {
 }
 
 class _MainTileState extends State<MainTile> {
-  List<CustomDialogBox> popups = new List<CustomDialogBox>();
+  List<CalculatorAdPopup> popups = new List<CalculatorAdPopup>();
 
   @override
   void initState() {

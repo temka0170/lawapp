@@ -6,9 +6,9 @@ import 'DistrictsLocation/CD.dart';
 import 'DistrictsLocation/HUD.dart';
 import 'DistrictsLocation/SBD.dart';
 import 'DistrictsLocation/SHD.dart';
-import 'DistrictsLocation/bagahangai.dart';
-import 'DistrictsLocation/baganuur.dart';
-import 'DistrictsLocation/nalaih.dart';
+import 'DistrictsLocation/Bagahangai.dart';
+import 'DistrictsLocation/Baganuur.dart';
+import 'DistrictsLocation/Nalaih.dart';
 import 'menu_items.dart';
 // import 'boxRow_buttons.dart';
 

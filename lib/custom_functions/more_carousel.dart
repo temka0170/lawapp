@@ -10,12 +10,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 //Custom Carousel Slider of Calculator.dart and More.dart
 // ignore: must_be_immutable
-class MoreScreen extends StatefulWidget {
+class MoreCarousel extends StatefulWidget {
   @override
-  _MoreScreenState createState() => _MoreScreenState();
+  _MoreCarouselState createState() => _MoreCarouselState();
 }
 
-class _MoreScreenState extends State<MoreScreen> {
+class _MoreCarouselState extends State<MoreCarousel> {
   //gets values in data.dart for each slide
   List<MoreModel> mores = new List<MoreModel>();
   int _currentAd = 0;
@@ -198,7 +198,7 @@ class MoreTile extends StatefulWidget {
 }
 
 class _MoreTileState extends State<MoreTile> {
-  List<CustomDialogBox> morepopups = new List<CustomDialogBox>();
+  List<CalculatorAdPopup> morepopups = new List<CalculatorAdPopup>();
 
   @override
   void initState() {

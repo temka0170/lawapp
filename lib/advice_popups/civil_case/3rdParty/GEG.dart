@@ -4,7 +4,7 @@ import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 // import 'boxRow_buttons.dart';
 
-//civil case popup
+/*This file shows sub directory of civil case 3rd party*/
 // ignore: must_be_immutable
 class GEGBox extends StatefulWidget {
   String title;

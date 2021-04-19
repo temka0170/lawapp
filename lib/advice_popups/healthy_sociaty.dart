@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class NewBox extends StatefulWidget {
+class HealthySociety extends StatefulWidget {
   String title;
 
-  NewBox({Key key, this.title}) : super(key: key);
+  HealthySociety({Key key, this.title}) : super(key: key);
 
   @override
-  _NewBoxState createState() => _NewBoxState();
+  _HealthySocietyState createState() => _HealthySocietyState();
 }
 
-class _NewBoxState extends State<NewBox> {
+class _HealthySocietyState extends State<HealthySociety> {
   @override
   void initState() {
     // ignore: todo
@@ -108,7 +108,7 @@ class _NewBoxState extends State<NewBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            // return SubIrgenBox(
+                            // return SubCivilBox(
                             //   title: "Шүүхийн Маргаан",
                             // );
                           });
@@ -149,7 +149,7 @@ class _NewBoxState extends State<NewBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            // return ESBox(
+                            // return ReconcileSub(
                             //   title: "Эвлэрүүлэн Зуучлах",
                             // );
                           });

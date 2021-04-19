@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import '../../sub_location.dart';
 import '../reconciliation/reconcile_sub.dart';
 import 'sub_civil.dart';
-// import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class FirstIrgenBox extends StatefulWidget {
+class FirstCivilBox extends StatefulWidget {
   String title;
 
-  FirstIrgenBox({Key key, this.title}) : super(key: key);
+  FirstCivilBox({Key key, this.title}) : super(key: key);
 
   @override
-  _FirstIrgenBoxState createState() => _FirstIrgenBoxState();
+  _FirstCivilBoxState createState() => _FirstCivilBoxState();
 }
 
-class _FirstIrgenBoxState extends State<FirstIrgenBox> {
+class _FirstCivilBoxState extends State<FirstCivilBox> {
   @override
   void initState() {
     // ignore: todo
@@ -111,7 +110,7 @@ class _FirstIrgenBoxState extends State<FirstIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return SubIrgenBox(
+                            return SubCivilBox(
                               title: "Шүүхийн Маргаан",
                             );
                           });
@@ -152,7 +151,7 @@ class _FirstIrgenBoxState extends State<FirstIrgenBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ESBox(
+                            return ReconcileSub(
                               title: "Эвлэрүүлэн Зуучлах",
                             );
                           });

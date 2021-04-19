@@ -11,16 +11,16 @@ import 'guest.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class ESBox extends StatefulWidget {
+class ReconcileSub extends StatefulWidget {
   String title;
 
-  ESBox({Key key, this.title}) : super(key: key);
+  ReconcileSub({Key key, this.title}) : super(key: key);
 
   @override
   _ESState createState() => _ESState();
 }
 
-class _ESState extends State<ESBox> {
+class _ESState extends State<ReconcileSub> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -118,17 +118,17 @@ class _ESState extends State<ESBox> {
                 child: Column(
                   children: <Widget>[
                     MenuItems(
-                      popup: UGBox(title: "Өргөдөл Гаргагч"),
+                      popup: Applicant(title: "Өргөдөл Гаргагч"),
                       title: "Өргөдөл Гаргагч",
                       img: "assets/Icons/UrgudulGargagch.png",
                     ),
                     MenuItems(
-                      popup: URBox(title: "Уригдагч тал"),
+                      popup: Guest(title: "Уригдагч тал"),
                       title: "Уригдагч тал",
                       img: "assets/Icons/Urigdagch.png",
                     ),
                     MenuItems(
-                      popup: ESxemBox(title: "СХЕМ ЗУРАГ"),
+                      popup: ReconcileTemplate(title: "СХЕМ ЗУРАГ"),
                       title: "СХЕМ ЗУРАГ",
                       img: "assets/Icons/Zagwar.png",
                     ),

@@ -7,16 +7,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class URBox extends StatefulWidget {
+class Guest extends StatefulWidget {
   String title;
 
-  URBox({Key key, this.title}) : super(key: key);
+  Guest({Key key, this.title}) : super(key: key);
 
   @override
   _URState createState() => _URState();
 }
 
-class _URState extends State<URBox> {
+class _URState extends State<Guest> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override

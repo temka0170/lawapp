@@ -7,16 +7,16 @@ import '../../advice_popup.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class EHohirogchBox extends StatefulWidget {
+class FelonyVictim extends StatefulWidget {
   String title;
 
-  EHohirogchBox({Key key, this.title}) : super(key: key);
+  FelonyVictim({Key key, this.title}) : super(key: key);
 
   @override
-  _EHohirogchBoxState createState() => _EHohirogchBoxState();
+  _FelonyVictimState createState() => _FelonyVictimState();
 }
 
-class _EHohirogchBoxState extends State<EHohirogchBox> {
+class _FelonyVictimState extends State<FelonyVictim> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -138,7 +138,7 @@ class _EHohirogchBoxState extends State<EHohirogchBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return HohirogchErh(
+                            return FelonyVictimRights(
                               title: "Таны эрх",
                             );
                           });

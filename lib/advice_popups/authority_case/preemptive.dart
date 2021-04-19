@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../menu_items.dart';
 import '../advice_popup.dart';
-// import 'boxRow_buttons.dart';
 
-//civil case popup
+/*This file shows sub directory for authority case*/
 // ignore: must_be_immutable
-class Uridchilah extends StatefulWidget {
+class Preemptive extends StatefulWidget {
   String title;
 
-  Uridchilah({Key key, this.title}) : super(key: key);
+  Preemptive({Key key, this.title}) : super(key: key);
 
   @override
-  _UridchilahState createState() => _UridchilahState();
+  _PreemptiveState createState() => _PreemptiveState();
 }
 
-class _UridchilahState extends State<Uridchilah> {
+class _PreemptiveState extends State<Preemptive> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -24,7 +23,7 @@ class _UridchilahState extends State<Uridchilah> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = moreSubPopups();
+    morepopups = moreSubPopups();//gets popup values from data.dart
   }
 
   @override
@@ -32,22 +31,24 @@ class _UridchilahState extends State<Uridchilah> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(//popup made by Dialog widget
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20),//rounded container
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,//blurred background
         child: contentBox(context),
       ),
     );
   }
 
+  //contents of container
   contentBox(context) {
     ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        //back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -74,6 +75,7 @@ class _UridchilahState extends State<Uridchilah> {
             ),
           ),
         ),
+        //title of popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -88,6 +90,7 @@ class _UridchilahState extends State<Uridchilah> {
                 )),
           ),
         ),
+        //items of popup
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(

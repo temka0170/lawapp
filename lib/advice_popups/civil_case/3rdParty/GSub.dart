@@ -4,9 +4,8 @@ import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 import 'GEG.dart';
 import 'GWG.dart';
-// import 'boxRow_buttons.dart';
 
-//civil case popup
+/*This file shows subdirectory of 3rd party*/
 // ignore: must_be_immutable
 class GSBox extends StatefulWidget {
   String title;
