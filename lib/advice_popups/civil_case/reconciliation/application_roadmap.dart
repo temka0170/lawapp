@@ -123,7 +123,7 @@ class _UZState extends State<ApplicantTemplate> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Жищээ Загвар"),
+                          child: Text("Жишээ Загвар"),
                         ),
                       ),
                     ),
