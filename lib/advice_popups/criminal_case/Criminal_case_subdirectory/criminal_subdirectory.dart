@@ -125,8 +125,8 @@ class _SEState extends State<CriminalSub> {
                     img: "assets/Icons/Hugatsaa.png",
                   ),
                   MenuItems(
-                    popup: FelonyTemplate(title: "СХЕМ ЗУРАГ",),
-                    title: "СХЕМ ЗУРАГ",
+                    popup: FelonyTemplate(title: "ТАЙЛБАР ЗУРАГ",),
+                    title: "ТАЙЛБАР ЗУРАГ",
                     img: "assets/Icons/Sxem.png",
                   ),
                 ],

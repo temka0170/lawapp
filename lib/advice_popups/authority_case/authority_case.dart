@@ -199,7 +199,7 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return AuthorityTemplate(
-                              title: "СХЕМ ЗУРАГ",
+                              title: "ТАЙЛБАР ЗУРАГ",
                             );
                           });
                     },
@@ -221,7 +221,7 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                             Expanded(
                               flex: 1,
                               child: Center(
-                                child: Text("СХЕМ ЗУРАГ", textAlign: TextAlign.center,),
+                                child: Text("ТАЙЛБАР ЗУРАГ", textAlign: TextAlign.center,),
                               ),
                             ),
                           ],

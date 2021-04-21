@@ -123,8 +123,8 @@ class _SubCivilBoxState extends State<SubCivilBox> {
                     img: "assets/Icons/3rdParty.png",
                   ),
                   MenuItems(
-                    popup: CivilTemplate(title: "СХЕМ ЗУРАГ"),
-                    title: "СХЕМ ЗУРАГ",
+                    popup: CivilTemplate(title: "ТАЙЛБАР ЗУРАГ"),
+                    title: "ТАЙЛБАР ЗУРАГ",
                     img: "assets/Icons/Zagwar.png",
                   ),
                 ],

@@ -128,8 +128,8 @@ class _ESState extends State<Reconciliation> {
                       img: "assets/Icons/Urigdagch.png",
                     ),
                     MenuItems(
-                      popup: ReconcileTemplate(title: "СХЕМ ЗУРАГ"),
-                      title: "СХЕМ ЗУРАГ",
+                      popup: ReconcileTemplate(title: "ТАЙЛБАР ЗУРАГ"),
+                      title: "ТАЙЛБАР ЗУРАГ",
                       img: "assets/Icons/Zagwar.png",
                     ),
                     MenuItems(

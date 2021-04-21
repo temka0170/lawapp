@@ -126,8 +126,8 @@ class _SZState extends State<ConflictSub> {
                     img: "assets/Icons/Hohirogch.png",
                   ),
                   MenuItems(
-                    popup: ConflictTemplate(title: "СХЕМ ЗУРАГ",),
-                    title: "СХЕМ ЗУРАГ",
+                    popup: ConflictTemplate(title: "ТАЙЛБАР ЗУРАГ",),
+                    title: "ТАЙЛБАР ЗУРАГ",
                     img: "assets/Icons/Sxem.png",
                   ),
                 ],

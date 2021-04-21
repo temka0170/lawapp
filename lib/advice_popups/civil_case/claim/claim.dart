@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/menu_items.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
-import '../../boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable

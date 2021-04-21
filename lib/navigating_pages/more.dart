@@ -115,7 +115,7 @@ class _MyStatefulWidgetState extends State<More> {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),
-                  child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  СХЕМ ЗУРАГ",
+                  child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  ТАЙЛБАР ЗУРАГ",
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         color: Color(0xff23233c),
