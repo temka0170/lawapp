@@ -5,7 +5,7 @@ import 'package:project_1/advice_popups/criminal_case/Conflict/authority_victim.
 import 'package:project_1/advice_popups/criminal_case/Conflict/conflict_connection.dart';
 import '../../menu_items.dart';
 import '../../advice_popup.dart';
-// import 'boxRow_buttons.dart';
+import '../Conflict/conflict_roadmap.dart';
 
 //civil case popup
 // ignore: must_be_immutable
@@ -124,6 +124,11 @@ class _SZState extends State<ConflictSub> {
                     popup: AuthorityVictim(title: "Хохирогч"),
                     title: "Хохирогч",
                     img: "assets/Icons/Hohirogch.png",
+                  ),
+                  MenuItems(
+                    popup: ConflictTemplate(title: "СХЕМ ЗУРАГ",),
+                    title: "СХЕМ ЗУРАГ",
+                    img: "assets/Icons/Sxem.png",
                   ),
                 ],
               ),

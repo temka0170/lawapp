@@ -16,14 +16,12 @@ class TeamCarousel extends StatefulWidget {
 }
 
 class _TeamCarouselState extends State<TeamCarousel> {
-  List<CreatorModel> creators = new List<CreatorModel>();
 
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    creators = getCreators();
   }
 
   @override
@@ -141,31 +139,6 @@ class _TeamCarouselState extends State<TeamCarousel> {
                     ),
                   ),
                 ],
-                //   List.generate(
-                //   itemCount,
-                //   (x) => RotatedBox(
-                //       quarterTurns: 1,
-                //       child: GestureDetector(
-                //           onTap: () {
-                //             double height = MediaQuery.of(context).size.height;
-                //             buildShowGeneralDialog(
-                //                 context, height, creators[x].creatorIdx);
-                //           },
-                //           child: AnimatedContainer(
-                //             duration: Duration(milliseconds: 400),
-                //             width: x == selected ? 100 : 80,
-                //             height: x == selected ? 100 : 80,
-                //             alignment: Alignment.center,
-                //             decoration: BoxDecoration(
-                //                 color: x == selected ? Colors.red : Colors.grey,
-                //                 shape: BoxShape.circle),
-                //             child: Text("Test"),
-                //             //   Image.asset(
-                //             //   creators[x].creatorImgPath,
-                //             //   fit: BoxFit.fill,
-                //             // )),
-                //           ))),
-                // ),
               ),
             ),
           ),

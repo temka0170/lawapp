@@ -22,8 +22,19 @@ class LocationItems extends StatelessWidget {
           height: 120,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(8.0)),
-          child: Center(
-            child: Text(title, textAlign: TextAlign.center,),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Image.asset("assets/Icons/googlemap.jpg"),
+              ),
+              Expanded(
+                flex: 2,
+                child: Center(
+                  child: Text(title, textAlign: TextAlign.center,),
+                ),
+              ),
+            ],
           ),
         ),
       ),

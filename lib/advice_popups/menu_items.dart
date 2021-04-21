@@ -7,7 +7,7 @@ class MenuItems extends StatelessWidget {
   const MenuItems({
     Key key,
     @required this.popup,
-    @required this.img,
+    this.img,
     @required this.title,
   }) : super(key: key);
 
@@ -31,19 +31,38 @@ class MenuItems extends StatelessWidget {
               color: Colors.white, borderRadius: BorderRadius.circular(8.0)),
           child: Row(
             children: [
-              Expanded(
+              img != null ? Expanded(
                 flex: 1,
                 child: Image.asset(
                   img,
                   fit: BoxFit.fill,
                 ),
-              ),
+              ) : Container(),
               Expanded(
                 flex: 2,
-                child: Center(
-                  child: Text(title),
+                child: img == null ? Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Center(
+                    child: Text(title, textAlign: TextAlign.center,),
+                  ),
+                ) : Center(
+                  child: Text(title, textAlign: TextAlign.center,),
                 ),
               ),
+              IconButton(
+                icon: Icon(Icons.arrow_forward_ios_rounded),
+                splashColor: Colors.grey[400],
+                color: Colors.grey[600],
+                iconSize: 24.0,
+                onPressed: () {
+                showDialog(
+                    context: context,
+                    barrierDismissible: true,
+                    builder: (BuildContext context) {
+                      //links popups to its button
+                      return popup;
+                    });
+              },),
             ],
           ),
         ),

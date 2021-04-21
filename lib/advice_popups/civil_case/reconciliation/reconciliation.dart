@@ -1,6 +1,13 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import '../../boxRow_buttons.dart';
+import 'package:project_1/custom_functions/data.dart';
+import '../../menu_items.dart';
+import 'reconcile_roadmap.dart';
+import '../../advice_popup.dart';
+import 'applicant.dart';
+import 'guest.dart';
+// import 'boxRow_buttons.dart';
 
 //civil case popup
 // ignore: must_be_immutable
@@ -10,15 +17,18 @@ class Reconciliation extends StatefulWidget {
   Reconciliation({Key key, this.title}) : super(key: key);
 
   @override
-  _ReconciliationState createState() => _ReconciliationState();
+  _ESState createState() => _ESState();
 }
 
-class _ReconciliationState extends State<Reconciliation> {
+class _ESState extends State<Reconciliation> {
+  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
+    morepopups = moreSubPopups();
   }
 
   @override
@@ -38,13 +48,15 @@ class _ReconciliationState extends State<Reconciliation> {
   }
 
   contentBox(context) {
+    ScrollController _controller = new ScrollController();
+    double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
         Align(
           alignment: Alignment.topRight,
           child: Container(
-            width: 30.0,
-            height: 30.0,
+            width: height * 0.04,
+            height: height * 0.04,
             decoration: new BoxDecoration(
               color: Color(0xffffffff),
               borderRadius: BorderRadius.circular(8),
@@ -83,7 +95,7 @@ class _ReconciliationState extends State<Reconciliation> {
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.68,
+            height: height * 0.69,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13.0),
               color: Color(0xfffff4e8).withOpacity(0.88),
@@ -96,38 +108,43 @@ class _ReconciliationState extends State<Reconciliation> {
                 ),
               ],
             ),
-            child: ListView(
-              padding: EdgeInsets.only(top: 23.0),
-              itemExtent: 120.0,
-              children: <Widget>[
-                //index value links to what popup should show when clicked,
-                //boxrow has 2 buttons in 1 row so it requires atleast index1,desc1,img1
-                //if index2,desc2,img2 is null shows only 1 button with index1 values
-                BoxRow(
-                  index1: 34,
-                  index2: 35,
-                  desc1: "Өргөдөл гаргагчийн үүрэг",
-                  desc2: "Өргөдөл гаргагчийн эрх",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
+            child: Scrollbar(
+              thickness: 8.0,
+              isAlwaysShown: true,
+              controller: _controller,
+              radius: Radius.circular(4.0),
+              child: SingleChildScrollView(
+                controller: _controller,
+                child: Column(
+                  children: <Widget>[
+                    MenuItems(
+                      popup: Applicant(title: "Өргөдөл Гаргагч"),
+                      title: "Өргөдөл Гаргагч",
+                      img: "assets/Icons/UrgudulGargagch.png",
+                    ),
+                    MenuItems(
+                      popup: Guest(title: "Уригдагч тал"),
+                      title: "Уригдагч тал",
+                      img: "assets/Icons/Urigdagch.png",
+                    ),
+                    MenuItems(
+                      popup: ReconcileTemplate(title: "СХЕМ ЗУРАГ"),
+                      title: "СХЕМ ЗУРАГ",
+                      img: "assets/Icons/Zagwar.png",
+                    ),
+                    MenuItems(
+                      popup: morepopups[39],
+                      title: "Эвлэрлийн гэрээ",
+                      img: "assets/Icons/EwlerliinGeree.png",
+                    ),
+                    MenuItems(
+                      popup: morepopups[38],
+                      title: "Гэрээний гүйцэтгэл хангах",
+                      img: "assets/Icons/EwlerliinGereeGuitsetgeh.png",
+                    ),
+                  ],
                 ),
-                BoxRow(
-                  index1: 36,
-                  index2: 37,
-                  desc1: "Удирдагч талын үүрэг",
-                  desc2: "Удирдагч талын эрх",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-                BoxRow(
-                  index1: 38,
-                  index2: 39,
-                  desc1: "Эвлэрлийн гэрээний гүйцэтгэлийг хангах",
-                  desc2: "Эвлэрлийн гэрээ",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-              ],
+              ),
             ),
           ),
         ),

@@ -1,34 +1,25 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:project_1/custom_functions/data.dart';
-import '../../menu_items.dart';
-import 'reconcile_roadmap.dart';
-import '../../advice_popup.dart';
-import 'applicant.dart';
-import 'guest.dart';
-// import 'boxRow_buttons.dart';
+import '../../location_items.dart';
 
 //civil case popup
 // ignore: must_be_immutable
-class ReconcileSub extends StatefulWidget {
+class CivilCourtLocationBox extends StatefulWidget {
   String title;
 
-  ReconcileSub({Key key, this.title}) : super(key: key);
+  CivilCourtLocationBox({Key key, this.title}) : super(key: key);
 
   @override
-  _ESState createState() => _ESState();
+  _CivilCourtLocationBoxState createState() => _CivilCourtLocationBoxState();
 }
 
-class _ESState extends State<ReconcileSub> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
-
+class _CivilCourtLocationBoxState extends State<CivilCourtLocationBox> {
+  ScrollController _controller = new ScrollController();
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = moreSubPopups();
   }
 
   @override
@@ -48,7 +39,6 @@ class _ESState extends State<ReconcileSub> {
   }
 
   contentBox(context) {
-    ScrollController _controller = new ScrollController();
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
@@ -108,42 +98,20 @@ class _ESState extends State<ReconcileSub> {
                 ),
               ],
             ),
-            child: Scrollbar(
-              thickness: 8.0,
-              isAlwaysShown: true,
+            child: SingleChildScrollView(
               controller: _controller,
-              radius: Radius.circular(4.0),
-              child: SingleChildScrollView(
-                controller: _controller,
-                child: Column(
-                  children: <Widget>[
-                    MenuItems(
-                      popup: Applicant(title: "Өргөдөл Гаргагч"),
-                      title: "Өргөдөл Гаргагч",
-                      img: "assets/Icons/UrgudulGargagch.png",
-                    ),
-                    MenuItems(
-                      popup: Guest(title: "Уригдагч тал"),
-                      title: "Уригдагч тал",
-                      img: "assets/Icons/Urigdagch.png",
-                    ),
-                    MenuItems(
-                      popup: ReconcileTemplate(title: "СХЕМ ЗУРАГ"),
-                      title: "СХЕМ ЗУРАГ",
-                      img: "assets/Icons/Zagwar.png",
-                    ),
-                    MenuItems(
-                      popup: morepopups[39],
-                      title: "Эвлэрлийн гэрээ",
-                      img: "assets/Icons/EwlerliinGeree.png",
-                    ),
-                    MenuItems(
-                      popup: morepopups[38],
-                      title: "Гэрээний гүйцэтгэл хангах",
-                      img: "assets/Icons/EwlerliinGereeGuitsetgeh.png",
-                    ),
-                  ],
-                ),
+              child: Column(
+                children: <Widget>[
+                  LocationItems(title: "БГД Иргэний хэргийн шүүх", url: "https://goo.gl/maps/9DFe7sJA9yAaKrnQ7",),
+                  LocationItems(title: "БЗД Иргэний хэргийн шүүх", url: "https://goo.gl/maps/gp2a8Gr86FEMDC6e8",),
+                  LocationItems(title: "СБД Иргэний хэргийн шүүх", url: "https://goo.gl/maps/KTzLqgNyqJAYneMy9",),
+                  LocationItems(title: "СХД Иргэний хэргийн шүүх", url: "https://goo.gl/maps/7YBeYo47cZFe845HA",),
+                  LocationItems(title: "ХУД Иргэний хэргийн шүүх", url: "https://goo.gl/maps/gD3cNTHU4jJwMWTs6",),
+                  LocationItems(title: "ЧД Иргэний хэргийн шүүх", url: "https://goo.gl/maps/KTzLqgNyqJAYneMy9",),
+                  LocationItems(title: "Багахангай Иргэний хэргийн шүүх", url: "https://goo.gl/maps/TJKHH9cQ4Amr93dJ8",),
+                  LocationItems(title: "Багануур дүүргийн  Иргэний хэргийн шүүх", url: "https://goo.gl/maps/rMZqspRptgtpzEJL7",),
+                  LocationItems(title: "Налайх дүүргийн Иргэний хэргийн шүүх", url: "https://goo.gl/maps/TJKHH9cQ4Amr93dJ8",),
+                ],
               ),
             ),
           ),

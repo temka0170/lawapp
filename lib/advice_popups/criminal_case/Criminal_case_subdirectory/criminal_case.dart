@@ -192,7 +192,7 @@ class _CriminalState extends State<Criminal> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return SubLocationBox(
-                              title: "Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод",
+                              title: "НИЙСЛЭЛ ДЭХ ЦАГДААГИЙН ГАЗРУУД\nХАЯГ / УТАС",
                             );
                           });
                     },
@@ -214,7 +214,7 @@ class _CriminalState extends State<Criminal> {
                             Expanded(
                               flex: 1,
                               child: Center(
-                                child: Text("Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод", textAlign: TextAlign.center,),
+                                child: Text("НИЙСЛЭЛ ДЭХ ЦАГДААГИЙН ГАЗРУУД\nХАЯГ, УТАС", textAlign: TextAlign.center,),
                               ),
                             ),
                           ],

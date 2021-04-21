@@ -149,7 +149,7 @@ class _HealthySocietyState extends State<HealthySociety> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            // return ReconcileSub(
+                            // return Reconciliation(
                             //   title: "Эвлэрүүлэн Зуучлах",
                             // );
                           });

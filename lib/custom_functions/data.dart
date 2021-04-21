@@ -283,43 +283,6 @@ class CreatorModel {
   }
 }
 
-//values of home section carousel
-List<CreatorModel> getCreators() {
-  List<CreatorModel> creators = new List<CreatorModel>();
-  CreatorModel crt = new CreatorModel();
-
-  crt.setCrtPath("assets/creators_png/tsengel.jpg");
-  crt.setCrtDesc("С.Батцэнгэл\nDeveloper");
-  crt.setIdx(1);
-  creators.add(crt);
-
-  crt = new CreatorModel();
-  crt.setCrtPath("assets/creators_png/tedy1.jpg");
-  crt.setCrtDesc("Б.Тэмүүлэн\nDeveloper");
-  crt.setIdx(2);
-  creators.add(crt);
-
-  crt = new CreatorModel();
-  crt.setCrtPath("assets/images/LawyerAmraa.jpg");
-  crt.setCrtDesc("Э.АМАРХҮҮ\nХУУЛЬЧ, ӨМГӨӨЛӨГЧ");
-  crt.setIdx(0);
-  creators.add(crt);
-
-  crt = new CreatorModel();
-  crt.setCrtPath("assets/creators_png/lawyer2.jpg");
-  crt.setCrtDesc("null");
-  crt.setIdx(3);
-  creators.add(crt);
-
-  crt = new CreatorModel();
-  crt.setCrtPath("assets/creators_png/lawyer3.jpg");
-  crt.setCrtDesc("null");
-  crt.setIdx(4);
-  creators.add(crt);
-
-  return creators;
-}
-
 //home section popup values
 List<CalculatorAdPopup> getPopups() {
   List<CalculatorAdPopup> popups = new List<CalculatorAdPopup>();

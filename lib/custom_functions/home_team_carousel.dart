@@ -123,7 +123,7 @@ final List<String> itemTitle = [
   "Дизайнэр",
   "Хуульч, Өмгөөлөгч",
   "Хуульч, Өмгөөлөгч",
-  "Хуульч, Өмгөөлөгч"
+  "Эрх зүйч"
 ];
 
 //our team popup descriptions
@@ -132,7 +132,7 @@ final List<String> itemDesc = [
   "\"Junior Developer\"",
   "\"Lead Designer\"",
   "\"Үүсгэн байгуулагч\"",
-  "\"Туслах\"",
+  "\"ULF Partner\"",
   "\"Туслах\""
 ];
 

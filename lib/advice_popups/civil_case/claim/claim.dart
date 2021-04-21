@@ -1,5 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:project_1/advice_popups/menu_items.dart';
+import 'package:project_1/custom_functions/data.dart';
+import '../../advice_popup.dart';
 import '../../boxRow_buttons.dart';
 
 //civil case popup
@@ -14,11 +17,15 @@ class ClaimBox extends StatefulWidget {
 }
 
 class _ClaimBoxState extends State<ClaimBox> {
+  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  ScrollController _controller = new ScrollController();
+
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
+    morepopups = moreSubPopups();
   }
 
   @override
@@ -38,6 +45,7 @@ class _ClaimBoxState extends State<ClaimBox> {
   }
 
   contentBox(context) {
+    double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
         Align(
@@ -83,7 +91,7 @@ class _ClaimBoxState extends State<ClaimBox> {
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
-            height: 555,
+            height: height * 0.69,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13.0),
               color: Color(0xfffff4e8).withOpacity(0.88),
@@ -96,67 +104,32 @@ class _ClaimBoxState extends State<ClaimBox> {
                 ),
               ],
             ),
-            child: ListView(
-              padding: EdgeInsets.only(top: 23.0),
-              itemExtent: 120.0,
-              children: <Widget>[
-                BoxRow(
-                  index1: 0,
-                  index2: 1,
-                  desc1: "Гэм хор",
-                  desc2: "Ажлаас халагдсан",
-                  img1: "assets/images/ajilsanjil.png",
-                  img2: "assets/images/fired.png",
+            child: Scrollbar(
+              thickness: 8.0,
+              isAlwaysShown: true,
+              controller: _controller,
+              radius: Radius.circular(4.0),
+              child: SingleChildScrollView(
+                controller: _controller,
+                child: Column(
+                  children: <Widget>[
+                    MenuItems(popup: morepopups[0], img: "assets/Icons/shTemplate.png", title: "Гэм хор",),
+                    MenuItems(popup: morepopups[1], img: "assets/Icons/shTemplate.png", title: "Ажлаас халагдсан",),
+                    MenuItems(popup: morepopups[2], img: "assets/Icons/shTemplate.png", title: "Орон сууцны өмчлөгчөөр тогтоолгох тухай",),
+                    MenuItems(popup: morepopups[3], img: "assets/Icons/shTemplate.png", title: "Асран хамгаалагчаар тогтоолгох тухай",),
+                    MenuItems(popup: morepopups[4], img: "assets/Icons/shTemplate.png", title: "Гэрлэлт цуцлуулах тухай",),
+                    MenuItems(popup: morepopups[5], img: "assets/Icons/shTemplate.png", title: "Хүүхдийн тэтгэлэг тогтоолгох",),
+                    MenuItems(popup: morepopups[14], img: "assets/Icons/shTemplate.png", title: "Хариуцагчийг эрэн сурвалжлуулах",),
+                    MenuItems(popup: morepopups[7], img: "assets/Icons/shTemplate.png", title: "Хамтын амьдралтай байсныг тогтоолгох",),
+                    MenuItems(popup: morepopups[8], img: "assets/Icons/shTemplate.png", title: "Нөхөн олговор гаргуулах тухай",),
+                    MenuItems(popup: morepopups[9], img: "assets/Icons/shTemplate.png", title: "Нас тогтоолгох тухай",),
+                    MenuItems(popup: morepopups[10], img: "assets/Icons/shTemplate.png", title: "Зээлийн гэрээний авлага",),
+                    MenuItems(popup: morepopups[11], img: "assets/Icons/shTemplate.png", title: "Ажилласан жил тогтоолгох тухай",),
+                    MenuItems(popup: morepopups[12], img: "assets/Icons/shTemplate.png", title: "Гэрээний дагуу авлага",),
+                    MenuItems(popup: morepopups[15], img: "assets/Icons/shTemplate.png", title: "Эрх хязгаарлах арга хэмжээ авахуулах тухай",),
+                  ],
                 ),
-                BoxRow(
-                  index1: 2,
-                  index2: 3,
-                  desc1: "Орон сууцны өмчлөгчөөр тогтоолгох тухай",
-                  desc2: "Асран хамгаалагчаар тогтоолгох тухай",
-                  img1: "assets/images/care.png",
-                  img2: "assets/images/danger.png",
-                ),
-                BoxRow(
-                  index1: 4,
-                  index2: 5,
-                  desc1: "Гэрлэлт цуцлуулах тухай",
-                  desc2: "Хүүхдийн тэтгэлэг тогтоолгох",
-                  img1: "assets/images/lostmarrige.png",
-                  img2: "assets/images/loan.png",
-                ),
-                BoxRow(
-                  index1: 14,
-                  index2: 7,
-                  desc1: "Хариуцагчийг эрэн сурвалжлуулах",
-                  desc2: "Хамтын амьдралтай байсныг тогтоолгох",
-                  img1: "assets/images/contr.png",
-                  img2: "assets/images/nehemj.png",
-                ),
-                BoxRow(
-                  index1: 8,
-                  index2: 9,
-                  desc1: "Нөхөн олговор гаргуулах тухай",
-                  desc2: "Нас тогтоолгох тухай",
-                  img1: "assets/images/age.png",
-                  img2: "assets/images/olgovor.png",
-                ),
-                BoxRow(
-                  index1: 10,
-                  index2: 11,
-                  desc1: "Зээлийн гэрээний авлага",
-                  desc2: "Ажилласан жил тогтоолгох тухай",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-                BoxRow(
-                  index1: 12,
-                  index2: 15,
-                  desc1: "Гэрээний дагуу авлага",
-                  desc2: "Эрх хязгаарлах арга хэмжээ авахуулах тухай",
-                  img1: "assets/images/galaxy.jpg",
-                  img2: "assets/images/galaxy.jpg",
-                ),
-              ],
+              ),
             ),
           ),
         ),

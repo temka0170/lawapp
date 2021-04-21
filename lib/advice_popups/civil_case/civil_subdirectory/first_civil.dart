@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../../sub_location.dart';
-import '../reconciliation/reconcile_sub.dart';
+import '../reconciliation/reconciliation.dart';
 import 'sub_civil.dart';
+import 'civil_case_court_location.dart';
 
 //civil case popup
 // ignore: must_be_immutable
@@ -151,7 +151,7 @@ class _FirstCivilBoxState extends State<FirstCivilBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ReconcileSub(
+                            return Reconciliation(
                               title: "Эвлэрүүлэн Зуучлах",
                             );
                           });
@@ -192,8 +192,8 @@ class _FirstCivilBoxState extends State<FirstCivilBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return SubLocationBox(
-                              title: "Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод",
+                            return CivilCourtLocationBox(
+                              title: "НИЙСЛЭЛ ДЭХ ИРГЭНИЙ ХЭРГИЙН\nАНХАН ШАТНЫ ШҮҮХҮҮД",
                             );
                           });
                     },
@@ -215,7 +215,7 @@ class _FirstCivilBoxState extends State<FirstCivilBox> {
                             Expanded(
                               flex: 1,
                               child: Center(
-                                child: Text("Дүүрэг дэх цагдаагийн хэлтсүүдийн хариуцсан хороод", textAlign: TextAlign.center,),
+                                child: Text("НИЙСЛЭЛ ДЭХ ИРГЭНИЙ ХЭРГИЙН\nАНХАН ШАТНЫ ШҮҮХҮҮД", textAlign: TextAlign.center,),
                               ),
                             ),
                           ],

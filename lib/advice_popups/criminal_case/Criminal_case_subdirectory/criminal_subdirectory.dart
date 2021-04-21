@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:project_1/advice_popups/criminal_case/Felony/felony_roadmap.dart';
 import 'package:project_1/custom_functions/data.dart';
 import 'package:project_1/advice_popups/criminal_case/Felony/felony_victim.dart';
 import 'package:project_1/advice_popups/criminal_case/Felony/felony_connection.dart';
@@ -122,6 +123,11 @@ class _SEState extends State<CriminalSub> {
                     popup: morepopups[55],
                     title: "Ажиллагааны хугацаа",
                     img: "assets/Icons/Hugatsaa.png",
+                  ),
+                  MenuItems(
+                    popup: FelonyTemplate(title: "СХЕМ ЗУРАГ",),
+                    title: "СХЕМ ЗУРАГ",
+                    img: "assets/Icons/Sxem.png",
                   ),
                 ],
               ),

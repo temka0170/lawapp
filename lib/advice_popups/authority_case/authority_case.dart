@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/authority_case/preemptive.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'authority_case_roadmap.dart';
 import '../sub_location.dart';
 import 'court.dart';
 
@@ -192,6 +193,46 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return AuthorityTemplate(
+                              title: "СХЕМ ЗУРАГ",
+                            );
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: Image.asset(
+                                  "assets/Icons/Sxem.png",
+                                  fit: BoxFit.fill,
+                                )),
+                            Expanded(
+                              flex: 1,
+                              child: Center(
+                                child: Text("СХЕМ ЗУРАГ", textAlign: TextAlign.center,),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
                       launch("https://goo.gl/maps/Y2woQHbfsoPFGCcW9");
                     },
                     child: Padding(
@@ -212,7 +253,7 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                             Expanded(
                               flex: 1,
                               child: Center(
-                                child: Text("Захиргааны хэргийн шүүхийн нэгдсэн байр", textAlign: TextAlign.center,),
+                                child: Text("ЗАХИРГААНЫ ХЭРГИЙН ШҮҮХ\nНЭГДСЭН БАЙР", textAlign: TextAlign.center,),
                               ),
                             ),
                           ],

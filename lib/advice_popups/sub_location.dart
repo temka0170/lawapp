@@ -111,13 +111,13 @@ class _SubLocationBoxState extends State<SubLocationBox> {
               child: Column(
                 children: <Widget>[
                   MenuItems(
-                    popup: LocationBox(title: "Хороо Дүүргийн Цагдаагийн хэсгийн байршил"),
-                    title: "Хороо Дүүргийн Цагдаагийн хэсгийн байршил",
+                    popup: LocationBox(title: "ЦАГДААГИЙН ГАЗРЫН ХАЯГ"),
+                    title: "ЦАГДААГИЙН ГАЗРЫН ХАЯГ",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: CallBox(title: "Хороо Дүүргийн Цагдаагийн хэсгийн утасны дугаар"),
-                    title: "Хороо Дүүргийн Цагдаагийн хэсгийн утасны дугаар",
+                    popup: CallBox(title: "ЦАГДААГИЙН ГАЗРЫН УТАС"),
+                    title: "ЦАГДААГИЙН ГАЗРЫН УТАС",
                     img: "assets/Icons/phone.png",
                   ),
                 ],

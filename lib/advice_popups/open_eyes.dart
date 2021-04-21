@@ -1,7 +1,6 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'boxRow_buttons.dart';
+import 'phone_items.dart';
 
 //Open your eyes Movement section
 // ignore: must_be_immutable
@@ -15,6 +14,7 @@ class EyeBox extends StatefulWidget {
 }
 
 class _EyeBoxState extends State<EyeBox> {
+  ScrollController _controller = new ScrollController();
   @override
   void initState() {
     // ignore: todo
@@ -39,6 +39,7 @@ class _EyeBoxState extends State<EyeBox> {
   }
 
   contentBox(context) {
+    double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
         Align(
@@ -84,7 +85,7 @@ class _EyeBoxState extends State<EyeBox> {
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
-            height: 555,
+            height: height * 0.69,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13.0),
               color: Color(0xfffff4e8).withOpacity(0.88),
@@ -97,18 +98,22 @@ class _EyeBoxState extends State<EyeBox> {
                 ),
               ],
             ),
-            child: ListView(
-              padding: EdgeInsets.only(top: 23.0),
-              itemExtent: 120.0,
-              children: <Widget>[
-                //index value links to what popup should show when clicked,
-                //boxrow has 2 buttons in 1 row so it requires atleast index1,desc1,img1
-                //if index2,desc2,img2 is null shows only 1 button with index1 values
-                BoxRow(
-                  index1: 25,
-                  desc1: "Coming Soon",
+            child: Scrollbar(
+              thickness: 8.0,
+              isAlwaysShown: true,
+              controller: _controller,
+              radius: Radius.circular(4.0),
+              child: SingleChildScrollView(
+                controller: _controller,
+                child: Column(
+                  children: <Widget>[
+                    PhoneItems(number: "102", title: "ЦАГДААГИЙН ШУУРХАЙ ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
+                    PhoneItems(number: "107", title: "ГЭР БҮЛИЙН ХҮЧИРХИЙЛЛИЙН ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
+                    PhoneItems(number: "108", title: "ХҮҮХДИЙН ТУСЛАМЖИЙН УТАС\n",),
+                    PhoneItems(number: "+97696490505", title: "24/7 ХҮЧИРХИЙЛЛИЙН ЭСРЭГ ЗӨВЛӨГӨӨ\n",),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),
