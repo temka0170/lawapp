@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:project_1/advice_popups/civil_case/3rdParty/GSub.dart';
+import 'package:project_1/advice_popups/civil_case/third_party/third_party_sub.dart';
 
-import 'Call.dart';
-import 'Location.dart';
+import 'call.dart';
+import 'location.dart';
 import 'menu_items.dart';
 // import 'boxRow_buttons.dart';
 

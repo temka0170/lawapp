@@ -2,21 +2,20 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
-import 'HEG.dart';
 // import 'boxRow_buttons.dart';
 
-//civil case popup
+//administrate case
 // ignore: must_be_immutable
-class HSBox extends StatefulWidget {
+class CWHBox extends StatefulWidget {
   String title;
 
-  HSBox({Key key, this.title}) : super(key: key);
+  CWHBox({Key key, this.title}) : super(key: key);
 
   @override
-  _HSState createState() => _HSState();
+  _NWHState createState() => _NWHState();
 }
 
-class _HSState extends State<HSBox> {
+class _NWHState extends State<CWHBox> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -114,9 +113,7 @@ class _HSState extends State<HSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return HEGBox(
-                              title: "Таны эрх, үүрэг",
-                            );
+                            return morepopups[26];
                           });
                     },
                     child: Padding(
@@ -126,7 +123,7 @@ class _HSState extends State<HSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таны эрх, үүрэг"),
+                          child: Text("НЭХЭМЖЛЭГЧ ГЭДЭГ НЬ"),
                         ),
                       ),
                     ),
@@ -140,7 +137,7 @@ class _HSState extends State<HSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[32];
+                            return morepopups[ 27];
                           });
                     },
                     child: Padding(
@@ -150,31 +147,7 @@ class _HSState extends State<HSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("ХАРИУ ТАЙЛБАР"),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context) {
-                            //links popups to its button
-                            return morepopups[33];
-                          });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8.0)),
-                        child: Center(
-                          child: Text("ХАРИУЦАГЧ ГЭДЭГ НЬ"),
+                          child: Text("НЭХЭМЖЛЭЛ ГЭДЭГ НЬ"),
                         ),
                       ),
                     ),

@@ -1,14 +1,14 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'DistrictsLocation/BGD.dart';
-import 'DistrictsLocation/BZD.dart';
-import 'DistrictsLocation/CD.dart';
-import 'DistrictsLocation/HUD.dart';
-import 'DistrictsLocation/SBD.dart';
-import 'DistrictsLocation/SHD.dart';
-import 'DistrictsLocation/Bagahangai.dart';
-import 'DistrictsLocation/Baganuur.dart';
-import 'DistrictsLocation/Nalaih.dart';
+import 'districts_location/bayngol.dart';
+import 'districts_location/baynzurh.dart';
+import 'districts_location/chingeltei.dart';
+import 'districts_location/han_uul.dart';
+import 'districts_location/suh_baatar.dart';
+import 'districts_location/songino_hairhan.dart';
+import 'districts_location/bagahangai.dart';
+import 'districts_location/baganuur.dart';
+import 'districts_location/nalaih.dart';
 import 'menu_items.dart';
 // import 'boxRow_buttons.dart';
 

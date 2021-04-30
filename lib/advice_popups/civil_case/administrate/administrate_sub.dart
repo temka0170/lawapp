@@ -2,20 +2,21 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
+import 'administrate_rights.dart';
 // import 'boxRow_buttons.dart';
 
-//civil case popup
+//administrate case popup
 // ignore: must_be_immutable
-class CWHBox extends StatefulWidget {
+class HSBox extends StatefulWidget {
   String title;
 
-  CWHBox({Key key, this.title}) : super(key: key);
+  HSBox({Key key, this.title}) : super(key: key);
 
   @override
-  _NWHState createState() => _NWHState();
+  _HSState createState() => _HSState();
 }
 
-class _NWHState extends State<CWHBox> {
+class _HSState extends State<HSBox> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -113,7 +114,9 @@ class _NWHState extends State<CWHBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[26];
+                            return HEGBox(
+                              title: "Таны эрх, үүрэг",
+                            );
                           });
                     },
                     child: Padding(
@@ -123,7 +126,7 @@ class _NWHState extends State<CWHBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("НЭХЭМЖЛЭГЧ ГЭДЭГ НЬ"),
+                          child: Text("Таны эрх, үүрэг"),
                         ),
                       ),
                     ),
@@ -137,7 +140,7 @@ class _NWHState extends State<CWHBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[ 27];
+                            return morepopups[32];
                           });
                     },
                     child: Padding(
@@ -147,7 +150,31 @@ class _NWHState extends State<CWHBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("НЭХЭМЖЛЭЛ ГЭДЭГ НЬ"),
+                          child: Text("ХАРИУ ТАЙЛБАР"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            //links popups to its button
+                            return morepopups[33];
+                          });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Center(
+                          child: Text("ХАРИУЦАГЧ ГЭДЭГ НЬ"),
                         ),
                       ),
                     ),

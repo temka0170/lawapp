@@ -84,10 +84,30 @@ class _AdviceState extends State<AdvicePopup> {
             alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.only(top: 70.0),
-              child: GestureDetector(
+              child: InkWell(
                 onTap: () {
                   setState(() {
                     downloadFile();
+                    showDialog(
+                        barrierDismissible: true,
+                        context: context,
+                        builder: (context) {
+                          Future.delayed(Duration(milliseconds: 1200),
+                                  () {
+                                Navigator.of(context).pop(true);
+                              });
+                          return AlertDialog(
+                            title: Text(
+                              "Амжилттай татаж авлаа!",
+                              style: TextStyle(
+                                color: Color(0xffffffff),
+                                fontSize: 16.0,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            backgroundColor: Color(0xfff78c1e),
+                          );
+                        });
                   });
                 },
                 child: Container(

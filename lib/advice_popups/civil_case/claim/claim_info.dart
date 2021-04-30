@@ -2,21 +2,20 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
-import 'GEG.dart';
-import 'GWG.dart';
+// import 'boxRow_buttons.dart';
 
-/*This file shows subdirectory of 3rd party*/
+//claim case
 // ignore: must_be_immutable
-class GSBox extends StatefulWidget {
+class CWHBox extends StatefulWidget {
   String title;
 
-  GSBox({Key key, this.title}) : super(key: key);
+  CWHBox({Key key, this.title}) : super(key: key);
 
   @override
-  _GSState createState() => _GSState();
+  _NWHState createState() => _NWHState();
 }
 
-class _GSState extends State<GSBox> {
+class _NWHState extends State<CWHBox> {
   List<AdvicePopup> morepopups = new List<AdvicePopup>();
 
   @override
@@ -114,9 +113,7 @@ class _GSState extends State<GSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return GEGBox(
-                              title: "Таны эрх, үүрэг",
-                            );
+                            return morepopups[26];
                           });
                     },
                     child: Padding(
@@ -126,7 +123,7 @@ class _GSState extends State<GSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Таны эрх, үүрэг"),
+                          child: Text("НЭХЭМЖЛЭГЧ ГЭДЭГ НЬ"),
                         ),
                       ),
                     ),
@@ -140,9 +137,7 @@ class _GSState extends State<GSBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return GWGBox(
-                              title: "3-дагч этгээд гэж хэн бэ?",
-                            );
+                            return morepopups[ 27];
                           });
                     },
                     child: Padding(
@@ -152,7 +147,7 @@ class _GSState extends State<GSBox> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("3-дагч этгээд гэж хэн бэ?"),
+                          child: Text("НЭХЭМЖЛЭЛ ГЭДЭГ НЬ"),
                         ),
                       ),
                     ),

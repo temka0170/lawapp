@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/data.dart';
 import '../../advice_popup.dart';
 import 'claim_rights.dart';
-import 'NWH.dart';
+import 'claim_info.dart';
 import 'claim.dart';
 
 //civil case popup

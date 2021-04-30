@@ -1,14 +1,14 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:project_1/advice_popups/DistrictsPhone/PNalaih.dart';
-import 'DistrictsPhone/PBGD.dart';
-import 'DistrictsPhone/PBZD.dart';
-import 'DistrictsPhone/PCD.dart';
-import 'DistrictsPhone/PHUD.dart';
-import 'DistrictsPhone/PSBD.dart';
-import 'DistrictsPhone/PSHD.dart';
-import 'DistrictsPhone/PBagahangai.dart';
-import 'DistrictsPhone/PBaganuur.dart';
+import 'package:project_1/advice_popups/districts_phone/phone_nalaih.dart';
+import 'districts_phone/phone_bayngol.dart';
+import 'districts_phone/phone_baynzurh.dart';
+import 'districts_phone/phone_chingeltei.dart';
+import 'districts_phone/phone_han_uul.dart';
+import 'districts_phone/phone_suh_baatar.dart';
+import 'districts_phone/phone_songino_hairhan.dart';
+import 'districts_phone/phone_bagahangai.dart';
+import 'districts_phone/phone_baganuur.dart';
 import 'menu_items.dart';
 // import 'boxRow_buttons.dart';
 

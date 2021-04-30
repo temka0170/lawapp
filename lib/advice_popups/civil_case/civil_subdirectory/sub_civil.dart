@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:project_1/advice_popups/civil_case/3rdParty/GSub.dart';
+import 'package:project_1/advice_popups/civil_case/third_party/third_party_sub.dart';
 import '../../menu_items.dart';
-import '../administrate/HSub.dart';
+import '../administrate/administrate_sub.dart';
 import 'civil_roadmap.dart';
 import '../claim/claim_sub.dart';
 
