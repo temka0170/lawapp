@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:ext_storage/ext_storage.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 //sub popups
 // ignore: must_be_immutable
@@ -24,8 +25,9 @@ class _AdviceState extends State<AdvicePopup> {
     try {
       var dir = await getExternalStorageDirectory();
       var path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOWNLOADS);
-
-      await dio.download(widget.url, "$path/${widget.title}.pdf");
+      if(await Permission.storage.isGranted) {
+        await dio.download(widget.url, "$path/${widget.title}.pdf");
+      }
     } catch (e) {
       print(e);
     }
@@ -85,30 +87,32 @@ class _AdviceState extends State<AdvicePopup> {
             child: Padding(
               padding: const EdgeInsets.only(top: 70.0),
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  await Permission.storage.request().isGranted;
                   setState(() {
                     downloadFile();
                     showDialog(
-                        barrierDismissible: true,
-                        context: context,
-                        builder: (context) {
-                          Future.delayed(Duration(milliseconds: 1200),
-                                  () {
-                                Navigator.of(context).pop(true);
-                              });
-                          return AlertDialog(
-                            title: Text(
-                              "Амжилттай татаж авлаа!",
-                              style: TextStyle(
-                                color: Color(0xffffffff),
-                                fontSize: 16.0,
+                          barrierDismissible: true,
+                          context: context,
+                          builder: (context) {
+                            Future.delayed(Duration(milliseconds: 1200),
+                                    () {
+                                  Navigator.of(context).pop(true);
+                                });
+                            return AlertDialog(
+                              title: Text(
+                                "Амжилттай татаж авлаа!",
+                                style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontSize: 16.0,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                            backgroundColor: Color(0xfff78c1e),
-                          );
-                        });
-                  });
+                              backgroundColor: Color(0xfff78c1e),
+                            );
+                          });
+                    }
+                  );
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.65,
