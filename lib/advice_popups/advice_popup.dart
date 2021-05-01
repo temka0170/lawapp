@@ -33,7 +33,7 @@ class _AdviceState extends State<AdvicePopup> {
       var response = await request.close();
       if(response.statusCode == 200) {
         var bytes = await consolidateHttpClientResponseBytes(response);
-        filePath = '$dir/$fileName';
+        filePath = '$dir/$fileName.docx';
         file = File(filePath);
         await file.writeAsBytes(bytes);
       }
@@ -238,7 +238,7 @@ class _AdviceState extends State<AdvicePopup> {
                                   widget.title,
                                   style: TextStyle(
                                     fontFamily: 'Roboto',
-                                    color: Color(0xff23233c),
+                                    color: Color(0xffffffff),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.normal,
