@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
@@ -19,19 +21,44 @@ class AdvicePopup extends StatefulWidget {
 }
 
 class _AdviceState extends State<AdvicePopup> {
-  Future<void> downloadFile() async {
-    Dio dio = Dio();
+
+  static var httpClient = new HttpClient();
+  Future<String> _downloadFile(String url, String fileName, String dir) async {
+    HttpClient httpClient = new HttpClient();
+    File file;
+    String filePath = '';
 
     try {
-      var dir = await getExternalStorageDirectory();
-      var path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOWNLOADS);
-      if(await Permission.storage.isGranted) {
-        await dio.download(widget.url, "$path/${widget.title}.pdf");
+      var request = await httpClient.getUrl(Uri.parse(url));
+      var response = await request.close();
+      if(response.statusCode == 200) {
+        var bytes = await consolidateHttpClientResponseBytes(response);
+        filePath = '$dir/$fileName';
+        file = File(filePath);
+        await file.writeAsBytes(bytes);
       }
-    } catch (e) {
-      print(e);
+      else
+        filePath = 'Error code: '+response.statusCode.toString();
     }
+    catch(ex){
+      filePath = 'Can not fetch url';
+    }
+
+    return filePath;
   }
+  // Future<void> downloadFile() async {
+  //   Dio dio = Dio();
+  //
+  //   try {
+  //     var dir = await getExternalStorageDirectory();
+  //     var path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOWNLOADS);
+  //     if(await Permission.storage.isGranted) {
+  //       await dio.download(widget.url, "$path/${widget.title}.pdf");
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -89,8 +116,9 @@ class _AdviceState extends State<AdvicePopup> {
               child: InkWell(
                 onTap: () async {
                   await Permission.storage.request().isGranted;
+                  var path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOWNLOADS);
                   setState(() {
-                    downloadFile();
+                    _downloadFile(widget.url, widget.title, path);
                     showDialog(
                           barrierDismissible: true,
                           context: context,
@@ -183,25 +211,42 @@ class _AdviceState extends State<AdvicePopup> {
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      SizedBox(
-                        height: 29,
-                      ),
                       Align(
                         alignment: Alignment.center,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 28.0),
-                          child: Text(
-                            //get values in data.dart
-                            widget.title,
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              color: Color(0xff23233c),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              fontStyle: FontStyle.normal,
+                          padding: const EdgeInsets.only(top: 16.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.74,
+                            decoration: new BoxDecoration(
+                              color: Color(0xfff78c1e),
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color(0x14000000),
+                                    offset: Offset(0, 0),
+                                    blurRadius: 10,
+                                    spreadRadius: 0,),
+                              ],
                             ),
-                            textAlign: TextAlign.center,
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  //get values in data.dart
+                                  widget.title,
+                                  style: TextStyle(
+                                    fontFamily: 'Roboto',
+                                    color: Color(0xff23233c),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
