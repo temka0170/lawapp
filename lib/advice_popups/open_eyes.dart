@@ -107,10 +107,10 @@ class _EyeBoxState extends State<EyeBox> {
                 controller: _controller,
                 child: Column(
                   children: <Widget>[
-                    PhoneItems(number: "102", title: "ЦАГДААГИЙН ШУУРХАЙ ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
-                    PhoneItems(number: "107", title: "ГЭР БҮЛИЙН ХҮЧИРХИЙЛЛИЙН ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
-                    PhoneItems(number: "108", title: "ХҮҮХДИЙН ТУСЛАМЖИЙН УТАС\n",),
-                    PhoneItems(number: "+97696490505", title: "24/7 ХҮЧИРХИЙЛЛИЙН ЭСРЭГ ЗӨВЛӨГӨӨ\n",),
+                    PhoneItems(number: "tel:102", title: "ЦАГДААГИЙН ШУУРХАЙ ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
+                    PhoneItems(number: "tel:107", title: "ГЭР БҮЛИЙН ХҮЧИРХИЙЛЛИЙН ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
+                    PhoneItems(number: "tel:108", title: "ХҮҮХДИЙН ТУСЛАМЖИЙН УТАС\n",),
+                    PhoneItems(number: "tel:+97696490505", title: "24/7 ХҮЧИРХИЙЛЛИЙН ЭСРЭГ ЗӨВЛӨГӨӨ\n",),
                   ],
                 ),
               ),

@@ -111,7 +111,7 @@ class _FirstCivilBoxState extends State<FirstCivilBox> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return SubCivilBox(
-                              title: "Шүүхийн Маргаан",
+                              title: "Шүүхийн Маргаан".toUpperCase(),
                             );
                           });
                     },
@@ -152,7 +152,7 @@ class _FirstCivilBoxState extends State<FirstCivilBox> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return Reconciliation(
-                              title: "Эвлэрүүлэн Зуучлах",
+                              title: "Эвлэрүүлэн Зуучлах".toUpperCase(),
                             );
                           });
                     },
@@ -193,7 +193,7 @@ class _FirstCivilBoxState extends State<FirstCivilBox> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return CivilCourtLocationBox(
-                              title: "НИЙСЛЭЛ ДЭХ ИРГЭНИЙ ХЭРГИЙН\nАНХАН ШАТНЫ ШҮҮХҮҮД",
+                              title: "НИЙСЛЭЛ ДЭХ ИРГЭНИЙ ХЭРГИЙН\nАНХАН ШАТНЫ ШҮҮХҮҮД".toUpperCase(),
                             );
                           });
                     },

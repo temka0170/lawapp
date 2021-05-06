@@ -31,7 +31,7 @@ class LocationItems extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Center(
-                  child: Text(title, textAlign: TextAlign.center,),
+                  child: Text(title.toUpperCase(), textAlign: TextAlign.center,),
                 ),
               ),
             ],

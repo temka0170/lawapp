@@ -117,7 +117,7 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                           builder: (BuildContext context) {
                             //links popups to its button
                             return Preemptive(
-                              title: "УРЬДЧИЛАН ШИЙДВЭРЛЭХ ШАТ",
+                              title: "УРЬДЧИЛАН ШИЙДВЭРЛЭХ ШАТ".toUpperCase(),
                             );
                           });
                     },

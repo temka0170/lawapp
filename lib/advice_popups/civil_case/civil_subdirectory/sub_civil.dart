@@ -108,22 +108,22 @@ class _SubCivilBoxState extends State<SubCivilBox> {
               child: Column(
                 children: <Widget>[
                   MenuItems(
-                    popup: ClaimSub(title: "Нэхэмжлэгч"),
+                    popup: ClaimSub(title: "Нэхэмжлэгч".toUpperCase()),
                     title: "Нэхэмжлэгч",
                     img: "assets/Icons/Nehemjlegch.png",
                   ),
                   MenuItems(
-                    popup: HSBox(title: "Хариуцагч"),
+                    popup: HSBox(title: "Хариуцагч".toUpperCase()),
                     title: "Хариуцагч",
                     img: "assets/Icons/Hariutsagch.png",
                   ),
                   MenuItems(
-                    popup: GSBox(title: "Гуравдагч Этгээд"),
+                    popup: GSBox(title: "Гуравдагч Этгээд".toUpperCase()),
                     title: "Гуравдагч Этгээд",
                     img: "assets/Icons/3rdParty.png",
                   ),
                   MenuItems(
-                    popup: CivilTemplate(title: "ТАЙЛБАР ЗУРАГ"),
+                    popup: CivilTemplate(title: "ТАЙЛБАР ЗУРАГ".toUpperCase()),
                     title: "ТАЙЛБАР ЗУРАГ",
                     img: "assets/Icons/Zagwar.png",
                   ),

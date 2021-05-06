@@ -107,10 +107,10 @@ class _PNALBoxState extends State<PNALBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  PhoneItems(number: "+97694945479"),
-                  PhoneItems(number: "+97696167713"),
-                  PhoneItems(number: "+97693022390"),
-                  PhoneItems(number: "+97688220099"),
+                  PhoneItems(number: "tel:+97694945479"),
+                  PhoneItems(number: "tel:+97696167713"),
+                  PhoneItems(number: "tel:+97693022390"),
+                  PhoneItems(number: "tel:+97688220099"),
                 ],
               ),
             ),

@@ -116,17 +116,17 @@ class _SZState extends State<ConflictSub> {
                     img: "assets/Icons/Zagwar.png",
                   ),
                   MenuItems(
-                    popup: ConflictConnection(title: "Холбогдогч"),
+                    popup: ConflictConnection(title: "Холбогдогч".toUpperCase()),
                     title: "Холбогдогч",
                     img: "assets/Icons/Holbogdogch.png",
                   ),
                   MenuItems(
-                    popup: AuthorityVictim(title: "Хохирогч"),
+                    popup: AuthorityVictim(title: "Хохирогч".toUpperCase()),
                     title: "Хохирогч",
                     img: "assets/Icons/Hohirogch.png",
                   ),
                   MenuItems(
-                    popup: ConflictTemplate(title: "ТАЙЛБАР ЗУРАГ",),
+                    popup: ConflictTemplate(title: "ТАЙЛБАР ЗУРАГ".toUpperCase(),),
                     title: "ТАЙЛБАР ЗУРАГ",
                     img: "assets/Icons/Sxem.png",
                   ),

@@ -235,7 +235,7 @@ class _AdviceState extends State<AdvicePopup> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
                                   //get values in data.dart
-                                  widget.title,
+                                  widget.title.toUpperCase(),
                                   style: TextStyle(
                                     fontFamily: 'Roboto',
                                     color: Color(0xffffffff),
@@ -261,6 +261,7 @@ class _AdviceState extends State<AdvicePopup> {
                             //get values in data.dart
                             widget.descriptions,
                             style: TextStyle(fontSize: 14),
+                            textAlign: TextAlign.justify,
                           ),
                         ),
                       ),

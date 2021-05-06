@@ -115,47 +115,47 @@ class _CallBoxState extends State<CallBox> {
               child: Column(
                 children: <Widget>[
                   MenuItems(
-                    popup: PBGDBox(title: "Баянгол Дүүрэг"),
+                    popup: PBGDBox(title: "Баянгол Дүүрэг".toUpperCase()),
                     title: "Баянгол Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PBZDBox(title: "Баянзүрх Дүүрэг"),
+                    popup: PBZDBox(title: "Баянзүрх Дүүрэг".toUpperCase()),
                     title: "Баянзүрх Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PCDBox(title: "Чингэлтэй Дүүрэг"),
+                    popup: PCDBox(title: "Чингэлтэй Дүүрэг".toUpperCase()),
                     title: "Чингэлтэй Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PHUDBox(title: "Хан-Уул Дүүрэг"),
+                    popup: PHUDBox(title: "Хан-Уул Дүүрэг".toUpperCase()),
                     title: "Хан-Уул Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PSBDBox(title: "Сүхбаатар Дүүрэг"),
+                    popup: PSBDBox(title: "Сүхбаатар Дүүрэг".toUpperCase()),
                     title: "Сүхбаатар Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PSHDBox(title: "Сонгино Хайрхан Дүүрэг"),
+                    popup: PSHDBox(title: "Сонгино Хайрхан Дүүрэг".toUpperCase()),
                     title: "Сонгино Хайрхан Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PNALBox(title: "Налайх Дүүрэг"),
+                    popup: PNALBox(title: "Налайх Дүүрэг".toUpperCase()),
                     title: "Налайх Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PBHBox(title: "Багахангай Дүүрэг"),
+                    popup: PBHBox(title: "Багахангай Дүүрэг".toUpperCase()),
                     title: "Багахангай Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),
                   MenuItems(
-                    popup: PBGBox(title: "Багануур Дүүрэг"),
+                    popup: PBGBox(title: "Багануур Дүүрэг".toUpperCase()),
                     title: "Багануур Дүүрэг",
                     img: "assets/Icons/phone.png",
                   ),

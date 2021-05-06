@@ -107,10 +107,10 @@ class _PBGBoxState extends State<PBGBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  PhoneItems(number: "+97694945443"),
-                  PhoneItems(number: "+97696167714"),
-                  PhoneItems(number: "+97693022370"),
-                  PhoneItems(number: "+97688220089"),
+                  PhoneItems(number: "tel:+97694945443"),
+                  PhoneItems(number: "tel:+97696167714"),
+                  PhoneItems(number: "tel:+97693022370"),
+                  PhoneItems(number: "tel:+97688220089"),
                 ],
               ),
             ),

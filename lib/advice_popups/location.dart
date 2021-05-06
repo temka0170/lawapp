@@ -113,47 +113,47 @@ class _LocationBoxState extends State<LocationBox> {
               child: Column(
                 children: <Widget>[
                   MenuItems(
-                    popup: BGDBox(title: "Баянгол Дүүрэг"),
+                    popup: BGDBox(title: "Баянгол Дүүрэг".toUpperCase()),
                     title: "Баянгол Дүүрэг",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: BZDBox(title: "Баянзүрх Дүүрэг"),
+                    popup: BZDBox(title: "Баянзүрх Дүүрэг".toUpperCase()),
                     title: "Баянзүрх Дүүрэг",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: CDBox(title: "Чингэлтэй Дүүрэг"),
+                    popup: CDBox(title: "Чингэлтэй Дүүрэг".toUpperCase()),
                     title: "Чингэлтэй Дүүрэг",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: HUDBox(title: "Хан-Уул Дүүрэг"),
+                    popup: HUDBox(title: "Хан-Уул Дүүрэг".toUpperCase()),
                     title: "Хан-Уул Дүүрэг",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: SBDBox(title: "Сүхбаатар Дүүрэг"),
+                    popup: SBDBox(title: "Сүхбаатар Дүүрэг".toUpperCase()),
                     title: "Сүхбаатар Дүүрэг",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: SHDBox(title: "Сонгино Хайрхан Дүүрэг"),
+                    popup: SHDBox(title: "Сонгино Хайрхан Дүүрэг".toUpperCase()),
                     title: "Сонгино Хайрхан Дүүрэг",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: NALBox(title: "Налайх Дүүрэг"),
+                    popup: NALBox(title: "Налайх Дүүрэг".toUpperCase()),
                     title: "Налайх Дүүрэг",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: BHBox(title: "Багахангай"),
+                    popup: BHBox(title: "Багахангай".toUpperCase()),
                     title: "Багахангай",
                     img: "assets/Icons/Bairshil.png",
                   ),
                   MenuItems(
-                    popup: BGBox(title: "Багануур"),
+                    popup: BGBox(title: "Багануур".toUpperCase()),
                     title: "Багануур",
                     img: "assets/Icons/Bairshil.png",
                   ),

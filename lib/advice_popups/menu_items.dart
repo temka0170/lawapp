@@ -43,10 +43,10 @@ class MenuItems extends StatelessWidget {
                 child: img == null ? Padding(
                   padding: const EdgeInsets.only(left: 12.0),
                   child: Center(
-                    child: Text(title, textAlign: TextAlign.center,),
+                    child: Text(title.toUpperCase(), textAlign: TextAlign.center,),
                   ),
                 ) : Center(
-                  child: Text(title, textAlign: TextAlign.center,),
+                  child: Text(title.toUpperCase(), textAlign: TextAlign.center,),
                 ),
               ),
               IconButton(

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //button functions of calculator page buttons
 
-_makePhoneCall(String contact) async {
-  if (await FlutterPhoneDirectCaller.callNumber(contact)) {
-    await FlutterPhoneDirectCaller.callNumber(contact);
+Future<void> _makePhoneCall(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
   } else {
-    throw 'Could not dial $contact';
+    throw 'Could not dial $url';
   }
 }
 //url launcher to itax.mta.mn
@@ -169,7 +168,7 @@ Padding phoneCaller(double width, double height) {
               ),
               child: IconButton(
                 onPressed: () {
-                  _makePhoneCall("+97694998777");
+                  _makePhoneCall('tel:+97694998777');
                 },
                 icon: Icon(Icons.phone),
                 color: Color(0xff23233c),
@@ -201,7 +200,7 @@ Padding phoneCaller(double width, double height) {
                       fontStyle: FontStyle.normal,
                     ),
                   ),
-                  onTap: () => _makePhoneCall("+97694998777"),
+                  onTap: () => _makePhoneCall("tel:+97694998777"),
                 ),
               ),
             )

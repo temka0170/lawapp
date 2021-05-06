@@ -28,25 +28,25 @@ class MoreButtons extends StatelessWidget {
               BoxItems(
                 imgPath: 'assets/Icons/irgen.gif',
                 popup: FirstCivilBox(
-                  title: 'Иргэний хэрэг',
+                  title: 'Иргэний хэрэг'.toUpperCase(),
                 ),
               ),
               BoxItems(
                 imgPath: 'assets/Icons/eruu.gif',
                 popup: Criminal(
-                  title: 'Эрүүгийн хэрэг',
+                  title: 'Эрүүгийн хэрэг'.toUpperCase(),
                 ),
               ),
               BoxItems(
                 imgPath: 'assets/Icons/baiguullaga.gif',
                 popup: AuthorityBox(
-                  title: 'Захиргааны хэрэг',
+                  title: 'Захиргааны хэрэг'.toUpperCase(),
                 ),
               ),
               BoxItems(
                 imgPath: 'assets/Icons/openeye.gif',
                 popup: EyeBox(
-                  title: 'Нүдээ нээ',
+                  title: 'Нүдээ нээ'.toUpperCase(),
                 ),
               ),
               // BoxItems(

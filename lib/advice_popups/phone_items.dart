@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PhoneItems extends StatelessWidget {
   final String number;
@@ -9,11 +9,11 @@ class PhoneItems extends StatelessWidget {
     @required this.number,
     this.title,
   }) : super(key: key);
-  _makePhoneCall(String contact) async {
-    if (await FlutterPhoneDirectCaller.callNumber(contact)) {
-      await FlutterPhoneDirectCaller.callNumber(contact);
+  Future<void> _makePhoneCall(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
     } else {
-      throw 'Could not dial $contact';
+      throw 'Could not dial $url';
     }
   }
 
