@@ -43,12 +43,25 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         double height = MediaQuery.of(context).size.height;
                         buildShowGeneralDialog(context, height, 0);
                       },
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundColor: Color(0xfff78c1e),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromRGBO(241, 103, 48, 1.0),
+                              Color.fromRGBO(249, 167, 25, 1.0)
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                         child: CircleAvatar(
-                          radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/tsengelM.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                          child: CircleAvatar(
+                            radius: 47,
+                            backgroundImage: AssetImage("assets/creators_png/tsengelM.jpg"),
+                          ),
                         ),
                       ),
                     ),
@@ -60,12 +73,25 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         double height = MediaQuery.of(context).size.height;
                         buildShowGeneralDialog(context, height, 1);
                       },
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundColor: Color(0xfff78c1e),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromRGBO(241, 103, 48, 1.0),
+                              Color.fromRGBO(249, 167, 25, 1.0)
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                         child: CircleAvatar(
-                          radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/tedyM.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                          child: CircleAvatar(
+                            radius: 47,
+                            backgroundImage: AssetImage("assets/creators_png/tedyM.jpg"),
+                          ),
                         ),
                       ),
                     ),
@@ -77,12 +103,25 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         double height = MediaQuery.of(context).size.height;
                         buildShowGeneralDialog(context, height, 2);
                       },
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundColor: Color(0xfff78c1e),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromRGBO(241, 103, 48, 1.0),
+                              Color.fromRGBO(249, 167, 25, 1.0)
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                         child: CircleAvatar(
-                          radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/designer1_2.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                          child: CircleAvatar(
+                            radius: 47,
+                            backgroundImage: AssetImage("assets/creators_png/designer1_2.jpg"),
+                          ),
                         ),
                       ),
                     ),
@@ -94,12 +133,25 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         double height = MediaQuery.of(context).size.height;
                         buildShowGeneralDialog(context, height, 3);
                       },
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundColor: Color(0xfff78c1e),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromRGBO(241, 103, 48, 1.0),
+                              Color.fromRGBO(249, 167, 25, 1.0)
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                         child: CircleAvatar(
-                          radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/lawyer1_5.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                          child: CircleAvatar(
+                            radius: 47,
+                            backgroundImage: AssetImage("assets/creators_png/lawyer1_5.jpg"),
+                          ),
                         ),
                       ),
                     ),
@@ -111,12 +163,25 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         double height = MediaQuery.of(context).size.height;
                         buildShowGeneralDialog(context, height, 4);
                       },
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundColor: Color(0xfff78c1e),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromRGBO(241, 103, 48, 1.0),
+                              Color.fromRGBO(249, 167, 25, 1.0)
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                         child: CircleAvatar(
-                          radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/lawyer2_2.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                          child: CircleAvatar(
+                            radius: 47,
+                            backgroundImage: AssetImage("assets/creators_png/lawyer2_2.jpg"),
+                          ),
                         ),
                       ),
                     ),
@@ -128,12 +193,25 @@ class _TeamCarouselState extends State<TeamCarousel> {
                         double height = MediaQuery.of(context).size.height;
                         buildShowGeneralDialog(context, height, 5);
                       },
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundColor: Color(0xfff78c1e),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromRGBO(241, 103, 48, 1.0),
+                              Color.fromRGBO(249, 167, 25, 1.0)
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                         child: CircleAvatar(
-                          radius: 47,
-                          backgroundImage: AssetImage("assets/creators_png/lawyer3M.jpg"),
+                          radius: 50,
+                          backgroundColor: Colors.transparent,
+                          child: CircleAvatar(
+                            radius: 47,
+                            backgroundImage: AssetImage("assets/creators_png/lawyer3M.jpg"),
+                          ),
                         ),
                       ),
                     ),
