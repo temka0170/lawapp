@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/calculator_ad_popup.dart';
 import 'data.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:project_1/painters/mainpainter.dart';
 
 //Home section carousel, reused calculator section carousel with few changes
@@ -157,7 +158,7 @@ class MainTile extends StatefulWidget {
 }
 
 class _MainTileState extends State<MainTile> {
-  List<CalculatorAdPopup> popups = new List<CalculatorAdPopup>();
+  List<AdvertisementPopup> popups = new List<AdvertisementPopup>();
 
   @override
   void initState() {
@@ -165,54 +166,69 @@ class _MainTileState extends State<MainTile> {
     // TODO: implement initState
     super.initState();
 
-    popups = getPopups();
+    popups = homeAdPopups();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: GestureDetector(
-        onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                //gets values from list
-                return popups[widget.idx];
-              });
-        },
-        child: Stack(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 12.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.36,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12.0),
-                  child: FittedBox(
-                    child: Image.asset(widget.imgPath),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  widget.desc,
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                    color: Color(0xffffffff),
-                    fontSize: 25,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
-                  ),
-                ),
-              ),
-            ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              offset: Offset(2, 4),
+              blurRadius: 12,
+              spreadRadius: 0,
+            )
           ],
+        ),
+        child: GestureDetector(
+          onTap: () {
+            popups[widget.idx].url == null
+                ? showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  //this links which popup should popup when clicked on slider
+                  return popups[widget.idx];
+                })
+                : launch(popups[widget.idx].url);
+          },
+          child: Stack(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.28,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: FittedBox(
+                      child: Image.asset(widget.imgPath),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    widget.desc,
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Color(0xffffffff),
+                      fontSize: 25,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

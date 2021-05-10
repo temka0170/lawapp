@@ -2,21 +2,21 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-//calculator, more section carousel popup
+//Advertisement carousel Popup structure
 // ignore: must_be_immutable
-class CalculatorAdPopup extends StatefulWidget {
+class AdvertisementPopup extends StatefulWidget {
   String title, descriptions, text, url;
   Image img;
 
-  CalculatorAdPopup(
+  AdvertisementPopup(
       {Key key, this.title, this.descriptions, this.text, this.img, this.url})
       : super(key: key);
 
   @override
-  _CalculatorAdPopupState createState() => _CalculatorAdPopupState();
+  _AdvertisementPopupState createState() => _AdvertisementPopupState();
 }
 
-class _CalculatorAdPopupState extends State<CalculatorAdPopup> {
+class _AdvertisementPopupState extends State<AdvertisementPopup> {
 
   @override
   Widget build(BuildContext context) {

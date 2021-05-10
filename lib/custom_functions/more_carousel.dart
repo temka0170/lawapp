@@ -198,7 +198,7 @@ class MoreTile extends StatefulWidget {
 }
 
 class _MoreTileState extends State<MoreTile> {
-  List<CalculatorAdPopup> morepopups = new List<CalculatorAdPopup>();
+  List<AdvertisementPopup> morepopups = new List<AdvertisementPopup>();
 
   @override
   void initState() {

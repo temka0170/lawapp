@@ -198,7 +198,7 @@ class AdTile extends StatefulWidget {
 }
 
 class _AdTileState extends State<AdTile> {
-  List<CalculatorAdPopup> cmpopups = new List<CalculatorAdPopup>();
+  List<AdvertisementPopup> cmpopups = new List<AdvertisementPopup>();
 
   @override
   void initState() {
@@ -206,7 +206,7 @@ class _AdTileState extends State<AdTile> {
     // TODO: implement initState
     super.initState();
 
-    cmpopups = adPopups();
+    cmpopups = calculatorAdPopups();
   }
 
   @override

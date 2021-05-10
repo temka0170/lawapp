@@ -69,26 +69,26 @@ List<AdModel> getAds() {
 }
 
 //calculator, more section popup values
-List<CalculatorAdPopup> adPopups() {
-  List<CalculatorAdPopup> popups = new List<CalculatorAdPopup>();
-  CalculatorAdPopup popup = new CalculatorAdPopup();
+List<AdvertisementPopup> calculatorAdPopups() {
+  List<AdvertisementPopup> popups = new List<AdvertisementPopup>();
+  AdvertisementPopup popup = new AdvertisementPopup();
 
   popup.url =
       "https://edit.mn/course/38/tesc-teenagers-english-speaking-course";
   popup.img = Image.asset("assets/Ads/speak_club.jpg");
   popups.add(popup);
 
-  popup = new CalculatorAdPopup();
+  popup = new AdvertisementPopup();
   popup.url = "https://www.facebook.com/Umbrella.Lawfirm";
   popup.img = Image.asset("assets/Ads/ulf.jpg");
   popups.add(popup);
 
-  popup = new CalculatorAdPopup();
+  popup = new AdvertisementPopup();
   popup.url = "https://edit.mn/course/47/make-website-without-code";
   popup.img = Image.asset("assets/Ads/wordpress.jpg");
   popups.add(popup);
 
-  popup = new CalculatorAdPopup();
+  popup = new AdvertisementPopup();
   popup.url = "https://www.google.mn/";
   popup.img = Image.asset("assets/Ads/adSpace.jpg");
   popups.add(popup);
@@ -161,25 +161,25 @@ List<MoreModel> getMore() {
 }
 
 //calculator, more section popup values
-List<CalculatorAdPopup> morePopups() {
-  List<CalculatorAdPopup> morepops = new List<CalculatorAdPopup>();
-  CalculatorAdPopup morepop = new CalculatorAdPopup();
+List<AdvertisementPopup> morePopups() {
+  List<AdvertisementPopup> morepops = new List<AdvertisementPopup>();
+  AdvertisementPopup morepop = new AdvertisementPopup();
 
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
 
-  morepop = new CalculatorAdPopup();
+  morepop = new AdvertisementPopup();
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
 
-  morepop = new CalculatorAdPopup();
+  morepop = new AdvertisementPopup();
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
 
-  morepop = new CalculatorAdPopup();
+  morepop = new AdvertisementPopup();
   morepop.url = "https://www.google.mn/";
   morepop.img = Image.asset("assets/Ads/adSpace.jpg");
   morepops.add(morepop);
@@ -225,25 +225,25 @@ List<MainModel> getMains() {
   List<MainModel> mains = new List<MainModel>();
   MainModel main = new MainModel();
 
-  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdPath("assets/Ads/ads1-1.png");
   main.setAdDesc("");
   main.setIdx(0);
   mains.add(main);
 
   main = new MainModel();
-  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdPath("assets/Ads/ads1-2.png");
   main.setAdDesc("");
   main.setIdx(1);
   mains.add(main);
 
   main = new MainModel();
-  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdPath("assets/Ads/ads1-3.png");
   main.setAdDesc("");
   main.setIdx(2);
   mains.add(main);
 
   main = new MainModel();
-  main.setAdPath("assets/Ads/adSpace.jpg");
+  main.setAdPath("assets/Ads/ads1-4.png");
   main.setAdDesc("");
   main.setIdx(3);
   mains.add(main);
@@ -284,30 +284,32 @@ class CreatorModel {
 }
 
 //home section popup values
-List<CalculatorAdPopup> getPopups() {
-  List<CalculatorAdPopup> popups = new List<CalculatorAdPopup>();
-  CalculatorAdPopup popup = new CalculatorAdPopup();
+List<AdvertisementPopup> homeAdPopups() {
+  List<AdvertisementPopup> popups = new List<AdvertisementPopup>();
+  AdvertisementPopup popup = new AdvertisementPopup();
 
   popup.descriptions = "";
-  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.img = Image.asset("assets/Ads/ads1-1.png");
   popup.title = "";
   popups.add(popup);
 
-  popup = new CalculatorAdPopup();
+  popup = new AdvertisementPopup();
   popup.descriptions = "";
-  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.img = Image.asset("assets/Ads/ads1-2.png");
+  popup.url = "https://www.umbrella.mn/";
   popup.title = "";
   popups.add(popup);
 
-  popup = new CalculatorAdPopup();
+  popup = new AdvertisementPopup();
   popup.descriptions = "";
-  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.img = Image.asset("assets/Ads/ads1-3.png");
   popup.title = "";
   popups.add(popup);
 
-  popup = new CalculatorAdPopup();
+  popup = new AdvertisementPopup();
   popup.descriptions = "";
-  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.img = Image.asset("assets/Ads/ads1-4.png");
+  popup.url = "https://edit.mn/";
   popup.title = "";
   popups.add(popup);
 
