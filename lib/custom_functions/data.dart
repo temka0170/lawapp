@@ -290,6 +290,7 @@ List<AdvertisementPopup> homeAdPopups() {
 
   popup.descriptions = "";
   popup.img = Image.asset("assets/Ads/ads1-1.png");
+  popup.url = "https://newpress.mn/";
   popup.title = "";
   popups.add(popup);
 
@@ -302,6 +303,7 @@ List<AdvertisementPopup> homeAdPopups() {
 
   popup = new AdvertisementPopup();
   popup.descriptions = "";
+  popup.url = "https://www.facebook.com/BaljinnyamBayarsaikhanFoundation";
   popup.img = Image.asset("assets/Ads/ads1-3.png");
   popup.title = "";
   popups.add(popup);
