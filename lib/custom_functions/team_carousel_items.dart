@@ -60,7 +60,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                           backgroundColor: Colors.transparent,
                           child: CircleAvatar(
                             radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/tsengelM.jpg"),
+                            backgroundImage: AssetImage("assets/creators_png/designer1_2.jpg"),
                           ),
                         ),
                       ),
@@ -120,7 +120,7 @@ class _TeamCarouselState extends State<TeamCarousel> {
                           backgroundColor: Colors.transparent,
                           child: CircleAvatar(
                             radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/designer1_2.jpg"),
+                            backgroundImage: AssetImage("assets/creators_png/tsengelM.jpg"),
                           ),
                         ),
                       ),

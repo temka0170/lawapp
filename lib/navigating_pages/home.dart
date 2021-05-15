@@ -36,7 +36,7 @@ class _MyStatefulWidgetState extends State<MyHome> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5.0),
-                child: Text("БҮТЭЭСЭН БАГ",
+                child: Text("Төслийн БАГ".toUpperCase(),
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       color: Color(0xff23233c),

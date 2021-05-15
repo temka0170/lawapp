@@ -19,7 +19,7 @@ final List<Widget> imageSliders = imgList
                       left: 0.0,
                       right: 0.0,
                       child: Container(
-                        height: 186,
+                        height: 190,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
@@ -108,9 +108,9 @@ final List<Widget> imageSliders = imgList
 
 //our team popup images
 final List<String> imgList = [
-  "assets/creators_png/tsengel.jpg",
-  "assets/creators_png/tedy1.jpg",
   "assets/creators_png/designer1.jpg",
+  "assets/creators_png/tedy1.jpg",
+  "assets/creators_png/tsengel.jpg",
   "assets/creators_png/lawyer1_7.jpg",
   "assets/creators_png/lawyer2_7.jpg",
   "assets/creators_png/lawyer3.jpg"
@@ -118,9 +118,9 @@ final List<String> imgList = [
 
 //our team popup titles
 final List<String> itemTitle = [
-  "Апп Хөгжүүлэгч",
-  "Апп Хөгжүүлэгч",
   "Дизайнэр",
+  "Апп Хөгжүүлэгч",
+  "Апп Хөгжүүлэгч",
   "Хуульч, Өмгөөлөгч",
   "Хуульч, Өмгөөлөгч",
   "Эрх зүйч"
@@ -128,19 +128,19 @@ final List<String> itemTitle = [
 
 //our team popup descriptions
 final List<String> itemDesc = [
-  "\"Senior Developer\"",
-  "\"Junior Developer\"",
   "\"Lead Designer\"",
-  "\"Үүсгэн байгуулагч\"",
+  "\"Junior Developer\"",
+  "\"Senior Developer\"",
+  "\"Төслийг санаачлагч\"",
   "\"ULF Partner\"",
   "\"Туслах\""
 ];
 
 //our team popup bottom container with names
 final List<String> itemBtn = [
-  "С.Батцэнгэл",
-  "Б.Тэмүүлэн",
   "Б.Батзориг",
+  "Б.Тэмүүлэн",
+  "С.Батцэнгэл",
   "Э.Амархүү",
   "П.Ундрах-Эрдэнэ",
   "Х.Отгонтогтох",

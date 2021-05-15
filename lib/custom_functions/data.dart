@@ -134,25 +134,25 @@ List<MoreModel> getMore() {
   List<MoreModel> mores = new List<MoreModel>();
   MoreModel more = new MoreModel();
 
-  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdPath("assets/Ads/ads1-1.png");
   more.setAdDesc("");
   more.setIdx(0);
   mores.add(more);
 
   more = new MoreModel();
-  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdPath("assets/Ads/ads1-2.png");
   more.setAdDesc("");
   more.setIdx(1);
   mores.add(more);
 
   more = new MoreModel();
-  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdPath("assets/Ads/ads1-3.png");
   more.setAdDesc("");
   more.setIdx(2);
   mores.add(more);
 
   more = new MoreModel();
-  more.setAdPath("assets/Ads/adSpace.jpg");
+  more.setAdPath("assets/Ads/ads1-4.png");
   more.setAdDesc("");
   more.setIdx(3);
   mores.add(more);
@@ -165,23 +165,23 @@ List<AdvertisementPopup> morePopups() {
   List<AdvertisementPopup> morepops = new List<AdvertisementPopup>();
   AdvertisementPopup morepop = new AdvertisementPopup();
 
-  morepop.url = "https://www.google.mn/";
-  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepop.url = "https://newpress.mn/";
+  morepop.img = Image.asset("assets/Ads/ads1-1.png");
   morepops.add(morepop);
 
   morepop = new AdvertisementPopup();
-  morepop.url = "https://www.google.mn/";
-  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepop.url = "https://www.facebook.com/Umbrella.Lawfirm";
+  morepop.img = Image.asset("assets/Ads/ads1-2.png");
   morepops.add(morepop);
 
   morepop = new AdvertisementPopup();
-  morepop.url = "https://www.google.mn/";
-  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepop.url = "https://www.facebook.com/BaljinnyamBayarsaikhanFoundation";
+  morepop.img = Image.asset("assets/Ads/ads1-3.png");
   morepops.add(morepop);
 
   morepop = new AdvertisementPopup();
-  morepop.url = "https://www.google.mn/";
-  morepop.img = Image.asset("assets/Ads/adSpace.jpg");
+  morepop.url = "https://edit.mn/";
+  morepop.img = Image.asset("assets/Ads/ads1-4.png");
   morepops.add(morepop);
 
   return morepops;
@@ -297,7 +297,7 @@ List<AdvertisementPopup> homeAdPopups() {
   popup = new AdvertisementPopup();
   popup.descriptions = "";
   popup.img = Image.asset("assets/Ads/ads1-2.png");
-  popup.url = "https://www.umbrella.mn/";
+  popup.url = "https://www.facebook.com/Umbrella.Lawfirm";
   popup.title = "";
   popups.add(popup);
 
