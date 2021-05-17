@@ -42,25 +42,31 @@ List<AdModel> getAds() {
   List<AdModel> ads = new List<AdModel>();
   AdModel ad = new AdModel();
 
-  ad.setAdPath("assets/Ads/speak_club.jpg");
+  ad.setAdPath("assets/Ads/ads1-1.png");
   ad.setAdDesc("");
   ad.setIdx(0);
   ads.add(ad);
 
   ad = new AdModel();
-  ad.setAdPath("assets/Ads/ulf.jpg");
+  ad.setAdPath("assets/Ads/ads1-2.png");
   ad.setAdDesc("");
   ad.setIdx(1);
   ads.add(ad);
 
   ad = new AdModel();
-  ad.setAdPath("assets/Ads/wordpress.jpg");
+  ad.setAdPath("assets/Ads/ads1-3.png");
   ad.setAdDesc("");
   ad.setIdx(2);
   ads.add(ad);
 
   ad = new AdModel();
-  ad.setAdPath("assets/Ads/adSpace.jpg");
+  ad.setAdPath("assets/Ads/ads1-4.png");
+  ad.setAdDesc("");
+  ad.setIdx(3);
+  ads.add(ad);
+
+  ad = new AdModel();
+  ad.setAdPath("assets/Ads/ads1-5.png");
   ad.setAdDesc("");
   ad.setIdx(3);
   ads.add(ad);
@@ -73,24 +79,28 @@ List<AdvertisementPopup> calculatorAdPopups() {
   List<AdvertisementPopup> popups = new List<AdvertisementPopup>();
   AdvertisementPopup popup = new AdvertisementPopup();
 
-  popup.url =
-      "https://edit.mn/course/38/tesc-teenagers-english-speaking-course";
-  popup.img = Image.asset("assets/Ads/speak_club.jpg");
+  popup.url = "https://newpress.mn/";
+  popup.img = Image.asset("assets/Ads/ads1-1.png");
   popups.add(popup);
 
   popup = new AdvertisementPopup();
   popup.url = "https://www.facebook.com/Umbrella.Lawfirm";
-  popup.img = Image.asset("assets/Ads/ulf.jpg");
+  popup.img = Image.asset("assets/Ads/ads1-2.png");
   popups.add(popup);
 
   popup = new AdvertisementPopup();
-  popup.url = "https://edit.mn/course/47/make-website-without-code";
-  popup.img = Image.asset("assets/Ads/wordpress.jpg");
+  popup.url = "https://www.facebook.com/BaljinnyamBayarsaikhanFoundation";
+  popup.img = Image.asset("assets/Ads/ads1-3.png");
   popups.add(popup);
 
   popup = new AdvertisementPopup();
-  popup.url = "https://www.google.mn/";
-  popup.img = Image.asset("assets/Ads/adSpace.jpg");
+  popup.url = "https://edit.mn/";
+  popup.img = Image.asset("assets/Ads/ads1-4.png");
+  popups.add(popup);
+
+  popup = new AdvertisementPopup();
+  popup.url = "";
+  popup.img = Image.asset("assets/Ads/ads1-5.png");
   popups.add(popup);
 
   return popups;
@@ -157,6 +167,12 @@ List<MoreModel> getMore() {
   more.setIdx(3);
   mores.add(more);
 
+  more = new MoreModel();
+  more.setAdPath("assets/Ads/ads1-5.png");
+  more.setAdDesc("");
+  more.setIdx(4);
+  mores.add(more);
+
   return mores;
 }
 
@@ -182,6 +198,11 @@ List<AdvertisementPopup> morePopups() {
   morepop = new AdvertisementPopup();
   morepop.url = "https://edit.mn/";
   morepop.img = Image.asset("assets/Ads/ads1-4.png");
+  morepops.add(morepop);
+
+  morepop = new AdvertisementPopup();
+  morepop.url = "";
+  morepop.img = Image.asset("assets/Ads/ads1-5.png");
   morepops.add(morepop);
 
   return morepops;
@@ -248,6 +269,12 @@ List<MainModel> getMains() {
   main.setIdx(3);
   mains.add(main);
 
+  main = new MainModel();
+  main.setAdPath("assets/Ads/ads1-5.png");
+  main.setAdDesc("");
+  main.setIdx(4);
+  mains.add(main);
+
   return mains;
 }
 
@@ -312,6 +339,13 @@ List<AdvertisementPopup> homeAdPopups() {
   popup.descriptions = "";
   popup.img = Image.asset("assets/Ads/ads1-4.png");
   popup.url = "https://edit.mn/";
+  popup.title = "";
+  popups.add(popup);
+
+  popup = new AdvertisementPopup();
+  popup.descriptions = "";
+  popup.img = Image.asset("assets/Ads/ads1-5.png");
+  popup.url = "";
   popup.title = "";
   popups.add(popup);
 

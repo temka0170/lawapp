@@ -130,7 +130,7 @@ class _ESState extends State<Reconciliation> {
                     MenuItems(
                       popup: ReconcileTemplate(title: "ТАЙЛБАР ЗУРАГ"),
                       title: "ТАЙЛБАР ЗУРАГ",
-                      img: "assets/Icons/Zagwar.png",
+                      img: "assets/Icons/Sxem.png",
                     ),
                     MenuItems(
                       popup: morepopups[39],

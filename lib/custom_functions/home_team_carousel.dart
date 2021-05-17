@@ -34,10 +34,8 @@ final List<Widget> imageSliders = imgList
                             vertical: 10.0, horizontal: 20.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
-                            SizedBox(
-                              height: 40.0,
-                            ),
                             Align(
                               alignment: Alignment.topLeft,
                               child: Text(
@@ -67,7 +65,7 @@ final List<Widget> imageSliders = imgList
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 18.0),
+                              padding: const EdgeInsets.only(top: 18.0, bottom: 8.0),
                               child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Container(
@@ -118,7 +116,7 @@ final List<String> imgList = [
 
 //our team popup titles
 final List<String> itemTitle = [
-  "Дизайнэр",
+  "Дизайнер",
   "Апп Хөгжүүлэгч",
   "Апп Хөгжүүлэгч",
   "Хуульч, Өмгөөлөгч",
@@ -131,8 +129,8 @@ final List<String> itemDesc = [
   "\"Lead Designer\"",
   "\"Junior Developer\"",
   "\"Senior Developer\"",
-  "\"Төслийг санаачлагч\"",
-  "\"ULF Partner\"",
+  "\"Төслийг санаачлагч,\n Зохион бүтээгч,\n Төслийн удирдагч\"",
+  "\"Зөвлөх\"",
   "\"Туслах\""
 ];
 

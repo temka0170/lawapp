@@ -215,7 +215,7 @@ class Association extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image(
-                    image: AssetImage('assets/images/lawfirmlogo.png'),
+                    image: AssetImage('assets/images/umbrella_logo.jpg'),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -225,7 +225,7 @@ class Association extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),
                   child: Text(
-                    "Улсын тэмдэгтийн хураамж цахим тооцоолборын хамт олонтой хамтран ажиллахыг хүсвэл дараах дугаараар холбогдоно уу.",
+                    "Хүний эрх, шударга ёс, үнэний төлөөх Шүхэр төвийн хамт олонтой хамтран ажиллахыг хүсвэл дараах дугаараар холбогдоно уу.",
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       color: Color(0xff23233c),

@@ -125,7 +125,7 @@ class _SubCivilBoxState extends State<SubCivilBox> {
                   MenuItems(
                     popup: CivilTemplate(title: "ТАЙЛБАР ЗУРАГ".toUpperCase()),
                     title: "ТАЙЛБАР ЗУРАГ",
-                    img: "assets/Icons/Zagwar.png",
+                    img: "assets/Icons/Sxem.png",
                   ),
                 ],
               ),
