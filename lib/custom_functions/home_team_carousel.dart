@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//our team popup
+//Project team intro popup
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
           child: Container(
@@ -104,7 +104,7 @@ final List<Widget> imageSliders = imgList
         ))
     .toList();
 
-//our team popup images
+//Project team popup images
 final List<String> imgList = [
   "assets/creators_png/designer1.jpg",
   "assets/creators_png/tedy1.jpg",
@@ -114,7 +114,7 @@ final List<String> imgList = [
   "assets/creators_png/lawyer3.jpg"
 ];
 
-//our team popup titles
+//Project team popup titles
 final List<String> itemTitle = [
   "Дизайнер",
   "Апп Хөгжүүлэгч",
@@ -124,7 +124,7 @@ final List<String> itemTitle = [
   "Эрх зүйч"
 ];
 
-//our team popup descriptions
+//Project team popup descriptions
 final List<String> itemDesc = [
   "\"Lead Designer\"",
   "\"Junior Developer\"",
@@ -134,7 +134,7 @@ final List<String> itemDesc = [
   "\"Туслах\""
 ];
 
-//our team popup bottom container with names
+//Project team popup names
 final List<String> itemBtn = [
   "Б.Батзориг",
   "Б.Тэмүүлэн",

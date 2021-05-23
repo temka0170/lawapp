@@ -5,10 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/calculator_ad_popup.dart';
 import 'data.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-// import 'package:project_1/painters/calculatorpainter.dart';
 
-//Custom Carousel Slider of Calculator.dart and More.dart
+//Custom Carousel Slider of More.dart
 // ignore: must_be_immutable
 class MoreCarousel extends StatefulWidget {
   @override
@@ -29,7 +27,7 @@ class _MoreCarouselState extends State<MoreCarousel> {
     super.initState();
     //gets values from data.dart
     mores = getMore();
-    mores.shuffle();
+    mores.shuffle(); // shuffles slides randomly
 
     //periodic slide change timer
     if (mores != null) {
@@ -79,7 +77,7 @@ class _MoreCarouselState extends State<MoreCarousel> {
               idx: id,
             );
           },
-          options: CarouselOptions(
+          options: CarouselOptions(// carousel slider options
             onPageChanged: (index, reason) {
               setState(() {
                 _currentAd = index;
@@ -99,67 +97,7 @@ class _MoreCarouselState extends State<MoreCarousel> {
             height: MediaQuery.of(context).size.height * 0.28,
           ),
         ),
-        // PageView.builder(
-        //   controller: adController,
-        //   itemCount: ads.length,
-        //   onPageChanged: (idx) {
-        //     setState(() {
-        //       _currentAd = idx;
-        //     });
-        //   },
-        //   itemBuilder: (context, index) {
-        //     //Slide of carousel, gets data by list
-        //     ix = index;
-        //     id = ads[ix].getIdex();
-        //     return AdTile(
-        //       imgPath: ads[ix].getAssetPath(),
-        //       desc: ads[ix].getDescript(),
-        //       idx: id,
-        //     );
-        //   },
-        // ),
-        //Top curved border of Calculator,more section carousel
-        // IgnorePointer(
-        //   child: ClipPath(
-        //     clipper: WaveClipperTwo(
-        //       flip: true,
-        //       reverse: false,
-        //     ),
-        //     child: Container(
-        //       width: MediaQuery.of(context).size.width,
-        //       height: MediaQuery.of(context).size.height * 0.1,
-        //       color: Color(0xfff8931f).withOpacity(0.4),
-        //     ),
-        //   ),
-        // ),
-        // IgnorePointer(
-        //   child: ClipPath(
-        //     clipper: WaveClipperTwo(
-        //       flip: true,
-        //       reverse: false,
-        //     ),
-        //     child: Container(
-        //       width: MediaQuery.of(context).size.width,
-        //       height: MediaQuery.of(context).size.height * 0.09,
-        //       color: Color(0xfff8931f),
-        //     ),
-        //   ),
-        // ),
-        // //bottom curved border of calculator,more section carousel
-        // IgnorePointer(
-        //   child: CustomPaint(
-        //     size: Size(MediaQuery.of(context).size.width,
-        //         MediaQuery.of(context).size.height * 0.46 + 1),
-        //     painter: SecondWave(),
-        //   ),
-        // ),
-        // IgnorePointer(
-        //   child: CustomPaint(
-        //     size: Size(MediaQuery.of(context).size.width,
-        //         MediaQuery.of(context).size.height * 0.46 + 1),
-        //     painter: FirstWave(),
-        //   ),
-        // ),
+        // indicator implementation
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -185,7 +123,7 @@ class _MoreCarouselState extends State<MoreCarousel> {
   }
 }
 
-//defines single slide of carousel, aka theme of popup
+//Carousel Slide theme/template
 // ignore: must_be_immutable
 class MoreTile extends StatefulWidget {
   String imgPath;
@@ -205,7 +143,7 @@ class _MoreTileState extends State<MoreTile> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-
+    // data.dart value getter
     morepopups = morePopups();
   }
 
@@ -226,6 +164,9 @@ class _MoreTileState extends State<MoreTile> {
         ),
         child: GestureDetector(
           onTap: () {
+            //checks if there's url
+            //if url is null, shows popup with according info
+            //if url is not null, launches web link
             morepopups[widget.idx].url == null
                 ? showDialog(
                     context: context,
@@ -235,8 +176,10 @@ class _MoreTileState extends State<MoreTile> {
                     })
                 : launch(morepopups[widget.idx].url);
           },
+          // Slide Container
           child: Stack(
             children: <Widget>[
+              // Slide Image
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: Container(
@@ -251,6 +194,8 @@ class _MoreTileState extends State<MoreTile> {
                   ),
                 ),
               ),
+              // Optional Slide description
+              // unused since Ad image has text on them
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(

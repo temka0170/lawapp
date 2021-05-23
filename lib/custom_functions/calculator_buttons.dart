@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //button functions of calculator page buttons
-
+// call function
 Future<void> _makePhoneCall(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
@@ -10,10 +10,11 @@ Future<void> _makePhoneCall(String url) async {
     throw 'Could not dial $url';
   }
 }
-//url launcher to itax.mta.mn
+// url launcher to itax.mta.mn
 Padding govLink(double width, double height) {
   return Padding(
     padding: const EdgeInsets.only(top: 15.0),
+    // container of button
     child: SizedBox(
       width: width,
       height: height * 0.06,
@@ -34,12 +35,14 @@ Padding govLink(double width, double height) {
                       spreadRadius: 0)
                 ],
               ),
+              // icon button version
               child: IconButton(
                 onPressed: () => launch('https://itax.mta.mn/home/receiptCreate'),
                 icon: Icon(Icons.monetization_on),
                 color: Color(0xff23233c),
               ),
             ),
+            // text button version
             Container(
               width: width * 0.65,
               height: height * 0.06,
@@ -79,12 +82,14 @@ Padding govLink(double width, double height) {
 Padding ytLink(double width, double height) {
   return Padding(
     padding: const EdgeInsets.only(top: 10.0),
+    // container of button
     child: SizedBox(
       width: width,
       height: height * 0.06,
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            // icon button version
             Container(
               width: height * 0.06,
               height: height * 0.06,
@@ -106,6 +111,7 @@ Padding ytLink(double width, double height) {
                 color: Color(0xff23233c),
               ),
             ),
+            // text button version
             Container(
               width: width * 0.65,
               height: height * 0.06,
@@ -142,16 +148,18 @@ Padding ytLink(double width, double height) {
   );
 }
 
-// calculator page call button
+// Call button
 Padding phoneCaller(double width, double height) {
   return Padding(
     padding: const EdgeInsets.only(top: 10.0),
+    // container of button
     child: SizedBox(
       width: width,
       height: height * 0.06,
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            // icon button version
             Container(
               width: height * 0.06,
               height: height * 0.06,
@@ -174,6 +182,7 @@ Padding phoneCaller(double width, double height) {
                 color: Color(0xff23233c),
               ),
             ),
+            // text button version
             Container(
               width: width * 0.65,
               height: height * 0.06,

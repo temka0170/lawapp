@@ -3,12 +3,10 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:ext_storage/ext_storage.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-//sub popups
+// Popup template
 // ignore: must_be_immutable
 class AdvicePopup extends StatefulWidget {
   String title, descriptions, url;
@@ -46,26 +44,13 @@ class _AdviceState extends State<AdvicePopup> {
 
     return filePath;
   }
-  // Future<void> downloadFile() async {
-  //   Dio dio = Dio();
-  //
-  //   try {
-  //     var dir = await getExternalStorageDirectory();
-  //     var path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOWNLOADS);
-  //     if(await Permission.storage.isGranted) {
-  //       await dio.download(widget.url, "$path/${widget.title}.pdf");
-  //     }
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(//popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -78,9 +63,11 @@ class _AdviceState extends State<AdvicePopup> {
 
   contentBox(context) {
     return WillPopScope(
+      //only pops most recent popup instead of all popups
       onWillPop: () async => false,
       child: Stack(
         children: <Widget>[
+          //back button
           Positioned(
             right: 0.0,
             top: 0.0,
@@ -115,10 +102,14 @@ class _AdviceState extends State<AdvicePopup> {
               padding: const EdgeInsets.only(top: 70.0),
               child: InkWell(
                 onTap: () async {
+                  // asking for storage permission
                   await Permission.storage.request().isGranted;
+                  // getting download directory
                   var path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOWNLOADS);
                   setState(() {
+                    // download function
                     _downloadFile(widget.url, widget.title, path);
+                    // successfully downloaded reminder, pops current popup
                     showDialog(
                           barrierDismissible: true,
                           context: context,
@@ -142,6 +133,7 @@ class _AdviceState extends State<AdvicePopup> {
                     }
                   );
                 },
+                // download button widget
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.65,
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -191,7 +183,8 @@ class _AdviceState extends State<AdvicePopup> {
                 ),
               ),
             ),
-          ) : Container(),
+          ) : Container(), // shows empty container if url variable is null
+          // container of contents in the popup
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(
@@ -208,6 +201,7 @@ class _AdviceState extends State<AdvicePopup> {
                           offset: Offset(0, 10),
                           blurRadius: 10),
                     ]),
+                // longer contents are scrollable
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -234,7 +228,7 @@ class _AdviceState extends State<AdvicePopup> {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  //get values in data.dart
+                                  // Title shown in the Top section,
                                   widget.title.toUpperCase(),
                                   style: TextStyle(
                                     fontFamily: 'Roboto',
@@ -250,15 +244,17 @@ class _AdviceState extends State<AdvicePopup> {
                           ),
                         ),
                       ),
+                      // Seperate padding
                       SizedBox(
                         height: 15,
                       ),
+                      // main content of the popup
                       Align(
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 20, right: 20, top: 15),
                           child: Text(
-                            //get values in data.dart
+                            // main content of the popup
                             widget.descriptions,
                             style: TextStyle(fontSize: 14),
                             textAlign: TextAlign.justify,

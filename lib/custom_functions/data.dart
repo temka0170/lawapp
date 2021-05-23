@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/advice_popup.dart';
-
+import 'package:project_1/custom_functions/q&a_popup.dart';
 import 'calculator_ad_popup.dart';
 import '../advice_popups/advice_popup.dart';
 
@@ -37,7 +37,7 @@ class AdModel {
   }
 }
 
-//values of calculator, more section carousel
+//values of calculator advertisement carousel
 List<AdModel> getAds() {
   List<AdModel> ads = new List<AdModel>();
   AdModel ad = new AdModel();
@@ -68,13 +68,15 @@ List<AdModel> getAds() {
   ad = new AdModel();
   ad.setAdPath("assets/Ads/ads1-5.png");
   ad.setAdDesc("");
-  ad.setIdx(3);
+  ad.setIdx(4);
   ads.add(ad);
 
   return ads;
 }
 
-//calculator, more section popup values
+//calculator advertisement popup
+// if url is null shows popup that includes info
+// with popup.description, popup.title;
 List<AdvertisementPopup> calculatorAdPopups() {
   List<AdvertisementPopup> popups = new List<AdvertisementPopup>();
   AdvertisementPopup popup = new AdvertisementPopup();
@@ -139,7 +141,7 @@ class MoreModel {
   }
 }
 
-//values of more section carousel
+//More section advertisement carousel data
 List<MoreModel> getMore() {
   List<MoreModel> mores = new List<MoreModel>();
   MoreModel more = new MoreModel();
@@ -176,7 +178,9 @@ List<MoreModel> getMore() {
   return mores;
 }
 
-//calculator, more section popup values
+//More section advertisement popup values
+// if url is null shows popup that includes info
+// with morepop.description, morepop.title;
 List<AdvertisementPopup> morePopups() {
   List<AdvertisementPopup> morepops = new List<AdvertisementPopup>();
   AdvertisementPopup morepop = new AdvertisementPopup();
@@ -310,7 +314,9 @@ class CreatorModel {
   }
 }
 
-//home section popup values
+//home section advertisement popup values
+// if url is null shows popup that includes info
+// with popup.description, popup.title;
 List<AdvertisementPopup> homeAdPopups() {
   List<AdvertisementPopup> popups = new List<AdvertisementPopup>();
   AdvertisementPopup popup = new AdvertisementPopup();
@@ -352,6 +358,8 @@ List<AdvertisementPopup> homeAdPopups() {
   return popups;
 }
 
+// Q&A section data
+// popup value links to question
 const question_data = [
   {
     "question": "Иргэний хэргийн хөөн хэлэлцэх хугацааг юу гэж ойлгох вэ?",
@@ -402,17 +410,19 @@ const question_data = [
   {"question": "Газар өмчлөх эрх хэзээ дуусгавар болдог вэ?", "popup": 12},
 ];
 
-//values of more section q&a section
+//values of more section q&a popup
 List<QuestionBox> questionPop() {
   List<QuestionBox> qstPops = new List<QuestionBox>();
   QuestionBox qstPop = new QuestionBox();
-
+  // links here from previous Q&A popup value
+  // idx 0
   qstPop.question =
       'Иргэний хэргийн хөөн хэлэлцэх \n хугацааг юу гэж ойлгох вэ?';
   qstPop.answer =
       'Иргэн, хуулийн этгээдээс зөрчигдсөн эрхээ хамгаалуулахын тулд шүүх, арбитр зэрэг байгууллагад нэхэмжлэл гаргаж болох хугацааг хуулиар тогтоосныг хөөн хэлэлцэх хугацаа гэнэ. Хуульд өөрөөр заагаагүй бол хөөн хэлэлцэх ерөнхий хугацаа 10 жил, гэрээний үүрэгтэй холбоотой шаардлага гаргах хөөн хэлэлцэх хугацаа 3 жил, үл хөдлөх эд хөрөнгөтэй холбоотой гэрээний үүрэгтэй холбоотой хөөн хэлэлцэх хугацаа 6 жил гэх мэт тусгай асуудлаар нь зааж өгсөн. Хөөн хэлэлцэх хугацаа өнгөрсөн бол үүрэг гүйцэтгэгч үүрэг гүйцэтгэхээс татгалзах эрхтэй байдаг.';
   qstPops.add(qstPop);
 
+  //idx 1
   qstPop = new QuestionBox();
   qstPop.question =
       'Шүүхэд хандмаар байгаа ч хариуцагч этгээдийн оршин суугаа хаягийг мэдэхгүй байгаа тохиолдолд яах вэ?';
@@ -420,6 +430,7 @@ List<QuestionBox> questionPop() {
       'Хариуцагчийн оршин суугаа газрын хаяг мэдэгдэхгүй байвал түүнийг эрэн сурвалжлуулахаар шүүхэд хүсэлт гаргаж болно. Хариуцагчийг эрэн сурвалжлах тухай шүүхийн шийдвэр гарсан тохиолдолд цагдаагийн байгууллага тухайн этгээдийн оршин суугаа хаягийг тогтоохоор эрэн сурвалжлах ажиллагааг хийж гүйцэтгэнэ.';
   qstPops.add(qstPop);
 
+  //idx 2
   qstPop = new QuestionBox();
   qstPop.question =
       'Зээлийн гэрээ бичгээр байгуулаагүй ч \n гэсэн хүү нэхэж болох уу?';
@@ -427,6 +438,7 @@ List<QuestionBox> questionPop() {
       'Монгол Улсын Иргэний хуульд “Хуульд өөрөөр заагаагүй бол хүү тогтоосон бол зээлийн гэрээг бичгээр хийнэ. Энэ шаардлагыг хангаагүй бол хүү авах эрхээ алдана” гэж зохицуулсан байдаг. Иймд зээл олгохдоо хүү төлөхөөр тохиролцсон хэдий ч бичгээр гэрээ байгуулаагүй, зөвхөн амаар тохиролцсон тохиолдолд зээлдүүлэгч хүү шаардах эрхгүй болно.';
   qstPops.add(qstPop);
 
+  // idx 3
   qstPop = new QuestionBox();
   qstPop.question =
       'Орон сууц худалдаж авахаар гэрээ байгуулахад юуг анхаарах ёстой вэ?';
@@ -434,6 +446,7 @@ List<QuestionBox> questionPop() {
       'Орон сууц худалдах, худалдан авах гэрээ байгуулахдаа гэрээгээ улсын бүртгэлийн газарт бүртгүүлэх ёстой. Учир нь үл хөдлөх эрх хөрөнгө өмчлөх эрх хэлцлийн үндсэн дээр нэг этгээдээс нөгөөд шилжиж байгаа бол уг хэлцлийг үл хөдлөх эд хөрөнгийн бүртгэлийн газар бүртгүүлснээр тухайн үл хөдлөх эд хөрөнгийн өмчлөх эрх худалдан авагчид шилжиж, өмнөх өмчлөгч буюу худалдагчийн өмчлөх эрх дуусгавар болдог. Хэрэв уг шаардлагыг хангаагүй бол талуудын хооронд байгуулагдсан худалдах, худалдан авах гэрээ нь Иргэний хуульд заасан хүчин төгөлдөр бус байх хэлцэлд тооцогдох хууль зүйн үр дагаврыг бий болгоно.';
   qstPops.add(qstPop);
 
+  // idx 4
   qstPop = new QuestionBox();
   qstPop.question =
       'Шүүхийн шийдвэрээр тогтоосон тэтгэлгийг хугацаандаа төлөөгүй тохиолдолд алданги шаардаж болох уу?';
@@ -441,12 +454,14 @@ List<QuestionBox> questionPop() {
       'Хэрэв шүүхийн шийдвэрээр тогтоосон тэтгэлгийг хугацаанд нь төлөөгүй бол хожимдуулсан хоног тутамд тогтоосон тэтгэлгийн үнийн дүнгийн 0,5 хувиар алданги гаргуулахаар шаардаж болно. Гэхдээ алдангийн нийт хэмжээ төлөгдөөгүй тэтгэлгийн үнийн дүнгийн 50 хувиас хэтрэхгүй байхыг анхаарах нь зүйтэй.';
   qstPops.add(qstPop);
 
+  // idx 5
   qstPop = new QuestionBox();
   qstPop.question = 'Хөдөлмөрийн хөлсний доод хэмжээ гэж юуг хэлэх вэ?';
   qstPop.answer =
       'Хөдөлмөрийн хөлсний доод хэмжээ гэж тодорхой боловсрол, тусгай мэргэжил үл шаардагдах энгийн ажилд хөдөлмөрийн гэрээ, хөлсөөр ажиллах гэрээ болон тэдгээртэй адилтгах бусад гэрээгээр ажиллаж байгаа ажилтны хууль ёсны эрх, ашиг сонирхлыг хамгаалах зорилгоор эрх бүхий этгээдээс тогтоосон цагийн үндсэн цалин хөлсийн нийтээр дагаж мөрдвөл зохих хамгийн доод хэмжээг ойлгоно. Хөдөлмөр, нийгмийн зөвшлийн гурван талт үндэсний хорооноос хүн амын амьжиргааны өртгийн өөрчлөлт, эдийн засгийн өсөлт, хөдөлмөр эрхлэлтийн түвшин зэрэг хүчин зүйлсийг харгалзан 2 жилд 1 удаа тогтоодог. Хөдөлмөр, нийгмийн зөвшлийн гурван талт үндэсний хорооны 2018.08.19-ний өдрийн 05 дугаар тогтоолын дагуу улсын хэмжээнд мөрдөгдөх хөдөлмөрийн хөлсний доод хэмжээ 2020.01.01-нээс эхлэн нэг цагт 2500 төгрөг буюу сард 420,000 төгрөг байна.';
   qstPops.add(qstPop);
 
+  // idx 6
   qstPop = new QuestionBox();
   qstPop.question =
       'Хөдөлмөрийн гэрээг бичгээр байгуулаагүй тохиолдолд ажил олгогч хариуцлага хүлээх үү?';
@@ -454,6 +469,7 @@ List<QuestionBox> questionPop() {
       'Хөдөлмөрийн тухай хуульд зааснаар ажил олгогч нь ажилтантай байнгын ажлын байранд хөдөлмөрийн гэрээг заавал бичгээр байгуулах ёстой бөгөөд хэрэв ажил олгогч уг үүргээ биелүүлээгүй тохиолдолд Зөрчлийн тухай хуульд заасан хариуцлагыг хүлээнэ. Зөрчлийн тухай хуулийн 10.16-р зүйлийн 4.3-д зааснаар ажилтанд учруулсан хохирол, нөхөн төлбөрийг гаргуулж, хүнийг нэг зуун тавин нэгжтэй тэнцэх хэмжээний буюу 150,000 төгрөг, хуулийн этгээдийг нэг мянга таван зуун нэгжтэй тэнцэх хэмжээний буюу 1,500,000 төгрөгөөр торгох тухай хуульчилсан';
   qstPops.add(qstPop);
 
+  // idx 7
   qstPop = new QuestionBox();
   qstPop.question =
       'Хөдөлмөрийн гэрээний туршилтын хугацаа дууссан ч гэсэн үргэлжлүүлэн ажиллаж болох уу?';
@@ -461,12 +477,14 @@ List<QuestionBox> questionPop() {
       'Туршилтын хугацаа тогтоосон хөдөлмөрийн гэрээний хугацаа дуусмагц гэрээний талууд гэрээг цуцлах санал тавиагүй бөгөөд ажилтан ажлаа гүйцэтгэсээр байгаа тохиолдолд хөдөлмөрийн гэрээг анх заасан хугацаагаар сунгагдсанд тооцдог.';
   qstPops.add(qstPop);
 
+  // idx 8
   qstPop = new QuestionBox();
   qstPop.question = 'Гэрлэлтээ цуцлуулахад хаана хандах вэ?';
   qstPop.answer =
       'Гэрлэлтийг хуульд заасан үндэслэлээр захиргааны буюу шүүхийн журмаар цуцална. Гэрлэлтээ цуцлуулахыг харилцан зөвшөөрсөн, 18 хүртэлх насны хүүхэдгүй, эд хөрөнгийн маргаангүй тохиолдолд гэрлэгчид гэрлэлт цуцлуулах хүсэлтээ тус. тусдаа бичиж улсын бүртгэлийн байгууллагад гаргана. Мөн гадаад улсад байгаа тохиолдолд Монгол Улсын Дипломат төлөөлөгчийн газарт гаргана. Харин бусад тохиолдолд буюу гэрлэгчид харилцан тохиролцсон буюу тэдний хэн нэгний, эсхүл эрх зүйн бүрэн чадамжгүйд тооцогдсон эхнэр, нөхрийн асран хамгаалагчийн нэхэмжлэлийн дагуу гэрлэлт цуцлах эсэх асуудлыг шүүх шийдвэрлэнэ. Ийнхүү шүүхэд хандахаас өмнө гэрлэлт цуцлах асуудлаар эвлэрүүлэн зуучлалд хандаж шийдвэрлүүлсэн байх шаардлагатай';
   qstPops.add(qstPop);
 
+  // idx 9
   qstPop = new QuestionBox();
   qstPop.question =
       'Орон сууц худалдаж авахад өмнө хуримтлагдсан цахилгааны өр төлбөрийг хэн хариуцаж төлөх вэ?';
@@ -474,18 +492,21 @@ List<QuestionBox> questionPop() {
       'Цахилгаан эрчим хүч хэрэглэх дүрэмд зааснаар байр, орон сууц, хашаа, газар өмчлөгч, эзэмшигч иргэн, аж ахуйн нэгж, байгууллага нүүхдээ цахилгаан эрчим хүч хэрэглэсэн тооцоогоо хийж дуусган, энэ тухай тодорхойлолтыг эрчим хүчээр хангагч байгууллагаас авсан байх шаардлагатай. Түүнчлэн тухайн байр, орон сууц, хашаа, газрыг худалдан авч байгаа өмчлөгч эсвэл эзэмшигч нь худалдаж буй иргэн, аж ахуйн нэгж, байгууллагаас дээрх тодорхойлолтыг шаардаж авах шаардлагатай. Хэрэв уг тодорхойлолтыг аваагүй тохиолдолд шинээр өмчлөгч, эзэмшигч этгээд эрчим хүчний өр төлбөрийг хариуцахаар заасан байдаг.';
   qstPops.add(qstPop);
 
+  // idx 10
   qstPop = new QuestionBox();
   qstPop.question = 'Гэмт хэргийн талаарх гомдол, мэдээллийг хэрхэн гаргах вэ?';
   qstPop.answer =
       'Гэмт хэргийн талаарх гомдол, мэдээллийг иргэн амаар эсхүл бичгээр гаргаж болно. Бичгээр гаргах тохиолдолд гомдол, мэдээлэлд гомдол гаргагч, эсхүл мэдээлэл өгсөн хүн гарын үсэг зурсан байна. Биечлэн эсхүл харилцаа холбооны хэрэгсэл ашиглаж гаргасан гомдол мэдээллийг тэмдэглэл үйлдэж хүлээж авах ба түүнд тэмдэглэл үйлдсэн хүн гарын үсэг зурна.';
   qstPops.add(qstPop);
 
+  // idx 11
   qstPop = new QuestionBox();
   qstPop.question = 'Хадгаламжийн даатгалын нөхөн төлбөр гэж юу вэ?';
   qstPop.answer =
       'Банк татан буугдсан тохиолдолд Хадгаламжийн даатгалын сангаас Таны тухайн банкин дахь хадгаламжийн 20 сая хүртэлх төгрөгийг нөхөн олгохыг хэлнэ.';
   qstPops.add(qstPop);
 
+  // idx 12
   qstPop = new QuestionBox();
   qstPop.question = 'Газар өмчлөх эрх хэзээ дуусгавар болдог вэ?';
   qstPop.answer =
@@ -495,7 +516,7 @@ List<QuestionBox> questionPop() {
   return qstPops;
 }
 
-//values of more section advice section
+//Values of More section Advice popup templates
 List<AdvicePopup> moreSubPopups() {
   List<AdvicePopup> popups = new List<AdvicePopup>();
   AdvicePopup popup = new AdvicePopup();
@@ -1122,6 +1143,6 @@ List<AdvicePopup> moreSubPopups() {
   popup.descriptions = "";
   popup.title = "";
   popups.add(popup);
-
+  // copy above upwards to insert further data
   return popups;
 }

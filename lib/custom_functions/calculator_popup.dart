@@ -18,7 +18,7 @@ class _CalcPopState extends State<CalcPopup> {
     //blurring background of popup
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(// popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -33,6 +33,7 @@ class _CalcPopState extends State<CalcPopup> {
   contentBox(context) {
     return Column(
       children: <Widget>[
+        // back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -59,6 +60,7 @@ class _CalcPopState extends State<CalcPopup> {
             ),
           ),
         ),
+        // container of popup
         Padding(
           padding: const EdgeInsets.only(top: 60),
           child: SizedBox(
@@ -75,9 +77,11 @@ class _CalcPopState extends State<CalcPopup> {
                         offset: Offset(0, 10),
                         blurRadius: 10),
                   ]),
+              // container of contents
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
+                  // title of popup
                   Align(
                     alignment: Alignment.center,
                     child: Padding(
@@ -94,6 +98,7 @@ class _CalcPopState extends State<CalcPopup> {
                       ),
                     ),
                   ),
+                  // Calculated final amount text widget
                   Align(
                     alignment: Alignment.center,
                     child: Padding(
@@ -117,10 +122,12 @@ class _CalcPopState extends State<CalcPopup> {
             ),
           ),
         ),
+        // Pay and Copy button function
         Padding(
           padding: const EdgeInsets.only(top: 15.0),
           child: Row(
             children: <Widget>[
+              // Pay button
               Expanded(
                 flex: 1,
                 child: Padding(
@@ -151,6 +158,7 @@ class _CalcPopState extends State<CalcPopup> {
                   ),
                 ),
               ),
+              // Copy button
               Expanded(
                 flex: 2,
                 child: Padding(
@@ -166,7 +174,7 @@ class _CalcPopState extends State<CalcPopup> {
                           Clipboard.setData(
                               new ClipboardData(text: widget.prc));
                           Navigator.pop(context);
-                          showDialog(
+                          showDialog(// successfully copied reminder
                               barrierDismissible: false,
                               context: context,
                               builder: (context) {
@@ -206,6 +214,7 @@ class _CalcPopState extends State<CalcPopup> {
             ],
           ),
         ),
+        // Explanation of Calculator Formula
         Expanded(
           child: Align(
             alignment: Alignment.topCenter,

@@ -27,7 +27,7 @@ class _EyeBoxState extends State<EyeBox> {
     //lurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(//popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -37,11 +37,12 @@ class _EyeBoxState extends State<EyeBox> {
       ),
     );
   }
-
+  //container of popup
   contentBox(context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        // back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -68,6 +69,7 @@ class _EyeBoxState extends State<EyeBox> {
             ),
           ),
         ),
+        // title of the popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -82,6 +84,7 @@ class _EyeBoxState extends State<EyeBox> {
                 )),
           ),
         ),
+        // container of contents
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
@@ -98,7 +101,7 @@ class _EyeBoxState extends State<EyeBox> {
                 ),
               ],
             ),
-            child: Scrollbar(
+            child: Scrollbar(// shows scrollbar on scrollable widget
               thickness: 8.0,
               isAlwaysShown: true,
               controller: _controller,
@@ -107,6 +110,7 @@ class _EyeBoxState extends State<EyeBox> {
                 controller: _controller,
                 child: Column(
                   children: <Widget>[
+                    // phone links
                     PhoneItems(number: "tel:102", title: "ЦАГДААГИЙН ШУУРХАЙ ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
                     PhoneItems(number: "tel:107", title: "ГЭР БҮЛИЙН ХҮЧИРХИЙЛЛИЙН ДУУДЛАГА, МЭДЭЭЛЭЛ АВАХ УТАС\n",),
                     PhoneItems(number: "tel:108", title: "ХҮҮХДИЙН ТУСЛАМЖИЙН УТАС\n",),

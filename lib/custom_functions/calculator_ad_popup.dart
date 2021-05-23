@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-//Advertisement carousel Popup structure
+//Advertisement carousel Popup structure/template
 // ignore: must_be_immutable
 class AdvertisementPopup extends StatefulWidget {
   String title, descriptions, text, url;
@@ -23,7 +23,7 @@ class _AdvertisementPopupState extends State<AdvertisementPopup> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(// popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -33,10 +33,11 @@ class _AdvertisementPopupState extends State<AdvertisementPopup> {
       ),
     );
   }
-
+  //container of popup
   contentBox(context) {
     return Stack(
       children: <Widget>[
+        // back button
         Positioned(
           right: 0.0,
           top: 0.0,
@@ -64,6 +65,7 @@ class _AdvertisementPopupState extends State<AdvertisementPopup> {
             ),
           ),
         ),
+        // container of contents
         Padding(
           padding: const EdgeInsets.only(top: 100.0, bottom: 99.0),
           child: Container(
@@ -80,9 +82,11 @@ class _AdvertisementPopupState extends State<AdvertisementPopup> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
+                // separate vertical padding
                 SizedBox(
                   height: 50,
                 ),
+                // title of the popup
                 Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: Padding(
@@ -99,9 +103,11 @@ class _AdvertisementPopupState extends State<AdvertisementPopup> {
                         )),
                   ),
                 ),
+                // separate vertical padding
                 SizedBox(
                   height: 15,
                 ),
+                // content of popup
                 Text(
                   //gets value in data.dart
                   widget.descriptions,
@@ -115,6 +121,7 @@ class _AdvertisementPopupState extends State<AdvertisementPopup> {
             ),
           ),
         ),
+        // image of the advertisement nested to popup
         Padding(
           padding: EdgeInsets.only(left: 28.0, top: 30),
           child: Container(
@@ -140,132 +147,6 @@ class _AdvertisementPopupState extends State<AdvertisementPopup> {
                 //gets value in data.dart
                 child: widget.img,
                 fit: BoxFit.fill,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-//more section q&a popup
-// ignore: must_be_immutable
-class QuestionBox extends StatefulWidget {
-  String question, answer, text;
-
-  QuestionBox({Key key, this.question, this.answer, this.text})
-      : super(key: key);
-
-  @override
-  _QuestionBoxState createState() => _QuestionBoxState();
-}
-
-class _QuestionBoxState extends State<QuestionBox> {
-  @override
-  Widget build(BuildContext context) {
-    //blurred background
-    return BackdropFilter(
-      filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        child: contentBox(context),
-      ),
-    );
-  }
-
-  contentBox(context) {
-    return Stack(
-      children: <Widget>[
-        Positioned(
-          right: 0.0,
-          top: 0.0,
-          child: Container(
-            width: 30.0,
-            height: 30.0,
-            decoration: new BoxDecoration(
-              color: Color(0xffffffff),
-              borderRadius: BorderRadius.circular(8),
-              boxShadow: [
-                BoxShadow(
-                    color: Color(0x14000000),
-                    offset: Offset(0, 0),
-                    blurRadius: 10,
-                    spreadRadius: 0)
-              ],
-            ),
-            child: IconButton(
-              iconSize: 12,
-              color: Color(0xff23233c),
-              icon: Icon(Icons.close),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 100.0, bottom: 99.0),
-          child: Container(
-            decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black,
-                      offset: Offset(0, 10),
-                      blurRadius: 10),
-                ]),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional.center,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        //gets value in data.dart
-                        widget.question,
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          color: Color(0xff23233c),
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle.normal,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Align(
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 20, right: 20, top: 15),
-                      child: Text(
-                        //gets value in data.dart
-                        widget.answer,
-                        style: TextStyle(fontSize: 14, height: 2),
-                        textAlign: TextAlign.justify,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 22,
-                  ),
-                ],
               ),
             ),
           ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_1/custom_functions/calculator_ad_popup.dart';
 import 'package:project_1/custom_functions/data.dart';
 import 'package:project_1/custom_functions/more_carousel.dart';
 import 'package:project_1/custom_functions/more_table.dart';
+import 'package:project_1/custom_functions/q&a_popup.dart';
 
 class More extends StatefulWidget {
   More({Key key}) : super(key: key);
@@ -35,7 +35,7 @@ class _MyStatefulWidgetState extends State<More> {
     List<dynamic> responseList = question_data;
     List<Widget> listItems = [];
     responseList.forEach((post) {
-      listItems.add(GestureDetector(
+      listItems.add(GestureDetector(// popup widget of Q&A section
         onTap: () {
           showDialog(
               context: context,
@@ -90,92 +90,97 @@ class _MyStatefulWidgetState extends State<More> {
     final double categoryHeight = size.height * 0.35 - 50;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        color: Color(0xffffffff),
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 32.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.34,
-                //same carousel as calculator page carousel, shuffled
-                child: MoreCarousel(),
-              ),
-            ),
-            AnimatedOpacity(
-              duration: const Duration(milliseconds: 200),
-              opacity: closeTopContainer ? 0 : 1,
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                width: MediaQuery.of(context).size.width,
-                height: closeTopContainer ? 0 : MediaQuery.of(context).size.height * 0.04,
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  ТАЙЛБАР ЗУРАГ",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        color: Color(0xff23233c),
-                        fontSize: MediaQuery.of(context).size.height * 0.02,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                      )),
+      body: SafeArea(
+        child: FittedBox(
+          fit: BoxFit.fill,
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 32.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.34,
+                  //same carousel as calculator page carousel, shuffled
+                  child: MoreCarousel(),
                 ),
               ),
-            ),
-            AnimatedOpacity(
-              duration: const Duration(milliseconds: 200),
-              opacity: closeTopContainer ? 0 : 1,
-              child: AnimatedContainer(
+              // Advice Title, animated to disappear if Q&A dragged up
+              AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
-                width: MediaQuery.of(context).size.width,
-                alignment: Alignment.topCenter,
-                height: closeTopContainer ? 0 : categoryHeight,
-                child: MoreButtons(),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Text(
-                "ТҮГЭЭМЭЛ АСУУЛТУУД",
-                style: TextStyle(
-                  fontFamily: 'Roboto',
-                  color: Color(0xff23233c),
-                  fontSize: MediaQuery.of(context).size.height * 0.02,
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.normal,
+                opacity: closeTopContainer ? 0 : 1,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  width: MediaQuery.of(context).size.width,
+                  height: closeTopContainer ? 0 : MediaQuery.of(context).size.height * 0.04, // if statement to check Q&A offset
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    // title of Advice Buttons
+                    child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  ТАЙЛБАР ЗУРАГ",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          color: Color(0xff23233c),
+                          fontSize: MediaQuery.of(context).size.height * 0.02,
+                          fontWeight: FontWeight.w700,
+                          fontStyle: FontStyle.normal,
+                        )),
+                  ),
                 ),
-                textAlign: TextAlign.left,
               ),
-            ),
-            Expanded(
-                child: Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Scrollbar(
-                controller: controller,
-                radius: Radius.circular(4.0),
-                thickness: 6.0,
-                isAlwaysShown: true,
-                child: ListView.builder(
-                    itemCount: questionsData.length,
-                    controller: controller,
-                    physics: BouncingScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return questionsData[index];
-                    }),
+              // Advice Buttons, animated to disappear if Q&A dragged up
+              AnimatedOpacity(
+                duration: const Duration(milliseconds: 200),
+                opacity: closeTopContainer ? 0 : 1,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  width: MediaQuery.of(context).size.width,
+                  alignment: Alignment.topCenter,
+                  height: closeTopContainer ? 0 : categoryHeight,
+                  child: MoreButtons(),
+                ),
               ),
-            )),
-          ],
+              // Q&A section Title, animated to Fill page if dragged up
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  "ТҮГЭЭМЭЛ АСУУЛТУУД",
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    color: Color(0xff23233c),
+                    fontSize: MediaQuery.of(context).size.height * 0.02,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              // Q&A section, animated to Fill page if dragged up
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Scrollbar(
+                  controller: controller,
+                  radius: Radius.circular(4.0),
+                  thickness: 6.0,
+                  isAlwaysShown: true,
+                  child: ListView.builder(// q&a list view builder
+                      itemCount: questionsData.length, // length of data
+                      controller: controller, // controller
+                      physics: BouncingScrollPhysics(), // scroll physics
+                      itemBuilder: (context, index) {
+                        return questionsData[index]; // item builder
+                      }),
+                ),
+              )),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-//items of advice tab
+//Advice Button template
 class BoxItems extends StatelessWidget {
   const BoxItems({
     Key key,
@@ -223,7 +228,7 @@ class BoxItems extends StatelessWidget {
   }
 }
 
-//q&a section items
+//Q&A button template
 class QstsItems extends StatelessWidget {
   const QstsItems({
     Key key,

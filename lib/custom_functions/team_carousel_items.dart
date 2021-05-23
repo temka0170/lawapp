@@ -1,12 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'data.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:project_1/custom_functions/home_team_carousel.dart';
 
-//home section scrollable creators section
+//Home Section Project Team profiles
 class TeamCarousel extends StatefulWidget {
   TeamCarousel({
     Key key,
@@ -31,190 +29,35 @@ class _TeamCarouselState extends State<TeamCarousel> {
       children: [
         Expanded(
           flex: 4,
+          // makes scrollable widget, removes overflow
           child: SingleChildScrollView(
             controller: _controller,
             scrollDirection: Axis.horizontal,
             child: Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        double height = MediaQuery.of(context).size.height;
-                        buildShowGeneralDialog(context, height, 0);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromRGBO(241, 103, 48, 1.0),
-                              Color.fromRGBO(249, 167, 25, 1.0)
-                            ],
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Colors.transparent,
-                          child: CircleAvatar(
-                            radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/designer1_2.jpg"),
-                          ),
-                        ),
-                      ),
-                    ),
+                  CreatorProfile(
+                    img: "assets/creators_png/designer1_2.jpg",
+                    idx: 0,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        double height = MediaQuery.of(context).size.height;
-                        buildShowGeneralDialog(context, height, 1);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromRGBO(241, 103, 48, 1.0),
-                              Color.fromRGBO(249, 167, 25, 1.0)
-                            ],
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Colors.transparent,
-                          child: CircleAvatar(
-                            radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/tedyM.jpg"),
-                          ),
-                        ),
-                      ),
-                    ),
+                  CreatorProfile(
+                    img: "assets/creators_png/tedyM.jpg",
+                    idx: 1,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        double height = MediaQuery.of(context).size.height;
-                        buildShowGeneralDialog(context, height, 2);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromRGBO(241, 103, 48, 1.0),
-                              Color.fromRGBO(249, 167, 25, 1.0)
-                            ],
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Colors.transparent,
-                          child: CircleAvatar(
-                            radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/tsengelM.jpg"),
-                          ),
-                        ),
-                      ),
-                    ),
+                  CreatorProfile(
+                    img: "assets/creators_png/tsengelM.jpg",
+                    idx: 2,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        double height = MediaQuery.of(context).size.height;
-                        buildShowGeneralDialog(context, height, 3);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromRGBO(241, 103, 48, 1.0),
-                              Color.fromRGBO(249, 167, 25, 1.0)
-                            ],
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Colors.transparent,
-                          child: CircleAvatar(
-                            radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/lawyer1_5.jpg"),
-                          ),
-                        ),
-                      ),
-                    ),
+                  CreatorProfile(
+                    img: "assets/creators_png/lawyer1_5.jpg",
+                    idx: 3,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        double height = MediaQuery.of(context).size.height;
-                        buildShowGeneralDialog(context, height, 4);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromRGBO(241, 103, 48, 1.0),
-                              Color.fromRGBO(249, 167, 25, 1.0)
-                            ],
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Colors.transparent,
-                          child: CircleAvatar(
-                            radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/lawyer2_2.jpg"),
-                          ),
-                        ),
-                      ),
-                    ),
+                  CreatorProfile(
+                    img: "assets/creators_png/lawyer2_2.jpg",
+                    idx: 4,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        double height = MediaQuery.of(context).size.height;
-                        buildShowGeneralDialog(context, height, 5);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromRGBO(241, 103, 48, 1.0),
-                              Color.fromRGBO(249, 167, 25, 1.0)
-                            ],
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Colors.transparent,
-                          child: CircleAvatar(
-                            radius: 47,
-                            backgroundImage: AssetImage("assets/creators_png/lawyer3M.jpg"),
-                          ),
-                        ),
-                      ),
-                    ),
+                  CreatorProfile(
+                    img: "assets/creators_png/lawyer3M.jpg",
+                    idx: 5,
                   ),
                 ],
               ),
@@ -223,30 +66,91 @@ class _TeamCarouselState extends State<TeamCarousel> {
       ],
     );
   }
+}
+// Template of individual profile
+// ignore: must_be_immutable
+class CreatorProfile extends StatefulWidget{
+  int idx;
+  String img;
+  CreatorProfile({
+    Key key,
+    @required idx,
+    @required img,
+  }) : super(key: key);
+  @override
+  _CreatorProfileState createState() => _CreatorProfileState();
+}
+
+class _CreatorProfileState extends State<CreatorProfile>{
+  @override
+  void initState() {
+    // ignore: todo
+    // TODO: implement initState
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+      // popup carousel slider
+      child: GestureDetector(
+        onTap: () {
+          double height = MediaQuery.of(context).size.height;
+          buildShowGeneralDialog(context, height, widget.idx); // links to popup idx 0
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            // profile outer line gradient
+            gradient: LinearGradient(
+              colors: [
+                Color.fromRGBO(241, 103, 48, 1.0),
+                Color.fromRGBO(249, 167, 25, 1.0)
+              ],
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+            ),
+          ),
+          // circle avatar profile
+          child: CircleAvatar(
+            radius: 50,
+            backgroundColor: Colors.transparent,
+            child: CircleAvatar(
+              radius: 47,
+              backgroundImage: AssetImage(widget.img),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
   //App creators intro popup
   Future buildShowGeneralDialog(BuildContext context, double height, int idx) {
     // ignore: unused_local_variable
     int _current;
-    return showGeneralDialog(
+    return showGeneralDialog(// popup widget
         context: context,
         barrierDismissible: true,
         barrierLabel:
-            MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        MaterialLocalizations.of(context).modalBarrierDismissLabel,
         barrierColor: Colors.black45,
         transitionDuration: const Duration(milliseconds: 200),
         pageBuilder: (BuildContext buildContext, Animation animation,
             Animation secondaryAnimation) {
-          return BackdropFilter(
+          return BackdropFilter(// blurred background
             filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-            child: Container(
+            child: Container(// container of popup
               width: MediaQuery.of(context).size.width,
               height: height,
               child: SizedBox.expand(
                 child: Column(children: [
+                  // separate padding
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.12,
                   ),
+                  //back button
                   Align(
                     alignment: Alignment.topRight,
                     child: Padding(
@@ -271,13 +175,15 @@ class _TeamCarouselState extends State<TeamCarousel> {
                       ),
                     ),
                   ),
+                  // separate padding
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.06,
                   ),
+                  // Slider of Project creators
                   CarouselSlider(
                     items: imageSliders,
                     options: CarouselOptions(
-                        initialPage: idx,
+                        initialPage: idx, // links to previous widget, Pops up clicked person's info
                         autoPlay: false,
                         enlargeCenterPage: false,
                         height: height * 0.685,

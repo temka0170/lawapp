@@ -88,7 +88,7 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                 )),
           ),
         ),
-        //items of popup
+        // info container
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(

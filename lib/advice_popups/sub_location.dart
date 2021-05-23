@@ -1,14 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:project_1/advice_popups/civil_case/third_party/third_party_sub.dart';
-
 import 'call.dart';
 import 'location.dart';
 import 'menu_items.dart';
-// import 'boxRow_buttons.dart';
 
-//civil case popup
+// Sub Location popup template
 // ignore: must_be_immutable
 class SubLocationBox extends StatefulWidget {
   String title;
@@ -33,7 +29,7 @@ class _SubLocationBoxState extends State<SubLocationBox> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(// popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -43,11 +39,12 @@ class _SubLocationBoxState extends State<SubLocationBox> {
       ),
     );
   }
-
+  // container of popup
   contentBox(context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        // back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -74,6 +71,7 @@ class _SubLocationBoxState extends State<SubLocationBox> {
             ),
           ),
         ),
+        // title of the popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -90,6 +88,7 @@ class _SubLocationBoxState extends State<SubLocationBox> {
             ),
           ),
         ),
+        // container of contents
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
@@ -106,6 +105,7 @@ class _SubLocationBoxState extends State<SubLocationBox> {
                 ),
               ],
             ),
+            // longer contents are scrollable, removing overflow
             child: SingleChildScrollView(
               controller: _controller,
               child: Column(

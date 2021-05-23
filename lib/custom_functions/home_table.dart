@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// Home page info table
 class HomeContainer extends StatefulWidget {
   HomeContainer({
     Key key,
@@ -16,7 +17,7 @@ class _HomeContainerState extends State<HomeContainer> {
     Link(),
     Association(),
   ];
-  int _currentTab = 0;
+  int _currentTab = 0; // default tab is links
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class _HomeContainerState extends State<HomeContainer> {
     double maxHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: EdgeInsets.only(top: 14.0),
+      // main container
       child: Column(
         children: [
           Container(
@@ -43,8 +45,10 @@ class _HomeContainerState extends State<HomeContainer> {
                 )
               ],
             ),
+            // Tab buttons container
             child: Row(
               children: <Widget>[
+                // Links tab button
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
@@ -57,9 +61,10 @@ class _HomeContainerState extends State<HomeContainer> {
                         decoration: BoxDecoration(
                           borderRadius:
                               BorderRadius.vertical(top: Radius.circular(12.0)),
+                          // changes color if active or inactive
                           color: _currentTab == 0
-                              ? Color(0xffffffff)
-                              : Color(0xfff4f5fa),
+                              ? Color(0xffffffff) // active color
+                              : Color(0xfff4f5fa), // inactive color
                         ),
                         child: Align(
                           alignment: Alignment.center,
@@ -81,6 +86,7 @@ class _HomeContainerState extends State<HomeContainer> {
                     ),
                   ),
                 ),
+                // Association tab button
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
@@ -93,9 +99,10 @@ class _HomeContainerState extends State<HomeContainer> {
                         decoration: BoxDecoration(
                           borderRadius:
                               BorderRadius.vertical(top: Radius.circular(12.0)),
+                          // changes color if tab is active or inactive
                           color: _currentTab == 1
-                              ? Color(0xffffffff)
-                              : Color(0xfff4f5fa),
+                              ? Color(0xffffffff) // active color
+                              : Color(0xfff4f5fa), // inactive color
                         ),
                         child: Align(
                           alignment: Alignment.center,
@@ -120,7 +127,7 @@ class _HomeContainerState extends State<HomeContainer> {
               ],
             ),
           ),
-          //container of tab items
+          //container of current tab contents
           Container(
             width: maxWidth * 0.9,
             height: maxHeight * 0.25,
@@ -143,7 +150,7 @@ class _HomeContainerState extends State<HomeContainer> {
   }
 }
 
-//links tab
+//links tab contents
 class Link extends StatefulWidget {
   const Link({
     Key key,
@@ -158,10 +165,10 @@ class _LinkState extends State<Link> {
       new ScrollController(initialScrollOffset: 127.0, keepScrollOffset: true);
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
+    return Scrollbar(// shows scrollbar
       controller: _scrollController,
       isAlwaysShown: true,
-      child: ListView(
+      child: ListView(// creates list view of items
         padding: EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
         itemExtent: 80.0,
         controller: _scrollController,
@@ -194,7 +201,7 @@ class _LinkState extends State<Link> {
   }
 }
 
-//associate tab
+//associate tab contents
 class Association extends StatelessWidget {
   const Association({
     Key key,
@@ -258,7 +265,7 @@ class Association extends StatelessWidget {
   }
 }
 
-//items of links tab
+//Function of items in Links tab
 class BoxItems extends StatelessWidget {
   const BoxItems({
     Key key,
@@ -270,7 +277,7 @@ class BoxItems extends StatelessWidget {
   final String imgPath;
   final String textBox;
   final String url;
-
+// url launcher function
   _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -278,7 +285,7 @@ class BoxItems extends StatelessWidget {
       throw 'Could not launch $url';
     }
   }
-
+ // template of individual item
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -287,6 +294,7 @@ class BoxItems extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
+          // icon
           Expanded(
             flex: 1,
             child: Image.asset(
@@ -294,6 +302,7 @@ class BoxItems extends StatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
+          // Button to launch url
           Expanded(
             flex: 4,
             child: FlatButton(

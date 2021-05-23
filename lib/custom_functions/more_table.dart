@@ -5,24 +5,28 @@ import 'package:project_1/advice_popups/civil_case/civil_subdirectory/first_civi
 import 'package:project_1/advice_popups/open_eyes.dart';
 import 'package:project_1/advice_popups/authority_case/authority_case.dart';
 
+// More Section Advice Buttons
 class MoreButtons extends StatelessWidget {
   const MoreButtons();
 
   @override
   Widget build(BuildContext context) {
+    //defined controller and offset scrollable widget in the middle
     ScrollController _scrollController = new ScrollController(
       initialScrollOffset: 100.0,
       keepScrollOffset: true,
     );
+    // removes overflow, makes scrollable widget
     return SingleChildScrollView(
       controller: _scrollController,
-      physics: BouncingScrollPhysics(),
-      scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(), // scroll physics
+      scrollDirection: Axis.horizontal, // direction
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 8),
-        child: FittedBox(
+        child: FittedBox(// fits parent widget
           fit: BoxFit.fill,
           alignment: Alignment.topCenter,
+          // buttons container
           child: Row(
             children: <Widget>[
               BoxItems(
@@ -49,12 +53,6 @@ class MoreButtons extends StatelessWidget {
                   title: 'Нүдээ нээ'.toUpperCase(),
                 ),
               ),
-              // BoxItems(
-              //   imgPath: 'assets/Icons/irgen.gif',
-              //   popup: HealthySociety(
-              //     title: 'ЭРҮҮЛ НИЙГЭМ',
-              //   ),
-              // ),
             ],
           ),
         ),

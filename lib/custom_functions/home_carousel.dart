@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/calculator_ad_popup.dart';
 import 'data.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:project_1/painters/mainpainter.dart';
 
-//Home section carousel, reused calculator section carousel with few changes
+//Home section advertisement carousel
 // ignore: must_be_immutable
 class HomeCarousel extends StatefulWidget {
   @override
@@ -27,8 +26,9 @@ class _HomeCarouselState extends State<HomeCarousel> {
     // TODO: implement initState
     super.initState();
     mains = getMains();
-    mains.shuffle();
+    mains.shuffle(); // shuffles slides randomly
 
+    // timer for slide change
     if (mains != null) {
       timerMain = Timer.periodic(Duration(seconds: 4), (_) {
         if (mainController.hasClients) {
@@ -45,7 +45,7 @@ class _HomeCarouselState extends State<HomeCarousel> {
     }
   }
 
-//tab indicator
+//current slide dot indicator
   Widget adIndicator(bool currentIdx) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5.5),
@@ -69,13 +69,13 @@ class _HomeCarouselState extends State<HomeCarousel> {
             //Slide of carousel, gets data by list
             ix = index;
             id = mains[ix].getIdx();
-            return MainTile(
+            return MainTile(// individual ad template
               imgPath: mains[ix].getAssetPath(),
               desc: mains[ix].getDescript(),
               idx: id,
             );
           },
-          options: CarouselOptions(
+          options: CarouselOptions(// carousel slider options
             onPageChanged: (index, reason) {
               setState(() {
                 _currentMain = index;
@@ -94,39 +94,7 @@ class _HomeCarouselState extends State<HomeCarousel> {
             scrollDirection: Axis.horizontal,
           ),
         ),
-        // PageView.builder(
-        //   controller: mainController,
-        //   itemCount: mains.length,
-        //   onPageChanged: (idx) {
-        //     setState(() {
-        //       _currentMain = idx;
-        //     });
-        //   },
-        //   itemBuilder: (context, index) {
-        //     ix = index;
-        //     return MainTile(
-        //       imgPath: mains[ix].getAssetPath(),
-        //       desc: mains[ix].getDescript(),
-        //       idx: mains[ix].getIdx(),
-        //     );
-        //   },
-        // ),
-        //curved border of home section carousel
-        // IgnorePointer(
-        //   child: CustomPaint(
-        //     size: Size(MediaQuery.of(context).size.width,
-        //         MediaQuery.of(context).size.height * 0.36 + 1),
-        //     painter: MainWave1(),
-        //   ),
-        // ),
-        // IgnorePointer(
-        //   child: CustomPaint(
-        //     size: Size(MediaQuery.of(context).size.width,
-        //         MediaQuery.of(context).size.height * 0.36 + 1),
-        //     painter: MainWave2(),
-        //   ),
-        // ),
-        //indicator builder
+        //indicator implementation
         Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
@@ -145,7 +113,7 @@ class _HomeCarouselState extends State<HomeCarousel> {
   }
 }
 
-//slide theme
+//Individual Slide theme/template
 // ignore: must_be_immutable
 class MainTile extends StatefulWidget {
   String imgPath;
@@ -186,6 +154,9 @@ class _MainTileState extends State<MainTile> {
         ),
         child: GestureDetector(
           onTap: () {
+            // checks if there's url
+            // if url is null, shows popup with according info
+            // of url is not null, launches web link
             popups[widget.idx].url == null
                 ? showDialog(
                 context: context,
@@ -195,6 +166,7 @@ class _MainTileState extends State<MainTile> {
                 })
                 : launch(popups[widget.idx].url);
           },
+          // Slide data
           child: Stack(
             children: <Widget>[
               Padding(
@@ -205,12 +177,15 @@ class _MainTileState extends State<MainTile> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: FittedBox(
+                      // img of slide
                       child: Image.asset(widget.imgPath),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
               ),
+              // optional description for slide,
+              // unused since advertisement img has text on them
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(

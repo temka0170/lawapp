@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Popup template
 class MenuItems extends StatelessWidget {
   final Widget popup;
   final String img;
@@ -15,6 +16,7 @@ class MenuItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // shows next popup
         showDialog(
             context: context,
             barrierDismissible: true,
@@ -31,6 +33,7 @@ class MenuItems extends StatelessWidget {
               color: Colors.white, borderRadius: BorderRadius.circular(8.0)),
           child: Row(
             children: [
+              // checks if there's icon
               img != null ? Expanded(
                 flex: 1,
                 child: Image.asset(
@@ -38,6 +41,7 @@ class MenuItems extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               ) : Container(),
+              // checks if there's icon and optimizes padding of the title according to icon
               Expanded(
                 flex: 2,
                 child: img == null ? Padding(
@@ -49,6 +53,7 @@ class MenuItems extends StatelessWidget {
                   child: Text(title.toUpperCase(), textAlign: TextAlign.center,),
                 ),
               ),
+              // forward arrow icon for touch up
               IconButton(
                 icon: Icon(Icons.arrow_forward_ios_rounded),
                 splashColor: Colors.grey[400],

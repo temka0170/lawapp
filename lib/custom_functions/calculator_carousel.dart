@@ -5,10 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:project_1/custom_functions/calculator_ad_popup.dart';
 import 'data.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-// import 'package:project_1/painters/calculatorpainter.dart';
 
-//Custom Carousel Slider of Calculator.dart and More.dart
+//Custom Carousel Slider of Calculator.dart
 // ignore: must_be_immutable
 class CalculatorCarousel extends StatefulWidget {
   @override
@@ -29,7 +27,7 @@ class _CalculatorCarouselState extends State<CalculatorCarousel> {
     super.initState();
     //gets values from data.dart
     ads = getAds();
-    ads.shuffle();
+    ads.shuffle(); // shuffles the ads randomly
 
     //periodic slide change timer
     if (ads != null) {
@@ -48,7 +46,7 @@ class _CalculatorCarouselState extends State<CalculatorCarousel> {
     }
   }
 
-  //current tab/slide indicator
+  //current tab/slide dot indicator
   Widget adIndicator(bool currentIdx) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5.5),
@@ -61,105 +59,47 @@ class _CalculatorCarouselState extends State<CalculatorCarousel> {
     );
   }
 
+  // Carousel Slider builder
   @override
   Widget build(BuildContext context) {
     int ix;
     int id;
     return Column(
       children: <Widget>[
+        // carousel slider
         CarouselSlider.builder(
-          itemCount: ads.length,
+          itemCount: ads.length, // length of carousel
           itemBuilder: (context, index) {
-            //Slide of carousel, gets data by list
+            //current slide of carousel, gets data by list
             ix = index;
             id = ads[ix].getIdex();
-            return AdTile(
+            return AdTile( // individual ad template
               imgPath: ads[ix].getAssetPath(),
               desc: ads[ix].getDescript(),
               idx: id,
             );
           },
-          options: CarouselOptions(
+          options: CarouselOptions(// settings of carousel slider
             onPageChanged: (index, reason) {
               setState(() {
-                _currentAd = index;
+                _currentAd = index; // changes current slider, Timer is 4 second
               });
             },
-            aspectRatio: 18 / 10,
-            viewportFraction: 0.8,
-            initialPage: 0,
-            enableInfiniteScroll: true,
-            reverse: false,
-            autoPlay: true,
-            autoPlayInterval: Duration(seconds: 3),
-            autoPlayAnimationDuration: Duration(milliseconds: 800),
-            autoPlayCurve: Curves.fastOutSlowIn,
-            enlargeCenterPage: true,
-            scrollDirection: Axis.horizontal,
-            height: MediaQuery.of(context).size.height * 0.28,
+            aspectRatio: 18 / 10, // aspect ratio
+            viewportFraction: 0.8, // defines how current slider looks width wide, currently 80%
+            initialPage: 0, // initial index of slider is 0
+            enableInfiniteScroll: true, // returns to index 0 after last index
+            reverse: false, // defines slider sliding way, if false slides slide right to left, vise versa
+            autoPlay: true, // defines if sliders go automatically with timer
+            autoPlayInterval: Duration(seconds: 3), // automate slide time interval
+            autoPlayAnimationDuration: Duration(milliseconds: 800), // sliding animation duration
+            autoPlayCurve: Curves.fastOutSlowIn, // sliding animation curve
+            enlargeCenterPage: true, // highlights current slide
+            scrollDirection: Axis.horizontal, // slide direction
+            height: MediaQuery.of(context).size.height * 0.28, // height of slider overall
           ),
         ),
-        // PageView.builder(
-        //   controller: adController,
-        //   itemCount: ads.length,
-        //   onPageChanged: (idx) {
-        //     setState(() {
-        //       _currentAd = idx;
-        //     });
-        //   },
-        //   itemBuilder: (context, index) {
-        //     //Slide of carousel, gets data by list
-        //     ix = index;
-        //     id = ads[ix].getIdex();
-        //     return AdTile(
-        //       imgPath: ads[ix].getAssetPath(),
-        //       desc: ads[ix].getDescript(),
-        //       idx: id,
-        //     );
-        //   },
-        // ),
-        //Top curved border of Calculator,more section carousel
-        // IgnorePointer(
-        //   child: ClipPath(
-        //     clipper: WaveClipperTwo(
-        //       flip: true,
-        //       reverse: false,
-        //     ),
-        //     child: Container(
-        //       width: MediaQuery.of(context).size.width,
-        //       height: MediaQuery.of(context).size.height * 0.1,
-        //       color: Color(0xfff8931f).withOpacity(0.4),
-        //     ),
-        //   ),
-        // ),
-        // IgnorePointer(
-        //   child: ClipPath(
-        //     clipper: WaveClipperTwo(
-        //       flip: true,
-        //       reverse: false,
-        //     ),
-        //     child: Container(
-        //       width: MediaQuery.of(context).size.width,
-        //       height: MediaQuery.of(context).size.height * 0.09,
-        //       color: Color(0xfff8931f),
-        //     ),
-        //   ),
-        // ),
-        // //bottom curved border of calculator,more section carousel
-        // IgnorePointer(
-        //   child: CustomPaint(
-        //     size: Size(MediaQuery.of(context).size.width,
-        //         MediaQuery.of(context).size.height * 0.46 + 1),
-        //     painter: SecondWave(),
-        //   ),
-        // ),
-        // IgnorePointer(
-        //   child: CustomPaint(
-        //     size: Size(MediaQuery.of(context).size.width,
-        //         MediaQuery.of(context).size.height * 0.46 + 1),
-        //     painter: FirstWave(),
-        //   ),
-        // ),
+        // indicator implementation
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -185,7 +125,7 @@ class _CalculatorCarouselState extends State<CalculatorCarousel> {
   }
 }
 
-//defines single slide of carousel, aka theme of popup
+//defines single individual slide template of carousel
 // ignore: must_be_immutable
 class AdTile extends StatefulWidget {
   String imgPath;
@@ -205,7 +145,7 @@ class _AdTileState extends State<AdTile> {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-
+  // ad data getter
     cmpopups = calculatorAdPopups();
   }
 
@@ -224,6 +164,9 @@ class _AdTileState extends State<AdTile> {
             )
           ],
         ),
+        // checks for url
+        // if url is null, shows popup with info
+        // if url is not null, links to url
         child: GestureDetector(
           onTap: () {
             cmpopups[widget.idx].url == null
@@ -235,6 +178,7 @@ class _AdTileState extends State<AdTile> {
                     })
                 : launch(cmpopups[widget.idx].url);
           },
+          // contents of Ad
           child: Stack(
             children: <Widget>[
               Padding(
@@ -251,6 +195,8 @@ class _AdTileState extends State<AdTile> {
                   ),
                 ),
               ),
+              // unused, since Ad banners images have text in them,
+              // can be used to add optional text on the Ad slide
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(

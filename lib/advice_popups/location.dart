@@ -10,9 +10,8 @@ import 'districts_location/bagahangai.dart';
 import 'districts_location/baganuur.dart';
 import 'districts_location/nalaih.dart';
 import 'menu_items.dart';
-// import 'boxRow_buttons.dart';
 
-//civil case popup
+// District Location popup template
 // ignore: must_be_immutable
 class LocationBox extends StatefulWidget {
   String title;
@@ -37,7 +36,7 @@ class _LocationBoxState extends State<LocationBox> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(// popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -47,11 +46,12 @@ class _LocationBoxState extends State<LocationBox> {
       ),
     );
   }
-
+  //container of popup
   contentBox(context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        // back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -78,6 +78,7 @@ class _LocationBoxState extends State<LocationBox> {
             ),
           ),
         ),
+        // title of the popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -92,6 +93,7 @@ class _LocationBoxState extends State<LocationBox> {
                 )),
           ),
         ),
+        //container of contents
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
@@ -108,10 +110,12 @@ class _LocationBoxState extends State<LocationBox> {
                 ),
               ],
             ),
+            // removes overflow, makes longer content scrollable
             child: SingleChildScrollView(
               controller: _controller,
               child: Column(
                 children: <Widget>[
+                  // popups
                   MenuItems(
                     popup: BGDBox(title: "Баянгол Дүүрэг".toUpperCase()),
                     title: "Баянгол Дүүрэг",

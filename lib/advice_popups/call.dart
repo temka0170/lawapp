@@ -10,9 +10,8 @@ import 'districts_phone/phone_songino_hairhan.dart';
 import 'districts_phone/phone_bagahangai.dart';
 import 'districts_phone/phone_baganuur.dart';
 import 'menu_items.dart';
-// import 'boxRow_buttons.dart';
 
-//civil case popup
+// Phone call button template
 // ignore: must_be_immutable
 class CallBox extends StatefulWidget {
   String title;
@@ -37,7 +36,7 @@ class _CallBoxState extends State<CallBox> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(
+      child: Dialog(// popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -47,11 +46,12 @@ class _CallBoxState extends State<CallBox> {
       ),
     );
   }
-
+  // container of popup
   contentBox(context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
+        // back button
         Align(
           alignment: Alignment.topRight,
           child: Container(
@@ -78,6 +78,7 @@ class _CallBoxState extends State<CallBox> {
             ),
           ),
         ),
+        // title of the popup
         Align(
           alignment: Alignment.center,
           child: Padding(
@@ -94,6 +95,7 @@ class _CallBoxState extends State<CallBox> {
             ),
           ),
         ),
+        // container of contents
         Padding(
           padding: const EdgeInsets.only(top: 37.0),
           child: Container(
@@ -110,10 +112,12 @@ class _CallBoxState extends State<CallBox> {
                 ),
               ],
             ),
+            // longer contents are scrollable
             child: SingleChildScrollView(
               controller: _controller,
               child: Column(
                 children: <Widget>[
+                  // popups
                   MenuItems(
                     popup: PBGDBox(title: "Баянгол Дүүрэг".toUpperCase()),
                     title: "Баянгол Дүүрэг",
