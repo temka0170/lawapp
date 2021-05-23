@@ -25,7 +25,7 @@ class _MyStatefulWidgetState extends State<MyHome> {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
+                  padding: const EdgeInsets.only(top: 6.0),
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: height * 0.31,

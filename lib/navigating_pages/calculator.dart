@@ -40,7 +40,7 @@ class _MyCustomFormState extends State<CalculatorPage> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 32.0),
+                  padding: const EdgeInsets.only(top: 6.0),
                   child: Container(
                     width: _width,
                     height: _height * 0.34,
