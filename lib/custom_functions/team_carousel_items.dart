@@ -70,12 +70,12 @@ class _TeamCarouselState extends State<TeamCarousel> {
 // Template of individual profile
 // ignore: must_be_immutable
 class CreatorProfile extends StatefulWidget{
-  int idx;
-  String img;
+  final int idx;
+  final String img;
   CreatorProfile({
     Key key,
-    @required idx,
-    @required img,
+    @required this.idx,
+    @required this.img,
   }) : super(key: key);
   @override
   _CreatorProfileState createState() => _CreatorProfileState();

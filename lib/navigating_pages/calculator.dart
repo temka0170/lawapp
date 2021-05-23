@@ -129,42 +129,48 @@ class _MyCustomFormState extends State<CalculatorPage> {
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0, right: 10.0),
-                      child: Text(
-                          //shows final price
-                          finalresult + '₮',
-                          style: TextStyle(
-                            fontFamily: 'SFProDisplay',
-                            color: Color(0xff23233c),
-                            fontSize: MediaQuery.of(context).size.height * 0.024,
-                            fontWeight: FontWeight.w900,
-                            fontStyle: FontStyle.normal,
-                          )),
-                    ),
-                  ],
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, right: 10.0),
+                        child: Text(
+                            //shows final price
+                            finalresult + '₮',
+                            style: TextStyle(
+                              fontFamily: 'SFProDisplay',
+                              color: Color(0xff23233c),
+                              fontSize: MediaQuery.of(context).size.height * 0.024,
+                              fontWeight: FontWeight.w900,
+                              fontStyle: FontStyle.normal,
+                            )),
+                      ),
+                    ],
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0, right: 10.0),
-                      child: Text(
-                          psps == 1
-                              ? "Таны төлөх үнийн дүн"
-                              : "Үнэлэх боломжгүй нэхэмжлэлд төлнө",
-                          style: TextStyle(
-                            fontFamily: 'SFProDisplay',
-                            color: Color(0xff23233c),
-                            fontSize: MediaQuery.of(context).size.height * 0.016,
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal,
-                          )),
-                    ),
-                  ],
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0, right: 10.0),
+                        child: Text(
+                            psps == 1
+                                ? "Таны төлөх үнийн дүн"
+                                : "Үнэлэх боломжгүй нэхэмжлэлд төлнө",
+                            style: TextStyle(
+                              fontFamily: 'SFProDisplay',
+                              color: Color(0xff23233c),
+                              fontSize: MediaQuery.of(context).size.height * 0.016,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            )),
+                      ),
+                    ],
+                  ),
                 ),
                 // Button links
                 govLink(_width, _height),

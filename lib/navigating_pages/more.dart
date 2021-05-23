@@ -91,89 +91,86 @@ class _MyStatefulWidgetState extends State<More> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: FittedBox(
-          fit: BoxFit.fill,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 6.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.34,
-                  //same carousel as calculator page carousel, shuffled
-                  child: MoreCarousel(),
-                ),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 6.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.34,
+                //same carousel as calculator page carousel, shuffled
+                child: MoreCarousel(),
               ),
-              // Advice Title, animated to disappear if Q&A dragged up
-              AnimatedOpacity(
+            ),
+            // Advice Title, animated to disappear if Q&A dragged up
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 200),
+              opacity: closeTopContainer ? 0 : 1,
+              child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
-                opacity: closeTopContainer ? 0 : 1,
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  width: MediaQuery.of(context).size.width,
-                  height: closeTopContainer ? 0 : MediaQuery.of(context).size.height * 0.04, // if statement to check Q&A offset
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    // title of Advice Buttons
-                    child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  ТАЙЛБАР ЗУРАГ",
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          color: Color(0xff23233c),
-                          fontSize: MediaQuery.of(context).size.height * 0.02,
-                          fontWeight: FontWeight.w700,
-                          fontStyle: FontStyle.normal,
-                        )),
-                  ),
+                width: MediaQuery.of(context).size.width,
+                height: closeTopContainer ? 0 : MediaQuery.of(context).size.height * 0.04, // if statement to check Q&A offset
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  // title of Advice Buttons
+                  child: Text("ЗӨВЛӨГӨӨ  /  ЗАГВАР  /  ТАЙЛБАР ЗУРАГ",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        color: Color(0xff23233c),
+                        fontSize: MediaQuery.of(context).size.height * 0.02,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.normal,
+                      )),
                 ),
               ),
-              // Advice Buttons, animated to disappear if Q&A dragged up
-              AnimatedOpacity(
+            ),
+            // Advice Buttons, animated to disappear if Q&A dragged up
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 200),
+              opacity: closeTopContainer ? 0 : 1,
+              child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
-                opacity: closeTopContainer ? 0 : 1,
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  width: MediaQuery.of(context).size.width,
-                  alignment: Alignment.topCenter,
-                  height: closeTopContainer ? 0 : categoryHeight,
-                  child: MoreButtons(),
-                ),
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.topCenter,
+                height: closeTopContainer ? 0 : categoryHeight,
+                child: MoreButtons(),
               ),
-              // Q&A section Title, animated to Fill page if dragged up
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Text(
-                  "ТҮГЭЭМЭЛ АСУУЛТУУД",
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                    color: Color(0xff23233c),
-                    fontSize: MediaQuery.of(context).size.height * 0.02,
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
-                  ),
-                  textAlign: TextAlign.left,
+            ),
+            // Q&A section Title, animated to Fill page if dragged up
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, bottom: 12.0),
+              child: Text(
+                "ТҮГЭЭМЭЛ АСУУЛТУУД",
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  color: Color(0xff23233c),
+                  fontSize: MediaQuery.of(context).size.height * 0.02,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.normal,
                 ),
+                textAlign: TextAlign.left,
               ),
-              // Q&A section, animated to Fill page if dragged up
-              Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Scrollbar(
-                  controller: controller,
-                  radius: Radius.circular(4.0),
-                  thickness: 6.0,
-                  isAlwaysShown: true,
-                  child: ListView.builder(// q&a list view builder
-                      itemCount: questionsData.length, // length of data
-                      controller: controller, // controller
-                      physics: BouncingScrollPhysics(), // scroll physics
-                      itemBuilder: (context, index) {
-                        return questionsData[index]; // item builder
-                      }),
-                ),
-              )),
-            ],
-          ),
+            ),
+            // Q&A section, animated to Fill page if dragged up
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: Scrollbar(
+                controller: controller,
+                radius: Radius.circular(4.0),
+                thickness: 6.0,
+                isAlwaysShown: true,
+                child: ListView.builder(// q&a list view builder
+                    itemCount: questionsData.length, // length of data
+                    controller: controller, // controller
+                    physics: BouncingScrollPhysics(), // scroll physics
+                    itemBuilder: (context, index) {
+                      return questionsData[index]; // item builder
+                    }),
+              ),
+            )),
+          ],
         ),
       ),
     );
