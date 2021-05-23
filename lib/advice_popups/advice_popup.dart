@@ -119,15 +119,31 @@ class _AdviceState extends State<AdvicePopup> {
                                   Navigator.of(context).pop(true);
                                 });
                             return AlertDialog(
-                              title: Text(
-                                "Амжилттай татаж авлаа!",
-                                style: TextStyle(
-                                  color: Color(0xffffffff),
-                                  fontSize: 16.0,
+                              backgroundColor: Colors.transparent,
+                              contentPadding: EdgeInsets.all(0.0),
+                              content: Container(
+                                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(6.0),
+                                  // profile outer line gradient
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color.fromRGBO(241, 103, 48, 1.0),
+                                      Color.fromRGBO(249, 167, 25, 1.0)
+                                    ],
+                                    begin: Alignment.bottomLeft,
+                                    end: Alignment.topRight,
+                                  ),
                                 ),
-                                textAlign: TextAlign.center,
+                                child: Text(
+                                  "Амжилттай татаж авлаа!",
+                                  style: TextStyle(
+                                    color: Color(0xffffffff),
+                                    fontSize: 16.0,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
-                              backgroundColor: Color(0xfff78c1e),
                             );
                           });
                     }
