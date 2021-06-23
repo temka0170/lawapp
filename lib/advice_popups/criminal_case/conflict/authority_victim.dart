@@ -17,7 +17,7 @@ class AuthorityVictim extends StatefulWidget {
 }
 
 class _SHohirogchState extends State<AuthorityVictim> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/location_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -106,7 +105,9 @@ class _NALBoxState extends State<NALBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://goo.gl/maps/pQN4kB1fE58ncVJB8", title: "Налайх дүүрэг дэхь цагдаагийн хэлтэс"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/pQN4kB1fE58ncVJB8",
+                      title: "Налайх дүүрэг дэхь цагдаагийн хэлтэс"),
                 ],
               ),
             ),

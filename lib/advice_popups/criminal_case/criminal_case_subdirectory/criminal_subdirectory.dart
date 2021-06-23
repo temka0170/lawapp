@@ -18,7 +18,7 @@ class CriminalSub extends StatefulWidget {
 }
 
 class _SEState extends State<CriminalSub> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
@@ -125,7 +125,9 @@ class _SEState extends State<CriminalSub> {
                     img: "assets/Icons/Hugatsaa.png",
                   ),
                   MenuItems(
-                    popup: FelonyTemplate(title: "ТАЙЛБАР ЗУРАГ",),
+                    popup: FelonyTemplate(
+                      title: "ТАЙЛБАР ЗУРАГ",
+                    ),
                     title: "ТАЙЛБАР ЗУРАГ",
                     img: "assets/Icons/Sxem.png",
                   ),

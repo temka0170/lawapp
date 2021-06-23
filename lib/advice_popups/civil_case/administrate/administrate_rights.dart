@@ -16,7 +16,7 @@ class HEGBox extends StatefulWidget {
 }
 
 class _HEGState extends State<HEGBox> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

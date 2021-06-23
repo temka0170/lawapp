@@ -1,9 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/location_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -106,7 +104,10 @@ class _BHBoxState extends State<BHBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://www.google.com/maps/search/%D0%B1%D0%B0%D0%B3%D0%B0%D1%85%D0%B0%D0%BD%D0%B3%D0%B0%D0%B9+%D1%8D%D1%80%D1%87+%D0%BE%D1%80%D0%B4/@47.3515193,107.4899684,262m/data=!3m1!1e3", title: "Багахангай дүүрэг дэх цагдаагийн тасаг"),
+                  LocationItems(
+                      url:
+                          "https://www.google.com/maps/search/%D0%B1%D0%B0%D0%B3%D0%B0%D1%85%D0%B0%D0%BD%D0%B3%D0%B0%D0%B9+%D1%8D%D1%80%D1%87+%D0%BE%D1%80%D0%B4/@47.3515193,107.4899684,262m/data=!3m1!1e3",
+                      title: "Багахангай дүүрэг дэх цагдаагийн тасаг"),
                 ],
               ),
             ),

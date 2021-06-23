@@ -21,7 +21,7 @@ class Reconciliation extends StatefulWidget {
 }
 
 class _ESState extends State<Reconciliation> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

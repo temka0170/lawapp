@@ -16,7 +16,7 @@ class FelonyVictimRights extends StatefulWidget {
 }
 
 class _FelonyVictimRightsState extends State<FelonyVictimRights> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/location_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -106,8 +105,14 @@ class _BGDBoxState extends State<BGDBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://goo.gl/maps/Y8nTJz1AnmNqDvVCA", title: "БГД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 9,10,11,12,14,15,16,17,18,19,20,21,22,23"),
-                  LocationItems(url: "https://goo.gl/maps/LQeDocUiEF84GLej9", title: "БГД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,13,20"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/Y8nTJz1AnmNqDvVCA",
+                      title:
+                          "БГД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 9,10,11,12,14,15,16,17,18,19,20,21,22,23"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/LQeDocUiEF84GLej9",
+                      title:
+                          "БГД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,13,20"),
                 ],
               ),
             ),

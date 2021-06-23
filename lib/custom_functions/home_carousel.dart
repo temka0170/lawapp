@@ -15,7 +15,7 @@ class HomeCarousel extends StatefulWidget {
 
 class _HomeCarouselState extends State<HomeCarousel> {
   //gets slide values
-  List<MainModel> mains = new List<MainModel>();
+  List<MainModel> mains = <MainModel>[];
   int _currentMain = 0;
   Timer timerMain;
   PageController mainController = new PageController(initialPage: 0);
@@ -61,7 +61,7 @@ class _HomeCarouselState extends State<HomeCarousel> {
   @override
   Widget build(BuildContext context) {
     int ix, id;
-    return Stack(
+    return Column(
       children: <Widget>[
         CarouselSlider.builder(
           itemCount: mains.length,
@@ -69,13 +69,15 @@ class _HomeCarouselState extends State<HomeCarousel> {
             //Slide of carousel, gets data by list
             ix = index;
             id = mains[ix].getIdx();
-            return MainTile(// individual ad template
+            return MainTile(
+              // individual ad template
               imgPath: mains[ix].getAssetPath(),
               desc: mains[ix].getDescript(),
               idx: id,
             );
           },
-          options: CarouselOptions(// carousel slider options
+          options: CarouselOptions(
+            // carousel slider options
             onPageChanged: (index, reason) {
               setState(() {
                 _currentMain = index;
@@ -92,22 +94,25 @@ class _HomeCarouselState extends State<HomeCarousel> {
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,
             scrollDirection: Axis.horizontal,
+            height: MediaQuery.of(context).size.height * 0.28,
           ),
         ),
         //indicator implementation
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                for (int i = 0; i < mains.length; i++)
-                  _currentMain == i ? adIndicator(true) : adIndicator(false),
-              ],
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  for (int i = 0; i < mains.length; i++)
+                    _currentMain == i ? adIndicator(true) : adIndicator(false),
+                ],
+              ),
             ),
           ),
-        ),
+        ]),
       ],
     );
   }
@@ -126,7 +131,7 @@ class MainTile extends StatefulWidget {
 }
 
 class _MainTileState extends State<MainTile> {
-  List<AdvertisementPopup> popups = new List<AdvertisementPopup>();
+  List<AdvertisementPopup> popups = <AdvertisementPopup>[];
 
   @override
   void initState() {
@@ -159,11 +164,11 @@ class _MainTileState extends State<MainTile> {
             // of url is not null, launches web link
             popups[widget.idx].url == null
                 ? showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  //this links which popup should popup when clicked on slider
-                  return popups[widget.idx];
-                })
+                    context: context,
+                    builder: (BuildContext context) {
+                      //this links which popup should popup when clicked on slider
+                      return popups[widget.idx];
+                    })
                 : launch(popups[widget.idx].url);
           },
           // Slide data

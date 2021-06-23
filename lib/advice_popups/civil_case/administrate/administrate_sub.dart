@@ -17,7 +17,7 @@ class HSBox extends StatefulWidget {
 }
 
 class _HSState extends State<HSBox> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

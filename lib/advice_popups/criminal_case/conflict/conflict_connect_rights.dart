@@ -14,7 +14,7 @@ class ConflictConnectionRights extends StatefulWidget {
 }
 
 class _ZLEGState extends State<ConflictConnectionRights> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

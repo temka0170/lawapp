@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/location_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -106,9 +105,18 @@ class _BZDBoxState extends State<BZDBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://goo.gl/maps/1Hc2T9u3UowWsMYw6", title: "БЗД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 13,16,17,19,22,24"),
-                  LocationItems(url: "https://goo.gl/maps/9aqKfG1GosdLprnD6", title: "БЗД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,14,15,18,21,25,27"),
-                  LocationItems(url: "https://goo.gl/maps/uQvMz7rZGckiC63C6", title: "БЗД-ийн Цагдаагийн 3-р Хэлтэс\nХариуцах Хороод: 8,9,10,11,12,20,23,28"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/1Hc2T9u3UowWsMYw6",
+                      title:
+                          "БЗД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 13,16,17,19,22,24"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/9aqKfG1GosdLprnD6",
+                      title:
+                          "БЗД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,14,15,18,21,25,27"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/uQvMz7rZGckiC63C6",
+                      title:
+                          "БЗД-ийн Цагдаагийн 3-р Хэлтэс\nХариуцах Хороод: 8,9,10,11,12,20,23,28"),
                 ],
               ),
             ),

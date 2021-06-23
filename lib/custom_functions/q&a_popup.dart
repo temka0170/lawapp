@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // More Section Q&A popups template
+// ignore: must_be_immutable
 class QuestionBox extends StatefulWidget {
   String question, answer, text;
 
@@ -19,7 +20,8 @@ class _QuestionBoxState extends State<QuestionBox> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(// popup widget
+      child: Dialog(
+        // popup widget
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -29,6 +31,7 @@ class _QuestionBoxState extends State<QuestionBox> {
       ),
     );
   }
+
   //container of popup
   contentBox(context) {
     return Stack(
@@ -112,7 +115,7 @@ class _QuestionBoxState extends State<QuestionBox> {
                   Align(
                     child: Padding(
                       padding:
-                      const EdgeInsets.only(left: 20, right: 20, top: 15),
+                          const EdgeInsets.only(left: 20, right: 20, top: 15),
                       child: Text(
                         //gets value in data.dart
                         widget.answer,

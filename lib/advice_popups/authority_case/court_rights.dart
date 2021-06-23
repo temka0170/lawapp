@@ -16,14 +16,14 @@ class CourtRight extends StatefulWidget {
 }
 
 class _CourtRightState extends State<CourtRight> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    morepopups = moreSubPopups();//gets popup values from data.dart
+    morepopups = moreSubPopups(); //gets popup values from data.dart
   }
 
   @override
@@ -31,12 +31,13 @@ class _CourtRightState extends State<CourtRight> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(//popup made by Dialog widget
+      child: Dialog(
+        //popup made by Dialog widget
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),//rounded container
+          borderRadius: BorderRadius.circular(20), //rounded container
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,//blurred background
+        backgroundColor: Colors.transparent, //blurred background
         child: contentBox(context),
       ),
     );

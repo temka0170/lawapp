@@ -31,7 +31,6 @@ Color _inactclr = Color(0xfff78c1e);
 
 //curved nav bar default page, default is Calculator page
 int _activePage = 1;
-int _history;
 
 class Main extends StatefulWidget {
   @override
@@ -61,23 +60,25 @@ class _PageState extends State<Main> {
           items: <Widget>[
             Container(
               decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          gradient: _activePage == 0 ? LinearGradient(
-            colors: [
-              Color.fromRGBO(241, 103, 48, 1.0),
-              Color.fromRGBO(249, 167, 25, 1.0)
-            ],
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-          ) : LinearGradient(
-            colors: [
-              Color(0xffffffff),
-              Color(0xffffffff),
-            ],
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-          ),
-        ),
+                shape: BoxShape.circle,
+                gradient: _activePage == 0
+                    ? LinearGradient(
+                        colors: [
+                          Color.fromRGBO(241, 103, 48, 1.0),
+                          Color.fromRGBO(249, 167, 25, 1.0)
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      )
+                    : LinearGradient(
+                        colors: [
+                          Color(0xffffffff),
+                          Color(0xffffffff),
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      ),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Icon(
@@ -90,21 +91,23 @@ class _PageState extends State<Main> {
             Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                gradient: _activePage == 1 ? LinearGradient(
-                  colors: [
-                    Color.fromRGBO(241, 103, 48, 1.0),
-                    Color.fromRGBO(249, 167, 25, 1.0)
-                  ],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight,
-                ) : LinearGradient(
-                  colors: [
-                    Color(0xffffffff),
-                    Color(0xffffffff),
-                  ],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight,
-                ),
+                gradient: _activePage == 1
+                    ? LinearGradient(
+                        colors: [
+                          Color.fromRGBO(241, 103, 48, 1.0),
+                          Color.fromRGBO(249, 167, 25, 1.0)
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      )
+                    : LinearGradient(
+                        colors: [
+                          Color(0xffffffff),
+                          Color(0xffffffff),
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
@@ -118,21 +121,23 @@ class _PageState extends State<Main> {
             Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                gradient: _activePage == 2 ? LinearGradient(
-                  colors: [
-                    Color.fromRGBO(241, 103, 48, 1.0),
-                    Color.fromRGBO(249, 167, 25, 1.0)
-                  ],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight,
-                ) : LinearGradient(
-                  colors: [
-                    Color(0xffffffff),
-                    Color(0xffffffff),
-                  ],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight,
-                ),
+                gradient: _activePage == 2
+                    ? LinearGradient(
+                        colors: [
+                          Color.fromRGBO(241, 103, 48, 1.0),
+                          Color.fromRGBO(249, 167, 25, 1.0)
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      )
+                    : LinearGradient(
+                        colors: [
+                          Color(0xffffffff),
+                          Color(0xffffffff),
+                        ],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                      ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
@@ -146,7 +151,6 @@ class _PageState extends State<Main> {
           ],
           onTap: (index) {
             setState(() {
-              _history = _activePage;
               _activePage = index;
             });
           },

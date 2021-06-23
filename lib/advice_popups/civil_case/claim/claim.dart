@@ -16,7 +16,7 @@ class ClaimBox extends StatefulWidget {
 }
 
 class _ClaimBoxState extends State<ClaimBox> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
   ScrollController _controller = new ScrollController();
 
   @override
@@ -112,20 +112,76 @@ class _ClaimBoxState extends State<ClaimBox> {
                 controller: _controller,
                 child: Column(
                   children: <Widget>[
-                    MenuItems(popup: morepopups[0], img: "assets/Icons/shTemplate.png", title: "Гэм хор",),
-                    MenuItems(popup: morepopups[1], img: "assets/Icons/shTemplate.png", title: "Ажлаас халагдсан",),
-                    MenuItems(popup: morepopups[2], img: "assets/Icons/shTemplate.png", title: "Орон сууцны өмчлөгчөөр тогтоолгох тухай",),
-                    MenuItems(popup: morepopups[3], img: "assets/Icons/shTemplate.png", title: "Асран хамгаалагчаар тогтоолгох тухай",),
-                    MenuItems(popup: morepopups[4], img: "assets/Icons/shTemplate.png", title: "Гэрлэлт цуцлуулах тухай",),
-                    MenuItems(popup: morepopups[5], img: "assets/Icons/shTemplate.png", title: "Хүүхдийн тэтгэлэг тогтоолгох",),
-                    MenuItems(popup: morepopups[14], img: "assets/Icons/shTemplate.png", title: "Хариуцагчийг эрэн сурвалжлуулах",),
-                    MenuItems(popup: morepopups[7], img: "assets/Icons/shTemplate.png", title: "Хамтын амьдралтай байсныг тогтоолгох",),
-                    MenuItems(popup: morepopups[8], img: "assets/Icons/shTemplate.png", title: "Нөхөн олговор гаргуулах тухай",),
-                    MenuItems(popup: morepopups[9], img: "assets/Icons/shTemplate.png", title: "Нас тогтоолгох тухай",),
-                    MenuItems(popup: morepopups[10], img: "assets/Icons/shTemplate.png", title: "Зээлийн гэрээний авлага",),
-                    MenuItems(popup: morepopups[11], img: "assets/Icons/shTemplate.png", title: "Ажилласан жил тогтоолгох тухай",),
-                    MenuItems(popup: morepopups[12], img: "assets/Icons/shTemplate.png", title: "Гэрээний дагуу авлага",),
-                    MenuItems(popup: morepopups[15], img: "assets/Icons/shTemplate.png", title: "Эрх хязгаарлах арга хэмжээ авахуулах тухай",),
+                    MenuItems(
+                      popup: morepopups[0],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Гэм хор",
+                    ),
+                    MenuItems(
+                      popup: morepopups[1],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Ажлаас халагдсан",
+                    ),
+                    MenuItems(
+                      popup: morepopups[2],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Орон сууцны өмчлөгчөөр тогтоолгох тухай",
+                    ),
+                    MenuItems(
+                      popup: morepopups[3],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Асран хамгаалагчаар тогтоолгох тухай",
+                    ),
+                    MenuItems(
+                      popup: morepopups[4],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Гэрлэлт цуцлуулах тухай",
+                    ),
+                    MenuItems(
+                      popup: morepopups[5],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Хүүхдийн тэтгэлэг тогтоолгох",
+                    ),
+                    MenuItems(
+                      popup: morepopups[14],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Хариуцагчийг эрэн сурвалжлуулах",
+                    ),
+                    MenuItems(
+                      popup: morepopups[7],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Хамтын амьдралтай байсныг тогтоолгох",
+                    ),
+                    MenuItems(
+                      popup: morepopups[8],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Нөхөн олговор гаргуулах тухай",
+                    ),
+                    MenuItems(
+                      popup: morepopups[9],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Нас тогтоолгох тухай",
+                    ),
+                    MenuItems(
+                      popup: morepopups[10],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Зээлийн гэрээний авлага",
+                    ),
+                    MenuItems(
+                      popup: morepopups[11],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Ажилласан жил тогтоолгох тухай",
+                    ),
+                    MenuItems(
+                      popup: morepopups[12],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Гэрээний дагуу авлага",
+                    ),
+                    MenuItems(
+                      popup: morepopups[15],
+                      img: "assets/Icons/shTemplate.png",
+                      title: "Эрх хязгаарлах арга хэмжээ авахуулах тухай",
+                    ),
                   ],
                 ),
               ),

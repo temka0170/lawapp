@@ -14,7 +14,7 @@ class ConflictRights extends StatefulWidget {
 }
 
 class _ZHEGState extends State<ConflictRights> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

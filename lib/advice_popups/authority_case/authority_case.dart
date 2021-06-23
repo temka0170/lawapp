@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/authority_case/preemptive.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'authority_case_roadmap.dart';
-import '../sub_location.dart';
 import 'court.dart';
 
 /*This file shows authority case section in advice page*/
@@ -30,12 +29,14 @@ class _AuthorityBoxState extends State<AuthorityBox> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(//Popup is made by Dialog widget
-        shape: RoundedRectangleBorder(//rounded the container
+      child: Dialog(
+        //Popup is made by Dialog widget
+        shape: RoundedRectangleBorder(
+          //rounded the container
           borderRadius: BorderRadius.circular(20),
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,//blurs background
+        backgroundColor: Colors.transparent, //blurs background
         child: contentBox(context),
       ),
     );
@@ -221,7 +222,10 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                             Expanded(
                               flex: 1,
                               child: Center(
-                                child: Text("ТАЙЛБАР ЗУРАГ", textAlign: TextAlign.center,),
+                                child: Text(
+                                  "ТАЙЛБАР ЗУРАГ",
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
                           ],
@@ -253,7 +257,10 @@ class _AuthorityBoxState extends State<AuthorityBox> {
                             Expanded(
                               flex: 1,
                               child: Center(
-                                child: Text("ЗАХИРГААНЫ ХЭРГИЙН ШҮҮХ\nНЭГДСЭН БАЙР", textAlign: TextAlign.center,),
+                                child: Text(
+                                  "ЗАХИРГААНЫ ХЭРГИЙН ШҮҮХ\nНЭГДСЭН БАЙР",
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ),
                           ],

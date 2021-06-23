@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/location_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -106,8 +105,15 @@ class _HUDBoxState extends State<HUDBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://goo.gl/maps/TrZzRt2Zn4nikiM9A", title: "ХУД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 1,2,3,11,15"),
-                  LocationItems(url: "https://www.google.com/maps/@47.8654273,106.811621,3a,24.8y,331.52h,90.25t/data=!3m6!1e1!3m4!1s3Q2fPTXPBZ7jm7hprom2lg!2e0!7i13312!8i6656", title: "ХУД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 4,5,6,7,8,9,10,12,13,14,16"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/TrZzRt2Zn4nikiM9A",
+                      title:
+                          "ХУД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 1,2,3,11,15"),
+                  LocationItems(
+                      url:
+                          "https://www.google.com/maps/@47.8654273,106.811621,3a,24.8y,331.52h,90.25t/data=!3m6!1e1!3m4!1s3Q2fPTXPBZ7jm7hprom2lg!2e0!7i13312!8i6656",
+                      title:
+                          "ХУД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 4,5,6,7,8,9,10,12,13,14,16"),
                 ],
               ),
             ),

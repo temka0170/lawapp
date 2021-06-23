@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/location_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -106,8 +105,14 @@ class _SBDBoxState extends State<SBDBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://goo.gl/maps/ccucb5Lx6jCJLKcE7", title: "СБД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9"),
-                  LocationItems(url: "https://goo.gl/maps/4R9SwzrVQr9vPLkz5", title: "СБД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/ccucb5Lx6jCJLKcE7",
+                      title:
+                          "СБД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/4R9SwzrVQr9vPLkz5",
+                      title:
+                          "СБД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20"),
                 ],
               ),
             ),

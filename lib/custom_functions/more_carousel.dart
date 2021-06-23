@@ -15,7 +15,7 @@ class MoreCarousel extends StatefulWidget {
 
 class _MoreCarouselState extends State<MoreCarousel> {
   //gets values in data.dart for each slide
-  List<MoreModel> mores = new List<MoreModel>();
+  List<MoreModel> mores = <MoreModel>[];
   int _currentAd = 0;
   Timer timer;
   PageController adController = new PageController(initialPage: 0);
@@ -77,7 +77,8 @@ class _MoreCarouselState extends State<MoreCarousel> {
               idx: id,
             );
           },
-          options: CarouselOptions(// carousel slider options
+          options: CarouselOptions(
+            // carousel slider options
             onPageChanged: (index, reason) {
               setState(() {
                 _currentAd = index;
@@ -136,7 +137,7 @@ class MoreTile extends StatefulWidget {
 }
 
 class _MoreTileState extends State<MoreTile> {
-  List<AdvertisementPopup> morepopups = new List<AdvertisementPopup>();
+  List<AdvertisementPopup> morepopups = <AdvertisementPopup>[];
 
   @override
   void initState() {

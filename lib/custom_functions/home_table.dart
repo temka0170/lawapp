@@ -25,7 +25,7 @@ class _HomeContainerState extends State<HomeContainer> {
     double maxWidth = MediaQuery.of(context).size.width;
     double maxHeight = MediaQuery.of(context).size.height;
     return Padding(
-      padding: EdgeInsets.only(top: 14.0),
+      padding: EdgeInsets.only(top: 8.0),
       // main container
       child: Column(
         children: [
@@ -165,10 +165,12 @@ class _LinkState extends State<Link> {
       new ScrollController(initialScrollOffset: 127.0, keepScrollOffset: true);
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(// shows scrollbar
+    return Scrollbar(
+      // shows scrollbar
       controller: _scrollController,
       isAlwaysShown: true,
-      child: ListView(// creates list view of items
+      child: ListView(
+        // creates list view of items
         padding: EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
         itemExtent: 80.0,
         controller: _scrollController,
@@ -285,12 +287,13 @@ class BoxItems extends StatelessWidget {
       throw 'Could not launch $url';
     }
   }
- // template of individual item
+
+  // template of individual item
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.9,
-      height: 90.0,
+      height: MediaQuery.of(context).size.width * 0.18,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -305,7 +308,7 @@ class BoxItems extends StatelessWidget {
           // Button to launch url
           Expanded(
             flex: 4,
-            child: FlatButton(
+            child: TextButton(
               onPressed: () {
                 _launchURL(url);
               },

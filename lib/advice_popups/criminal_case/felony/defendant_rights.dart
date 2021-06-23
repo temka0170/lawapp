@@ -16,7 +16,7 @@ class DefendantRights extends StatefulWidget {
 }
 
 class _DefendantRightsState extends State<DefendantRights> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
@@ -147,7 +147,8 @@ class _DefendantRightsState extends State<DefendantRights> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0)),
                         child: Center(
-                          child: Text("Гэм буруутай эсэхийг урьдчилан тогтоохыг хориглох"),
+                          child: Text(
+                              "Гэм буруутай эсэхийг урьдчилан тогтоохыг хориглох"),
                         ),
                       ),
                     ),

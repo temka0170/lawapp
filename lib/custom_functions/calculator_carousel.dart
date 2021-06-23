@@ -15,7 +15,7 @@ class CalculatorCarousel extends StatefulWidget {
 
 class _CalculatorCarouselState extends State<CalculatorCarousel> {
   //gets values in data.dart for each slide
-  List<AdModel> ads = new List<AdModel>();
+  List<AdModel> ads = <AdModel>[];
   int _currentAd = 0;
   Timer timer;
   PageController adController = new PageController(initialPage: 0);
@@ -73,30 +73,37 @@ class _CalculatorCarouselState extends State<CalculatorCarousel> {
             //current slide of carousel, gets data by list
             ix = index;
             id = ads[ix].getIdex();
-            return AdTile( // individual ad template
+            return AdTile(
+              // individual ad template
               imgPath: ads[ix].getAssetPath(),
               desc: ads[ix].getDescript(),
               idx: id,
             );
           },
-          options: CarouselOptions(// settings of carousel slider
+          options: CarouselOptions(
+            // settings of carousel slider
             onPageChanged: (index, reason) {
               setState(() {
                 _currentAd = index; // changes current slider, Timer is 4 second
               });
             },
             aspectRatio: 18 / 10, // aspect ratio
-            viewportFraction: 0.8, // defines how current slider looks width wide, currently 80%
+            viewportFraction:
+                0.8, // defines how current slider looks width wide, currently 80%
             initialPage: 0, // initial index of slider is 0
             enableInfiniteScroll: true, // returns to index 0 after last index
-            reverse: false, // defines slider sliding way, if false slides slide right to left, vise versa
+            reverse:
+                false, // defines slider sliding way, if false slides slide right to left, vise versa
             autoPlay: true, // defines if sliders go automatically with timer
-            autoPlayInterval: Duration(seconds: 3), // automate slide time interval
-            autoPlayAnimationDuration: Duration(milliseconds: 800), // sliding animation duration
+            autoPlayInterval:
+                Duration(seconds: 3), // automate slide time interval
+            autoPlayAnimationDuration:
+                Duration(milliseconds: 800), // sliding animation duration
             autoPlayCurve: Curves.fastOutSlowIn, // sliding animation curve
             enlargeCenterPage: true, // highlights current slide
             scrollDirection: Axis.horizontal, // slide direction
-            height: MediaQuery.of(context).size.height * 0.28, // height of slider overall
+            height: MediaQuery.of(context).size.height *
+                0.28, // height of slider overall
           ),
         ),
         // indicator implementation
@@ -138,14 +145,14 @@ class AdTile extends StatefulWidget {
 }
 
 class _AdTileState extends State<AdTile> {
-  List<AdvertisementPopup> cmpopups = new List<AdvertisementPopup>();
+  List<AdvertisementPopup> cmpopups = <AdvertisementPopup>[];
 
   @override
   void initState() {
     // ignore: todo
     // TODO: implement initState
     super.initState();
-  // ad data getter
+    // ad data getter
     cmpopups = calculatorAdPopups();
   }
 

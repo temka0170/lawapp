@@ -19,7 +19,7 @@ class FelonyConnection extends StatefulWidget {
 }
 
 class _EHolbogdState extends State<FelonyConnection> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

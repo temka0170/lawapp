@@ -17,7 +17,7 @@ class GSBox extends StatefulWidget {
 }
 
 class _GSState extends State<GSBox> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

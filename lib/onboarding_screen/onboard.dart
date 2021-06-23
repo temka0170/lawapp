@@ -28,11 +28,13 @@ class StartState extends State<OnboardingScreen>
       end: 1.0,
     ).animate(_controller);
   }
+
   //timer of transition to main page
   startTimer() async {
     var duration = Duration(milliseconds: 2000);
     return Timer(duration, route);
   }
+
   //path to main page
   route() {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Main()));
@@ -43,12 +45,85 @@ class StartState extends State<OnboardingScreen>
     _controller.forward();
     return FadeTransition(
       opacity: _animation,
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: FittedBox(
-          child: Image.asset("assets/splashscreen/intro.jpg"),
-          fit: BoxFit.fill,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: SizedBox(),
+              ),
+              Expanded(
+                  flex: 2,
+                  child: Image.asset(
+                    "assets/images/umbrella_logo.jpg",
+                    fit: BoxFit.contain,
+                  )),
+              Expanded(
+                flex: 1,
+                child: SizedBox(),
+              ),
+              Expanded(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Pro Bono Application".toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: SizedBox(),
+              ),
+              Expanded(
+                flex: 1,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "UMBRELLA\nCENTER",
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Container(
+                      width: 1.0,
+                      color: Colors.black,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "UMBRELLA\nLAW FIRM",
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: SizedBox(),
+              ),
+              Expanded(
+                  flex: 2,
+                  child: Image.asset(
+                    "assets/images/lawfirmlogo.png",
+                    fit: BoxFit.contain,
+                  )),
+              Expanded(
+                flex: 1,
+                child: SizedBox(),
+              ),
+            ],
+          ),
         ),
       ),
     );

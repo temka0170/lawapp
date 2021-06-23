@@ -16,7 +16,7 @@ class Applicant extends StatefulWidget {
 }
 
 class _UGState extends State<Applicant> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

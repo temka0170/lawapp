@@ -16,7 +16,7 @@ class GWGBox extends StatefulWidget {
 }
 
 class _GWGState extends State<GWGBox> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
@@ -127,7 +127,8 @@ class _GWGState extends State<GWGBox> {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
-                                "Бие даасан шаардлага гаргаагүй гуравдагч этгээд", textAlign: TextAlign.center),
+                                "Бие даасан шаардлага гаргаагүй гуравдагч этгээд",
+                                textAlign: TextAlign.center),
                           ),
                         ),
                       ),
@@ -156,7 +157,8 @@ class _GWGState extends State<GWGBox> {
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
-                                "Бие даасан шаардлага гаргасан гуравдагч этгээд", textAlign: TextAlign.center),
+                                "Бие даасан шаардлага гаргасан гуравдагч этгээд",
+                                textAlign: TextAlign.center),
                           ),
                         ),
                       ),

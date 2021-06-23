@@ -17,7 +17,7 @@ class Guest extends StatefulWidget {
 }
 
 class _URState extends State<Guest> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

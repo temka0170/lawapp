@@ -16,7 +16,7 @@ class CWHBox extends StatefulWidget {
 }
 
 class _NWHState extends State<CWHBox> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
@@ -137,7 +137,7 @@ class _NWHState extends State<CWHBox> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return morepopups[ 27];
+                            return morepopups[27];
                           });
                     },
                     child: Padding(

@@ -19,7 +19,7 @@ class ConflictSub extends StatefulWidget {
 }
 
 class _SZState extends State<ConflictSub> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
@@ -116,7 +116,8 @@ class _SZState extends State<ConflictSub> {
                     img: "assets/Icons/Zagwar.png",
                   ),
                   MenuItems(
-                    popup: ConflictConnection(title: "Холбогдогч".toUpperCase()),
+                    popup:
+                        ConflictConnection(title: "Холбогдогч".toUpperCase()),
                     title: "Холбогдогч",
                     img: "assets/Icons/Holbogdogch.png",
                   ),
@@ -126,7 +127,9 @@ class _SZState extends State<ConflictSub> {
                     img: "assets/Icons/Hohirogch.png",
                   ),
                   MenuItems(
-                    popup: ConflictTemplate(title: "ТАЙЛБАР ЗУРАГ".toUpperCase(),),
+                    popup: ConflictTemplate(
+                      title: "ТАЙЛБАР ЗУРАГ".toUpperCase(),
+                    ),
                     title: "ТАЙЛБАР ЗУРАГ",
                     img: "assets/Icons/Sxem.png",
                   ),

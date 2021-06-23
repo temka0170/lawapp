@@ -12,7 +12,7 @@ class More extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<More> {
-  List<QuestionBox> questions = new List<QuestionBox>();
+  List<QuestionBox> questions = <QuestionBox>[];
   List<Widget> questionsData = [];
   ScrollController controller = ScrollController();
   bool closeTopContainer = false;
@@ -35,7 +35,8 @@ class _MyStatefulWidgetState extends State<More> {
     List<dynamic> responseList = question_data;
     List<Widget> listItems = [];
     responseList.forEach((post) {
-      listItems.add(GestureDetector(// popup widget of Q&A section
+      listItems.add(GestureDetector(
+        // popup widget of Q&A section
         onTap: () {
           showDialog(
               context: context,
@@ -87,20 +88,17 @@ class _MyStatefulWidgetState extends State<More> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final double categoryHeight = size.height * 0.35 - 50;
+    final double categoryHeight = size.height * 0.30 - 50;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 6.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.34,
-                //same carousel as calculator page carousel, shuffled
-                child: MoreCarousel(),
-              ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.32,
+              //same carousel as calculator page carousel, shuffled
+              child: MoreCarousel(),
             ),
             // Advice Title, animated to disappear if Q&A dragged up
             AnimatedOpacity(
@@ -109,7 +107,10 @@ class _MyStatefulWidgetState extends State<More> {
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
                 width: MediaQuery.of(context).size.width,
-                height: closeTopContainer ? 0 : MediaQuery.of(context).size.height * 0.04, // if statement to check Q&A offset
+                height: closeTopContainer
+                    ? 0
+                    : MediaQuery.of(context).size.height *
+                        0.04, // if statement to check Q&A offset
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.all(6.0),
@@ -161,7 +162,8 @@ class _MyStatefulWidgetState extends State<More> {
                 radius: Radius.circular(4.0),
                 thickness: 6.0,
                 isAlwaysShown: true,
-                child: ListView.builder(// q&a list view builder
+                child: ListView.builder(
+                    // q&a list view builder
                     itemCount: questionsData.length, // length of data
                     controller: controller, // controller
                     physics: BouncingScrollPhysics(), // scroll physics
@@ -203,7 +205,7 @@ class BoxItems extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.only(top: 5.0),
-        width: MediaQuery.of(context).size.width * 0.36,
+        width: categoryHeight * 0.715,
         height: categoryHeight,
         child: Padding(
           padding: const EdgeInsets.all(6.0),

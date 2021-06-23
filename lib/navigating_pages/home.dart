@@ -14,48 +14,36 @@ class MyHome extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    double maxHeight = MediaQuery.of(context).size.height;
     double maxWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: FittedBox(
-            fit: BoxFit.fill,
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 6.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: height * 0.31,
-                    //advertisement carousel of home page
-                    child: HomeCarousel(),
-                  ),
-                ),
-                // Title of Project Team
-                Padding(
-                  padding: const EdgeInsets.only(top: 5.0),
-                  child: Text("Төслийн БАГ".toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        color: Color(0xff23233c),
-                        fontSize: MediaQuery.of(context).size.height * 0.026,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.normal,
-                      )),
-                ),
-                // Project Team section
-                Container(
-                  width: maxWidth,
-                  height: height * 0.18,
-                  child: TeamCarousel(),
-                ),
-                //Content Table (Links, Association)
-                HomeContainer(),
-              ],
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: maxWidth,
+              height: maxHeight * 0.32,
+              //advertisement carousel of home page
+              child: HomeCarousel(),
             ),
-          ),
+            // Title of Project Team
+            Text("Төслийн БАГ".toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  color: Color(0xff23233c),
+                  fontSize: MediaQuery.of(context).size.height * 0.026,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.normal,
+                )),
+            // Project Team section
+            Container(
+              width: maxWidth,
+              height: maxHeight * 0.17,
+              child: TeamCarousel(),
+            ),
+            //Content Table (Links, Association)
+            HomeContainer(),
+          ],
         ),
       ),
     );

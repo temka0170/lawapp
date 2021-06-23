@@ -16,7 +16,7 @@ class ClaimRights extends StatefulWidget {
 }
 
 class _NEGState extends State<ClaimRights> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

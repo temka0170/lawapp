@@ -16,7 +16,7 @@ class GEGBox extends StatefulWidget {
 }
 
 class _GEGState extends State<GEGBox> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

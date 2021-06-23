@@ -16,7 +16,7 @@ class ApplicantTemplate extends StatefulWidget {
 }
 
 class _UZState extends State<ApplicantTemplate> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

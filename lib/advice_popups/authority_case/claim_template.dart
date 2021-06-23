@@ -16,7 +16,7 @@ class Claim extends StatefulWidget {
 }
 
 class _ClaimState extends State<Claim> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
@@ -31,12 +31,13 @@ class _ClaimState extends State<Claim> {
     //blurred background
     return BackdropFilter(
       filter: new ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-      child: Dialog(//Popup made by Dialog widget
+      child: Dialog(
+        //Popup made by Dialog widget
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),//Rounded container
+          borderRadius: BorderRadius.circular(20), //Rounded container
         ),
         elevation: 0,
-        backgroundColor: Colors.transparent,//blurred background
+        backgroundColor: Colors.transparent, //blurred background
         child: contentBox(context),
       ),
     );

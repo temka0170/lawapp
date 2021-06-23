@@ -1,10 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:project_1/advice_popups/location_items.dart';
 import 'package:project_1/advice_popups/phone_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -107,14 +105,46 @@ class _PSBDBoxState extends State<PSBDBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  PhoneItems(number: "tel:+97694945416", title: "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",),
-                  PhoneItems(number: "tel:+97696500137", title: "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",),
-                  PhoneItems(number: "tel:+97653132410", title: "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",),
-                  PhoneItems(number: "tel:+97688220044", title: "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",),
-                  PhoneItems(number: "tel:+97694945428", title: "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",),
-                  PhoneItems(number: "tel:+97696167706", title: "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",),
-                  PhoneItems(number: "tel:+97663040207", title: "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",),
-                  PhoneItems(number: "tel:+97688220045", title: "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",),
+                  PhoneItems(
+                    number: "tel:+97694945416",
+                    title:
+                        "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",
+                  ),
+                  PhoneItems(
+                    number: "tel:+97696500137",
+                    title:
+                        "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",
+                  ),
+                  PhoneItems(
+                    number: "tel:+97653132410",
+                    title:
+                        "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",
+                  ),
+                  PhoneItems(
+                    number: "tel:+97688220044",
+                    title:
+                        "СБД цагдаагийн 1-р хэлтэс\nХариуцах Хороод: 1,2,3,4,5,6,7,8,9: ",
+                  ),
+                  PhoneItems(
+                    number: "tel:+97694945428",
+                    title:
+                        "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",
+                  ),
+                  PhoneItems(
+                    number: "tel:+97696167706",
+                    title:
+                        "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",
+                  ),
+                  PhoneItems(
+                    number: "tel:+97663040207",
+                    title:
+                        "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",
+                  ),
+                  PhoneItems(
+                    number: "tel:+97688220045",
+                    title:
+                        "СБД цагдаагийн 2-р хэлтэс\nХариуцах Хороод: 10,11,12,13,14,15,16,17,18,19,20: ",
+                  ),
                 ],
               ),
             ),

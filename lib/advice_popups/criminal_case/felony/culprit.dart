@@ -17,7 +17,7 @@ class Culprit extends StatefulWidget {
 }
 
 class _CulpritState extends State<Culprit> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

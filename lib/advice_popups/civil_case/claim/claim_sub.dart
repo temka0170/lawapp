@@ -18,7 +18,7 @@ class ClaimSub extends StatefulWidget {
 }
 
 class _NSState extends State<ClaimSub> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {

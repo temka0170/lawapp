@@ -16,7 +16,7 @@ class ConflictConnection extends StatefulWidget {
 }
 
 class _SHolbogdState extends State<ConflictConnection> {
-  List<AdvicePopup> morepopups = new List<AdvicePopup>();
+  List<AdvicePopup> morepopups = <AdvicePopup>[];
 
   @override
   void initState() {
@@ -113,7 +113,8 @@ class _SHolbogdState extends State<ConflictConnection> {
                           barrierDismissible: true,
                           builder: (BuildContext context) {
                             //links popups to its button
-                            return ConflictConnectionRights(title: "Таны эрх, үүрэг");
+                            return ConflictConnectionRights(
+                                title: "Таны эрх, үүрэг");
                           });
                     },
                     child: Padding(

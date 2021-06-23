@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_1/advice_popups/location_items.dart';
 
-import '../menu_items.dart';
 // import 'boxRow_buttons.dart';
 
 //civil case popup
@@ -106,9 +105,18 @@ class _SHDBoxState extends State<SHDBox> {
               controller: _controller,
               child: Column(
                 children: <Widget>[
-                  LocationItems(url: "https://goo.gl/maps/amyBaAnJXLY2ugBC6", title: "СХД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,18,19,20,21,22,26,27,32"),
-                  LocationItems(url: "https://goo.gl/maps/e41tK9wMCXk9XEgJ7", title: "СХД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 6,7,8,9,10,11,24,25,28"),
-                  LocationItems(url: "https://goo.gl/maps/U4qPvsibv7Tqvc9T7", title: "СХД-ийн Цагдаагийн 3-р Хэлтэс\nХариуцах Хороод: 12,13,14,15,16,17,23,29,30,31"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/amyBaAnJXLY2ugBC6",
+                      title:
+                          "СХД-ийн Цагдаагийн 1-р Хэлтэс\nХариуцах Хороод: 1,2,3,4,5,18,19,20,21,22,26,27,32"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/e41tK9wMCXk9XEgJ7",
+                      title:
+                          "СХД-ийн Цагдаагийн 2-р Хэлтэс\nХариуцах Хороод: 6,7,8,9,10,11,24,25,28"),
+                  LocationItems(
+                      url: "https://goo.gl/maps/U4qPvsibv7Tqvc9T7",
+                      title:
+                          "СХД-ийн Цагдаагийн 3-р Хэлтэс\nХариуцах Хороод: 12,13,14,15,16,17,23,29,30,31"),
                 ],
               ),
             ),
